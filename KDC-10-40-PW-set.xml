@@ -78,8 +78,6 @@
 	</limits>
 	
 	<options n="0">
-		<boom-pos-cmd type="bool">0</boom-pos-cmd>
-		<drogues-shown type="bool">0</drogues-shown>
 		<eng type="string">PW</eng>
 		<eng-int type="int">1</eng-int>
 	</options>

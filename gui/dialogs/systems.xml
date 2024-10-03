@@ -771,7 +771,7 @@
 			<checkbox>
 				<label>Fill 2</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/fill-1</property>
+				<property>/controls/fuel/switches/fill-2</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>

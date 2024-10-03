@@ -192,6 +192,7 @@
 		<multiplay n="0">
 			<generic n="0">
 				<bool n="0" alias="/services/chocks/enable"/>
+				<bool n="1" alias="/options/drogues-shown"/>
 				<float n="0" alias="/gear/gear[0]/rollspeed-ms"/>
 				<float n="1" alias="/gear/gear[1]/rollspeed-ms"/>
 				<float n="2" alias="/gear/gear[2]/rollspeed-ms"/>
@@ -1434,6 +1435,11 @@
 			<vert type="int">0</vert>
 		</output>
 	</it-autoflight>
+	
+	<options n="0">
+		<boom-pos-cmd type="bool">0</boom-pos-cmd>
+		<drogues-shown type="bool">0</drogues-shown>
+	</options>
 	
 	<services n="0">
 		<chocks n="0">

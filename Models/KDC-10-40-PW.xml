@@ -242,7 +242,7 @@
 		<object-name>RefuelProbeLeft</object-name>
 		<object-name>RefuelProbeRight</object-name>
 		<condition>
-			<property>options/drogues-shown</property>
+			<property>sim/multiplay/generic/bool[1]</property>
 		</condition>
 	</animation>
 	
