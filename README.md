@@ -1,4 +1,4 @@
-# DC-10
+# McDonnell Douglas DC-10
 This is a simulation of the McDonnell Douglas DC-10 for FlightGear. It is on hold in the very early stage of development due to needing a complete 3D modelling overhaul, which I am not able to do.
 
 Present pack includes the following McDonnell Douglas DC-10 variants:
