@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Instrument based off AI from Ryan Miller's DC-10 -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>ai.ac</path>
+	
+	<animation>
+		<name>Lighting</name>
+		<type>material</type>
+		<object-name>FD</object-name>
+		<object-name>Ball</object-name>
+		<object-name>Horizon</object-name>
+		<object-name>Roll</object-name>
+		<object-name>RollPointer</object-name>
+		<object-name>SlipTrack</object-name>
+		<object-name>LightGroup</object-name>
+		<emission>
+			<red>0.6</red>
+			<green>0.45</green>
+			<blue>0.3</blue>
+			<factor-prop>controls/lighting/main-panel-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<name>Roll</name>
+		<type>rotate</type>
+		<object-name>Ball</object-name>
+		<object-name>RollPointer</object-name>
+		<property>instrumentation/ai[0]/roll-deg</property>
+		<factor>1</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-0.052</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.004</z-m>
+		</center>
+	</animation>
+	<animation>
+		<name>Pitch</name>
+		<type>rotate</type>
+		<object-name>Ball</object-name>
+		<property>instrumentation/ai[0]/pitch-deg</property>
+		<interpolation> <!-- Carefully calibrated -->
+			<entry><ind>-90</ind><dep>-90.0</dep></entry>
+			<entry><ind>-80</ind><dep>-80.6</dep></entry>
+			<entry><ind>-70</ind><dep>-70.8</dep></entry>
+			<entry><ind>-60</ind><dep>-60.9</dep></entry>
+			<entry><ind>-50</ind><dep>-51.0</dep></entry>
+			<entry><ind>-40</ind><dep>-40.9</dep></entry>
+			<entry><ind>-30</ind><dep>-30.7</dep></entry>
+			<entry><ind>-20</ind><dep>-20.4</dep></entry>
+			<entry><ind>-10</ind><dep>-10.3</dep></entry>
+			<entry><ind>  0</ind><dep>  0.0</dep></entry>
+			<entry><ind> 10</ind><dep>  9.8</dep></entry>
+			<entry><ind> 20</ind><dep> 20.0</dep></entry>
+			<entry><ind> 30</ind><dep> 30.1</dep></entry>
+			<entry><ind> 40</ind><dep> 40.4</dep></entry>
+			<entry><ind> 50</ind><dep> 50.5</dep></entry>
+			<entry><ind> 60</ind><dep> 60.4</dep></entry>
+			<entry><ind> 70</ind><dep> 70.3</dep></entry>
+			<entry><ind> 80</ind><dep> 80.1</dep></entry>
+			<entry><ind> 90</ind><dep> 90.0</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-0.052</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.004</z-m>
+		</center>
+	</animation>
+	<animation>
+		<name>Slip</name>
+		<type>rotate</type>
+		<object-name>SlipBall</object-name>
+		<property>instrumentation/ai[0]/slip-skid</property>
+		<interpolation>
+			<entry><ind>-15</ind><dep>-13.7</dep></entry>
+			<entry><ind>  0</ind><dep>  0.0</dep></entry>
+			<entry><ind> 15</ind><dep> 13.7</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.02736</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>LOCInd</object-name>
+		<property>instrumentation/ai[0]/loc-deviation</property>
+		<factor>0.0022</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>GSInd</object-name>
+		<property>instrumentation/ai[0]/gs-deviation</property>
+		<factor>0.0063</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>FSInd</object-name>
+		<property>instrumentation/airspeed-indicator/speed-error</property>
+		<factor>0.0011</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>TestBtn</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/ai[0]/test-btn</property>
+				<value>1</value>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>libraries.Sound.btn1();</script>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>instrumentation/ai[0]/test-btn</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>TestBtn</object-name>
+		<property>instrumentation/ai[0]/test-btn</property>
+		<factor>-0.002</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

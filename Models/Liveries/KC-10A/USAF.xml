@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name>USAF, 305 AMW</name>
+				<texture>Liveries/KC-10A/USAF.png</texture>
+			</livery>
+		</model>
+	</sim>
+
+</PropertyList>

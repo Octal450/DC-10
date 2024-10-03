@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Yokes from MD-11 -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>res/yokes.ac</path>
+	
+	<animation> 
+		<type>material</type> 
+		<object-name>yoke.left.chart</object-name>
+		<object-name>yoke.right.chart</object-name>
+		<property-base>sim/model/yoke</property-base>
+		<texture-prop>texture</texture-prop> 
+		<texture>res/yoke.png</texture>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>yoke.left.chart</object-name>
+		<object-name>yoke.left.column</object-name>
+		<object-name>yoke.left</object-name>
+		<object-name>yoke.noseup</object-name>
+		<object-name>yoke.nosedown</object-name>
+		<object-name>yoke.autodsg</object-name>
+		<object-name>yoke.piece</object-name>
+		<property>controls/cockpit/elevator-yoke</property>
+		<factor>-15</factor>
+		<center>
+			<x-m>-27.3315</x-m>
+			<y-m>-0.524</y-m>
+			<z-m>6.3408</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>yoke.left</object-name>
+		<object-name>yoke.noseup</object-name>
+		<object-name>yoke.nosedown</object-name>
+		<object-name>yoke.autodsg</object-name>
+		<object-name>autopilot_disengage</object-name>
+		<property>controls/cockpit/aileron-yoke</property>
+		<factor>-90</factor>
+		<center>
+			<x-m>-27.2846</x-m>
+			<y-m>-0.524</y-m>
+			<z-m>6.9244</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>yoke.left.column.2</object-name>
+		<property>controls/cockpit/elevator-yoke</property>
+		<factor>-0.01</factor>
+		<axis>
+		<x>1</x>
+		<y>0</y>
+		<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>yoke.autodsg</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/cockpit/ap-disc-1</property>
+				<value>1</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/cockpit/ap-disc-1</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
+			<binding>
+				<command>nasal</command>
+				<script>cockpit.ApPanel.apDisc();</script>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>yoke.autodsg</object-name>
+		<property>controls/cockpit/ap-disc-1</property>
+		<factor>0.002</factor>
+		<axis>
+			<x1-m>-27.2002</x1-m>
+			<y1-m>-0.6221</y1-m>
+			<z1-m>6.9687</z1-m>
+			<x2-m>-27.2135</x2-m>
+			<y2-m>-0.6199</y2-m>
+			<z2-m>6.9713</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>yoke.right.chart</object-name>
+		<object-name>yoke.right.column</object-name>
+		<object-name>yoke.right</object-name>
+		<object-name>yoke.noseup.right</object-name>
+		<object-name>yoke.nosedown.right</object-name>
+		<object-name>yoke.autodsg.right</object-name>
+		<property>controls/cockpit/elevator-yoke</property>
+		<factor>-15</factor>
+		<center>
+			<x-m>-27.3315</x-m>
+			<y-m>0.524</y-m>
+			<z-m>6.3408</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>yoke.right</object-name>
+		<object-name>yoke.noseup.right</object-name>
+		<object-name>yoke.nosedown.right</object-name>
+		<object-name>yoke.autodsg.right</object-name>
+		<property>controls/cockpit/aileron-yoke</property>
+		<factor>-90</factor>
+		<center>
+			<x-m>-27.2846</x-m>
+			<y-m>0.524</y-m>
+			<z-m>6.9244</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>yoke.right.column.2</object-name>
+		<property>controls/cockpit/elevator-yoke</property>
+		<factor>-0.01</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>yoke.autodsg.right</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/cockpit/ap-disc-2</property>
+				<value>1</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/cockpit/ap-disc-2</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
+			<binding>
+				<command>nasal</command>
+				<script>cockpit.ApPanel.apDisc();</script>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>yoke.autodsg.right</object-name>
+		<property>controls/cockpit/ap-disc-2</property>
+		<factor>0.002</factor>
+		<axis>
+			<x1-m>-27.2002</x1-m>
+			<y1-m>0.6221</y1-m>
+			<z1-m>6.9687</z1-m>
+			<x2-m>-27.2135</x2-m>
+			<y2-m>0.6199</y2-m>
+			<z2-m>6.9713</z2-m>
+		</axis>
+	</animation>
+
+</PropertyList>

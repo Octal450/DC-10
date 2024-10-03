@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+
+<!-- McDonnell Douglas DC-10 Cockpit -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<system name="DC-10: Cockpit"> <!-- Everything here is after all systems -->
+	
+	<channel name="Animations">
+		
+		<!-- General -->
+		<lag_filter name="/controls/cockpit/aileron-yoke">
+			<input>hydraulics/aileron-yoke-sum</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/elevator-yoke">
+			<input>hydraulics/elevator-yoke-switch</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<fcs_function name="/controls/cockpit/fgcp/ap1-cmd">
+			<function>
+				<max>
+					<property>/it-autoflight/input/fgs1-sel</property>
+					<property>/controls/cockpit/fgcp/ap1-sw</property>
+				</max>
+			</function>
+		</fcs_function>
+		
+		<lag_filter name="/controls/cockpit/fgcp/ap1">
+			<input>/controls/cockpit/fgcp/ap1-cmd</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<fcs_function name="/controls/cockpit/fgcp/ap2-cmd">
+			<function>
+				<max>
+					<property>/it-autoflight/input/fgs2-sel</property>
+					<property>/controls/cockpit/fgcp/ap2-sw</property>
+				</max>
+			</function>
+		</fcs_function>
+		
+		<lag_filter name="/controls/cockpit/fgcp/ap2">
+			<input>/controls/cockpit/fgcp/ap2-cmd</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<fcs_function name="/controls/cockpit/fgcp/ats-cmd">
+			<function>
+				<max>
+					<property>/it-autoflight/output/athr</property>
+					<property>/controls/cockpit/fgcp/ats-sw</property>
+				</max>
+			</function>
+		</fcs_function>
+		
+		<lag_filter name="/controls/cockpit/fgcp/ats1">
+			<input>/controls/cockpit/fgcp/ats-cmd</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/fgcp/bank-limit">
+			<input>/it-autoflight/input/bank-limit-sw</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/fgcp/fd1">
+			<input>/it-autoflight/input/fd1</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/fgcp/fd2">
+			<input>/it-autoflight/input/fd2</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/fgcp/hsi-1-slaved">
+			<input>/instrumentation/hsi[0]/slaved-to-gps</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/fgcp/hsi-2-slaved">
+			<input>/instrumentation/hsi[1]/slaved-to-gps</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<actuator name="/controls/cockpit/gear-lever">
+			<input>/controls/gear/lever-cockpit</input>
+			<rate_limit>4.5</rate_limit>
+			<lag>20</lag>
+		</actuator>
+		
+		<lag_filter name="/controls/cockpit/rudder-pedal">
+			<input>hydraulics/rudder/pedal-sum</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/tiller-handle">
+			<input>hydraulics/tiller/handle</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/vor-adf-1[0]">
+			<input>/instrumentation/rmi[0]/vor-adf-1</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/vor-adf-1[1]">
+			<input>/instrumentation/rmi[1]/vor-adf-1</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/vor-adf-2[0]">
+			<input>/instrumentation/rmi[0]/vor-adf-2</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/vor-adf-2[1]">
+			<input>/instrumentation/rmi[1]/vor-adf-2</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<!-- Pedestal -->
+		<lag_filter name="/controls/cockpit/elevator-trim-lever">
+			<input>/controls/flight/elevator-trim-lever</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/engine-cutoff[0]">
+			<input>/controls/engines/engine[0]/cutoff-switch</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/engine-cutoff[1]">
+			<input>/controls/engines/engine[1]/cutoff-switch</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/engine-cutoff[2]">
+			<input>/controls/engines/engine[2]/cutoff-switch</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/flaps-lever-rotate">
+			<input>/controls/flight/flaps-input</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/flaps-lever-translate">
+			<input>/controls/cockpit/flaps-lever-translate-cmd</input>
+			<c1>30</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/reverse-lever[0]">
+			<input>/controls/engines/engine[0]/reverse-lever</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/reverse-lever[1]">
+			<input>/controls/engines/engine[1]/reverse-lever</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/reverse-lever[2]">
+			<input>/controls/engines/engine[2]/reverse-lever</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/spoilers-lever-rotate">
+			<input>spoilers/lever-cmd</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/spoilers-lever-translate">
+			<input>/controls/flight/speedbrake-arm</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/throttle-lever[0]">
+			<input>engine/control-1/throttle-pos</input>
+			<c1>20</c1>
+			<output>engine/throttle-lever-feedback[0]</output>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/throttle-lever[1]">
+			<input>engine/control-2/throttle-pos</input>
+			<c1>20</c1>
+			<output>engine/throttle-lever-feedback[1]</output>
+		</lag_filter>
+		
+		<lag_filter name="/controls/cockpit/throttle-lever[2]">
+			<input>engine/control-3/throttle-pos</input>
+			<c1>20</c1>
+			<output>engine/throttle-lever-feedback[2]</output>
+		</lag_filter>
+	
+	</channel>
+	
+	<channel name="Glass Effects">
+		
+		<fcs_function name="glass-effects/airspeed-clamped-sqrt">
+			<function>
+				<sqrt>
+					<quotient>
+						<min>
+							<property>velocities/vc-kts</property>
+							<value>40</value>
+						</min>
+						<value>40</value>
+					</quotient>
+				</sqrt>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="glass-effects/splash-x">
+			<function>
+				<difference>
+					<value>-0.1</value>
+					<product>
+						<value>2</value>
+						<property>glass-effects/airspeed-clamped-sqrt</property>
+					</product>
+				</difference>
+			</function>
+			<output>/environment/aircraft-effects/splash-vector-x</output>
+		</fcs_function>
+		
+		<fcs_function name="glass-effects/splash-y">
+			<function>
+				<value>0</value>
+			</function>
+			<output>/environment/aircraft-effects/splash-vector-y</output>
+		</fcs_function>
+		
+		<fcs_function name="glass-effects/splash-z">
+			<function>
+				<difference>
+					<value>1</value>
+					<product>
+						<value>1.35</value>
+						<property>glass-effects/airspeed-clamped-sqrt</property>
+					</product>
+				</difference>
+			</function>
+			<output>/environment/aircraft-effects/splash-vector-z</output>
+		</fcs_function>
+	
+	</channel>
+
+</system>

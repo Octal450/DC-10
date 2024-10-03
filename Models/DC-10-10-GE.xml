@@ -1,0 +1,47 @@
+﻿<?xml version="1.0"?>
+
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>DC-10-10-GE.ac</path>
+	
+	<main include="DC-10-main.xml" omit-node="y"/>
+	
+	<nasal>
+		<load>
+			var livery_update = aircraft.livery_update.new("Aircraft/DC-10/Models/Liveries/DC-10-10");
+		</load>
+		<unload>
+			livery_update.stop();
+		</unload>
+	</nasal>
+	
+	<animation>
+		<type>material</type>
+		<object-name>Fuselage</object-name>
+		<object-name>Vstab</object-name>
+		<object-name>DoorL1</object-name>
+		<object-name>DoorL2</object-name>
+		<object-name>DoorL3</object-name>
+		<object-name>DoorL4</object-name>
+		<object-name>DoorR1</object-name>
+		<object-name>DoorR2</object-name>
+		<object-name>DoorR3</object-name>
+		<object-name>DoorR4</object-name>
+		<object-name>GearNDoorL1</object-name>
+		<object-name>GearNDoorL2</object-name>
+		<object-name>GearNDoorR1</object-name>
+		<object-name>GearNDoorR2</object-name>
+		<object-name>Nacelle1</object-name>
+		<object-name>Nacelle2</object-name>
+		<object-name>Nacelle3</object-name>
+		<object-name>Reverser1</object-name>
+		<object-name>Reverser2</object-name>
+		<object-name>Reverser3</object-name>
+		<property-base>sim/model/livery</property-base>
+		<texture-prop>texture</texture-prop>
+		<texture>White.png</texture>
+	</animation>
+
+</PropertyList>

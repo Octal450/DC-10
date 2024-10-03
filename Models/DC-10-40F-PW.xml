@@ -1,0 +1,231 @@
+﻿<?xml version="1.0"?>
+
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>DC-10-40F-PW.ac</path>
+	
+	<main include="DC-10-main.xml" omit-node="y"/>
+	
+	<nasal>
+		<load>
+			var livery_update = aircraft.livery_update.new("Aircraft/DC-10/Models/Liveries/DC-10-40F");
+		</load>
+		<unload>
+			livery_update.stop();
+		</unload>
+	</nasal>
+	
+	<animation>
+		<type>material</type>
+		<object-name>Fuselage</object-name>
+		<object-name>Vstab</object-name>
+		<object-name>DoorL1</object-name>
+		<object-name>DoorL2</object-name>
+		<object-name>DoorL3</object-name>
+		<object-name>DoorL4</object-name>
+		<object-name>DoorR1</object-name>
+		<object-name>DoorR2</object-name>
+		<object-name>DoorR3</object-name>
+		<object-name>DoorR4</object-name>
+		<object-name>GearNDoorL1</object-name>
+		<object-name>GearNDoorL2</object-name>
+		<object-name>GearNDoorR1</object-name>
+		<object-name>GearNDoorR2</object-name>
+		<object-name>GearCDoorL1</object-name>
+		<object-name>GearCDoorL2</object-name>
+		<object-name>GearCDoorR1</object-name>
+		<object-name>GearCDoorR2</object-name>
+		<object-name>Nacelle1</object-name>
+		<object-name>Nacelle2</object-name>
+		<object-name>Nacelle3</object-name>
+		<object-name>Reverser1</object-name>
+		<object-name>Reverser2</object-name>
+		<object-name>Reverser3</object-name>
+		<property-base>sim/model/livery</property-base>
+		<texture-prop>texture</texture-prop>
+		<texture>White.png</texture>
+	</animation>
+	
+	<!-- Center Main Gear -->
+	<animation>
+		<type>translate</type>
+		<object-name>central.strut.low</object-name>
+		<object-name>tyres.central</object-name>
+		<object-name>central.scissor.down</object-name>
+		<property>gear/gear[3]/compression-norm</property>
+		<factor>-0.3</factor>
+		<axis>
+			<x>-0.32787</x>
+			<y> 0.00000</y>
+			<z>-1.29466</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>central.scissor.down</object-name>
+		<property>gear/gear[3]/compression-norm</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>  0</dep></entry>
+			<entry><ind>1.0</ind><dep>-35</dep></entry>
+			<entry><ind>1.5</ind><dep>-53</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>4.838</x-m>
+			<y-m>0</y-m>
+			<z-m>1.639</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>central.scissor.up</object-name>
+		<property>gear/gear[3]/compression-norm</property>
+		<interpolation>
+			<entry><ind>0.00</ind><dep> 0</dep></entry>
+			<entry><ind>0.50</ind><dep>13</dep></entry>
+			<entry><ind>1.00</ind><dep>18</dep></entry>
+			<entry><ind>1.25</ind><dep>20</dep></entry>
+			<entry><ind>1.50</ind><dep>19</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>5.232</x-m>
+			<y-m>0</y-m>
+			<z-m>2.263</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>central.strut.up</object-name>
+		<object-name>central.strut.low</object-name>
+		<object-name>central.scissor.up</object-name>
+		<object-name>central.scissor.down</object-name>
+		<object-name>tyres.central</object-name>
+		<property>gear/gear[3]/position-norm</property>
+		<interpolation>
+			<entry><ind>0.4</ind><dep>-80</dep></entry>
+			<entry><ind>0.8</ind><dep>  0</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>5.3500</x-m>
+			<y-m>0</y-m>
+			<z-m>4.0400</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>GearCDoorL1</object-name>
+		<object-name>GearCDoorL1Int</object-name>
+		<property>gear/gear[3]/position-norm</property>
+		<interpolation>
+			<entry><ind>0.00</ind><dep>  0</dep></entry>
+			<entry><ind>0.15</ind><dep>-75</dep></entry>
+			<entry><ind>0.70</ind><dep>-75</dep></entry>
+			<entry><ind>1.00</ind><dep>  0</dep></entry>
+		</interpolation>
+		<axis>
+			<x1-m>1.97372</x1-m>
+			<y1-m>-0.57888</y1-m>
+			<z1-m>3.29128</z1-m>
+			<x2-m>3.79831</x2-m>
+			<y2-m>-0.56268</y2-m>
+			<z2-m>3.29189</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>GearCDoorR1</object-name>
+		<object-name>GearCDoorR1Int</object-name>
+		<property>gear/gear[3]/position-norm</property>
+		<interpolation>
+			<entry><ind>0.00</ind><dep> 0</dep></entry>
+			<entry><ind>0.15</ind><dep>75</dep></entry>
+			<entry><ind>0.70</ind><dep>75</dep></entry>
+			<entry><ind>1.00</ind><dep> 0</dep></entry>
+		</interpolation>
+		<axis>
+			<x1-m>1.97372</x1-m>
+			<y1-m>0.57888</y1-m>
+			<z1-m>3.29128</z1-m>
+			<x2-m>3.79831</x2-m>
+			<y2-m>0.56268</y2-m>
+			<z2-m>3.29189</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>GearCDoorL2</object-name>
+		<object-name>GearCDoorL2Int</object-name>
+		<property>gear/gear[3]/position-norm</property>
+		<interpolation>
+			<entry><ind>0.1</ind><dep>  0</dep></entry>
+			<entry><ind>0.7</ind><dep>-50</dep></entry>
+		</interpolation>
+		<axis>
+			<x1-m>3.79831</x1-m>
+			<y1-m>-0.56268</y1-m>
+			<z1-m>3.29189</z1-m>
+			<x2-m>4.96556</x2-m>
+			<y2-m>-0.55232</y2-m>
+			<z2-m>3.29229</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>GearCDoorR2</object-name>
+		<object-name>GearCDoorR2Int</object-name>
+		<property>gear/gear[3]/position-norm</property>
+		<interpolation>
+			<entry><ind>0.15</ind><dep> 0</dep></entry>
+			<entry><ind>0.70</ind><dep>50</dep></entry>
+		</interpolation>
+		<axis>
+			<x1-m>3.79831</x1-m>
+			<y1-m>0.56268</y1-m>
+			<z1-m>3.29189</z1-m>
+			<x2-m>4.96556</x2-m>
+			<y2-m>0.55232</y2-m>
+			<z2-m>3.29229</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>spin</type>
+		<object-name>tyres.central</object-name>
+		<property>sim/multiplay/generic/float[3]</property>
+		<factor>10</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>4.7549</x-m>
+			<y-m>0</y-m>
+			<z-m>1.4330</z-m>
+		</center>
+	</animation>
+
+</PropertyList>

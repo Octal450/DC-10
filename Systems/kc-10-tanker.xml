@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<!-- McDonnell Douglas KC-10 Tanker -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<system name="KC-10: Tanker">
+	
+	<channel name="Boom">
+		
+		<switch name="fcs/boom-rate">
+			<default value="0"/>
+			<test logic="OR" value="0.2">
+				/systems/hydraulics/sys-1-psi ge 1500
+				/systems/hydraulics/sys-2-psi ge 1500
+				/systems/hydraulics/sys-3-psi ge 1500
+			</test>
+		</switch>
+		
+		<actuator name="fcs/boom-pos">
+			<input>/options/boom-pos-cmd</input>
+			<rate_limit>fcs/boom-rate</rate_limit>
+		</actuator>
+		
+		<lag_filter name="fcs/boom-lag">
+			<input>fcs/boom-pos</input>
+			<c1>5</c1>
+			<output>/engines/engine[7]/n1</output>
+		</lag_filter>
+	
+	</channel>
+
+</system>

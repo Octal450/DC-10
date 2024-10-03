@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2010 Gary R. Neely (Buckaroo) -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>rmi.ac</path>
+	
+	<animation>
+		<type>scale</type>
+		<x-offset>0.95</x-offset>
+		<y-offset>0.95</y-offset>
+		<z-offset>0.95</z-offset>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>CompassPoints</object-name>
+		<object-name>Face</object-name>
+		<object-name>Flag</object-name>
+		<object-name>Needle1</object-name>
+		<object-name>Needle2</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>0.6</green>
+			<blue>0.3</blue>
+			<factor-prop>controls/lighting/capt-panel-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Flag</object-name>
+		<condition>
+			<not-equals>
+				<property>instrumentation/rmi[0]/power-avail</property>
+				<value>1</value>
+			</not-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Face</object-name>
+		<property>instrumentation/rmi[0]/heading-linear</property>
+		<factor>-1</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle1</object-name>
+		<property>instrumentation/rmi[0]/nav1-linear</property>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle2</object-name>
+		<property>instrumentation/rmi[0]/nav2-linear</property>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>Knob1</object-name>
+		<property>controls/cockpit/vor-adf-1[0]</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>120</dep></entry>
+			<entry><ind>1</ind><dep>-30</dep></entry>
+		</interpolation>   
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.0325</y-m>
+			<z-m>-0.0325</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/rmi[0]/vor-adf-1</property>
+				<factor>-1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>Knob2</object-name>
+		<property>controls/cockpit/vor-adf-2[0]</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>120</dep></entry>
+			<entry><ind>1</ind><dep>-30</dep></entry>
+		</interpolation>   
+		<center>
+			<x-m>0</x-m>
+			<y-m>0.0325</y-m>
+			<z-m>-0.0325</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/rmi[0]/vor-adf-2</property>
+				<factor>1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
+
+</PropertyList>

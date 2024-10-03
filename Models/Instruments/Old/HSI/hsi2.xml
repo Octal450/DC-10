@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Instrument based off HSI from Ryan Miller's DC-10 -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>hsi.ac</path>
+	
+	<animation>
+		<name>Lighting</name>
+		<type>material</type>
+		<object-name>LightGroup</object-name>
+		<emission>
+			<red>0.6</red>
+			<green>0.45</green>
+			<blue>0.3</blue>
+			<factor-prop>controls/lighting/main-panel-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>gs.needle</object-name>
+		<condition>
+			<property>instrumentation/nav[1]/has-gs</property>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>HSI.spd100</object-name>
+		<object-name>HSI.spd10</object-name>
+		<object-name>HSI.spd1</object-name>
+		<condition>
+			<greater-than>
+				<property>systems/electrical/outputs/nav[1]</property>
+				<value>15</value>
+			</greater-than>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>HSI.dst100</object-name>
+		<object-name>HSI.dst10</object-name>
+		<object-name>HSI.dst1</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>systems/electrical/outputs/nav[1]</property>
+					<value>15</value>
+				</greater-than>
+				<property>instrumentation/nav[1]/in-range</property>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>navflag</object-name>
+		<condition>
+			<or>
+				<less-than-equals>
+					<property>systems/electrical/outputs/nav[1]</property>
+					<value>15</value>
+				</less-than-equals>
+				<not><property>instrumentation/nav[1]/in-range</property></not>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>toflag</object-name>
+		<condition>
+			<property>instrumentation/nav[1]/to-flag</property>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>fromflag</object-name>
+		<condition>
+			<not><property>instrumentation/nav[1]/to-flag</property></not>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>HSI.card</object-name>
+		<object-name>HSI.crsneedle</object-name>
+		<object-name>HSI.crsdeflection</object-name>
+		<object-name>HSI.hdgbug</object-name>
+		<object-name>toflag</object-name>
+		<object-name>fromflag</object-name>
+		<property>orientation/heading-magnetic-deg</property>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>HSI.crsneedle</object-name>
+		<object-name>HSI.crsdeflection</object-name>
+		<object-name>toflag</object-name>
+		<object-name>fromflag</object-name>
+		<property>instrumentation/nav[1]/radials/selected-deg</property>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>HSI.crsdeflection</object-name>
+		<property>instrumentation/nav[1]/heading-needle-deflection</property>
+		<interpolation>
+			<entry><ind>-5</ind><dep>-0.0147</dep></entry>
+			<entry><ind> 0</ind><dep> 0.0000</dep></entry>
+			<entry><ind> 5</ind><dep> 0.0147</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>HSI.hdgbug</object-name>
+		<property>autopilot/settings/heading-bug-deg</property>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>gs.needle</object-name>
+		<property>instrumentation/nav[1]/gs-needle-deflection</property>
+		<interpolation>
+			<entry><ind>-2</ind><dep>-0.0164</dep></entry>
+			<entry><ind> 0</ind><dep> 0.0000</dep></entry>
+			<entry><ind> 2</ind><dep> 0.0164</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<!-- GND SPEED text-->
+	<animation>
+		<type>textranslate</type>
+		<object-name>HSI.spd100</object-name>
+		<property>velocities/groundspeed-kt</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>HSI.spd10</object-name>
+		<property>velocities/groundspeed-kt</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>HSI.spd1</object-name>
+		<property>velocities/groundspeed-kt</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<!-- MILES text-->
+	<animation>
+		<type>textranslate</type>
+		<object-name>HSI.dst100</object-name>
+		<property>instrumentation/dme[1]/indicated-distance-nm</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>HSI.dst10</object-name>
+		<property>instrumentation/dme[1]/indicated-distance-nm</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>HSI.dst1</object-name>
+		<property>instrumentation/dme[1]/indicated-distance-nm</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+
+</PropertyList>

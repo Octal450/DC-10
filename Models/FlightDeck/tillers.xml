@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Tillers from MD-11 -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>res/tillers.ac</path>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Tiller</object-name>
+		<property>controls/cockpit/tiller-handle</property>
+		<factor>-70</factor>
+		<center>
+			<x-m>-27.2143</x-m>
+			<y-m>-0.9685</y-m>
+			<z-m>0.0</z-m>
+		</center>
+		<axis>
+			<x>0</x> 
+			<y>0</y> 
+			<z>1</z> 
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Tiller.2</object-name>
+		<property>controls/cockpit/tiller-handle</property>
+		<factor>-70</factor>
+		<center>
+			<x-m>-27.2143</x-m>
+			<y-m>0.9685</y-m>
+			<z-m>0.0</z-m>
+		</center>
+		<axis>
+			<x>0</x> 
+			<y>0</y> 
+			<z>1</z> 
+		</axis>
+	</animation>
+
+</PropertyList>

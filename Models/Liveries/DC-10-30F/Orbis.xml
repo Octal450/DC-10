@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name>Orbis Flying Eye Hospital</name>
+				<texture>Liveries/DC-10-30F/Orbis.png</texture>
+			</livery>
+		</model>
+	</sim>
+
+</PropertyList>

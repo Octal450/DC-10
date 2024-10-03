@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Instrument based off RadioAlt from Ryan Miller's DC-10 -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>agl.ac</path>
+	
+	<animation>
+		<type>material</type>
+		<object-name>Face</object-name>
+		<object-name>Tape</object-name>
+		<object-name>DH1</object-name>
+		<object-name>DH10</object-name>
+		<object-name>DH100</object-name>
+		<object-name>Pointer</object-name>
+		<emission>
+			<red>0.6</red>
+			<green>0.45</green>
+			<blue>0.3</blue>
+			<factor-prop>controls/lighting/main-panel-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>DHLight</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>0.776</green>
+			<blue>0.273</blue>
+			<factor-prop>instrumentation/agl/dh-light</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>Tape</object-name>
+		<property>instrumentation/agl/agl-altitude-ft</property>
+		<interpolation>
+			<entry><ind>   0</ind><dep>0.0000</dep></entry>
+			<entry><ind>2500</ind><dep>0.8772</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>DH100</object-name>
+		<property>instrumentation/agl/decision-height-ft</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<scroll>10</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>DH10</object-name>
+		<property>instrumentation/agl/decision-height-ft</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<scroll>1</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>DH1</object-name>
+		<property>instrumentation/agl/decision-height-ft</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<scroll>0.1</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>Knob</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/agl/decision-height-ft</property>
+				<step>10</step>
+				<max>999</max>
+			</binding>	
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/agl/decision-height-ft</property>
+				<step>-10</step>
+				<min>0</min>
+			</binding>		
+		</action>
+	</animation>
+
+</PropertyList>

@@ -1,0 +1,390 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+
+	<name>acconfig-main</name>
+	<layout>vbox</layout>
+	
+	<group>
+		<layout>hbox</layout>
+		
+		<text>
+			<halign>left</halign>
+			<label>Aircraft Config Center</label>
+		</text>
+		
+		<empty><stretch>1</stretch></empty>
+		
+		<button>
+			<halign>right</halign>
+			<pref-width>20</pref-width>
+			<pref-height>20</pref-height>
+			<legend>?</legend>
+			<binding>
+				<command>nasal</command>
+				<script>gui.showHelpDialog("/sim/help");</script>
+			</binding>
+		</button>
+		<button>
+			<halign>right</halign>
+			<pref-width>20</pref-width>
+			<pref-height>20</pref-height>
+			<legend>W</legend>
+			<binding>
+				<command>dialog-show</command>
+				<dialog-name>acconfig-welcome</dialog-name>
+			</binding>
+		</button>
+		<button>
+			<halign>right</halign>
+			<pref-width>20</pref-width>
+			<pref-height>20</pref-height>
+			<legend>X</legend>
+			<key>Esc</key>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+	</group>
+	
+	<hrule/>
+		
+	<group>
+		<layout>hbox</layout>
+
+		<group>
+			<layout>vbox</layout>
+			
+			<group>
+				<layout>vbox</layout>
+				
+				<button>
+					<halign>center</halign>
+					<legend>Select Livery</legend>
+					<pref-width>140</pref-width>
+					<binding>
+						<command>nasal</command>
+						<script>aircraft.livery.dialog.toggle();</script>
+					</binding>
+				</button>
+				<button>
+					<halign>center</halign>
+					<legend>Aircraft Help</legend>
+					<pref-width>140</pref-width>
+					<binding>
+						<command>nasal</command>
+						<script>gui.showHelpDialog("/sim/help");</script>
+					</binding>
+				</button>
+				<button>
+					<halign>center</halign>
+					<legend>Checklists</legend>
+					<pref-width>140</pref-width>
+					<binding>
+						<command>dialog-show</command>
+						<dialog-name>checklist</dialog-name>
+					</binding>
+				</button>
+				<button>
+					<halign>center</halign>
+					<legend>System Failures</legend>
+					<pref-width>140</pref-width>
+					<enable>
+						<not><property>/systems/acconfig/options/allow-damage</property></not>
+					</enable>
+					<binding>
+						<command>dialog-show</command>
+						<dialog-name>acconfig-failures</dialog-name>
+					</binding>
+				</button>
+			</group>
+			
+			<group>
+				<layout>vbox</layout>
+				
+				<group>
+					<layout>hbox</layout>
+					
+					<hrule>
+						<stretch>true</stretch>
+					</hrule>
+					<text>
+						<label>Load Panel State</label>
+					</text>
+					<hrule>
+						<stretch>true</stretch>
+					</hrule>
+				</group>
+				
+				<group>
+					<layout>vbox</layout>
+					
+					<button>
+						<halign>center</halign>
+						<legend>Cold and Dark</legend>
+						<pref-width>140</pref-width>
+						<enable>
+							<and>
+								<not><property>/systems/acconfig/autoconfig-running</property></not>
+								<equals>
+									<property>/fdm/jsbsim/position/wow</property>
+									<value>1</value>
+								</equals>
+								<less-than>
+									<property>/velocities/groundspeed-kt</property>
+									<value>2</value>
+								</less-than>
+							</and>
+						</enable>
+						<binding>
+							<command>nasal</command>
+							<script>acconfig.PANEL.coldDark();</script>
+						</binding>
+						<binding>
+							<command>dialog-close</command>
+						</binding>
+					</button>
+					<button>
+						<halign>center</halign>
+						<legend>Before Eng Start</legend>
+						<pref-width>140</pref-width>
+						<enable>
+							<and>
+								<not><property>/systems/acconfig/autoconfig-running</property></not>
+								<equals>
+									<property>/fdm/jsbsim/position/wow</property>
+									<value>1</value>
+								</equals>
+								<less-than>
+									<property>/velocities/groundspeed-kt</property>
+									<value>2</value>
+								</less-than>
+							</and>
+						</enable>
+						<binding>
+							<command>nasal</command>
+							<script>acconfig.PANEL.beforeStart();</script>
+						</binding>
+						<binding>
+							<command>dialog-close</command>
+						</binding>
+					</button>
+					<button>
+						<halign>center</halign>
+						<legend>Ready for Taxi</legend>
+						<pref-width>140</pref-width>
+						<enable>
+							<and>
+								<not><property>/systems/acconfig/autoconfig-running</property></not>
+								<equals>
+									<property>/fdm/jsbsim/position/wow</property>
+									<value>1</value>
+								</equals>
+								<less-than>
+									<property>/velocities/groundspeed-kt</property>
+									<value>2</value>
+								</less-than>
+							</and>
+						</enable>
+						<binding>
+							<command>nasal</command>
+							<script>acconfig.PANEL.afterStart(0);</script>
+						</binding>
+						<binding>
+							<command>dialog-close</command>
+						</binding>
+					</button>
+					<button>
+						<halign>center</halign>
+						<legend>Ready for Takeoff</legend>
+						<pref-width>140</pref-width>
+						<enable>
+							<and>
+								<not><property>/systems/acconfig/autoconfig-running</property></not>
+								<equals>
+									<property>/fdm/jsbsim/position/wow</property>
+									<value>1</value>
+								</equals>
+								<less-than>
+									<property>/velocities/groundspeed-kt</property>
+									<value>2</value>
+								</less-than>
+							</and>
+						</enable>
+						<binding>
+							<command>nasal</command>
+							<script>acconfig.PANEL.afterStart(1);</script>
+						</binding>
+						<binding>
+							<command>dialog-close</command>
+						</binding>
+					</button>
+				</group>
+			</group>
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+			
+			<checkbox>
+				<label>Enable Wheel Chocks</label>
+				<halign>left</halign>
+				<enable>
+					<and>
+						<equals>
+							<property>/fdm/jsbsim/position/wow</property>
+							<value>1</value>
+						</equals>
+						<less-than>
+							<property>/velocities/groundspeed-kt</property>
+							<value>2</value>
+						</less-than>
+					</and>
+				</enable>
+				<property>/services/chocks/enable</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Enable External Power Box</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/ground-cart</property>
+				<enable>
+					<and>
+						<or>
+							<equals>
+								<property>/controls/gear/brake-parking</property>
+								<value>1</value>
+							</equals>
+							<equals>
+								<property>/services/chocks/enable</property>
+								<value>1</value>
+							</equals>
+						</or>
+						<less-than>
+							<property>/velocities/groundspeed-kt</property>
+							<value>2</value>
+						</less-than>
+					</and>
+				</enable>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/electrical/switches/ext-pwr</property>
+					<value>0</value>
+				</binding>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Enable External Air</label>
+				<halign>left</halign>
+				<enable>
+					<property>/systems/acconfig/extra-stuff</property>
+				</enable>
+				<!--enable>
+					<and>
+						<or>
+							<equals>
+								<property>/controls/gear/brake-parking</property>
+								<value>1</value>
+							</equals>
+							<equals>
+								<property>/services/chocks/enable</property>
+								<value>1</value>
+							</equals>
+						</or>
+						<less-than>
+							<property>/velocities/groundspeed-kt</property>
+							<value>2</value>
+						</less-than>
+					</and>
+				</enable-->
+				<property>/controls/pneumatics/switches/ground-air</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+				<text>
+					<label>Simulation (See Aircraft Help)</label>
+				</text>
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+			</group>
+			
+			<checkbox>
+				<enable>
+					<and>
+						<equals>
+							<property>/fdm/jsbsim/position/wow</property>
+							<value>1</value>
+						</equals>
+						<less-than>
+							<property>/velocities/groundspeed-kt</property>
+							<value>2</value>
+						</less-than>
+						<property>/systems/acconfig/damage-installed</property>
+					</and>
+				</enable>
+				<label>Allow Damage</label>
+				<halign>left</halign>
+				<property>/payload/armament/msg</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>nasal</command>
+					<script>acconfig.OPTIONS.write();</script>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Keyboard Mode</label>
+				<halign>left</halign>
+				<property>/systems/acconfig/options/keyboard-mode</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>nasal</command>
+					<script>acconfig.OPTIONS.write();</script>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Separate Tiller Axis</label>
+				<halign>left</halign>
+				<property>/systems/acconfig/options/separate-tiller-axis</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>nasal</command>
+					<script>acconfig.OPTIONS.write();</script>
+				</binding>
+				<live>true</live>
+			</checkbox>
+		</group>
+	</group>
+
+</PropertyList>

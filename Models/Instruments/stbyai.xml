@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>stbyai.ac</path>
+	
+	<animation>
+		<type>scale</type>
+		<x-offset>0.95</x-offset>
+		<y-offset>0.95</y-offset>
+		<z-offset>0.95</z-offset>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>AI.Ball</object-name>
+		<object-name>AI.BankIndex</object-name>
+		<object-name>AI.BezelMask</object-name>
+		<object-name>AI.Bar.Aircraft</object-name>
+		<object-name>Flag</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>0.6</green>
+			<blue>0.3</blue>
+			<factor-prop>controls/lighting/center-panel-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Flag</object-name>
+		<condition>
+			<not-equals>
+				<property>instrumentation/stby-ai/spin-cmd</property>
+				<value>1</value>
+			</not-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>AI.BankIndex</object-name>
+		<property>instrumentation/stby-ai/roll-deg</property>
+		<factor>1</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>AI.Ball</object-name>
+		<property>instrumentation/stby-ai/roll-deg</property>
+		<factor>1</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-0.036</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>AI.Ball</object-name>
+		<property>instrumentation/stby-ai/pitch-deg</property>
+		<factor>1.34</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-0.03421</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>AI.Bar.Aircraft</object-name>
+		<property>instrumentation/stby-ai/airplane-offset</property>
+		<factor>0.001</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+</PropertyList>

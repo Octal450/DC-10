@@ -1,0 +1,183 @@
+﻿<?xml version="1.0"?>
+
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList include="DC-10-main.xml">
+	
+    <sim>
+		<aero>FDE/KC-10A-GE</aero>
+		<description>McDonnell Douglas KC-10A Extender (CF6-50C)</description>
+		<flight-model>jsb</flight-model>
+		<menubar>
+			<default>
+				<menu n="101">
+					<item n="2">
+						<label>Toggle Boom</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>/options/boom-pos-cmd</property>
+						</binding>
+					</item>
+					<item n="3">
+						<label>Toggle Drogue</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>/options/drogues-shown</property>
+						</binding>
+					</item>
+				</menu>
+			</default>
+		</menubar>
+		<model n="0">
+			<armrest type="double">0</armrest>
+			<door n="0">
+				<position-x-m type="float">-24.0</position-x-m>
+				<position-y-m type="float">-2.3</position-y-m>
+				<position-z-m type="float">6.0</position-z-m>
+				<jetway-hood-deg type="float">5</jetway-hood-deg>
+			</door>
+			<door n="1">
+				<position-x-m type="float">-14.5</position-x-m>
+				<position-y-m type="float">-2.8</position-y-m>
+				<position-z-m type="float">6.0</position-z-m>
+				<jetway-hood-deg type="float">1</jetway-hood-deg>
+			</door>
+			<livery>
+				<file type="string">USAF</file>
+			</livery>
+			<path>Aircraft/DC-10/Models/KC-10A-GE.xml</path>
+			<yoke n="0">
+				<texture type="string">res/yoke-kc.png</texture>
+			</yoke>
+		</model>
+		<previews>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>gui/splash/kc-10.png</path>
+			</preview>
+		</previews>
+		<primary-set>true</primary-set>
+		<sound>
+			<path>Aircraft/DC-10/Sounds/cf650-sound.xml</path>
+		</sound>
+		<systems n="0">
+			<autopilot n="6">
+				<path>Aircraft/DC-10/Sounds/cf650-sound-control.xml</path>
+			</autopilot>
+		</systems>
+    </sim>
+	
+	<fdm n="0">
+		<jsbsim n="0">
+			<inertia n="0">
+				<empty-weight-x-in type="double">93.0377953</empty-weight-x-in> <!-- 2.36316 meters, 30% MAC -->
+			</inertia>
+		</jsbsim>
+	</fdm>
+	
+	<limits>
+		<mass-and-balance> <!-- Data source: TCDS -->
+			<maximum-takeoff-mass-lbs>593000</maximum-takeoff-mass-lbs>
+			<maximum-landing-mass-lbs>436000</maximum-landing-mass-lbs>
+			<maximum-zero-fuel-mass-lbs>414000</maximum-zero-fuel-mass-lbs>
+		</mass-and-balance>
+	</limits>
+	
+	<options n="0">
+		<boom-pos-cmd type="bool">0</boom-pos-cmd>
+		<drogues-shown type="bool">0</drogues-shown>
+		<eng type="string">GE</eng>
+		<eng-int type="int">0</eng-int>
+	</options>
+	
+	<payload n="0">
+		<armament n="0">
+			<enable-craters type="bool">1</enable-craters>
+			<MAW-active type="bool">0</MAW-active>
+			<MAW-bearing type="double">0</MAW-bearing>
+			<MAW-semiactive type="bool">0</MAW-semiactive>
+			<MLW-bearing type="double">0</MLW-bearing>
+			<MLW-count type="int">0</MLW-count>
+			<MLW-launcher type="string"></MLW-launcher>
+			<models type="string">Aircraft/DC-10/Models/Damage/</models>
+			<msg type="bool">0</msg>
+			<spike type="bool">0</spike>
+		</armament>
+		<d-config n="0">
+			<auto_flare_caller type="bool">0</auto_flare_caller>
+			<full_damage_dist_m type="double">3</full_damage_dist_m>
+			<hitable_by_air_munitions type="bool">1</hitable_by_air_munitions>
+			<hitable_by_cannon type="bool">1</hitable_by_cannon>
+			<hp_max type="double">80</hp_max>
+			<is_fleet type="bool">0</is_fleet>
+			<m28_auto type="bool">0</m28_auto>
+			<mlw_max type="double">0</mlw_max>
+			<rwr_audio_extended type="bool">0</rwr_audio_extended>
+			<rwr_to_screen type="bool">1</rwr_to_screen>
+			<tacview_supported type="bool">0</tacview_supported>
+			<use_hitpoints_instead_of_failure_modes_bool type="bool">0</use_hitpoints_instead_of_failure_modes_bool>
+		</d-config>
+		<weight n="0">
+			<name>Forward Fuel Tank</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+			<min-lb type="double">0</min-lb>
+			<max-lb type="double">55308</max-lb>
+		</weight>
+		<weight n="1">
+			<name>Aft Fuel Tank</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+			<min-lb type="double">0</min-lb>
+			<max-lb type="double">66149</max-lb>
+		</weight>
+		<weight n="2">
+			<name>Forward Cargo</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
+			<min-lb type="double">0</min-lb>
+			<max-lb type="double">25200</max-lb>
+		</weight>
+		<weight n="3">
+			<name>Aft Cargo</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
+			<min-lb type="double">0</min-lb>
+			<max-lb type="double">33600</max-lb>
+		</weight>
+		<weight n="4">
+			<name>Aft Bulk Cargo</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]"/>
+			<min-lb type="double">0</min-lb>
+			<max-lb type="double">2000</max-lb>
+		</weight>
+	</payload>
+    
+	<systems n="0">
+		<ignition n="0">
+			<starter-cutoff-n2 type="double">45</starter-cutoff-n2>
+		</ignition>
+		<refuel n="0">
+			<max-fuel-transfer-lbs-min type="double">6000</max-fuel-transfer-lbs-min>
+			<serviceable type="bool">true</serviceable>
+			<type type="string">boom</type>
+		</refuel>
+	</systems>
+    
+	<nasal n="0">
+		<setup>
+			<script>aircraft.livery.init("Aircraft/DC-10/Models/Liveries/KC-10A");</script>
+		</setup>
+		<failure-bridge>
+			<file>Aircraft/DC-10/Nasal/failure-bridge.nas</file>
+		</failure-bridge>
+		<notifications>
+			<file>Aircraft/DC-10/Nasal/Damage/ArmamentNotification.nas</file>
+			<file>Aircraft/DC-10/Nasal/Damage/GeoBridgedTransmitter.nas</file>
+		</notifications>
+		<damage>
+			<file>Aircraft/DC-10/Nasal/Damage/damage.nas</file>
+		</damage>
+		<aar>
+			<file>Aircraft/Generic/aar.nas</file>
+		</aar>
+	</nasal>
+
+</PropertyList>

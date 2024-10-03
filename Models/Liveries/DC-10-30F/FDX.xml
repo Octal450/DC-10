@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name>FedEx Express</name>
+				<texture>Liveries/DC-10-30F/FDX.png</texture>
+			</livery>
+		</model>
+	</sim>
+
+</PropertyList>

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2010 Gary R. Neely (Buckaroo) -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>marker_beacons.ac</path>
+	
+	<animation>
+		<type>scale</type>
+		<x-offset>0.95</x-offset>
+		<y-offset>0.95</y-offset>
+		<z-offset>0.95</z-offset>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>LampOuterBlueOn</object-name>
+		<condition>
+			<or>
+				<property>instrumentation/marker-beacon/outer</property>
+				<property>instrumentation/marker-beacon/test</property>
+				<property>controls/switches/annun-test</property>
+			</or>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>LampOuterBlue</object-name>
+		<condition>
+			<and>
+				<not><property>instrumentation/marker-beacon/outer</property></not>
+				<not><property>instrumentation/marker-beacon/test</property></not>
+				<not><property>controls/switches/annun-test</property></not>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>LampMiddleAmberOn</object-name>
+		<condition>
+			<or>
+				<property>instrumentation/marker-beacon/middle</property>
+				<property>instrumentation/marker-beacon/test</property>
+				<property>controls/switches/annun-test</property>
+			</or>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>LampMiddleAmber</object-name>
+		<condition>
+			<and>
+				<not><property>instrumentation/marker-beacon/middle</property></not>
+				<not><property>instrumentation/marker-beacon/test</property></not>
+				<not><property>controls/switches/annun-test</property></not>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>LampInnerWhiteOn</object-name>
+		<condition>
+			<or>
+				<property>instrumentation/marker-beacon/inner</property>
+				<property>instrumentation/marker-beacon/test</property>
+				<property>controls/switches/annun-test</property>
+			</or>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>LampInnerWhite</object-name>
+		<condition>
+			<and>
+				<not><property>instrumentation/marker-beacon/inner</property></not>
+				<not><property>instrumentation/marker-beacon/test</property></not>
+				<not><property>controls/switches/annun-test</property></not>
+			</and>
+		</condition>
+	</animation>
+
+</PropertyList>

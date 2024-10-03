@@ -1,0 +1,1238 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+
+	<name>systems-gui</name>
+	<layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+		
+        <text>
+            <halign>left</halign>
+            <label>Engineer/Overhead Panel</label>
+        </text>
+		
+		<empty><stretch>1</stretch></empty>
+		
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+	
+    <hrule/>
+	
+	<group>
+		<layout>hbox</layout>
+		
+		<group>
+			<layout>vbox</layout>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+				<text>
+					<label>Electrical</label>
+				</text>
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+			</group>
+			
+			<checkbox>
+				<label>AC Tie 1</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/ac-tie-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>AC Tie 2</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/ac-tie-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>AC Tie 3</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/ac-tie-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>ADG Elec</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/adg-elec</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>APU Gen 1</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/apu-pwr-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>APU Gen 2</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/apu-pwr-2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>APU Gen 3</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/apu-pwr-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Battery</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/battery</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>DC Tie 1</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/dc-tie-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>DC Tie 3</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/dc-tie-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>DC X Tie</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/dc-x-tie</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Emergency Power</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/emer-pwr</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>EXT Power</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/ext-pwr</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>EXT Galley Power</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/extg-pwr</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<text>
+					<label>Galley 1</label>
+				</text>
+				
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/electrical/switches/galley-1</property>
+							<value>-1</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>RST</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/electrical/switches/galley-1</property>
+						<value>-1</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/electrical/switches/galley-1</property>
+							<value>0</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>OFF</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/electrical/switches/galley-1</property>
+						<value>0</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/electrical/switches/galley-1</property>
+							<value>1</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>ON</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/electrical/switches/galley-1</property>
+						<value>1</value>
+					</binding>
+				</button>
+			</group>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<text>
+					<label>Galley 2</label>
+				</text>
+				
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/electrical/switches/galley-2</property>
+							<value>-1</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>RST</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/electrical/switches/galley-2</property>
+						<value>-1</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/electrical/switches/galley-2</property>
+							<value>0</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>OFF</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/electrical/switches/galley-2</property>
+						<value>0</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/electrical/switches/galley-2</property>
+							<value>1</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>ON</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/electrical/switches/galley-2</property>
+						<value>1</value>
+					</binding>
+				</button>
+			</group>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<text>
+					<label>Galley 3</label>
+				</text>
+				
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/electrical/switches/galley-3</property>
+							<value>-1</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>RST</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/electrical/switches/galley-3</property>
+						<value>-1</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/electrical/switches/galley-3</property>
+							<value>0</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>OFF</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/electrical/switches/galley-3</property>
+						<value>0</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/electrical/switches/galley-3</property>
+							<value>1</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>ON</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/electrical/switches/galley-3</property>
+						<value>1</value>
+					</binding>
+				</button>
+			</group>
+			
+			<checkbox>
+				<label>Gen 1</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/gen-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Gen 2</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/gen-2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Gen 3</label>
+				<halign>left</halign>
+				<property>/controls/electrical/switches/gen-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+		
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+				<text>
+					<label>Hydraulics</label>
+				</text>
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+			</group>
+			
+			<checkbox>
+				<label>Aux Pump 1</label>
+				<halign>left</halign>
+				<property>/controls/hydraulics/switches/aux-pump-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Aux Pump 2</label>
+				<halign>left</halign>
+				<property>/controls/hydraulics/switches/aux-pump-2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Gear Gravity Ext</label>
+				<halign>left</halign>
+				<property>/controls/hydraulics/switches/gear-gravity-ext</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>L Pump 1</label>
+				<halign>left</halign>
+				<property>/controls/hydraulics/switches/l-pump-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>L Pump 2</label>
+				<halign>left</halign>
+				<property>/controls/hydraulics/switches/l-pump-2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>L Pump 3</label>
+				<halign>left</halign>
+				<property>/controls/hydraulics/switches/l-pump-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>R Pump 1</label>
+				<halign>left</halign>
+				<property>/controls/hydraulics/switches/r-pump-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>R Pump 2</label>
+				<halign>left</halign>
+				<property>/controls/hydraulics/switches/r-pump-2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>R Pump 3</label>
+				<halign>left</halign>
+				<property>/controls/hydraulics/switches/r-pump-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>RMP 1-3</label>
+				<halign>left</halign>
+				<property>/controls/hydraulics/switches/rmp-1-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>RMP 2-3</label>
+				<halign>left</halign>
+				<property>/controls/hydraulics/switches/rmp-2-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+				<text>
+					<label>Flight Controls</label>
+				</text>
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+			</group>
+			
+			<checkbox>
+				<label>Elevator Feel Manual</label>
+				<halign>left</halign>
+				<property>/controls/fcc/switches/elevator-feel-man</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<text>
+					<label>Elevator Feel</label>
+				</text>
+				
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/fcc/switches/elevator-feel-man</property>
+							<value>0</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&lt;&lt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/fdm/jsbsim/fcc/elevator-feel/speed</property>
+						<step>-10</step>
+						<min>120</min>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/fcc/switches/elevator-feel-man</property>
+							<value>0</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&lt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/fdm/jsbsim/fcc/elevator-feel/speed</property>
+						<step>-1</step>
+						<min>120</min>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/fcc/switches/elevator-feel-man</property>
+							<value>0</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&gt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/fdm/jsbsim/fcc/elevator-feel/speed</property>
+						<step>1</step>
+						<max>300</max>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/fcc/switches/elevator-feel-man</property>
+							<value>0</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&gt;&gt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/fdm/jsbsim/fcc/elevator-feel/speed</property>
+						<step>10</step>
+						<max>300</max>
+					</binding>
+				</button>
+			</group>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<text>
+					<label>Flap Limit</label>
+				</text>
+				
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/fcc/switches/flap-limit</property>
+							<value>0</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>45</pref-width>
+					<pref-height>20</pref-height>
+					<legend>AUTO</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/fcc/switches/flap-limit</property>
+						<value>0</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/fcc/switches/flap-limit</property>
+							<value>1</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>1</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/fcc/switches/flap-limit</property>
+						<value>1</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/fcc/switches/flap-limit</property>
+							<value>2</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>2</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/fcc/switches/flap-limit</property>
+						<value>2</value>
+					</binding>
+				</button>
+			</group>
+			
+			<checkbox>
+				<label>Yaw Damper Lwr A</label>
+				<halign>left</halign>
+				<property>/controls/fcc/switches/yd-lower-a</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Yaw Damper Lwr B</label>
+				<halign>left</halign>
+				<property>/controls/fcc/switches/yd-lower-b</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Yaw Damper Upr A</label>
+				<halign>left</halign>
+				<property>/controls/fcc/switches/yd-upper-a</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Yaw Damper Upr B</label>
+				<halign>left</halign>
+				<property>/controls/fcc/switches/yd-upper-b</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+		
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+				<text>
+					<label>Fuel</label>
+				</text>
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+			</group>
+			
+			<checkbox>
+				<label>Fill 1</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/fill-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Fill 2</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/fill-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Fill 3</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/fill-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Pump 1 Aft</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/pump-1-aft</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Pump 1 Fwd</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/pump-1-fwd</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Pump 2L Aft</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/pump-2l-aft</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Pump 2R Aft</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/pump-2r-aft</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Pump 2 Fwd</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/pump-2-fwd</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Pump 3 Aft</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/pump-3-aft</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Pump 3 Fwd</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/pump-3-fwd</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<text>
+					<label>Pumps Aux L</label>
+				</text>
+				
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/fuel/switches/trans-aux-l</property>
+							<value>0</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>OFF</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/fuel/switches/trans-aux-l</property>
+						<value>0</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/fuel/switches/trans-aux-l</property>
+							<value>1</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>ALL</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/fuel/switches/trans-aux-l</property>
+						<value>1</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/fuel/switches/trans-aux-l</property>
+							<value>2</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>UPR</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/fuel/switches/trans-aux-l</property>
+						<value>2</value>
+					</binding>
+				</button>
+			</group>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<text>
+					<label>Pumps Aux R</label>
+				</text>
+				
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/fuel/switches/trans-aux-r</property>
+							<value>0</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>OFF</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/fuel/switches/trans-aux-r</property>
+						<value>0</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/fuel/switches/trans-aux-r</property>
+							<value>1</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>ALL</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/fuel/switches/trans-aux-r</property>
+						<value>1</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/fuel/switches/trans-aux-r</property>
+							<value>2</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>35</pref-width>
+					<pref-height>20</pref-height>
+					<legend>UPR</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/fuel/switches/trans-aux-r</property>
+						<value>2</value>
+					</binding>
+				</button>
+			</group>
+			
+			<checkbox>
+				<label>Transfer 1</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/trans-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Transfer 2</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/trans-2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Transfer 3</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/trans-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>X Feed 1</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/x-feed-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>X Feed 2</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/x-feed-2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>X Feed 3</label>
+				<halign>left</halign>
+				<property>/controls/fuel/switches/x-feed-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+				<text>
+					<label>Engine Start</label>
+				</text>
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+			</group>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/ignition/switches/ign</property>
+							<value>-1</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>60</pref-width>
+					<pref-height>20</pref-height>
+					<legend>START A</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/ignition/switches/ign</property>
+						<value>-1</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/ignition/switches/ign</property>
+							<value>0</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>60</pref-width>
+					<pref-height>20</pref-height>
+					<legend>OFF</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/ignition/switches/ign</property>
+						<value>0</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/ignition/switches/ign</property>
+							<value>1</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>60</pref-width>
+					<pref-height>20</pref-height>
+					<legend>START B</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/ignition/switches/ign</property>
+						<value>1</value>
+					</binding>
+				</button>
+			</group>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<checkbox>
+					<label>Start 1</label>
+					<halign>left</halign>
+					<property>/controls/engines/engine[0]/start-cmd</property>
+					<binding>
+						<command>dialog-apply</command>
+					</binding>
+					<live>true</live>
+				</checkbox>
+				
+				<checkbox>
+					<label>Start 2</label>
+					<halign>left</halign>
+					<property>/controls/engines/engine[1]/start-cmd</property>
+					<binding>
+						<command>dialog-apply</command>
+					</binding>
+					<live>true</live>
+				</checkbox>
+				
+				<checkbox>
+					<label>Start 3</label>
+					<halign>left</halign>
+					<property>/controls/engines/engine[2]/start-cmd</property>
+					<binding>
+						<command>dialog-apply</command>
+					</binding>
+					<live>true</live>
+				</checkbox>
+			</group>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+				<text>
+					<label>APU</label>
+				</text>
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+			</group>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<text>
+					<label>99</label>
+					<live>true</live>
+					<property>/systems/apu/n1-actual-round</property>
+				</text>
+				<text>
+					<label>% N1</label>
+				</text>
+				
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/apu/switches/master</property>
+							<value>0</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>40</pref-width>
+					<pref-height>20</pref-height>
+					<legend>OFF</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/apu/switches/master</property>
+						<value>0</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/apu/switches/master</property>
+							<value>1</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>40</pref-width>
+					<pref-height>20</pref-height>
+					<legend>ON</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/apu/switches/master</property>
+						<value>1</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/apu/switches/master</property>
+							<value>2</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>55</pref-width>
+					<pref-height>20</pref-height>
+					<legend>START</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/apu/switches/master</property>
+						<value>2</value>
+					</binding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							settimer(func {
+								if (systems.APU.Switch.master.getValue() == 2) {
+									systems.APU.Switch.master.setValue(1);
+								}
+							}, 5);
+						</script>
+					</binding>
+				</button>
+			</group>
+		
+		</group>
+	
+	</group>
+
+</PropertyList>

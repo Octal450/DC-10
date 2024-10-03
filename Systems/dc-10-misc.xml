@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+
+<!-- McDonnell Douglas DC-10 Misc -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<system name="DC-10: Misc"> <!-- Everything here is after all systems -->
+	
+	<channel name="CAWS and Warnings Logic" execrate="8">
+		
+		<!-- Altitude Alert -->
+		<switch name="/systems/caws/logic/altitude-alert-captured">
+			<default value="/systems/caws/logic/altitude-alert-captured"/>
+			<test value="0">
+				/it-autoflight/input/alt-diff-abs ge 800
+			</test>
+			<test value="1">
+				/it-autoflight/input/alt-diff-abs le 250
+			</test>
+		</switch>
+		
+		<switch name="/systems/caws/logic/altitude-alert">
+			<default value="/systems/caws/logic/altitude-alert"/>
+			<test logic="OR" value="0"> <!-- Reset -->
+				/it-autoflight/input/alt-diff-abs le 250
+				fcs/flap-pos-deg ge 28
+				/it-autoflight/output/vert eq 2
+				/it-autoflight/output/vert eq 6
+				position/wow eq 1
+				<test logic="AND"> <!-- Approaching only -->
+					/systems/caws/logic/altitude-alert eq 1
+					/it-autoflight/input/alt-diff-abs ge 800
+				</test>
+			</test>
+			<test logic="AND" value="1"> <!-- Approaching -->
+				/systems/caws/logic/altitude-alert-captured eq 0
+				/it-autoflight/input/alt-diff-abs gt 250
+				/it-autoflight/input/alt-diff-abs le 750
+			</test>
+			<test logic="AND" value="2"> <!-- Deviating -->
+				/systems/caws/logic/altitude-alert-captured eq 1
+				/it-autoflight/input/alt-diff-abs gt 250
+			</test>
+		</switch>
+		
+		<switch name="/systems/caws/logic/altitude-alert-aural-1"> <!-- Prevent aural from playing if newly set altitude is inside the alert zone -->
+			<default value="/systems/caws/logic/altitude-alert-aural-1"/>
+			<test logic="AND" value="0">
+				/systems/caws/logic/altitude-alert eq 0
+				/it-autoflight/input/alt-diff-abs le 700
+			</test>
+			<test value="1">
+				/it-autoflight/input/alt-diff-abs ge 800
+			</test>
+		</switch>
+	
+	</channel>
+	
+	<channel name="CAWS Sound Controller" execrate="8">
+		
+		<!-- Autopilot Horn -->
+		<switch name="/systems/caws/apoff/trigger">
+			<default value="/systems/caws/apoff/trigger"/>
+			<test logic="OR" value="0">
+				/systems/electrical/outputs/mk-viii lt 24
+				/systems/caws/apoff/out eq 1
+			</test>
+			<test logic="AND" value="1">
+				/systems/caws/apoff/out eq 0
+				/it-autoflight/sound/apoff eq 1
+			</test>
+		</switch>
+		
+		<actuator name="/systems/caws/apoff/actuator">
+			<input>/systems/caws/apoff/trigger</input>
+			<rate_limit sense="incr">0.75</rate_limit>
+			<rate_limit sense="decr">100</rate_limit>
+			<output>/systems/caws/apoff/out</output>
+		</actuator>
+	
+	</channel>
+
+</system>

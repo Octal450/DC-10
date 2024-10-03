@@ -1,0 +1,592 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+
+	<name>acconfig-failures</name>
+	<layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+		
+        <text>
+            <halign>left</halign>
+            <label>System Failures</label>
+        </text>
+		
+		<empty><stretch>1</stretch></empty>
+		
+		<button>
+			<visible>
+				<not><property>/payload/armament/msg</property></not>
+			</visible>
+			<legend>Reset All</legend>
+			<halign>right</halign>
+			<padding>5</padding>
+			<pref-width>120</pref-width>
+			<pref-height>20</pref-height>
+			<binding>
+				<command>nasal</command>
+				<script>acconfig.SYSTEM.resetFailures();</script>
+			</binding>
+		</button>
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+	
+    <hrule/>
+	
+	<group>
+		<layout>table</layout>
+		
+		<text>
+			<row>0</row>
+			<col>0</col>
+			<visible>
+				<not><property>/payload/armament/msg</property></not>
+			</visible>
+			<halign>left</halign>
+			<label>Failed when checked</label>
+		</text>
+		<text>
+			<row>0</row>
+			<col>0</col>
+			<visible>
+				<property>/payload/armament/msg</property>
+			</visible>
+			<halign>left</halign>
+			<label>Not available while Allow Damage is enabled in Aircraft Config Center</label>
+		</text>
+	</group>
+	
+	<group>
+		<layout>hbox</layout>
+		<visible>
+			<not><property>/payload/armament/msg</property></not>
+		</visible>
+	
+		<group>
+			<layout>vbox</layout>
+			
+			<group>
+				<layout>hbox</layout>
+
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+				<text>
+					<label>Electrical</label>
+				</text>
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+			</group>
+			
+			<checkbox>
+				<label>APU Generator</label>
+				<halign>left</halign>
+				<property>/systems/failures/electrical/apu</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Battery</label>
+				<halign>left</halign>
+				<property>/systems/failures/electrical/battery</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Eng 1 Generator</label>
+				<halign>left</halign>
+				<property>/systems/failures/electrical/gen-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Eng 2 Generator</label>
+				<halign>left</halign>
+				<property>/systems/failures/electrical/gen-2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Eng 3 Generator</label>
+				<halign>left</halign>
+				<property>/systems/failures/electrical/gen-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>AC Bus Tie 1</label>
+				<halign>left</halign>
+				<property>/systems/failures/electrical/ac-tie-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>AC Bus Tie 2</label>
+				<halign>left</halign>
+				<property>/systems/failures/electrical/ac-tie-2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>AC Bus Tie 3</label>
+				<halign>left</halign>
+				<property>/systems/failures/electrical/ac-tie-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>DC Bus Tie 1</label>
+				<halign>left</halign>
+				<property>/systems/failures/electrical/dc-tie-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>DC Bus Tie 3</label>
+				<halign>left</halign>
+				<property>/systems/failures/electrical/dc-tie-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<vrule>
+				<visible>
+					<property>/systems/acconfig/extra-stuff</property>
+				</visible>
+				<stretch>true</stretch>
+			</vrule>
+		
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+			
+			<group>
+				<layout>hbox</layout>
+
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+				<text>
+					<label>Hydraulics</label>
+				</text>
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+			</group>
+			
+			<checkbox>
+				<label>Catastrophic Aft Explosion</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/catastrophic-aft</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>SYS 1 Leak</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/sys-1-leak</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>SYS 1 L Pump</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/l-pump-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>SYS 1 R Pump</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/r-pump-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>SYS 2 Leak</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/sys-2-leak</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>SYS 2 L Pump</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/l-pump-2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>SYS 2 R Pump</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/r-pump-2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>SYS 3 Leak</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/sys-3-leak</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>SYS 3 L Pump</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/l-pump-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>SYS 3 R Pump</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/r-pump-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Aux Pump 1</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/aux-pump-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Aux Pump 2</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/aux-pump-2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>RMP 1-3</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/rmp-1-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>RMP 2-3</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/rmp-2-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>NRMP 2-1</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/nrmp-2-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>NRMP 3-2</label>
+				<halign>left</halign>
+				<property>/systems/failures/hydraulics/nrmp-3-2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<group>
+				<layout>hbox</layout>
+
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+				<text>
+					<label>Landing Gear</label>
+				</text>
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+			</group>
+			
+			<checkbox>
+				<label>Nose Gear Actuator</label>
+				<halign>left</halign>
+				<property>/systems/failures/gear/nose-actuator</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Left Gear Actuator</label>
+				<halign>left</halign>
+				<property>/systems/failures/gear/left-actuator</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Center Gear Actuator</label>
+				<halign>left</halign>
+				<property>/systems/failures/gear/center-actuator</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Right Gear Actuator</label>
+				<halign>left</halign>
+				<property>/systems/failures/gear/right-actuator</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+		
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+			
+			<group>
+				<layout>hbox</layout>
+
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+				<text>
+					<label>Flight Controls/FCCs</label>
+				</text>
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+			</group>
+			
+			<checkbox>
+				<label>Yaw Damper Upper A</label>
+				<halign>left</halign>
+				<property>/systems/failures/fcc/yd-upper-a</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Yaw Damper Upper B</label>
+				<halign>left</halign>
+				<property>/systems/failures/fcc/yd-upper-b</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Yaw Damper Lower A</label>
+				<halign>left</halign>
+				<property>/systems/failures/fcc/yd-lower-a</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Yaw Damper Lower B</label>
+				<halign>left</halign>
+				<property>/systems/failures/fcc/yd-lower-b</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Elevator Feel</label>
+				<halign>left</halign>
+				<property>/systems/failures/fcc/elevator-feel</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Flap Limit</label>
+				<halign>left</halign>
+				<property>/systems/failures/fcc/flap-limit</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<group>
+				<layout>hbox</layout>
+
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+				<text>
+					<label>Fuel</label>
+				</text>
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+			</group>
+			
+			<checkbox>
+				<label>Tank 1 Pumps</label>
+				<halign>left</halign>
+				<property>/systems/failures/fuel/pumps-1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Tank 2 Pumps</label>
+				<halign>left</halign>
+				<property>/systems/failures/fuel/pumps-2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Tank 3 Pumps</label>
+				<halign>left</halign>
+				<property>/systems/failures/fuel/pumps-3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Aux Tank L Trans</label>
+				<halign>left</halign>
+				<property>/systems/failures/fuel/pumps-aux-l</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Aux Tank R Trans</label>
+				<halign>left</halign>
+				<property>/systems/failures/fuel/pumps-aux-r</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<vrule>
+				<visible>
+					<property>/systems/acconfig/extra-stuff</property>
+				</visible>
+				<stretch>true</stretch>
+			</vrule>
+		
+		</group>
+	
+	</group>
+	
+</PropertyList>

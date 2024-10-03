@@ -1,0 +1,37 @@
+     Canadian Pacific Airlines DC-10-30 livery by E-Savageair
+
+     In 1942, Canadian Pacific Railroad purchased ten bush airlines including Canadian Airways to form
+Canadian Pacific Air Lines.  The airline grew steadily with traffic through the 1950's even while limited 
+by the government.  In 1968 to align the company with Canadian Pacific's other subsidiaries under it's new 
+"Multimark" logo, Canadian Pacific Air Lines became CP Air along with companies, CP Hotels, CP Ships, 
+and later CP Rail.  The airliners were given a new bold orange and red scheme that if seen from the top, 
+looked the Multimark logo stretched on the fuselage that's also on the tail. 
+     
+     Despite federal restrictions where it battled for market share and international agreements with 
+government-owned Trans-Canada Air Lines, (later to become Air Canada) CP Air would still fly 38 
+destinations out of its hub from in Vancouver, British Columbia by creating its own overseas routes to 
+Amsterdam, Hong Kong, Tokyo, and Sydney. By the late 70's, those routes became lucrative and the federal 
+government lifted restrictions on CP Air.  It continued operations till 1987 when it was combined with 
+Nordair and Pacific Western to become Canadian Airlines.
+
+     Among its 68 fleet of 737, DC-8, and 747 aircraft CP Air also owned a fleet of McDonnell Douglas DC-10-30's 
+like C-GCPI depicted here from 1977 to 1987 when Canadian Airlines took over operations. (That same 
+aircraft would also wear the new Canadian Airlines "chevron" livery included in the aircraft download package.)
+
+To fly your own routes:
+
+Unzip your file to:
+FlightGear/data/aircraft/DC-10-30/models/liveries
+Run FlightGear, and if you have your CP Air livery, 
+then you can -
+
+"Fly Free" -without restrictions.
+
+Thank you for downloading ;-)
+ESA
+
+
+
+
+
+     

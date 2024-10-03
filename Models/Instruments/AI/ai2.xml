@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>ai.ac</path>
+	
+	<animation>
+		<type>scale</type>
+		<x-offset>0.95</x-offset>
+		<y-offset>0.95</y-offset>
+		<z-offset>0.95</z-offset>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>LightingGroup</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>0.6</green>
+			<blue>0.3</blue>
+			<factor-prop>controls/lighting/fo-panel-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Horizon</object-name>
+		<object-name>HorizonInner</object-name>
+		<object-name>RollIndex</object-name>
+		<property>instrumentation/ai[1]/roll-deg</property>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.00109</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>HorizonInner</object-name>
+		<property>instrumentation/ai[1]/pitch-deg</property>
+		<interpolation>
+			<entry><ind>-90</ind><dep>-0.319</dep></entry>
+			<entry><ind>  0</ind><dep> 0.000</dep></entry>
+			<entry><ind> 90</ind><dep> 0.319</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>FD</object-name>
+		<property>instrumentation/ai[1]/fd-roll</property>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>FD</object-name>
+		<property>instrumentation/ai[1]/fd-pitch</property>
+		<factor>0.001296</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>SlipSkid</object-name>
+		<property>instrumentation/ai[1]/slip-skid</property>
+		<interpolation>
+			<entry><ind>-15</ind><dep>-8</dep></entry>
+			<entry><ind>  0</ind><dep> 0</dep></entry>
+			<entry><ind> 15</ind><dep> 8</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.02</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>FastSlowFlag</object-name>
+		<condition>
+			<not-equals>
+				<property>instrumentation/ai[1]/power-avail</property>
+				<value>1</value>
+			</not-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>FastSlow</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/ai[1]/power-avail</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>FastSlow</object-name>
+		<property>instrumentation/ai[1]/fast-slow</property>
+		<factor>-0.0017</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>RunwayFlag</object-name>
+		<condition>
+			<or>
+				<not-equals>
+					<property>instrumentation/ai[1]/power-avail</property>
+					<value>1</value>
+				</not-equals>
+				<less-than>
+					<property>systems/electrical/outputs/nav[1]</property>
+					<value>24</value>
+				</less-than>
+				<not><property>instrumentation/nav[1]/in-range</property></not>
+				<less-than-equals>
+					<property>instrumentation/nav[1]/signal-quality-norm</property>
+					<value>0.99</value>
+				</less-than-equals>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Runway</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>instrumentation/ai[0]/power-avail</property>
+					<value>1</value>
+				</equals>
+				<greater-than-equals>
+					<property>systems/electrical/outputs/nav[0]</property>
+					<value>24</value>
+				</greater-than-equals>
+				<property>instrumentation/nav[0]/in-range</property>
+				<greater-than>
+					<property>instrumentation/nav[0]/signal-quality-norm</property>
+					<value>0.99</value>
+				</greater-than>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>Runway</object-name>
+		<property>instrumentation/ai[1]/loc-deviation</property>
+		<factor>0.00137</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>Runway</object-name>
+		<property>instrumentation/ai[1]/rising-runway</property>
+		<interpolation>
+			<entry><ind>  0</ind><dep> 0.0000</dep></entry>
+			<entry><ind>200</ind><dep>-0.0262</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>GSFlag</object-name>
+		<condition>
+			<or>
+				<not-equals>
+					<property>instrumentation/ai[1]/power-avail</property>
+					<value>1</value>
+				</not-equals>
+				<less-than>
+					<property>systems/electrical/outputs/nav[1]</property>
+					<value>24</value>
+				</less-than>
+				<not><property>instrumentation/nav[1]/gs-in-range</property></not>
+				<not><property>instrumentation/nav[1]/has-gs</property></not>
+				<less-than-equals>
+					<property>instrumentation/nav[1]/signal-quality-norm</property>
+					<value>0.99</value>
+				</less-than-equals>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>GS</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>instrumentation/ai[1]/power-avail</property>
+					<value>1</value>
+				</equals>
+				<greater-than-equals>
+					<property>systems/electrical/outputs/nav[1]</property>
+					<value>24</value>
+				</greater-than-equals>
+				<property>instrumentation/nav[1]/gs-in-range</property>
+				<property>instrumentation/nav[1]/has-gs</property>
+				<greater-than>
+					<property>instrumentation/nav[1]/signal-quality-norm</property>
+					<value>0.99</value>
+				</greater-than>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>GS</object-name>
+		<property>instrumentation/ai[1]/gs-deviation</property>
+		<factor>0.00537</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>DHLight</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>1.0</green>
+			<blue>0</blue>
+			<factor-prop>instrumentation/agl[1]/minimums-light</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>CmptrFlag</object-name>
+		<object-name>GyroFlag</object-name>
+		<condition>
+			<not-equals>
+				<property>instrumentation/ai[1]/att-avail</property>
+				<value>1</value>
+			</not-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>TestBtn</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/ai[1]/test-btn</property>
+				<value>1</value>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>libraries.Sound.btn1();</script>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>instrumentation/ai[1]/test-btn</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>TestBtn</object-name>
+		<property>instrumentation/ai[1]/test-btn</property>
+		<factor>-0.002</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

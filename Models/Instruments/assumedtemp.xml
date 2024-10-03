@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>assumedtemp.ac</path>
+	
+	<animation>
+		<type>material</type>
+		<object-name>flex1</object-name>
+		<object-name>flex2</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>0.6</green>
+			<blue>0.3</blue>
+			<factor-prop>controls/lighting/center-panel-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>flex1</object-name>
+		<property>instrumentation/assumed-temp/d10</property>
+		<factor>0.0695</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>flex1</object-name>
+		<drag-direction>vertical</drag-direction>
+		<drag-scale-px>15</drag-scale-px>
+		<increase>
+			<binding>
+				<command>nasal</command>
+				<script>
+					<![CDATA[
+						var flex = systems.THRLIM.Limit.flexTemp.getValue();
+						var digit = left(sprintf("%02d", flex), 1);
+						if (digit <= 0) systems.THRLIM.Limit.flexTemp.setValue(5 ~ right(sprintf("%02d", flex), 1));
+						else systems.THRLIM.Limit.flexTemp.setValue((digit - 1) ~ right(sprintf("%02d", flex), 1));
+					]]>
+				</script>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>nasal</command>
+				<script>
+					<![CDATA[
+						var flex = systems.THRLIM.Limit.flexTemp.getValue();
+						var digit = left(sprintf("%02d", flex), 1);
+						if (digit >= 5) systems.THRLIM.Limit.flexTemp.setValue(0 ~ right(sprintf("%02d", flex), 1));
+						else systems.THRLIM.Limit.flexTemp.setValue((digit + 1) ~ right(sprintf("%02d", flex), 1));
+					]]>
+				</script>
+			</binding>
+		</decrease>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>flex2</object-name>
+		<property>instrumentation/assumed-temp/d1</property>
+		<factor>0.0695</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>flex2</object-name>
+		<drag-direction>vertical</drag-direction>
+		<drag-scale-px>15</drag-scale-px>
+		<increase>
+			<binding>
+				<command>nasal</command>
+				<script>
+					<![CDATA[
+						var flex = systems.THRLIM.Limit.flexTemp.getValue();
+						var digit = right(sprintf("%02d", flex), 1);
+						if (digit <= 0) systems.THRLIM.Limit.flexTemp.setValue(left(sprintf("%02d", flex), 1) ~ 9);
+						else systems.THRLIM.Limit.flexTemp.setValue(left(sprintf("%02d", flex), 1) ~ (digit - 1));
+					]]>
+				</script>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>nasal</command>
+				<script>
+					<![CDATA[
+						var flex = systems.THRLIM.Limit.flexTemp.getValue();
+						var digit = right(sprintf("%02d", flex), 1);
+						if (digit >= 9) systems.THRLIM.Limit.flexTemp.setValue(left(sprintf("%02d", flex), 1) ~ 0);
+						else systems.THRLIM.Limit.flexTemp.setValue(left(sprintf("%02d", flex), 1) ~ (digit + 1));
+					]]>
+				</script>
+			</binding>
+		</decrease>
+	</animation>
+
+</PropertyList>

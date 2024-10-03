@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name>Northwest Airlines (Old -2003)</name>
+				<texture>Liveries/DC-10-40/NWA.png</texture>
+			</livery>
+		</model>
+	</sim>
+
+</PropertyList>

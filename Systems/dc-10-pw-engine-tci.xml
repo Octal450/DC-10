@@ -1,0 +1,1594 @@
+<?xml version="1.0"?>
+
+<!-- McDonnell Douglas DC-10 PW JT9D-59A Engine/TCI -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<system name="DC-10: PW Engine/TCI">
+	
+	<property value="30">engine/limit/rated-temp</property>
+	<property value="51720">engine/limit/rated-thrust</property>
+	<property value="670">engine/egt-alert</property>
+	<property value="685">engine/egt-redline</property>
+	<property value="105">engine/n1-redline</property>
+	<property value="102.6">engine/n2-redline</property>
+	
+	<channel name="Thrust Limits">
+		
+		<fcs_function name="engine/limit/rated-thrust-n1">
+			<function>
+				<table>
+					<independentVar lookup="row">/position/altitude-ft</independentVar>
+					<independentVar lookup="column">propulsion/tat-c</independentVar>
+					<tableData>
+						      -60   -30    0     30     60
+						    0  85.7  90.8  95.5  100.0  104.5
+						10000  91.2  94.7  99.7  101.0  104.9
+						45000  91.2  91.6  96.5  101.4  106.3
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/milthrust-unmodified"> <!-- Copy of MilThrust table in engines file -->
+			<function>
+				<table>
+					<independentVar lookup="row">velocities/mach</independentVar>
+					<independentVar lookup="column">atmosphere/density-altitude</independentVar>
+					<tableData>
+						    -10000   0       10000   20000   30000   45000   52000
+						0.0  1.2600  1.0000  0.7400  0.5640  0.3920  0.2840  0.0000
+						0.2  1.1710  0.9740  0.6970  0.5360  0.3850  0.2740  0.0000
+						0.4  1.1500  0.9570  0.6920  0.5460  0.3870  0.2670  0.0000
+						0.6  1.1810  0.9410  0.7210  0.5660  0.3580  0.2310  0.0000
+						0.8  1.2290  1.0200  0.7820  0.5570  0.3040  0.2060  0.0000
+						0.9  1.2580  1.0200  0.7820  0.5220  0.2710  0.1270  0.0000
+						1.0  1.1810  0.9510  0.7210  0.4410  0.1740  0.0580  0.0000
+						1.2  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
+		<!-- Following functions fix a FGTurbine inaccuracy... rated thrust N1% should be rated thrust lbs -->
+		<!-- These calculations change it so that the rated power at sea level is at the correct N1% value. It still changes with altitude and mach as it should -->
+		<fcs_function name="engine/limit/fgturbine-thrust">
+			<function>
+				<sum>
+					<product>
+						<property>propulsion/engine[0]/IdleThrust</property> <!-- It doesn't matter which engine, same for all -->
+						<property>engine/limit/rated-thrust</property>
+					</product>
+					<product>
+						<difference>
+							<property>engine/limit/rated-thrust</property>
+							<product>
+								<property>propulsion/engine[0]/IdleThrust</property> <!-- It doesn't matter which engine, same for all -->
+								<property>engine/limit/rated-thrust</property>
+							</product>
+						</difference>
+						<property>engine/limit/milthrust-unmodified</property>
+					</product>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/rated-thrust-actual">
+			<function>
+				<sum>
+					<product>
+						<property>propulsion/engine[0]/IdleThrust</property> <!-- It doesn't matter which engine, same for all -->
+						<property>engine/limit/rated-thrust</property>
+					</product>
+					<product>
+						<product>
+							<difference>
+								<property>engine/limit/rated-thrust</property>
+								<product>
+									<property>propulsion/engine[0]/IdleThrust</property> <!-- It doesn't matter which engine, same for all -->
+									<property>engine/limit/rated-thrust</property>
+								</product>
+							</difference>
+							<property>engine/limit/milthrust-unmodified</property>
+						</product>
+						<pow>
+							<quotient>
+								<difference>
+									<property>engine/limit/rated-thrust-n1</property>
+									<value>24.7</value>
+								</difference>
+								<value>80.3</value>
+							</quotient>
+							<value>2</value>
+						</pow>
+					</product>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/rated-thrust-factor">
+			<function>
+				<ifthen>
+					<eq>
+						<property>/systems/acconfig/autoconfig-running</property>
+						<value>1</value>
+					</eq>
+					<value>0</value>
+					<ifthen>
+						<nq> <!-- Prevent divide by 0 -->
+							<property>engine/limit/rated-thrust-actual</property>
+							<value>0</value>
+						</nq>
+						<quotient>
+							<property>engine/limit/fgturbine-thrust</property>
+							<property>engine/limit/rated-thrust-actual</property>
+						</quotient>
+						<value>1</value>
+					</ifthen>
+				</ifthen>
+			</function>
+		</fcs_function>
+		
+		<!-- 
+		Thrust limits on the PW are kinda hard to do because of EPR - and we don't have a linear way to control throttle
+		The GE's just use N1, which is linear so it works well to make the engine, but as stated primary param is EPR
+		So we have our thrust limits basic in N1 because its easier to calculate, then we calculate corrected EPR
+		After we round the EPR, in order to correctly control/limit thrust, we will convert it BACK to N1... annoying right?
+		Well the advantage is the plane is actually targetting EPR, so its more realistic to do this way even if its more steps
+		I think that's better than just pretending to use EPR, and actually using N1 - if you look close enough, you can tell!
+		-->
+		<fcs_function name="engine/limit/takeoff-input">
+			<function>
+				<pow>
+					<table>
+						<independentVar lookup="row">/position/altitude-ft</independentVar>
+						<independentVar lookup="column">propulsion/tat-c</independentVar>
+						<tableData>
+							      -60   -30    0     30     60
+							    0  85.7  90.8  95.5  100.0  95.3
+							10000  91.2  94.7  99.7  101.0  97.0
+						</tableData>
+					</table>
+					<value>3.5</value>
+				</pow>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/takeoff-ref">
+			<function>
+				<sum>
+					<product>
+						<table>
+							<independentVar lookup="row">engine/limit/takeoff-input</independentVar>
+							<tableData>
+								   74862.6  0.03
+								11862126.4  1.00
+							</tableData>
+						</table>
+						<property>engine/epr/c1</property>
+					</product>
+					<property>engine/epr/c2</property>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/takeoff">
+			<function>
+				<quotient>
+					<integer>
+						<sum>
+							<product>
+								<property>engine/limit/takeoff-ref</property>
+								<value>1000</value>
+							</product>
+							<value>0.5</value> <!-- Make it round correctly -->
+						</sum>
+					</integer>
+					<value>1000</value>
+				</quotient>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/altn-takeoff-input">
+			<function>
+				<pow>
+					<table>
+						<independentVar lookup="row">/position/altitude-ft</independentVar>
+						<independentVar lookup="column">propulsion/tat-c</independentVar>
+						<tableData>
+							      -60   -30    0     30    60
+							    0  83.1  88.1  92.6  97.0  92.4
+							10000  88.5  91.9  96.7  98.0  94.1
+						</tableData>
+					</table>
+					<value>3.5</value>
+				</pow>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/altn-takeoff-ref">
+			<function>
+				<sum>
+					<product>
+						<table>
+							<independentVar lookup="row">engine/limit/altn-takeoff-input</independentVar>
+							<tableData>
+								   74862.6  0.03
+								11862126.4  1.00
+							</tableData>
+						</table>
+						<property>engine/epr/c1</property>
+					</product>
+					<property>engine/epr/c2</property>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/altn-takeoff">
+			<function>
+				<quotient>
+					<integer>
+						<sum>
+							<product>
+								<property>engine/limit/altn-takeoff-ref</property>
+								<value>1000</value>
+							</product>
+							<value>0.5</value> <!-- Make it round correctly -->
+						</sum>
+					</integer>
+					<value>1000</value>
+				</quotient>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/go-around-input">
+			<function>
+				<pow>
+					<table>
+						<independentVar lookup="row">/position/altitude-ft</independentVar>
+						<independentVar lookup="column">propulsion/tat-c</independentVar>
+						<tableData>
+							      -60   -30    0      30     60
+							    0  86.1  91.2   95.9  100.5  95.7
+							10000  91.7  95.1  100.2  101.5  97.4
+							45000  91.7  92.0   96.9  101.9  99.8
+						</tableData>
+					</table>
+					<value>3.5</value>
+				</pow>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/go-around-ref">
+			<function>
+				<sum>
+					<product>
+						<table>
+							<independentVar lookup="row">engine/limit/go-around-input</independentVar>
+							<tableData>
+								   74862.6  0.03
+								11862126.4  1.00
+							</tableData>
+						</table>
+						<property>engine/epr/c1</property>
+					</product>
+					<property>engine/epr/c2</property>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/go-around">
+			<function>
+				<quotient>
+					<integer>
+						<sum>
+							<product>
+								<property>engine/limit/go-around-ref</property>
+								<value>1000</value>
+							</product>
+							<value>0.5</value> <!-- Make it round correctly -->
+						</sum>
+					</integer>
+					<value>1000</value>
+				</quotient>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/mct-input">
+			<function>
+				<pow>
+					<table>
+						<independentVar lookup="row">/position/altitude-ft</independentVar>
+						<independentVar lookup="column">propulsion/tat-c</independentVar>
+						<tableData>
+							      -60   -30    0     30    60
+							    0  83.2  93.2  87.8  92.1  94.0
+							10000  89.6  89.6  94.2  97.0  94.1
+							45000  95.1  95.9  94.0  97.9  98.9
+						</tableData>
+					</table>
+					<value>3.5</value>
+				</pow>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/mct-ref">
+			<function>
+				<sum>
+					<product>
+						<table>
+							<independentVar lookup="row">engine/limit/mct-input</independentVar>
+							<tableData>
+								   74862.6  0.03
+								11862126.4  1.00
+							</tableData>
+						</table>
+						<property>engine/epr/c1</property>
+					</product>
+					<property>engine/epr/c2</property>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/mct">
+			<function>
+				<quotient>
+					<integer>
+						<sum>
+							<product>
+								<property>engine/limit/mct-ref</property>
+								<value>1000</value>
+							</product>
+							<value>0.5</value> <!-- Make it round correctly -->
+						</sum>
+					</integer>
+					<value>1000</value>
+				</quotient>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/climb-input">
+			<function>
+				<pow>
+					<table>
+						<independentVar lookup="row">/position/altitude-ft</independentVar>
+						<independentVar lookup="column">propulsion/tat-c</independentVar>
+						<tableData>
+							      -60   -30    0     30    60
+							    0  81.4  81.4  85.9  90.2  88.4
+							10000  88.3  88.3  92.7  93.9  88.4
+							45000  92.2  92.7  92.2  92.7  88.4
+						</tableData>
+					</table>
+					<value>3.5</value>
+				</pow>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/climb-ref">
+			<function>
+				<sum>
+					<product>
+						<table>
+							<independentVar lookup="row">engine/limit/climb-input</independentVar>
+							<tableData>
+								   74862.6  0.03
+								11862126.4  1.00
+							</tableData>
+						</table>
+						<property>engine/epr/c1</property>
+					</product>
+					<property>engine/epr/c2</property>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/climb">
+			<function>
+				<quotient>
+					<integer>
+						<sum>
+							<product>
+								<property>engine/limit/climb-ref</property>
+								<value>1000</value>
+							</product>
+							<value>0.5</value> <!-- Make it round correctly -->
+						</sum>
+					</integer>
+					<value>1000</value>
+				</quotient>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/altn-climb-input">
+			<function>
+				<pow>
+					<table>
+						<independentVar lookup="row">/position/altitude-ft</independentVar>
+						<independentVar lookup="column">propulsion/tat-c</independentVar>
+						<tableData>
+							      -60   -30    0     30    60
+							    0  79.0  79.0  83.3  87.5  85.7
+							10000  85.7  85.7  89.9  91.1  85.7
+							45000  89.4  89.9  89.4  89.9  85.7
+						</tableData>
+					</table>
+					<value>3.5</value>
+				</pow>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/altn-climb-ref">
+			<function>
+				<sum>
+					<product>
+						<table>
+							<independentVar lookup="row">engine/limit/altn-climb-input</independentVar>
+							<tableData>
+								   74862.6  0.03
+								11862126.4  1.00
+							</tableData>
+						</table>
+						<property>engine/epr/c1</property>
+					</product>
+					<property>engine/epr/c2</property>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/altn-climb">
+			<function>
+				<quotient>
+					<integer>
+						<sum>
+							<product>
+								<property>engine/limit/altn-climb-ref</property>
+								<value>1000</value>
+							</product>
+							<value>0.5</value> <!-- Make it round correctly -->
+						</sum>
+					</integer>
+					<value>1000</value>
+				</quotient>
+			</function>
+		</fcs_function>
+		
+		<switch name="engine/limit/active">
+			<default value="1.5"/>
+			<test value="engine/limit/active">
+				engine/limit/active-mode-int eq -1
+			</test>
+			<test value="engine/limit/active">
+				<test logic="OR">
+					engine/limit/active-mode-int eq 0
+					engine/limit/active-mode-int eq 1
+				</test>
+				/instrumentation/airspeed-indicator/indicated-speed-kt ge 30
+			</test>
+			<test value="engine/limit/takeoff">
+				engine/limit/active-mode-int eq 0
+			</test>
+			<test value="engine/limit/altn-takeoff">
+				engine/limit/active-mode-int eq 1
+			</test>
+			<test value="engine/limit/go-around">
+				engine/limit/active-mode-int eq 2
+			</test>
+			<test value="engine/limit/mct">
+				engine/limit/active-mode-int eq 3
+			</test>
+			<test value="engine/limit/climb">
+				engine/limit/active-mode-int eq 4
+			</test>
+			<test value="engine/limit/altn-climb">
+				engine/limit/active-mode-int eq 5
+			</test>
+		</switch>
+		
+		<fcs_function name="engine/limit/active-norm-ref"> <!-- Opposite of EPR Calc -->
+			<function>
+				<quotient>
+					<difference>
+						<property>engine/limit/active</property>
+						<property>engine/epr/c2</property>
+					</difference>
+					<max> <!-- Prevent divide by 0 -->
+						<property>engine/epr/c1</property>
+						<value>0.001</value>
+					</max>
+				</quotient>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/active-norm-input"> <!-- Opposite of EPR Calc -->
+			<function>
+				<pow>
+					<table>
+						<independentVar lookup="row">engine/limit/active-norm-ref</independentVar>
+						<tableData>
+							0.03     74862.6
+							1.00  11862126.4
+						</tableData>
+					</table>
+					<quotient>
+						<value>1</value>
+						<value>3.5</value>
+					</quotient>
+				</pow>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/active-norm">
+			<function>
+				<table>
+					<independentVar lookup="row">engine/limit/active-norm-input</independentVar>
+					<tableData>
+						 24.7  0
+						105.0  1
+					</tableData>
+				</table>
+			</function>
+			<output>/it-autoflight/settings/autothrottle-max</output>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/highest">
+			<function>
+				<max>
+					<property>engine/limit/climb</property>
+					<property>engine/limit/go-around</property>
+					<property>engine/limit/mct</property>
+					<property>engine/limit/takeoff</property>
+				</max>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/highest-norm-ref"> <!-- Opposite of EPR Calc -->
+			<function>
+				<quotient>
+					<difference>
+						<property>engine/limit/highest</property>
+						<property>engine/epr/c2</property>
+					</difference>
+					<max> <!-- Prevent divide by 0 -->
+						<property>engine/epr/c1</property>
+						<value>0.001</value>
+					</max>
+				</quotient>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/highest-norm-input"> <!-- Opposite of EPR Calc -->
+			<function>
+				<pow>
+					<table>
+						<independentVar lookup="row">engine/limit/highest-norm-ref</independentVar>
+						<tableData>
+							0.03     74862.6
+							1.00  11862126.4
+						</tableData>
+					</table>
+					<quotient>
+						<value>1</value>
+						<value>3.5</value>
+					</quotient>
+				</pow>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/highest-norm">
+			<function>
+				<table>
+					<independentVar lookup="row">engine/limit/highest-norm-input</independentVar>
+					<tableData>
+						 24.7  0
+						105.0  1
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/idle"> <!-- No rounding, this is analog -->
+			<function>
+				<ifthen>
+					<eq>
+						<property>gear/unit[0]/WOW</property>
+						<value>0</value>
+					</eq>
+					<table>
+						<independentVar lookup="row">velocities/mach</independentVar>
+						<independentVar lookup="column">/controls/flight/flaps-input</independentVar> <!-- Take advantage of table interpolation, values same -->
+						<independentVar lookup="table">/position/altitude-ft</independentVar>
+						<tableData breakPoint="0">
+							      0     1
+							0.21  30.3  30.3
+							0.70  38.1  38.1
+						</tableData>
+						<tableData breakPoint="45000">
+							      0     1
+							0.55  47.3  47.3
+							0.90  53.0  53.0
+						</tableData>
+					</table>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/idle-norm">
+			<function>
+				<table>
+					<independentVar lookup="row">engine/limit/idle</independentVar>
+					<tableData>
+						 24.7  0
+						105.0  1
+					</tableData>
+				</table>
+			</function>
+			<output>/it-autoflight/settings/autothrottle-min</output>
+		</fcs_function>
+	
+	</channel>
+	
+	<channel name="Reversers">
+		
+		<!-- Engine 1 -->
+		<switch name="engine/reverse-1/position-cmd">
+			<default value="0"/>
+			<test value="1">
+				/controls/engines/engine[0]/reverse-engage eq 1
+			</test>
+			<test logic="AND" value="1"> <!-- Don't stow until thrust is reduced enough -->
+				/engines/engine[0]/n1-actual ge 40
+				engine/reverse-1/position-cmd eq 1
+			</test>
+			<output>/controls/engines/engine[0]/reverse-cmd</output>
+		</switch>
+		
+		<switch name="engine/reverse-1/position-rate">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				/systems/hydraulics/sys-1-psi ge 2200
+				/systems/acconfig/autoconfig-running eq 1
+			</test>
+		</switch>
+		
+		<actuator name="engine/reverse-1/position-norm">
+			<input>engine/reverse-1/position-cmd</input>
+			<rate_limit>engine/reverse-1/position-rate</rate_limit>
+			<output>/engines/engine[0]/reverser-pos-norm</output>
+		</actuator>
+		
+		<pure_gain name="propulsion/engine[0]/reverser-angle-rad">
+			<input>engine/reverse-1/position-norm</input>
+			<gain>3.14</gain>
+		</pure_gain>
+		
+		<switch name="engine/reverse-1/interlock"> <!-- Locked until 60% open, unlocked until 20% closed -->
+			<default value="engine/reverse-1/interlock"/>
+			<test value="0">
+				/engines/engine[0]/reverser-pos-norm ge 0.6
+			</test>
+			<test value="1">
+				/engines/engine[0]/reverser-pos-norm le 0.2
+			</test>
+		</switch>
+		
+		<fcs_function name="engine/reverse-1/throttle-rev-cmd">
+			<function>
+				<ifthen>
+					<eq>
+						<property>engine/reverse-1/position-norm</property>
+						<value>1</value>
+					</eq>
+					<table>
+						<independentVar lookup="row">/controls/engines/engine[0]/throttle</independentVar>
+						<tableData>
+							0.05  0.05
+							1.00  0.82
+						</tableData>
+					</table>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/controls/engines/engine[0]/reverse-lever">
+			<function>
+				<product>
+					<property>/controls/engines/engine[0]/reverse-engage</property>
+					<table>
+						<independentVar lookup="row">engine/reverse-1/throttle-rev-cmd</independentVar>
+						<tableData>
+							0.05  0.25
+							0.82  1.00
+						</tableData>
+					</table>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<switch name="engine/reverse-1/throttle-rev">
+			<default value="0"/>
+			<test value="0">
+				engine/reverse-1/interlock eq 1
+			</test>
+			<test value="engine/reverse-1/throttle-rev-cmd">
+				/controls/engines/engine[0]/reverse-engage eq 1
+			</test>
+			<clipto>
+				<min>0.05</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<switch name="engine/reverse-1/active">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				engine/reverse-1/position-cmd eq 1
+				engine/reverse-1/position-norm ne 0
+			</test>
+		</switch>
+		
+		<!-- Engine 2 -->
+		<switch name="engine/reverse-2/position-cmd">
+			<default value="0"/>
+			<test value="1">
+				/controls/engines/engine[1]/reverse-engage eq 1
+			</test>
+			<test logic="AND" value="1"> <!-- Don't stow until thrust is reduced enough -->
+				/engines/engine[1]/n1-actual ge 40
+				engine/reverse-2/position-cmd eq 1
+			</test>
+			<output>/controls/engines/engine[1]/reverse-cmd</output>
+		</switch>
+		
+		<switch name="engine/reverse-2/position-cmd-wow">
+			<default value="engine/reverse-2/position-cmd"/>
+			<test logic="AND" value="0">
+				/gear/gear[0]/wow ne 1
+				engine/reverse-2/position-cmd-wow eq 0
+			</test>
+		</switch>
+		
+		<switch name="engine/reverse-2/position-rate">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				/systems/hydraulics/sys-2-psi ge 2200
+				/systems/acconfig/autoconfig-running eq 1
+			</test>
+		</switch>
+		
+		<actuator name="engine/reverse-2/position-norm">
+			<input>engine/reverse-2/position-cmd-wow</input>
+			<rate_limit>engine/reverse-2/position-rate</rate_limit>
+			<output>/engines/engine[1]/reverser-pos-norm</output>
+		</actuator>
+		
+		<pure_gain name="propulsion/engine[1]/reverser-angle-rad">
+			<input>engine/reverse-2/position-norm</input>
+			<gain>3.14</gain>
+		</pure_gain>
+		
+		<switch name="engine/reverse-2/interlock"> <!-- Locked until 60% open, unlocked until 20% closed -->
+			<default value="engine/reverse-2/interlock"/>
+			<test value="0">
+				/engines/engine[1]/reverser-pos-norm ge 0.6
+			</test>
+			<test value="1">
+				/engines/engine[1]/reverser-pos-norm le 0.2
+			</test>
+		</switch>
+		
+		<fcs_function name="engine/reverse-2/throttle-rev-cmd">
+			<function>
+				<ifthen>
+					<eq>
+						<property>engine/reverse-2/position-norm</property>
+						<value>1</value>
+					</eq>
+					<table>
+						<independentVar lookup="row">/controls/engines/engine[1]/throttle</independentVar>
+						<tableData>
+							0.05  0.05
+							1.00  0.82
+						</tableData>
+					</table>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/controls/engines/engine[1]/reverse-lever">
+			<function>
+				<product>
+					<property>/controls/engines/engine[1]/reverse-engage</property>
+					<table>
+						<independentVar lookup="row">engine/reverse-2/throttle-rev-cmd</independentVar>
+						<tableData>
+							0.05  0.25
+							0.82  1.00
+						</tableData>
+					</table>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<switch name="engine/reverse-2/throttle-rev">
+			<default value="0"/>
+			<test value="0">
+				engine/reverse-2/interlock eq 1
+			</test>
+			<test value="engine/reverse-2/throttle-rev-cmd">
+				/controls/engines/engine[1]/reverse-engage eq 1
+			</test>
+			<clipto>
+				<min>0.05</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<switch name="engine/reverse-2/active">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				engine/reverse-2/position-cmd eq 1
+				engine/reverse-2/position-norm ne 0
+			</test>
+		</switch>
+		
+		<!-- Engine 3 -->
+		<switch name="engine/reverse-3/position-cmd">
+			<default value="0"/>
+			<test value="1">
+				/controls/engines/engine[2]/reverse-engage eq 1
+			</test>
+			<test logic="AND" value="1"> <!-- Don't stow until thrust is reduced enough -->
+				/engines/engine[2]/n1-actual ge 40
+				engine/reverse-3/position-cmd eq 1
+			</test>
+			<output>/controls/engines/engine[2]/reverse-cmd</output>
+		</switch>
+		
+		<switch name="engine/reverse-3/position-rate">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				/systems/hydraulics/sys-3-psi ge 2200
+				/systems/acconfig/autoconfig-running eq 1
+			</test>
+		</switch>
+		
+		<actuator name="engine/reverse-3/position-norm">
+			<input>engine/reverse-3/position-cmd</input>
+			<rate_limit>engine/reverse-3/position-rate</rate_limit>
+			<output>/engines/engine[2]/reverser-pos-norm</output>
+		</actuator>
+		
+		<pure_gain name="propulsion/engine[2]/reverser-angle-rad">
+			<input>engine/reverse-3/position-norm</input>
+			<gain>3.14</gain>
+		</pure_gain>
+		
+		<switch name="engine/reverse-3/interlock"> <!-- Locked until 60% open, unlocked until 20% closed -->
+			<default value="engine/reverse-3/interlock"/>
+			<test value="0">
+				/engines/engine[2]/reverser-pos-norm ge 0.6
+			</test>
+			<test value="1">
+				/engines/engine[2]/reverser-pos-norm le 0.2
+			</test>
+		</switch>
+		
+		<fcs_function name="engine/reverse-3/throttle-rev-cmd">
+			<function>
+				<ifthen>
+					<eq>
+						<property>engine/reverse-3/position-norm</property>
+						<value>1</value>
+					</eq>
+					<table>
+						<independentVar lookup="row">/controls/engines/engine[2]/throttle</independentVar>
+						<tableData>
+							0.05  0.05
+							1.00  0.82
+						</tableData>
+					</table>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/controls/engines/engine[2]/reverse-lever">
+			<function>
+				<product>
+					<property>/controls/engines/engine[2]/reverse-engage</property>
+					<table>
+						<independentVar lookup="row">engine/reverse-3/throttle-rev-cmd</independentVar>
+						<tableData>
+							0.05  0.25
+							0.82  1.00
+						</tableData>
+					</table>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<switch name="engine/reverse-3/throttle-rev">
+			<default value="0"/>
+			<test value="0">
+				engine/reverse-3/interlock eq 1
+			</test>
+			<test value="engine/reverse-3/throttle-rev-cmd">
+				/controls/engines/engine[2]/reverse-engage eq 1
+			</test>
+			<clipto>
+				<min>0.05</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<switch name="engine/reverse-3/active">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				engine/reverse-3/position-cmd eq 1
+				engine/reverse-3/position-norm ne 0
+			</test>
+		</switch>
+	
+	</channel>
+	
+	<channel name="Engine Control">
+		
+		<!-- Engine 1 -->
+		<fcs_function name="engine/limit/man-1-norm-ref"> <!-- Opposite of EPR Calc -->
+			<function>
+				<quotient>
+					<difference>
+						<property>/controls/engines/engine[0]/man-epr</property>
+						<property>engine/epr/c2</property>
+					</difference>
+					<max> <!-- Prevent divide by 0 -->
+						<property>engine/epr/c1</property>
+						<value>0.001</value>
+					</max>
+				</quotient>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/man-1-norm-input"> <!-- Opposite of EPR Calc -->
+			<function>
+				<pow>
+					<table>
+						<independentVar lookup="row">engine/limit/man-1-norm-ref</independentVar>
+						<tableData>
+							0.03     74862.6
+							1.00  11862126.4
+						</tableData>
+					</table>
+					<quotient>
+						<value>1</value>
+						<value>3.5</value>
+					</quotient>
+				</pow>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/man-1-norm">
+			<function>
+				<table>
+					<independentVar lookup="row">engine/limit/man-1-norm-input</independentVar>
+					<tableData>
+						 24.7  0
+						105.0  1
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
+		<switch name="engine/control-1/ats-max">
+			<default value="engine/limit/active-norm"/>
+			<test logic="AND" value="engine/limit/man-1-norm">
+				/instrumentation/epr[0]/power-avail eq 1
+				/controls/engines/engine[0]/man-epr-set eq 1
+				engine/limit/man-1-norm le engine/limit/active-norm
+			</test>
+			<clipto>
+				<min>engine/limit/idle-norm</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<switch name="engine/control-1/throttle-pos">
+			<default value="/controls/engines/engine[0]/throttle"/>
+			<test value="0">
+				engine/reverse-1/active eq 1
+			</test>
+			<test logic="AND" value="engine/ats-cmd-1">
+				/it-autoflight/output/athr eq 1
+				/it-autoflight/output/thr-mode ne 3
+			</test>
+		</switch>
+		
+		<lag_filter name="engine/control-1/throttle-pos-lag">
+			<input>engine/control-1/throttle-pos</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<switch name="engine/control-1/throttle-output">
+			<default value="engine/control-1/throttle-pos"/>
+			<test value="engine/reverse-1/throttle-rev">
+				engine/reverse-1/active eq 1
+			</test>
+			<clipto>
+				<min>engine/limit/idle-norm</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<lag_filter name="engine/control-1/throttle-fdm">
+			<input>engine/control-1/throttle-output</input>
+			<c1>1.0</c1>
+			<output>fcs/throttle-pos-norm[0]</output>
+		</lag_filter>
+		
+		<!-- Engine 2 -->
+		<fcs_function name="engine/limit/man-2-norm-ref"> <!-- Opposite of EPR Calc -->
+			<function>
+				<quotient>
+					<difference>
+						<property>/controls/engines/engine[1]/man-epr</property>
+						<property>engine/epr/c2</property>
+					</difference>
+					<max> <!-- Prevent divide by 0 -->
+						<property>engine/epr/c1</property>
+						<value>0.001</value>
+					</max>
+				</quotient>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/man-2-norm-input"> <!-- Opposite of EPR Calc -->
+			<function>
+				<pow>
+					<table>
+						<independentVar lookup="row">engine/limit/man-2-norm-ref</independentVar>
+						<tableData>
+							0.03     74862.6
+							1.00  11862126.4
+						</tableData>
+					</table>
+					<quotient>
+						<value>1</value>
+						<value>3.5</value>
+					</quotient>
+				</pow>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/man-2-norm">
+			<function>
+				<table>
+					<independentVar lookup="row">engine/limit/man-2-norm-input</independentVar>
+					<tableData>
+						 24.7  0
+						105.0  1
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
+		<switch name="engine/control-2/ats-max">
+			<default value="engine/limit/active-norm"/>
+			<test logic="AND" value="engine/limit/man-2-norm">
+				/instrumentation/epr[1]/power-avail eq 1
+				/controls/engines/engine[1]/man-epr-set eq 1
+				engine/limit/man-2-norm le engine/limit/active-norm
+			</test>
+			<clipto>
+				<min>engine/limit/idle-norm</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<switch name="engine/control-2/throttle-pos">
+			<default value="/controls/engines/engine[1]/throttle"/>
+			<test value="0">
+				engine/reverse-2/active eq 1
+			</test>
+			<test logic="AND" value="engine/ats-cmd-2">
+				/it-autoflight/output/athr eq 1
+				/it-autoflight/output/thr-mode ne 3
+			</test>
+		</switch>
+		
+		<lag_filter name="engine/control-2/throttle-pos-lag">
+			<input>engine/control-2/throttle-pos</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<switch name="engine/control-2/throttle-output">
+			<default value="engine/control-2/throttle-pos"/>
+			<test value="engine/reverse-2/throttle-rev">
+				engine/reverse-2/active eq 1
+			</test>
+			<clipto>
+				<min>engine/limit/idle-norm</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<lag_filter name="engine/control-2/throttle-fdm">
+			<input>engine/control-2/throttle-output</input>
+			<c1>1.0</c1>
+			<output>fcs/throttle-pos-norm[1]</output>
+		</lag_filter>
+		
+		<!-- Engine 3 -->
+		<fcs_function name="engine/limit/man-3-norm-ref"> <!-- Opposite of EPR Calc -->
+			<function>
+				<quotient>
+					<difference>
+						<property>/controls/engines/engine[2]/man-epr</property>
+						<property>engine/epr/c2</property>
+					</difference>
+					<max> <!-- Prevent divide by 0 -->
+						<property>engine/epr/c1</property>
+						<value>0.001</value>
+					</max>
+				</quotient>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/man-3-norm-input"> <!-- Opposite of EPR Calc -->
+			<function>
+				<pow>
+					<table>
+						<independentVar lookup="row">engine/limit/man-3-norm-ref</independentVar>
+						<tableData>
+							0.03     74862.6
+							1.00  11862126.4
+						</tableData>
+					</table>
+					<quotient>
+						<value>1</value>
+						<value>3.5</value>
+					</quotient>
+				</pow>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/limit/man-3-norm">
+			<function>
+				<table>
+					<independentVar lookup="row">engine/limit/man-3-norm-input</independentVar>
+					<tableData>
+						 24.7  0
+						105.0  1
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
+		<switch name="engine/control-3/ats-max">
+			<default value="engine/limit/active-norm"/>
+			<test logic="AND" value="engine/limit/man-3-norm">
+				/instrumentation/epr[2]/power-avail eq 1
+				/controls/engines/engine[2]/man-epr-set eq 1
+				engine/limit/man-3-norm le engine/limit/active-norm
+			</test>
+			<clipto>
+				<min>engine/limit/idle-norm</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<switch name="engine/control-3/throttle-pos">
+			<default value="/controls/engines/engine[2]/throttle"/>
+			<test value="0">
+				engine/reverse-3/active eq 1
+			</test>
+			<test logic="AND" value="engine/ats-cmd-3">
+				/it-autoflight/output/athr eq 1
+				/it-autoflight/output/thr-mode ne 3
+			</test>
+		</switch>
+		
+		<lag_filter name="engine/control-3/throttle-pos-lag">
+			<input>engine/control-3/throttle-pos</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<switch name="engine/control-3/throttle-output">
+			<default value="engine/control-3/throttle-pos"/>
+			<test value="engine/reverse-3/throttle-rev">
+				engine/reverse-3/active eq 1
+			</test>
+			<clipto>
+				<min>engine/limit/idle-norm</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<lag_filter name="engine/control-3/throttle-fdm">
+			<input>engine/control-3/throttle-output</input>
+			<c1>1.0</c1>
+			<output>fcs/throttle-pos-norm[2]</output>
+		</lag_filter>
+		
+		<!-- Comparator -->
+		<fcs_function name="engine/throttle-compare-max">
+			<function>
+				<max> <!-- Don't use clipped -->
+					<property>engine/control-1/throttle-pos-lag</property>
+					<property>engine/control-2/throttle-pos-lag</property>
+					<property>engine/control-3/throttle-pos-lag</property>
+				</max>
+			</function>
+		</fcs_function>
+	
+	</channel>
+	
+	<channel name="Engine Parameters" execrate="2">
+		
+		<lag_filter name="engine/n1-actual-1">
+			<input>/engines/engine[0]/n1</input>
+			<c1>2.25</c1>
+			<output>/engines/engine[0]/n1-actual</output>
+			<output>/engines/engine[4]/n1</output>
+		</lag_filter>
+		
+		<lag_filter name="engine/n1-actual-2">
+			<input>/engines/engine[1]/n1</input>
+			<c1>2.25</c1>
+			<output>/engines/engine[1]/n1-actual</output>
+			<output>/engines/engine[5]/n1</output>
+		</lag_filter>
+		
+		<lag_filter name="engine/n1-actual-3">
+			<input>/engines/engine[2]/n1</input>
+			<c1>2.25</c1>
+			<output>/engines/engine[2]/n1-actual</output>
+			<output>/engines/engine[6]/n1</output>
+		</lag_filter>
+		
+		<fcs_function name="engine/epr-actual-1-ref">
+			<function>
+				<pow>
+					<property>engine/n1-actual-1</property>
+					<value>3.5</value>
+				</pow>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/epr-actual-1-calc">
+			<function>
+				<sum>
+					<product>
+						<table>
+							<independentVar lookup="row">engine/epr-actual-1-ref</independentVar>
+							<tableData>
+								   74862.6  0.03
+								11862126.4  1.00
+							</tableData>
+						</table>
+						<property>engine/epr/c1</property>
+					</product>
+					<property>engine/epr/c2</property>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/epr-actual-1">
+			<function>
+				<interpolate1d>
+					<property>engine/n1-actual-1</property>
+					<value>5</value><interpolate1d> <!-- Eng off EPR -->
+						<property>velocities/mach</property>
+						<value>0.09</value><value>1</value>
+						<value>0.15</value><property>engine/epr/c2</property>
+					</interpolate1d>
+					<value>24.7</value><property>engine/epr-actual-1-calc</property>
+				</interpolate1d>
+			</function>
+			<output>/engines/engine[0]/epr-actual</output>
+		</fcs_function>
+		
+		<fcs_function name="engine/epr-actual-2-ref">
+			<function>
+				<pow>
+					<property>engine/n1-actual-2</property>
+					<value>3.5</value>
+				</pow>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/epr-actual-2-calc">
+			<function>
+				<sum>
+					<product>
+						<table>
+							<independentVar lookup="row">engine/epr-actual-2-ref</independentVar>
+							<tableData>
+								   74862.6  0.03
+								11862126.4  1.00
+							</tableData>
+						</table>
+						<property>engine/epr/c1</property>
+					</product>
+					<property>engine/epr/c2</property>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/epr-actual-2">
+			<function>
+				<interpolate1d>
+					<property>engine/n1-actual-2</property>
+					<value>5</value><interpolate1d> <!-- Eng off EPR -->
+						<property>velocities/mach</property>
+						<value>0.09</value><value>1</value>
+						<value>0.15</value><property>engine/epr/c2</property>
+					</interpolate1d>
+					<value>24.7</value><property>engine/epr-actual-2-calc</property>
+				</interpolate1d>
+			</function>
+			<output>/engines/engine[1]/epr-actual</output>
+		</fcs_function>
+		
+		<fcs_function name="engine/epr-actual-3-ref">
+			<function>
+				<pow>
+					<property>engine/n1-actual-3</property>
+					<value>3.5</value>
+				</pow>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/epr-actual-3-calc">
+			<function>
+				<sum>
+					<product>
+						<table>
+							<independentVar lookup="row">engine/epr-actual-3-ref</independentVar>
+							<tableData>
+								   74862.6  0.03
+								11862126.4  1.00
+							</tableData>
+						</table>
+						<property>engine/epr/c1</property>
+					</product>
+					<property>engine/epr/c2</property>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="engine/epr-actual-3">
+			<function>
+				<interpolate1d>
+					<property>engine/n1-actual-3</property>
+					<value>5</value><interpolate1d> <!-- Eng off EPR -->
+						<property>velocities/mach</property>
+						<value>0.09</value><value>1</value>
+						<value>0.15</value><property>engine/epr/c2</property>
+					</interpolate1d>
+					<value>24.7</value><property>engine/epr-actual-3-calc</property>
+				</interpolate1d>
+			</function>
+			<output>/engines/engine[2]/epr-actual</output>
+		</fcs_function>
+		
+		<switch name="engine/egt-c1">
+			<default value="0.35"/>
+			<test value="1000">
+				/systems/acconfig/autoconfig-running eq 1
+			</test>
+		</switch>
+		
+		<fcs_function name="engine/egt-cmd-1">
+			<function>
+				<sum>
+					<property>propulsion/tat-c</property>
+					<table>
+						<independentVar lookup="row">/engines/engine[0]/n2</independentVar>
+						<independentVar lookup="column">atmosphere/density-altitude</independentVar>
+						<independentVar lookup="table">/controls/engines/engine[0]/cutoff</independentVar>
+						<tableData breakPoint="0">
+							         0    50000
+							 10.0    0    0
+							 35.0  520  390
+							 50.0  515  385
+							 58.9  405  270
+							102.6  610  520
+						</tableData>
+						<tableData breakPoint="1">
+							       0    50000
+							 30.0  0    0
+							 58.9  405  270
+							102.6  610  520
+						</tableData>
+					</table>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<lag_filter name="engine/egt-actual-1">
+			<input>engine/egt-cmd-1</input>
+			<c1>engine/egt-c1</c1>
+			<output>/engines/engine[0]/egt-actual</output>
+		</lag_filter>
+		
+		<fcs_function name="engine/egt-cmd-2">
+			<function>
+				<sum>
+					<property>propulsion/tat-c</property>
+					<table>
+						<independentVar lookup="row">/engines/engine[1]/n2</independentVar>
+						<independentVar lookup="column">atmosphere/density-altitude</independentVar>
+						<independentVar lookup="table">/controls/engines/engine[1]/cutoff</independentVar>
+						<tableData breakPoint="0">
+							         0    50000
+							 10.0    0    0
+							 35.0  520  390
+							 50.0  515  385
+							 58.9  405  270
+							102.6  610  520
+						</tableData>
+						<tableData breakPoint="1">
+							       0    50000
+							 30.0  0    0
+							 58.9  405  270
+							102.6  610  520
+						</tableData>
+					</table>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<lag_filter name="engine/egt-actual-2">
+			<input>engine/egt-cmd-2</input>
+			<c1>engine/egt-c1</c1>
+			<output>/engines/engine[1]/egt-actual</output>
+		</lag_filter>
+		
+		<fcs_function name="engine/egt-cmd-3">
+			<function>
+				<sum>
+					<property>propulsion/tat-c</property>
+					<table>
+						<independentVar lookup="row">/engines/engine[2]/n2</independentVar>
+						<independentVar lookup="column">atmosphere/density-altitude</independentVar>
+						<independentVar lookup="table">/controls/engines/engine[2]/cutoff</independentVar>
+						<tableData breakPoint="0">
+							         0    50000
+							 10.0    0    0
+							 35.0  520  390
+							 50.0  515  385
+							 58.9  405  270
+							102.6  610  520
+						</tableData>
+						<tableData breakPoint="1">
+							       0    50000
+							 30.0  0    0
+							 58.9  405  270
+							102.6  610  520
+						</tableData>
+					</table>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<lag_filter name="engine/egt-actual-3">
+			<input>engine/egt-cmd-3</input>
+			<c1>engine/egt-c1</c1>
+			<output>/engines/engine[2]/egt-actual</output>
+		</lag_filter>
+		
+		<lag_filter name="engine/n2-actual-1">
+			<input>/engines/engine[0]/n2</input>
+			<c1>2.25</c1>
+			<output>/engines/engine[0]/n2-actual</output>
+			<output>/engines/engine[4]/n2</output>
+		</lag_filter>
+		
+		<lag_filter name="engine/n2-actual-2">
+			<input>/engines/engine[1]/n2</input>
+			<c1>2.25</c1>
+			<output>/engines/engine[1]/n2-actual</output>
+			<output>/engines/engine[5]/n2</output>
+		</lag_filter>
+		
+		<lag_filter name="engine/n2-actual-3">
+			<input>/engines/engine[2]/n2</input>
+			<c1>2.25</c1>
+			<output>/engines/engine[2]/n2-actual</output>
+			<output>/engines/engine[6]/n2</output>
+		</lag_filter>
+		
+		<lag_filter name="engine/ff-actual-1">
+			<input>/engines/engine[0]/fuel-flow_pph</input>
+			<c1>3.0</c1>
+			<output>/engines/engine[0]/ff-actual</output>
+		</lag_filter>
+		
+		<lag_filter name="engine/ff-actual-2">
+			<input>/engines/engine[1]/fuel-flow_pph</input>
+			<c1>3.0</c1>
+			<output>/engines/engine[1]/ff-actual</output>
+		</lag_filter>
+		
+		<lag_filter name="engine/ff-actual-3">
+			<input>/engines/engine[2]/fuel-flow_pph</input>
+			<c1>3.0</c1>
+			<output>/engines/engine[2]/ff-actual</output>
+		</lag_filter>
+		
+		<!-- Overspeed Alert -->
+		<fcs_function name="engine/limit/overspeed-epr-input">
+			<function>
+				<sum>
+					<max>
+						<property>engine/epr-actual-1</property>
+						<property>engine/epr-actual-2</property>
+						<property>engine/epr-actual-3</property>
+					</max>
+					<value>-0.03</value>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<switch name="engine/limit/overspeed">
+			<default value="0"/>
+			<test value="1">
+				engine/limit/overspeed-epr-input gt engine/limit/highest
+			</test>
+		</switch>
+	
+	</channel>
+	
+	<channel name="Reverser Status" execrate="8">
+		
+		<switch name="engine/eng-1-rev-state">
+			<default value="0"/>
+			<test value="3"> <!-- REV -->
+				engine/reverse-1/position-norm eq 1
+			</test>
+			<test logic="OR" value="2"> <!-- U/L -->
+				/controls/engines/engine[0]/reverse-engage eq 1
+				engine/reverse-1/position-norm gt 0.2
+			</test>
+			<test logic="OR" value="1"> <!-- PRES -->
+				/controls/engines/engine[0]/reverse-engage eq 1
+				engine/reverse-1/position-norm gt 0
+			</test>
+		</switch>
+		
+		<switch name="engine/eng-2-rev-state">
+			<default value="0"/>
+			<test value="3"> <!-- REV -->
+				engine/reverse-2/position-norm eq 1
+			</test>
+			<test logic="OR" value="2"> <!-- U/L -->
+				/controls/engines/engine[1]/reverse-engage eq 1
+				engine/reverse-2/position-norm gt 0.2
+			</test>
+			<test logic="OR" value="1"> <!-- PRES -->
+				/controls/engines/engine[1]/reverse-engage eq 1
+				engine/reverse-2/position-norm gt 0
+			</test>
+		</switch>
+		
+		<switch name="engine/eng-3-rev-state">
+			<default value="0"/>
+			<test value="3"> <!-- REV -->
+				engine/reverse-3/position-norm eq 1
+			</test>
+			<test logic="OR" value="2"> <!-- U/L -->
+				/controls/engines/engine[2]/reverse-engage eq 1
+				engine/reverse-3/position-norm gt 0.2
+			</test>
+			<test logic="OR" value="1"> <!-- PRES -->
+				/controls/engines/engine[2]/reverse-engage eq 1
+				engine/reverse-3/position-norm gt 0
+			</test>
+		</switch>
+	
+	</channel>
+
+</system>

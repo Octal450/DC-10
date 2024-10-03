@@ -1,0 +1,113 @@
+<?xml version="1" encoding="UTF-8" ?>
+
+<!-- Instrument based off Stby-ALT from Ryan Miller's DC-10 -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>alt.ac</path>
+	
+	<animation>
+		<type>material</type>
+		<object-name>Cylinder</object-name>
+		<object-name>Needle100</object-name>
+		<object-name>Needle1000</object-name>
+		<object-name>Needle10000</object-name>
+		<object-name>inhg</object-name>
+		<emission>
+			<red>0.6</red>
+			<green>0.45</green>
+			<blue>0.3</blue>
+			<factor-prop>controls/lighting/main-panel-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle100</object-name>
+		<property>instrumentation/altimeter/indicated-altitude-ft</property>
+		<factor>0.36</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle1000</object-name>
+		<property>instrumentation/altimeter/indicated-altitude-ft</property>
+		<factor>0.036</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle10000</object-name>
+		<property>instrumentation/altimeter/indicated-altitude-ft</property>
+		<factor>0.0036</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>texrotate</type>
+		<object-name>inhg</object-name>
+		<property>instrumentation/altimeter/setting-inhg</property>
+		<interpolation>
+			<entry><ind>27.90</ind><dep>0</dep></entry>
+			<entry><ind>28</ind><dep>-9.35</dep></entry>
+			<entry><ind>28.5</ind><dep>-59</dep></entry>
+			<entry><ind>29</ind><dep>-109</dep></entry>
+			<entry><ind>29.5</ind><dep>-159.5</dep></entry>
+			<entry><ind>29.9</ind><dep>-200</dep></entry>
+			<entry><ind>30</ind><dep>-210</dep></entry>
+			<entry><ind>30.5</ind><dep>-261</dep></entry>
+			<entry><ind>31</ind><dep>-310</dep></entry>
+			<entry><ind>31.4</ind><dep>-350</dep></entry>
+		</interpolation>
+		<center>
+			<x>0.5</x>
+			<y>0.5</y>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>Knob</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/altimeter/setting-inhg</property>
+				<step>0.01</step>
+				<max>35</max>
+			</binding>	
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/altimeter/setting-inhg</property>
+				<step>-0.01</step>
+				<min>25</min>
+			</binding>		
+		</action>
+	</animation>
+
+</PropertyList>

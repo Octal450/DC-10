@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Pedals from MD-11 -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>res/pedals.ac</path>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>pedals.left</object-name>
+		<property>controls/cockpit/rudder-pedal</property>
+		<factor>0.08</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>pedals.right</object-name>
+		<property>controls/cockpit/rudder-pedal</property>
+		<factor>-0.08</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+
+<!-- 3D/Textures: Copyright (c) 2023 SP-NTX -->
+<!-- Programming: Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>tas_sat.ac</path>
+	
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>text</object-name>
+	</effect>
+	
+	<animation>
+		<type>material</type>
+		<object-name>LightingGroup</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>0.6</green>
+			<blue>0.3</blue>
+			<factor-prop>controls/lighting/center-panel-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>tas.flag</object-name>
+		<object-name>sat.flag</object-name>
+		<condition>
+			<not><property>instrumentation/tas-sat/power-avail</property></not>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>tat.btn</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/tas-sat/tat-btn</property>
+				<value>1</value>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>libraries.Sound.btn1();</script>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>instrumentation/tas-sat/tat-btn</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>tat.btn</object-name>
+		<property>instrumentation/tas-sat/tat-btn</property>
+		<factor>-0.001</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>tas.hundreds</object-name>
+		<property>instrumentation/tas-sat/tas-d100</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<scroll>0.01</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>tas.tens</object-name>
+		<property>instrumentation/tas-sat/tas-d10</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<scroll>0.1</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>tas.ones</object-name>
+		<property>instrumentation/tas-sat/tas-d1</property>
+		<factor>0.1</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>sat.polarity</object-name>
+		<property>instrumentation/tas-sat/sat-polarity</property>
+		<factor>-0.1</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>sat.tens</object-name>
+		<property>instrumentation/tas-sat/sat-d10</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<scroll>0.1</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>sat.ones</object-name>
+		<property>instrumentation/tas-sat/sat-d1</property>
+		<factor>0.1</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

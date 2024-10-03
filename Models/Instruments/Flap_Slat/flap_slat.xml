@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+
+<!-- 3D/Textures: Copyright (c) 2023 SP-NTX -->
+<!-- Programming: Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>flap_slat.ac</path>
+	
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>text</object-name>
+		<object-name>text.1</object-name>
+		<object-name>text.2</object-name>
+		<object-name>to.light.text</object-name>
+		<object-name>land.light.text</object-name>
+		<object-name>disagree.text.light</object-name>
+	</effect>
+	
+	<animation>
+		<type>material</type>
+		<object-name>LightingGroup</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>0.6</green>
+			<blue>0.3</blue>
+			<factor-prop>controls/lighting/center-panel-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>disagree.flag</object-name>
+		<object-name>disagree.flag1</object-name>
+		<property>instrumentation/flap-slat/flap-disagree</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0.01234</dep></entry>
+			<entry><ind>1</ind><dep>0.00000</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>left.cmd</object-name>
+		<object-name>right.cmd</object-name>
+		<property>instrumentation/flap-slat/flap-cmd</property>
+		<interpolation>
+			<entry><ind> 0</ind><dep>0.00000</dep></entry>
+			<entry><ind>25</ind><dep>0.04392</dep></entry>
+			<entry><ind>50</ind><dep>0.06209</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>left.indicator</object-name>
+		<object-name>right.indicator</object-name>
+		<property>instrumentation/flap-slat/flap-pos</property>
+		<factor>1</factor>
+		<interpolation>
+			<entry><ind> 0</ind><dep>0.0000</dep></entry>
+			<entry><ind>25</ind><dep>0.2353</dep></entry>
+			<entry><ind>50</ind><dep>0.3326</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>to.light.text</object-name>
+		<condition>
+			<or>
+				<property>controls/switches/annun-test</property>
+				<equals>
+					<property>instrumentation/flap-slat/slat</property>
+					<value>1</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>disagree.light.text</object-name>
+		<condition>
+			<or>
+				<property>controls/switches/annun-test</property>
+				<equals>
+					<property>instrumentation/flap-slat/slat</property>
+					<value>2</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>land.light.text</object-name>
+		<condition>
+			<or>
+				<property>controls/switches/annun-test</property>
+				<equals>
+					<property>instrumentation/flap-slat/slat</property>
+					<value>3</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+
+</PropertyList>
