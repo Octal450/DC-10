@@ -682,7 +682,7 @@
 					<table>
 						<independentVar lookup="row">/controls/engines/engine[0]/throttle</independentVar>
 						<tableData>
-							0.05  0.05
+							0.05  0.00
 							1.00  0.82
 						</tableData>
 					</table>
@@ -714,10 +714,6 @@
 			<test value="engine/reverse-1/throttle-rev-cmd">
 				/controls/engines/engine[0]/reverse-engage eq 1
 			</test>
-			<clipto>
-				<min>0.05</min>
-				<max>1.0</max>
-			</clipto>
 		</switch>
 		
 		<switch name="engine/reverse-1/active">
@@ -788,7 +784,7 @@
 					<table>
 						<independentVar lookup="row">/controls/engines/engine[1]/throttle</independentVar>
 						<tableData>
-							0.05  0.05
+							0.05  0.00
 							1.00  0.82
 						</tableData>
 					</table>
@@ -820,10 +816,6 @@
 			<test value="engine/reverse-2/throttle-rev-cmd">
 				/controls/engines/engine[1]/reverse-engage eq 1
 			</test>
-			<clipto>
-				<min>0.05</min>
-				<max>1.0</max>
-			</clipto>
 		</switch>
 		
 		<switch name="engine/reverse-2/active">
@@ -886,7 +878,7 @@
 					<table>
 						<independentVar lookup="row">/controls/engines/engine[2]/throttle</independentVar>
 						<tableData>
-							0.05  0.05
+							0.05  0.00
 							1.00  0.82
 						</tableData>
 					</table>
@@ -918,10 +910,6 @@
 			<test value="engine/reverse-3/throttle-rev-cmd">
 				/controls/engines/engine[2]/reverse-engage eq 1
 			</test>
-			<clipto>
-				<min>0.05</min>
-				<max>1.0</max>
-			</clipto>
 		</switch>
 		
 		<switch name="engine/reverse-3/active">
