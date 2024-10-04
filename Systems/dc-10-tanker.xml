@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 
-<!-- McDonnell Douglas KC-10 Tanker -->
+<!-- McDonnell Douglas DC-10 Tanker -->
 <!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
 
-<system name="KC-10: Tanker">
+<system name="DC-10: Tanker">
 	
-	<channel name="Boom">
+	<channel name="Refueling Logic">
 		
 		<switch name="fcs/boom-rate">
 			<default value="0"/>
@@ -24,8 +24,18 @@
 		<lag_filter name="fcs/boom-lag">
 			<input>fcs/boom-pos</input>
 			<c1>5</c1>
-			<output>/engines/engine[7]/n1</output>
+			<output>fcs/boom-final</output> <!-- So it can be overidden by flight recorder -->
+			<output>/engines/engine[7]/n1</output> <!--  Backwards compatibility -->
 		</lag_filter>
+		
+		<switch name="fcs/tanker-active">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				fcs/boom-lag ge 0.95
+				/options/drogues-shown eq 1
+			</test>
+			<output>/tanker</output> <!-- Sets this property for MP -->
+		</switch>
 	
 	</channel>
 

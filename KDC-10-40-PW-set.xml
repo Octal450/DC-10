@@ -12,7 +12,7 @@
 			<default>
 				<menu n="101">
 					<item n="2">
-						<label>Toggle Drogue</label>
+						<label>Toggle Drogues</label>
 						<binding>
 							<command>property-toggle</command>
 							<property>/options/drogues-shown</property>

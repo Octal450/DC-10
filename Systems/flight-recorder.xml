@@ -181,6 +181,14 @@
 				<type>float</type>
 				<property>/fdm/jsbsim/hydraulics/spoiler-r5/final-deg</property>
 			</signal>
+			<signal>
+				<type>float</type>
+				<property>/fdm/jsbsim/fcs/boom-final</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property>/options/drogues-shown</property>
+			</signal>
 		</signals>
 	</config>
 

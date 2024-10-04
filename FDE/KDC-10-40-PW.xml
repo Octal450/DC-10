@@ -226,7 +226,7 @@
 	<system file="dc-10-ignition"/>
 	<system file="dc-10-pw-engine-tci"/>
 	<system file="dc-10-apu"/>
-	<system file="kc-10-tanker"/>
+	<system file="dc-10-tanker"/>
 	<system file="dc-10-misc"/>
 	<system file="dc-10-performance"/>
 	<system file="dc-10-cockpit"/>

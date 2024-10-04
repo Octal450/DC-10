@@ -242,7 +242,7 @@
 		<name>Boom rotate</name>
 		<type>rotate</type>
 		<object-name>BoomGroup</object-name>
-		<property>engines/engine[7]/n1</property> <!-- Hijack the N1 property of engine 7 to send boom position over MP -->
+		<property>sim/multiplay/generic/float[13]</property>
 		<interpolation>
 			<entry><ind>0.0</ind><dep> 0</dep></entry>
 			<entry><ind>0.7</ind><dep>40</dep></entry>
@@ -264,7 +264,7 @@
 		<name>Boom extend</name>
 		<type>translate</type>
 		<object-name>Hose</object-name>
-		<property>engines/engine[7]/n1</property> <!-- Hijack the N1 property of engine 7 to send boom position over MP -->
+		<property>sim/multiplay/generic/float[13]</property>
 		<interpolation>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
 			<entry><ind>0.7</ind><dep>0.0</dep></entry>

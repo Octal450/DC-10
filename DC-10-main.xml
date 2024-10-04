@@ -205,6 +205,7 @@
 				<float n="10" alias="/gear/gear[0]/steering-norm"/>
 				<float n="11" alias="/fdm/jsbsim/fcs/slat-pos-norm"/>
 				<float n="12" alias="/sim/model/wingflex"/>
+				<float n="13" alias="/fdm/jsbsim/fcs/boom-final"/>
 				<int n="0" alias="/sim/model/lights/strobe/state"/>
 				<int n="1" alias="/sim/model/lights/beacon/state"/>
 				<int n="2" alias="/controls/lighting/landing-lights-n"/>
@@ -1541,6 +1542,8 @@
 			<shaking type="double">0</shaking>
 		</shake>
 	</systems>
+	
+	<tanker type="bool">0</tanker> <!-- Set by refueling logic -->
 	
 	<nasal n="0">
 		<pts>
