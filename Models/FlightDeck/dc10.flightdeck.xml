@@ -1148,5 +1148,155 @@
 			</mod-up>
 		</action>
 	</animation>
+	
+	<!-- No button lights without power! -->
+	<animation>
+		<type>select</type>
+		<object-name>lg.ctr.green</object-name>
+		<object-name>lg.ctr.red</object-name>
+		<object-name>lg.left.green</object-name>
+		<object-name>lg.left.red</object-name>
+		<object-name>lg.nose.green</object-name>
+		<object-name>lg.nose.red</object-name>
+		<object-name>lg.right.green</object-name>
+		<object-name>lg.right.red</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>systems/electrical/bus/dc-bat</property>
+				<value>24</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<!-- Gear indications -->
+	<animation>
+		<type>select</type>
+		<object-name>lg.nose.green</object-name>
+		<condition>
+			<equals>
+				<property>fdm/jsbsim/gear/unit[0]/status</property>
+				<value>2</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>lg.nose.red</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>fdm/jsbsim/gear/unit[0]/status</property>
+					<value>1</value>
+				</equals>
+				<equals>
+					<property>controls/switches/annun-test</property>
+					<value>1</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>lg.left.green</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>fdm/jsbsim/gear/unit[1]/status</property>
+					<value>2</value>
+				</equals>
+				<equals>
+					<property>controls/switches/annun-test</property>
+					<value>1</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>lg.left.red</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>fdm/jsbsim/gear/unit[1]/status</property>
+					<value>1</value>
+				</equals>
+				<equals>
+					<property>controls/switches/annun-test</property>
+					<value>1</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>lg.right.green</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>fdm/jsbsim/gear/unit[2]/status</property>
+					<value>2</value>
+				</equals>
+				<equals>
+					<property>controls/switches/annun-test</property>
+					<value>1</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>lg.right.red</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>fdm/jsbsim/gear/unit[2]/status</property>
+					<value>1</value>
+				</equals>
+				<equals>
+					<property>controls/switches/annun-test</property>
+					<value>1</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>lg.ctr.green</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>fdm/jsbsim/gear/unit[3]/status</property>
+					<value>2</value>
+				</equals>
+				<equals>
+					<property>controls/switches/annun-test</property>
+					<value>1</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>lg.ctr.red</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>fdm/jsbsim/gear/unit[3]/status</property>
+					<value>1</value>
+				</equals>
+				<equals>
+					<property>controls/switches/annun-test</property>
+					<value>1</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
 
 </PropertyList>
