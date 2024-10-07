@@ -186,7 +186,7 @@
 		
 		<fcs_function name="fcc/speeds/v2-target"> <!-- Target V2 for TAKE OFF or G/A -->
 			<function>
-				<integer>
+				<floor>
 					<sum>
 						<ifthen>
 							<eq>
@@ -204,7 +204,7 @@
 						</ifthen>
 						<value>0.5</value>
 					</sum>
-				</integer>
+				</floor>
 			</function>
 		</fcs_function>
 		

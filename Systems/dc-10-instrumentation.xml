@@ -42,7 +42,7 @@
 		
 		<fcs_function name="/instrumentation/airspeed-indicator[0]/mach-digit-cmd">
 			<function>
-				<integer>
+				<floor>
 					<sum>
 						<product>
 							<property>/instrumentation/airspeed-indicator[0]/mach-input</property>
@@ -50,7 +50,7 @@
 						</product>
 						<value>0.5</value>
 					</sum>
-				</integer>
+				</floor>
 			</function>
 			<clipto>
 				<min>150</min>
@@ -159,7 +159,7 @@
 		
 		<fcs_function name="/instrumentation/airspeed-indicator[1]/mach-digit-cmd">
 			<function>
-				<integer>
+				<floor>
 					<sum>
 						<product>
 							<property>/instrumentation/airspeed-indicator[1]/mach-input</property>
@@ -167,7 +167,7 @@
 						</product>
 						<value>0.5</value>
 					</sum>
-				</integer>
+				</floor>
 			</function>
 			<clipto>
 				<min>150</min>
@@ -1607,7 +1607,7 @@
 					</eq>
 					<value>8888</value>
 					<quotient>
-						<integer>
+						<floor>
 							<sum>
 								<product>
 									<property>/instrumentation/dme[0]/indicated-distance-nm</property>
@@ -1615,7 +1615,7 @@
 								</product>
 								<value>0.5</value>
 							</sum>
-						</integer>
+						</floor>
 						<value>10</value>
 					</quotient>
 				</ifthen>
@@ -1647,7 +1647,7 @@
 					</eq>
 					<value>8888</value>
 					<quotient>
-						<integer>
+						<floor>
 							<sum>
 								<product>
 									<property>/instrumentation/dme[1]/indicated-distance-nm</property>
@@ -1655,7 +1655,7 @@
 								</product>
 								<value>0.5</value>
 							</sum>
-						</integer>
+						</floor>
 						<value>10</value>
 					</quotient>
 				</ifthen>
@@ -1781,9 +1781,9 @@
 				<product>
 					<difference>
 						<property>/instrumentation/epr[0]/epr-input</property>
-						<integer>
+						<floor>
 							<property>/instrumentation/epr[0]/epr-input</property>
-						</integer>
+						</floor>
 					</difference>
 					<value>10</value>
 				</product>
@@ -1867,9 +1867,9 @@
 				<product>
 					<difference>
 						<property>/instrumentation/epr[1]/epr-input</property>
-						<integer>
+						<floor>
 							<property>/instrumentation/epr[1]/epr-input</property>
-						</integer>
+						</floor>
 					</difference>
 					<value>10</value>
 				</product>
@@ -1953,9 +1953,9 @@
 				<product>
 					<difference>
 						<property>/instrumentation/epr[2]/epr-input</property>
-						<integer>
+						<floor>
 							<property>/instrumentation/epr[2]/epr-input</property>
-						</integer>
+						</floor>
 					</difference>
 					<value>10</value>
 				</product>
@@ -2036,7 +2036,7 @@
 		<fcs_function name="/instrumentation/n[0]/n1-round">
 			<function>
 				<quotient>
-					<integer>
+					<floor>
 						<sum>
 							<product>
 								<property>/instrumentation/n[0]/n1-input</property>
@@ -2044,7 +2044,7 @@
 							</product>
 							<value>0.5</value>
 						</sum>
-					</integer>
+					</floor>
 					<value>10</value>
 				</quotient>
 			</function>
@@ -2111,7 +2111,7 @@
 		<fcs_function name="/instrumentation/n[0]/n2-round">
 			<function>
 				<quotient>
-					<integer>
+					<floor>
 						<sum>
 							<product>
 								<property>/instrumentation/n[0]/n2-input</property>
@@ -2119,7 +2119,7 @@
 							</product>
 							<value>0.5</value>
 						</sum>
-					</integer>
+					</floor>
 					<value>10</value>
 				</quotient>
 			</function>
@@ -2174,7 +2174,7 @@
 		<fcs_function name="/instrumentation/n[1]/n1-round">
 			<function>
 				<quotient>
-					<integer>
+					<floor>
 						<sum>
 							<product>
 								<property>/instrumentation/n[1]/n1-input</property>
@@ -2182,7 +2182,7 @@
 							</product>
 							<value>0.5</value>
 						</sum>
-					</integer>
+					</floor>
 					<value>10</value>
 				</quotient>
 			</function>
@@ -2249,7 +2249,7 @@
 		<fcs_function name="/instrumentation/n[1]/n2-round">
 			<function>
 				<quotient>
-					<integer>
+					<floor>
 						<sum>
 							<product>
 								<property>/instrumentation/n[1]/n2-input</property>
@@ -2257,7 +2257,7 @@
 							</product>
 							<value>0.5</value>
 						</sum>
-					</integer>
+					</floor>
 					<value>10</value>
 				</quotient>
 			</function>
@@ -2312,7 +2312,7 @@
 		<fcs_function name="/instrumentation/n[2]/n1-round">
 			<function>
 				<quotient>
-					<integer>
+					<floor>
 						<sum>
 							<product>
 								<property>/instrumentation/n[2]/n1-input</property>
@@ -2320,7 +2320,7 @@
 							</product>
 							<value>0.5</value>
 						</sum>
-					</integer>
+					</floor>
 					<value>10</value>
 				</quotient>
 			</function>
@@ -2387,7 +2387,7 @@
 		<fcs_function name="/instrumentation/n[2]/n2-round">
 			<function>
 				<quotient>
-					<integer>
+					<floor>
 						<sum>
 							<product>
 								<property>/instrumentation/n[2]/n2-input</property>
@@ -2395,7 +2395,7 @@
 							</product>
 							<value>0.5</value>
 						</sum>
-					</integer>
+					</floor>
 					<value>10</value>
 				</quotient>
 			</function>
@@ -2457,12 +2457,12 @@
 		
 		<fcs_function name="/instrumentation/egt[0]/egt-round">
 			<function>
-				<integer>
+				<floor>
 					<sum>
 						<property>/instrumentation/egt[0]/egt-input</property>
 						<value>0.5</value>
 					</sum>
-				</integer>
+				</floor>
 			</function>
 		</fcs_function>
 		
@@ -2526,12 +2526,12 @@
 		
 		<fcs_function name="/instrumentation/egt[1]/egt-round">
 			<function>
-				<integer>
+				<floor>
 					<sum>
 						<property>/instrumentation/egt[1]/egt-input</property>
 						<value>0.5</value>
 					</sum>
-				</integer>
+				</floor>
 			</function>
 		</fcs_function>
 		
@@ -2595,12 +2595,12 @@
 		
 		<fcs_function name="/instrumentation/egt[2]/egt-round">
 			<function>
-				<integer>
+				<floor>
 					<sum>
 						<property>/instrumentation/egt[2]/egt-input</property>
 						<value>0.5</value>
 					</sum>
-				</integer>
+				</floor>
 			</function>
 		</fcs_function>
 		
@@ -2672,7 +2672,7 @@
 		<fcs_function name="/instrumentation/ff[0]/ff-round">
 			<function>
 				<product>
-					<integer>
+					<floor>
 						<sum>
 							<quotient>
 								<property>/instrumentation/ff[0]/ff-input-digit</property>
@@ -2680,7 +2680,7 @@
 							</quotient>
 							<value>0.5</value>
 						</sum>
-					</integer>
+					</floor>
 					<value>10</value>
 				</product>
 			</function>
@@ -2723,7 +2723,7 @@
 		<fcs_function name="/instrumentation/ff[1]/ff-round">
 			<function>
 				<product>
-					<integer>
+					<floor>
 						<sum>
 							<quotient>
 								<property>/instrumentation/ff[1]/ff-input-digit</property>
@@ -2731,7 +2731,7 @@
 							</quotient>
 							<value>0.5</value>
 						</sum>
-					</integer>
+					</floor>
 					<value>10</value>
 				</product>
 			</function>
@@ -2774,7 +2774,7 @@
 		<fcs_function name="/instrumentation/ff[2]/ff-round">
 			<function>
 				<product>
-					<integer>
+					<floor>
 						<sum>
 							<quotient>
 								<property>/instrumentation/ff[2]/ff-input-digit</property>
@@ -2782,7 +2782,7 @@
 							</quotient>
 							<value>0.5</value>
 						</sum>
-					</integer>
+					</floor>
 					<value>10</value>
 				</product>
 			</function>
@@ -2814,14 +2814,14 @@
 		
 		<fcs_function name="/instrumentation/tci/tat-fixed">
 			<function>
-				<integer>
+				<floor>
 					<sum>
 						<abs>
 							<property>/instrumentation/tci/tat-cmd</property>
 						</abs>
 						<value>0.5</value> <!-- Make it round correctly -->
 					</sum>
-				</integer>
+				</floor>
 			</function>
 		</fcs_function>
 		
@@ -2887,12 +2887,12 @@
 							<property>/instrumentation/tci/limit-n1-active</property>
 							<value>1000</value>
 						</quotient>
-						<integer>
+						<floor>
 							<quotient>
 								<property>/instrumentation/tci/limit-n1-active</property>
 								<value>1000</value>
 							</quotient>
-						</integer>
+						</floor>
 					</difference>
 					<value>10</value>
 				</product>
@@ -2907,12 +2907,12 @@
 							<property>/instrumentation/tci/limit-n1-active</property>
 							<value>100</value>
 						</quotient>
-						<integer>
+						<floor>
 							<quotient>
 								<property>/instrumentation/tci/limit-n1-active</property>
 								<value>100</value>
 							</quotient>
-						</integer>
+						</floor>
 					</difference>
 					<value>10</value>
 				</product>
@@ -2927,12 +2927,12 @@
 							<property>/instrumentation/tci/limit-n1-active</property>
 							<value>10</value>
 						</quotient>
-						<integer>
+						<floor>
 							<quotient>
 								<property>/instrumentation/tci/limit-n1-active</property>
 								<value>10</value>
 							</quotient>
-						</integer>
+						</floor>
 					</difference>
 					<value>10</value>
 				</product>
@@ -2973,9 +2973,9 @@
 				<product>
 					<difference>
 						<property>/instrumentation/tci/limit-epr-active</property>
-						<integer>
+						<floor>
 							<property>/instrumentation/tci/limit-epr-active</property>
-						</integer>
+						</floor>
 					</difference>
 					<value>10</value>
 				</product>
@@ -3076,18 +3076,18 @@
 		
 		<fcs_function name="/instrumentation/assumed-temp/input-d10">
 			<function>
-				<integer>
+				<floor>
 					<quotient>
 						<property>/instrumentation/assumed-temp/input-fixed</property>
 						<value>10</value>
 					</quotient>
-				</integer>
+				</floor>
 			</function>
 		</fcs_function>
 		
 		<fcs_function name="/instrumentation/assumed-temp/input-d1">
 			<function>
-				<integer>
+				<floor>
 					<product>
 						<fraction>
 							<quotient>
@@ -3097,7 +3097,7 @@
 						</fraction>
 						<value>10</value>
 					</product>
-				</integer>
+				</floor>
 			</function>
 		</fcs_function>
 		
@@ -3176,12 +3176,12 @@
 		
 		<fcs_function name="/instrumentation/tas-sat/tas-cmd">
 			<function>
-				<integer>
+				<floor>
 					<sum>
 						<property>/instrumentation/tas-sat/tas-input</property>
 						<value>0.5</value>
 					</sum>
-				</integer>
+				</floor>
 			</function>
 			<clipto>
 				<min>130</min>
@@ -3244,14 +3244,14 @@
 		
 		<fcs_function name="/instrumentation/tas-sat/sat-fixed">
 			<function>
-				<integer>
+				<floor>
 					<sum>
 						<abs>
 							<property>/instrumentation/tas-sat/sat-cmd</property>
 						</abs>
 						<value>0.5</value> <!-- Make it round correctly -->
 					</sum>
-				</integer>
+				</floor>
 			</function>
 		</fcs_function>
 		

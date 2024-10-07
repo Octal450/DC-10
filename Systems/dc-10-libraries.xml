@@ -193,7 +193,7 @@
 		
 		<fcs_function name="libraries/blink-med">
 			<function>
-				<integer>
+				<floor>
 					<mod>
 						<product>
 							<property>sim-time-sec</property>
@@ -201,13 +201,13 @@
 						</product>
 						<value>2</value>
 					</mod>
-				</integer>
+				</floor>
 			</function>
 		</fcs_function>
 		
 		<fcs_function name="libraries/blink-med-2">
 			<function>
-				<integer>
+				<floor>
 					<mod>
 						<product>
 							<sum>
@@ -218,7 +218,7 @@
 						</product>
 						<value>2</value>
 					</mod>
-				</integer>
+				</floor>
 			</function>
 		</fcs_function>
 		

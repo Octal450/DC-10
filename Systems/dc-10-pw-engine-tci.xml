@@ -174,7 +174,7 @@
 		<fcs_function name="engine/limit/takeoff">
 			<function>
 				<quotient>
-					<integer>
+					<floor>
 						<sum>
 							<product>
 								<property>engine/limit/takeoff-ref</property>
@@ -182,7 +182,7 @@
 							</product>
 							<value>0.5</value> <!-- Make it round correctly -->
 						</sum>
-					</integer>
+					</floor>
 					<value>1000</value>
 				</quotient>
 			</function>
@@ -226,7 +226,7 @@
 		<fcs_function name="engine/limit/altn-takeoff">
 			<function>
 				<quotient>
-					<integer>
+					<floor>
 						<sum>
 							<product>
 								<property>engine/limit/altn-takeoff-ref</property>
@@ -234,7 +234,7 @@
 							</product>
 							<value>0.5</value> <!-- Make it round correctly -->
 						</sum>
-					</integer>
+					</floor>
 					<value>1000</value>
 				</quotient>
 			</function>
@@ -279,7 +279,7 @@
 		<fcs_function name="engine/limit/go-around">
 			<function>
 				<quotient>
-					<integer>
+					<floor>
 						<sum>
 							<product>
 								<property>engine/limit/go-around-ref</property>
@@ -287,7 +287,7 @@
 							</product>
 							<value>0.5</value> <!-- Make it round correctly -->
 						</sum>
-					</integer>
+					</floor>
 					<value>1000</value>
 				</quotient>
 			</function>
@@ -332,7 +332,7 @@
 		<fcs_function name="engine/limit/mct">
 			<function>
 				<quotient>
-					<integer>
+					<floor>
 						<sum>
 							<product>
 								<property>engine/limit/mct-ref</property>
@@ -340,7 +340,7 @@
 							</product>
 							<value>0.5</value> <!-- Make it round correctly -->
 						</sum>
-					</integer>
+					</floor>
 					<value>1000</value>
 				</quotient>
 			</function>
@@ -385,7 +385,7 @@
 		<fcs_function name="engine/limit/climb">
 			<function>
 				<quotient>
-					<integer>
+					<floor>
 						<sum>
 							<product>
 								<property>engine/limit/climb-ref</property>
@@ -393,7 +393,7 @@
 							</product>
 							<value>0.5</value> <!-- Make it round correctly -->
 						</sum>
-					</integer>
+					</floor>
 					<value>1000</value>
 				</quotient>
 			</function>
@@ -438,7 +438,7 @@
 		<fcs_function name="engine/limit/altn-climb">
 			<function>
 				<quotient>
-					<integer>
+					<floor>
 						<sum>
 							<product>
 								<property>engine/limit/altn-climb-ref</property>
@@ -446,7 +446,7 @@
 							</product>
 							<value>0.5</value> <!-- Make it round correctly -->
 						</sum>
-					</integer>
+					</floor>
 					<value>1000</value>
 				</quotient>
 			</function>
