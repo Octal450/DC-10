@@ -8,9 +8,6 @@
 	<property value="0">fcc/aileron-out-enable</property>
 	<property value="0">fcc/cws-roll/input</property>
 	
-	<property value="160">fcc/speeds/v2-plus-10</property>
-	<property value="356">fcc/speeds/vmax</property>
-	
 	<!-- Properties for tuning -->
 	<property value="0">fcc/cws-roll/p-gain-tune</property>
 	<property value="0">fcc/cws-roll/i-gain-tune</property>
@@ -232,6 +229,15 @@
 			</test>
 		</switch>
 		
+		<pure_gain name="fcc/speeds/vmax">
+			<input>fcc/speeds/vmo-mmo</input>
+			<gain>1.0</gain>
+			<clipto>
+				<min>100</min>
+				<max>100000</max>
+			</clipto>
+		</pure_gain>
+		
 		<fcs_function name="fcc/nlg-timer-1/wow-timer-cmd">
 			<function>
 				<sum> <!-- Inverter, so that it is 1 at sim start -->
@@ -295,7 +301,7 @@
 			</function>
 			<clipto>
 				<min>0</min>
-				<max>fcc/speeds/vmo-mmo</max>
+				<max>fcc/speeds/vmax</max>
 			</clipto>
 		</fcs_function>
 		
@@ -321,7 +327,7 @@
 			</function>
 			<clipto>
 				<min>fcc/speeds/vss</min>
-				<max>100000</max>
+				<max>fcc/speeds/vmax</max>
 			</clipto>
 		</fcs_function>
 		
