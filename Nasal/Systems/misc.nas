@@ -270,7 +270,7 @@ var FCC = {
 
 # Flight Control Systems
 var FCS = {
-	slatCmd: props.globals.getNode("/systems/fcs/slats/cmd"),
+	slatsCmd: props.globals.getNode("/systems/fcs/slats/cmd"),
 };
 
 # Landing Gear

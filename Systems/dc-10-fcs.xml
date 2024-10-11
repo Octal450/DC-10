@@ -916,7 +916,7 @@
 	
 	<channel name="Nose Gear">
 		
-		<switch name="gear/unit[0]/rate-incr">
+		<switch name="/systems/gear/unit[0]/rate-incr">
 			<default value="0"/>
 			<test logic="AND" value="1000">
 				/systems/acconfig/autoconfig-running eq 1
@@ -934,7 +934,7 @@
 			</test>
 		</switch>
 		
-		<switch name="gear/unit[0]/rate-decr">
+		<switch name="/systems/gear/unit[0]/rate-decr">
 			<default value="0"/>
 			<test logic="AND" value="1000">
 				/systems/acconfig/autoconfig-running eq 1
@@ -948,10 +948,10 @@
 			</test>
 		</switch>
 		
-		<actuator name="gear/unit[0]/pos-norm-actuator">
+		<actuator name="/systems/gear/unit[0]/pos-actuator">
 			<input>/controls/gear/lever</input>
-			<rate_limit sense="incr">gear/unit[0]/rate-incr</rate_limit>
-			<rate_limit sense="decr">gear/unit[0]/rate-decr</rate_limit>
+			<rate_limit sense="incr">/systems/gear/unit[0]/rate-incr</rate_limit>
+			<rate_limit sense="decr">/systems/gear/unit[0]/rate-decr</rate_limit>
 			<output>gear/unit[0]/pos-norm</output>
 		</actuator>
 	
@@ -959,7 +959,7 @@
 	
 	<channel name="Left Main Gear">
 		
-		<switch name="gear/unit[1]/rate-incr">
+		<switch name="/systems/gear/unit[1]/rate-incr">
 			<default value="0"/>
 			<test logic="AND" value="1000">
 				/systems/acconfig/autoconfig-running eq 1
@@ -977,7 +977,7 @@
 			</test>
 		</switch>
 		
-		<switch name="gear/unit[1]/rate-decr">
+		<switch name="/systems/gear/unit[1]/rate-decr">
 			<default value="0"/>
 			<test logic="AND" value="1000">
 				/systems/acconfig/autoconfig-running eq 1
@@ -991,14 +991,14 @@
 			</test>
 		</switch>
 		
-		<actuator name="gear/unit[1]/pos-norm-actuator">
+		<actuator name="/systems/gear/unit[1]/pos-actuator">
 			<input>/controls/gear/lever</input>
-			<rate_limit sense="incr">gear/unit[1]/rate-incr</rate_limit>
-			<rate_limit sense="decr">gear/unit[1]/rate-decr</rate_limit>
+			<rate_limit sense="incr">/systems/gear/unit[1]/rate-incr</rate_limit>
+			<rate_limit sense="decr">/systems/gear/unit[1]/rate-decr</rate_limit>
 			<output>gear/unit[1]/pos-norm</output>
 		</actuator>
 		
-		<switch name="/gear/gear[1]/angle-deg-cmd">
+		<switch name="/systems/gear/unit[1]/angle-deg-cmd">
 			<default value="0"/>
 			<test logic="AND" value="/orientation/pitch-deg">
 				gear/unit[1]/WOW eq 1
@@ -1009,8 +1009,8 @@
 			</clipto>
 		</switch>
 		
-		<lag_filter name="/gear/gear[1]/angle-deg">
-			<input>/gear/gear[1]/angle-deg-cmd</input>
+		<lag_filter name="/systems/gear/unit[1]/angle-deg">
+			<input>/systems/gear/unit[1]/angle-deg-cmd</input>
 			<c1>20</c1>
 		</lag_filter>
 	
@@ -1018,7 +1018,7 @@
 	
 	<channel name="Right Main Gear">
 		
-		<switch name="gear/unit[2]/rate-incr">
+		<switch name="/systems/gear/unit[2]/rate-incr">
 			<default value="0"/>
 			<test logic="AND" value="1000">
 				/systems/acconfig/autoconfig-running eq 1
@@ -1036,7 +1036,7 @@
 			</test>
 		</switch>
 		
-		<switch name="gear/unit[2]/rate-decr">
+		<switch name="/systems/gear/unit[2]/rate-decr">
 			<default value="0"/>
 			<test logic="AND" value="1000">
 				/systems/acconfig/autoconfig-running eq 1
@@ -1050,14 +1050,14 @@
 			</test>
 		</switch>
 		
-		<actuator name="gear/unit[2]/pos-norm-actuator">
+		<actuator name="/systems/gear/unit[2]/pos-actuator">
 			<input>/controls/gear/lever</input>
-			<rate_limit sense="incr">gear/unit[2]/rate-incr</rate_limit>
-			<rate_limit sense="decr">gear/unit[2]/rate-decr</rate_limit>
+			<rate_limit sense="incr">/systems/gear/unit[2]/rate-incr</rate_limit>
+			<rate_limit sense="decr">/systems/gear/unit[2]/rate-decr</rate_limit>
 			<output>gear/unit[2]/pos-norm</output>
 		</actuator>
 		
-		<switch name="/gear/gear[2]/angle-deg-cmd">
+		<switch name="/systems/gear/unit[2]/angle-deg-cmd">
 			<default value="0"/>
 			<test logic="AND" value="/orientation/pitch-deg">
 				gear/unit[2]/WOW eq 1
@@ -1068,8 +1068,8 @@
 			</clipto>
 		</switch>
 		
-		<lag_filter name="/gear/gear[2]/angle-deg">
-			<input>/gear/gear[2]/angle-deg-cmd</input>
+		<lag_filter name="/systems/gear/unit[2]/angle-deg">
+			<input>/systems/gear/unit[2]/angle-deg-cmd</input>
 			<c1>20</c1>
 		</lag_filter>
 	
@@ -1077,7 +1077,7 @@
 	
 	<channel name="Center Main Gear">
 		
-		<switch name="gear/unit[3]/rate-incr">
+		<switch name="/systems/gear/unit[3]/rate-incr">
 			<default value="0"/>
 			<test logic="AND" value="1000">
 				/systems/acconfig/autoconfig-running eq 1
@@ -1095,7 +1095,7 @@
 			</test>
 		</switch>
 		
-		<switch name="gear/unit[3]/rate-decr">
+		<switch name="/systems/gear/unit[3]/rate-decr">
 			<default value="0"/>
 			<test logic="AND" value="1000">
 				/systems/acconfig/autoconfig-running eq 1
@@ -1109,10 +1109,10 @@
 			</test>
 		</switch>
 		
-		<actuator name="gear/unit[3]/pos-norm-actuator">
+		<actuator name="/systems/gear/unit[3]/pos-actuator">
 			<input>/controls/gear/lever-center</input>
-			<rate_limit sense="incr">gear/unit[3]/rate-incr</rate_limit>
-			<rate_limit sense="decr">gear/unit[3]/rate-decr</rate_limit>
+			<rate_limit sense="incr">/systems/gear/unit[3]/rate-incr</rate_limit>
+			<rate_limit sense="decr">/systems/gear/unit[3]/rate-decr</rate_limit>
 			<output>gear/unit[3]/pos-norm</output>
 		</actuator>
 	
@@ -1123,63 +1123,63 @@
 		<fcs_function name="gear/gear-all-norm">
 			<function>
 				<product>
-					<property>gear/unit[0]/pos-norm-actuator</property>
-					<property>gear/unit[1]/pos-norm-actuator</property>
-					<property>gear/unit[2]/pos-norm-actuator</property>
-					<property>gear/unit[3]/pos-norm-actuator</property>
+					<property>/systems/gear/unit[0]/pos-actuator</property>
+					<property>/systems/gear/unit[1]/pos-actuator</property>
+					<property>/systems/gear/unit[2]/pos-actuator</property>
+					<property>/systems/gear/unit[3]/pos-actuator</property>
 				</product>
 			</function>
 		</fcs_function>
 		
-		<switch name="gear/unit[0]/status">
+		<switch name="/systems/gear/unit[0]/status">
 			<default value="1"/> <!-- In transit -->
 			<test logic="AND" value="0"> <!-- Up -->
 				/controls/gear/lever-cockpit eq 0
-				gear/unit[0]/pos-norm-actuator lt 0.01
+				/systems/gear/unit[0]/pos-actuator lt 0.01
 			</test>
 			<test logic="AND" value="2"> <!-- Down -->
 				/controls/gear/lever-cockpit eq 3
-				gear/unit[0]/pos-norm-actuator gt 0.99
+				/systems/gear/unit[0]/pos-actuator gt 0.99
 			</test>
 		</switch>
 		
-		<switch name="gear/unit[1]/status">
+		<switch name="/systems/gear/unit[1]/status">
 			<default value="1"/> <!-- In transit -->
 			<test logic="AND" value="0"> <!-- Up -->
 				/controls/gear/lever-cockpit eq 0
-				gear/unit[1]/pos-norm-actuator lt 0.01
+				/systems/gear/unit[1]/pos-actuator lt 0.01
 			</test>
 			<test logic="AND" value="2"> <!-- Down -->
 				/controls/gear/lever-cockpit eq 3
-				gear/unit[1]/pos-norm-actuator gt 0.99
+				/systems/gear/unit[1]/pos-actuator gt 0.99
 			</test>
 		</switch>
 		
-		<switch name="gear/unit[2]/status">
+		<switch name="/systems/gear/unit[2]/status">
 			<default value="1"/> <!-- In transit -->
 			<test logic="AND" value="0"> <!-- Up -->
 				/controls/gear/lever-cockpit eq 0
-				gear/unit[2]/pos-norm-actuator lt 0.01
+				/systems/gear/unit[2]/pos-actuator lt 0.01
 			</test>
 			<test logic="AND" value="2"> <!-- Down -->
 				/controls/gear/lever-cockpit eq 3
-				gear/unit[2]/pos-norm-actuator gt 0.99
+				/systems/gear/unit[2]/pos-actuator gt 0.99
 			</test>
 		</switch>
 		
-		<switch name="gear/unit[3]/status">
+		<switch name="/systems/gear/unit[3]/status">
 			<default value="1"/> <!-- In transit -->
 			<test logic="AND" value="0"> <!-- Inhibited -->
 				/controls/gear/center-gear-up eq 1
-				gear/unit[3]/pos-norm-actuator lt 0.01
+				/systems/gear/unit[3]/pos-actuator lt 0.01
 			</test>
 			<test logic="AND" value="0"> <!-- Up -->
 				/controls/gear/lever-cockpit eq 0
-				gear/unit[3]/pos-norm-actuator lt 0.01
+				/systems/gear/unit[3]/pos-actuator lt 0.01
 			</test>
 			<test logic="AND" value="2"> <!-- Down -->
 				/controls/gear/lever-cockpit eq 3
-				gear/unit[3]/pos-norm-actuator gt 0.99
+				/systems/gear/unit[3]/pos-actuator gt 0.99
 			</test>
 		</switch>
 	

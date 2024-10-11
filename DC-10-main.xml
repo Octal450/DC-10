@@ -197,8 +197,8 @@
 				<float n="1" alias="/gear/gear[1]/rollspeed-ms"/>
 				<float n="2" alias="/gear/gear[2]/rollspeed-ms"/>
 				<float n="3" alias="/gear/gear[3]/rollspeed-ms"/>
-				<float n="4" alias="/gear/gear[1]/angle-deg"/>
-				<float n="5" alias="/gear/gear[2]/angle-deg"/>
+				<float n="4" alias="/systems/gear/unit[1]/angle-deg"/>
+				<float n="5" alias="/systems/gear/unit[2]/angle-deg"/>
 				<float n="7" alias="/engines/engine[0]/reverser-pos-norm"/>
 				<float n="8" alias="/engines/engine[1]/reverser-pos-norm"/>
 				<float n="9" alias="/engines/engine[2]/reverser-pos-norm"/>

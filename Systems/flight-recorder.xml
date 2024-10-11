@@ -35,11 +35,11 @@
 			</signal>
 			<signal>
 				<type>float</type>
-				<property>/gear/gear[1]/angle-deg</property>
+				<property>/systems/gear/unit[1]/angle-deg</property>
 			</signal>
 			<signal>
 				<type>float</type>
-				<property>/gear/gear[2]/angle-deg</property>
+				<property>/systems/gear/unit[2]/angle-deg</property>
 			</signal>
 			<signal>
 				<type>float</type>

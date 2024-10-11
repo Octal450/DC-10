@@ -1174,7 +1174,7 @@
 		<object-name>lg.nose.green</object-name>
 		<condition>
 			<equals>
-				<property>fdm/jsbsim/gear/unit[0]/status</property>
+				<property>systems/gear/unit[0]/status</property>
 				<value>2</value>
 			</equals>
 		</condition>
@@ -1186,7 +1186,7 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/gear/unit[0]/status</property>
+					<property>systems/gear/unit[0]/status</property>
 					<value>1</value>
 				</equals>
 				<equals>
@@ -1203,7 +1203,7 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/gear/unit[1]/status</property>
+					<property>systems/gear/unit[1]/status</property>
 					<value>2</value>
 				</equals>
 				<equals>
@@ -1220,7 +1220,7 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/gear/unit[1]/status</property>
+					<property>systems/gear/unit[1]/status</property>
 					<value>1</value>
 				</equals>
 				<equals>
@@ -1237,7 +1237,7 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/gear/unit[2]/status</property>
+					<property>systems/gear/unit[2]/status</property>
 					<value>2</value>
 				</equals>
 				<equals>
@@ -1254,7 +1254,7 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/gear/unit[2]/status</property>
+					<property>systems/gear/unit[2]/status</property>
 					<value>1</value>
 				</equals>
 				<equals>
@@ -1271,7 +1271,7 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/gear/unit[3]/status</property>
+					<property>systems/gear/unit[3]/status</property>
 					<value>2</value>
 				</equals>
 				<equals>
@@ -1288,7 +1288,7 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/gear/unit[3]/status</property>
+					<property>systems/gear/unit[3]/status</property>
 					<value>1</value>
 				</equals>
 				<equals>

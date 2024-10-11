@@ -164,7 +164,7 @@
 		
 		<summer name="/systems/engines/limit/flex-temp-input"> <!-- (Rated - Flex) + TAT -->
 			<input>/systems/engines/limit/rated-temp</input>
-			<input>-engine/limit/flex-temp</input>
+			<input>-/systems/engines/limit/flex-temp</input>
 			<input>propulsion/tat-c</input>
 		</summer>
 		
