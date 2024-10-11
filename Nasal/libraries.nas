@@ -18,6 +18,7 @@ setprop("/sim/multiplay/visibility-range-nm", 130);
 
 var initDone = 0;
 var systemsInit = func {
+	# Standard modules
 	systems.APU.init();
 	systems.ELEC.init();
 	systems.ENGINE.init();
@@ -27,6 +28,8 @@ var systemsInit = func {
 	systems.HYD.init();
 	systems.THRLIM.init();
 	fgs.ITAF.init();
+	
+	# Other switches
 	cockpit.variousReset();
 }
 
@@ -35,7 +38,7 @@ var fdmInit = setlistener("sim/signals/fdm-initialized", func {
 	systemsInit();
 	systemsLoop.start();
 	slowLoop.start();
-	canvas_fma.init();
+	canvas_fma.setup();
 	acconfig.SYSTEM.finalInit();
 	removelistener(fdmInit);
 	initDone = 1;
