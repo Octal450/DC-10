@@ -299,7 +299,7 @@ var PANEL = {
 			pts.Controls.Flight.flaps.setValue(0);
 			pts.Controls.Flight.speedbrakeArm.setBoolValue(0);
 		}
-		systems.GEAR.Switch.leverCockpit.setValue(3);
+		systems.GEAR.Controls.leverCockpit.setValue(3);
 	},
 	coldDark: func(s = 0) {
 		me.panelBase(0);
@@ -324,7 +324,7 @@ var PANEL = {
 		me.panelBase(0);
 		
 		pts.Services.Chocks.enable.setBoolValue(1);
-		systems.ELEC.Switch.battery.setBoolValue(1);
+		systems.ELEC.Controls.battery.setBoolValue(1);
 		systems.APU.fastStart();
 		#pts.Controls.Lighting.beacon.setBoolValue(1);
 		#pts.Controls.Lighting.navLights.setBoolValue(1);
@@ -339,16 +339,16 @@ var PANEL = {
 				removelistener(me.l1);
 				me.l1 = nil; # Important
 				
-				systems.ELEC.Switch.apuPwr1.setBoolValue(1);
-				systems.ELEC.Switch.apuPwr2.setBoolValue(2);
-				systems.ELEC.Switch.apuPwr3.setBoolValue(3);
-				systems.FUEL.Switch.pump1Aft.setBoolValue(1);
-				systems.FUEL.Switch.pump1Fwd.setBoolValue(1);
-				systems.FUEL.Switch.pump2LAft.setBoolValue(1);
-				systems.FUEL.Switch.pump2RAft.setBoolValue(1);
-				systems.FUEL.Switch.pump2Fwd.setBoolValue(1);
-				systems.FUEL.Switch.pump3Aft.setBoolValue(1);
-				systems.FUEL.Switch.pump3Fwd.setBoolValue(1);
+				systems.ELEC.Controls.apuPwr1.setBoolValue(1);
+				systems.ELEC.Controls.apuPwr2.setBoolValue(2);
+				systems.ELEC.Controls.apuPwr3.setBoolValue(3);
+				systems.FUEL.Controls.pump1Aft.setBoolValue(1);
+				systems.FUEL.Controls.pump1Fwd.setBoolValue(1);
+				systems.FUEL.Controls.pump2LAft.setBoolValue(1);
+				systems.FUEL.Controls.pump2RAft.setBoolValue(1);
+				systems.FUEL.Controls.pump2Fwd.setBoolValue(1);
+				systems.FUEL.Controls.pump3Aft.setBoolValue(1);
+				systems.FUEL.Controls.pump3Fwd.setBoolValue(1);
 				
 				fgcommand("dialog-close", props.Node.new({"dialog-name": "acconfig-psload"}));
 				spinningT.stop();
@@ -362,23 +362,23 @@ var PANEL = {
 		me.panelBase(t);
 		
 		pts.Services.Chocks.enable.setBoolValue(0);
-		systems.ELEC.Switch.battery.setBoolValue(1);
-		systems.ELEC.Switch.groundCart.setBoolValue(1); # autoConfigRunning cancels disable check in libraries.nas
-		systems.ELEC.Switch.extPwr.setBoolValue(1);
-		systems.ELEC.Switch.extGPwr.setBoolValue(1);
+		systems.ELEC.Controls.battery.setBoolValue(1);
+		systems.ELEC.Controls.groundCart.setBoolValue(1); # autoConfigRunning cancels disable check in libraries.nas
+		systems.ELEC.Controls.extPwr.setBoolValue(1);
+		systems.ELEC.Controls.extGPwr.setBoolValue(1);
 		pts.Controls.Switches.seatbeltSign.setBoolValue(1);
 		#pts.Controls.Lighting.beacon.setBoolValue(1);
 		#pts.Controls.Lighting.navLights.setBoolValue(1);
-		systems.FUEL.Switch.pump1Aft.setBoolValue(1);
-		systems.FUEL.Switch.pump1Fwd.setBoolValue(1);
-		systems.FUEL.Switch.pump2LAft.setBoolValue(1);
-		systems.FUEL.Switch.pump2RAft.setBoolValue(1);
-		systems.FUEL.Switch.pump2Fwd.setBoolValue(1);
-		systems.FUEL.Switch.pump3Aft.setBoolValue(1);
-		systems.FUEL.Switch.pump3Fwd.setBoolValue(1);
+		systems.FUEL.Controls.pump1Aft.setBoolValue(1);
+		systems.FUEL.Controls.pump1Fwd.setBoolValue(1);
+		systems.FUEL.Controls.pump2LAft.setBoolValue(1);
+		systems.FUEL.Controls.pump2RAft.setBoolValue(1);
+		systems.FUEL.Controls.pump2Fwd.setBoolValue(1);
+		systems.FUEL.Controls.pump3Aft.setBoolValue(1);
+		systems.FUEL.Controls.pump3Fwd.setBoolValue(1);
 		systems.APU.stopRpm();
 		
-		if (pts.Engines.Engine.state[0].getValue() != 3 or pts.Engines.Engine.state[1].getValue() != 3 or pts.Engines.Engine.state[2].getValue() != 3) {
+		if (systems.ENGINE.state[0].getValue() != 3 or systems.ENGINE.state[1].getValue() != 3 or systems.ENGINE.state[2].getValue() != 3) {
 			engTimer = 3;
 			settimer(func() {
 				if (!me.stop) {
@@ -392,21 +392,21 @@ var PANEL = {
 		}
 		
 		me.l1 = setlistener("/engines/engine[1]/state", func() {
-			if (pts.Engines.Engine.state[1].getValue() == 3) {
+			if (systems.ENGINE.state[1].getValue() == 3) {
 				removelistener(me.l1);
 				me.l1 = nil; # Important
-				systems.ELEC.Switch.groundCart.setBoolValue(0);
-				systems.ELEC.Switch.extPwr.setBoolValue(0);
-				systems.ELEC.Switch.extGPwr.setBoolValue(0);
-				systems.ELEC.Switch.gen1.setBoolValue(1);
-				systems.ELEC.Switch.gen2.setBoolValue(1);
-				systems.ELEC.Switch.gen3.setBoolValue(1);
-				systems.HYD.Switch.lPump1.setBoolValue(1);
-				systems.HYD.Switch.lPump2.setBoolValue(1);
-				systems.HYD.Switch.lPump3.setBoolValue(1);
-				systems.HYD.Switch.rPump1.setBoolValue(1);
-				systems.HYD.Switch.rPump2.setBoolValue(1);
-				systems.HYD.Switch.rPump3.setBoolValue(1);
+				systems.ELEC.Controls.groundCart.setBoolValue(0);
+				systems.ELEC.Controls.extPwr.setBoolValue(0);
+				systems.ELEC.Controls.extGPwr.setBoolValue(0);
+				systems.ELEC.Controls.gen1.setBoolValue(1);
+				systems.ELEC.Controls.gen2.setBoolValue(1);
+				systems.ELEC.Controls.gen3.setBoolValue(1);
+				systems.HYD.Controls.lPump1.setBoolValue(1);
+				systems.HYD.Controls.lPump2.setBoolValue(1);
+				systems.HYD.Controls.lPump3.setBoolValue(1);
+				systems.HYD.Controls.rPump1.setBoolValue(1);
+				systems.HYD.Controls.rPump2.setBoolValue(1);
+				systems.HYD.Controls.rPump3.setBoolValue(1);
 				# XPDR TA/RA
 				fgs.Input.fd1.setBoolValue(1);
 				fgs.Input.fd2.setBoolValue(1);

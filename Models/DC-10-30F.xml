@@ -4,13 +4,13 @@
 
 <PropertyList>
 	
-	<path>KC-10A-GE.ac</path>
+	<path>DC-10-30F.ac</path>
 	
 	<main include="DC-10-main.xml" omit-node="y"/>
 	
 	<nasal>
 		<load>
-			var livery_update = aircraft.livery_update.new("Aircraft/DC-10/Models/Liveries/KC-10A");
+			var livery_update = aircraft.livery_update.new("Aircraft/DC-10/Models/Liveries/DC-10-30F");
 		</load>
 		<unload>
 			livery_update.stop();
@@ -37,17 +37,15 @@
 		<object-name>GearCDoorL2</object-name>
 		<object-name>GearCDoorR1</object-name>
 		<object-name>GearCDoorR2</object-name>
-		<object-name>Operator</object-name>
 		<object-name>Nacelle1</object-name>
 		<object-name>Nacelle2</object-name>
 		<object-name>Nacelle3</object-name>
-		<object-name>Pivot</object-name>
 		<object-name>Reverser1</object-name>
 		<object-name>Reverser2</object-name>
 		<object-name>Reverser3</object-name>
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture</texture-prop>
-		<texture>USAF.png</texture>
+		<texture>White.png</texture>
 	</animation>
 	
 	<!-- Center Main Gear -->
@@ -228,64 +226,6 @@
 			<y-m>0</y-m>
 			<z-m>1.4330</z-m>
 		</center>
-	</animation>
-	
-	<!-- Tanker stuff -->
-	<multiplay>
-		<refuel>
-			<type>boom</type>
-			<type>probe</type>
-		</refuel>
-	</multiplay>
-	
-	<animation>
-		<name>Boom rotate</name>
-		<type>rotate</type>
-		<object-name>BoomGroup</object-name>
-		<property>sim/multiplay/generic/float[13]</property>
-		<interpolation>
-			<entry><ind>0.0</ind><dep> 0</dep></entry>
-			<entry><ind>0.7</ind><dep>40</dep></entry>
-			<entry><ind>1.0</ind><dep>40</dep></entry>
-		</interpolation>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
-		<center>
-			<x-m>17.971</x-m>
-			<y-m>0</y-m>
-			<z-m>4.19861</z-m>
-		</center>
-	</animation>
-	
-	<animation>
-		<name>Boom extend</name>
-		<type>translate</type>
-		<object-name>Hose</object-name>
-		<property>sim/multiplay/generic/float[13]</property>
-		<interpolation>
-			<entry><ind>0.0</ind><dep>0.0</dep></entry>
-			<entry><ind>0.7</ind><dep>0.0</dep></entry>
-			<entry><ind>1.0</ind><dep>3.5</dep></entry>
-		</interpolation>
-		<axis>
-			<x1-m>17.971</x1-m>
-			<y1-m>0</y1-m>
-			<z1-m>4.19861</z1-m>
-			<x2-m>24.8413</x2-m>
-			<y2-m>0</y2-m>
-			<z2-m>5.76847</z2-m>
-		</axis>
-	</animation>
-	
-	<animation>
-		<type>select</type>
-		<object-name>RefuelProbeRight</object-name>
-		<condition>
-			<property>sim/multiplay/generic/bool[1]</property>
-		</condition>
 	</animation>
 
 </PropertyList>

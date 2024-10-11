@@ -5,7 +5,7 @@
 <PropertyList include="DC-10-main.xml">
 	
     <sim>
-		<aero>FDE/DC-10-40-PW</aero>
+		<aero>FDE/DC-10-40</aero>
 		<description>McDonnell Douglas DC-10-40 (JT9D-59A)</description>
 		<flight-model>jsb</flight-model>
 		<model n="0">
@@ -25,7 +25,7 @@
 			<livery>
 				<file type="string">White</file>
 			</livery>
-			<path>Aircraft/DC-10/Models/DC-10-40-PW.xml</path>
+			<path>Aircraft/DC-10/Models/DC-10-40.xml</path>
 			<yoke n="0">
 				<texture type="string">res/yoke.png</texture>
 			</yoke>

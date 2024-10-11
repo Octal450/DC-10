@@ -5,7 +5,7 @@
 <PropertyList include="DC-10-main.xml">
 	
     <sim>
-		<aero>FDE/KC-10A-GE</aero>
+		<aero>FDE/KC-10A</aero>
 		<description>McDonnell Douglas KC-10A Extender (CF6-50C)</description>
 		<flight-model>jsb</flight-model>
 		<menubar>
@@ -45,7 +45,7 @@
 			<livery>
 				<file type="string">USAF</file>
 			</livery>
-			<path>Aircraft/DC-10/Models/KC-10A-GE.xml</path>
+			<path>Aircraft/DC-10/Models/KC-10A.xml</path>
 			<yoke n="0">
 				<texture type="string">res/yoke-kc.png</texture>
 			</yoke>

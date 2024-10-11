@@ -5,7 +5,7 @@
 <PropertyList include="DC-10-main.xml">
 	
     <sim>
-		<aero>FDE/KDC-10-40-PW</aero>
+		<aero>FDE/KDC-10-40</aero>
 		<description>McDonnell Douglas KDC-10-40 (JT9D-59A)</description>
 		<flight-model>jsb</flight-model>
 		<menubar>
@@ -38,7 +38,7 @@
 			<livery>
 				<file type="string">Omega</file>
 			</livery>
-			<path>Aircraft/DC-10/Models/KDC-10-40-PW.xml</path>
+			<path>Aircraft/DC-10/Models/KDC-10-40.xml</path>
 			<yoke n="0">
 				<texture type="string">res/yoke.png</texture>
 			</yoke>
@@ -58,7 +58,7 @@
 				<path>Aircraft/DC-10/Sounds/jt9d-sound-control.xml</path>
 			</autopilot>
 		</systems>
-		<variant-of>KC-10A-GE</variant-of>
+		<variant-of>KC-10A</variant-of>
     </sim>
 	
 	<fdm n="0">

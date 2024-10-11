@@ -3,10 +3,10 @@
 <!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
 
 <PropertyList include="DC-10-main.xml">
-	
+
     <sim>
-		<aero>FDE/DC-10-30-GE</aero>
-		<description>McDonnell Douglas DC-10-30 (CF6-50C)</description>
+		<aero>FDE/DC-10-40F</aero>
+		<description>McDonnell Douglas DC-10-40F (JT9D-59A)</description>
 		<flight-model>jsb</flight-model>
 		<model n="0">
 			<armrest type="double">0</armrest>
@@ -25,7 +25,7 @@
 			<livery>
 				<file type="string">White</file>
 			</livery>
-			<path>Aircraft/DC-10/Models/DC-10-30-GE.xml</path>
+			<path>Aircraft/DC-10/Models/DC-10-40F.xml</path>
 			<yoke n="0">
 				<texture type="string">res/yoke.png</texture>
 			</yoke>
@@ -37,15 +37,15 @@
 				<path>gui/splash/dc-10.png</path>
 			</preview>
 		</previews>
-		<primary-set>true</primary-set>
 		<sound n="0">
-			<path>Aircraft/DC-10/Sounds/cf650-sound.xml</path>
+			<path>Aircraft/DC-10/Sounds/cf650-sound.xml</path> <!-- Temporary -->
 		</sound>
 		<systems n="0">
 			<autopilot n="6">
-				<path>Aircraft/DC-10/Sounds/cf650-sound-control.xml</path>
+				<path>Aircraft/DC-10/Sounds/jt9d-sound-control.xml</path>
 			</autopilot>
 		</systems>
+		<variant-of>DC-10-40</variant-of>
     </sim>
 	
 	<fdm n="0">
@@ -58,44 +58,44 @@
 	
 	<limits>
 		<mass-and-balance> <!-- Data source: TCDS -->
-			<maximum-takeoff-mass-lbs>593000</maximum-takeoff-mass-lbs>
-			<maximum-landing-mass-lbs>411000</maximum-landing-mass-lbs>
-			<maximum-zero-fuel-mass-lbs>368000</maximum-zero-fuel-mass-lbs>
+			<maximum-takeoff-mass-lbs>572000</maximum-takeoff-mass-lbs>
+			<maximum-landing-mass-lbs>424000</maximum-landing-mass-lbs>
+			<maximum-zero-fuel-mass-lbs>401000</maximum-zero-fuel-mass-lbs>
 		</mass-and-balance>
 	</limits>
 	
 	<options n="0">
-		<eng type="string">GE</eng>
-		<eng-int type="int">0</eng-int>
+		<eng type="string">PW</eng>
+		<eng-int type="int">1</eng-int>
 	</options>
 	
 	<payload n="0">
 		<weight n="0">
-			<name>Forward Cabin</name>
+			<name>Forward Upper Cargo</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">6120</max-lb>
+			<max-lb type="double">33600</max-lb>
 		</weight>
 		<weight n="1">
-			<name>Mid Cabin</name>
+			<name>Mid Upper Cargo</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">21960</max-lb>
+			<max-lb type="double">33600</max-lb>
 		</weight>
 		<weight n="2">
-			<name>Aft Cabin</name>
+			<name>Aft Upper Cargo</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">29880</max-lb>
+			<max-lb type="double">42000</max-lb>
 		</weight>
 		<weight n="3">
-			<name>Forward Cargo</name>
+			<name>Forward Lower Cargo</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
 			<min-lb type="double">0</min-lb>
 			<max-lb type="double">25200</max-lb>
 		</weight>
 		<weight n="4">
-			<name>Aft Cargo</name>
+			<name>Aft Lower Cargo</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]"/>
 			<min-lb type="double">0</min-lb>
 			<max-lb type="double">33600</max-lb>
@@ -116,7 +116,7 @@
     
 	<nasal n="0">
 		<setup>
-			<script>aircraft.livery.init("Aircraft/DC-10/Models/Liveries/DC-10-30");</script>
+			<script>aircraft.livery.init("Aircraft/DC-10/Models/Liveries/DC-10-40F");</script>
 		</setup>
 	</nasal>
 

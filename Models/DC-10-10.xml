@@ -4,7 +4,7 @@
 
 <PropertyList>
 	
-	<path>DC-10-10-GE.ac</path>
+	<path>DC-10-10.ac</path>
 	
 	<main include="DC-10-main.xml" omit-node="y"/>
 	

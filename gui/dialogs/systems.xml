@@ -1222,8 +1222,8 @@
 						<command>nasal</command>
 						<script>
 							settimer(func {
-								if (systems.APU.Switch.master.getValue() == 2) {
-									systems.APU.Switch.master.setValue(1);
+								if (systems.APU.Controls.master.getValue() == 2) {
+									systems.APU.Controls.master.setValue(1);
 								}
 							}, 5);
 						</script>

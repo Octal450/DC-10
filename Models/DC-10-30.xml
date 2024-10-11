@@ -4,13 +4,13 @@
 
 <PropertyList>
 	
-	<path>DC-10-40F-PW.ac</path>
+	<path>DC-10-30.ac</path>
 	
 	<main include="DC-10-main.xml" omit-node="y"/>
 	
 	<nasal>
 		<load>
-			var livery_update = aircraft.livery_update.new("Aircraft/DC-10/Models/Liveries/DC-10-40F");
+			var livery_update = aircraft.livery_update.new("Aircraft/DC-10/Models/Liveries/DC-10-30");
 		</load>
 		<unload>
 			livery_update.stop();

@@ -5,7 +5,7 @@
 <PropertyList include="DC-10-main.xml">
 
     <sim>
-		<aero>FDE/DC-10-30F-GE</aero>
+		<aero>FDE/DC-10-30F</aero>
 		<description>McDonnell Douglas DC-10-30F (CF6-50C)</description>
 		<flight-model>jsb</flight-model>
 		<model n="0">
@@ -25,7 +25,7 @@
 			<livery>
 				<file type="string">White</file>
 			</livery>
-			<path>Aircraft/DC-10/Models/DC-10-30F-GE.xml</path>
+			<path>Aircraft/DC-10/Models/DC-10-30F.xml</path>
 			<yoke n="0">
 				<texture type="string">res/yoke.png</texture>
 			</yoke>
@@ -45,7 +45,7 @@
 				<path>Aircraft/DC-10/Sounds/cf650-sound-control.xml</path>
 			</autopilot>
 		</systems>
-		<variant-of>DC-10-30-GE</variant-of>
+		<variant-of>DC-10-30</variant-of>
     </sim>
 	
 	<fdm n="0">

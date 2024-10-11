@@ -2,14 +2,14 @@
 # Copyright (c) 2024 Josh Davidson (Octal450)
 
 var FUEL = {
-	Fail: {
+	Failures: {
 		pumpsAuxL: props.globals.getNode("/systems/failures/fuel/pumps-aux-l"),
 		pumpsAuxR: props.globals.getNode("/systems/failures/fuel/pumps-aux-r"),
 		pumps1: props.globals.getNode("/systems/failures/fuel/pumps-1"),
 		pumps2: props.globals.getNode("/systems/failures/fuel/pumps-2"),
 		pumps3: props.globals.getNode("/systems/failures/fuel/pumps-3"),
 	},
-	Switch: {
+	Controls: {
 		fill1: props.globals.getNode("/controls/fuel/fill-1"),
 		fill2: props.globals.getNode("/controls/fuel/fill-2"),
 		fill3: props.globals.getNode("/controls/fuel/fill-3"),
@@ -31,30 +31,30 @@ var FUEL = {
 	},
 	init: func() {
 		me.resetFailures();
-		me.Switch.fill1.setBoolValue(0);
-		me.Switch.fill2.setBoolValue(0);
-		me.Switch.fill3.setBoolValue(0);
-		me.Switch.pump1Aft.setBoolValue(0);
-		me.Switch.pump1Fwd.setBoolValue(0);
-		me.Switch.pump2LAft.setBoolValue(0);
-		me.Switch.pump2RAft.setBoolValue(0);
-		me.Switch.pump2Fwd.setBoolValue(0);
-		me.Switch.pump3Aft.setBoolValue(0);
-		me.Switch.pump3Fwd.setBoolValue(0);
-		me.Switch.transAuxL.setValue(0);
-		me.Switch.transAuxR.setValue(0);
-		me.Switch.trans1.setBoolValue(0);
-		me.Switch.trans2.setBoolValue(0);
-		me.Switch.trans3.setBoolValue(0);
-		me.Switch.xFeed1.setBoolValue(0);
-		me.Switch.xFeed2.setBoolValue(0);
-		me.Switch.xFeed3.setBoolValue(0);
+		me.Controls.fill1.setBoolValue(0);
+		me.Controls.fill2.setBoolValue(0);
+		me.Controls.fill3.setBoolValue(0);
+		me.Controls.pump1Aft.setBoolValue(0);
+		me.Controls.pump1Fwd.setBoolValue(0);
+		me.Controls.pump2LAft.setBoolValue(0);
+		me.Controls.pump2RAft.setBoolValue(0);
+		me.Controls.pump2Fwd.setBoolValue(0);
+		me.Controls.pump3Aft.setBoolValue(0);
+		me.Controls.pump3Fwd.setBoolValue(0);
+		me.Controls.transAuxL.setValue(0);
+		me.Controls.transAuxR.setValue(0);
+		me.Controls.trans1.setBoolValue(0);
+		me.Controls.trans2.setBoolValue(0);
+		me.Controls.trans3.setBoolValue(0);
+		me.Controls.xFeed1.setBoolValue(0);
+		me.Controls.xFeed2.setBoolValue(0);
+		me.Controls.xFeed3.setBoolValue(0);
 	},
 	resetFailures: func() {
-		me.Fail.pumpsAuxL.setBoolValue(0);
-		me.Fail.pumpsAuxR.setBoolValue(0);
-		me.Fail.pumps1.setBoolValue(0);
-		me.Fail.pumps2.setBoolValue(0);
-		me.Fail.pumps3.setBoolValue(0);
+		me.Failures.pumpsAuxL.setBoolValue(0);
+		me.Failures.pumpsAuxR.setBoolValue(0);
+		me.Failures.pumps1.setBoolValue(0);
+		me.Failures.pumps2.setBoolValue(0);
+		me.Failures.pumps3.setBoolValue(0);
 	},
 };
