@@ -133,11 +133,11 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/engine/eng-1-rev-state</property>
+					<property>systems/engines/eng-1-rev-state</property>
 					<value>1</value>
 				</equals>
 				<equals>
-					<property>fdm/jsbsim/engine/eng-1-rev-state</property>
+					<property>systems/engines/eng-1-rev-state</property>
 					<value>2</value>
 				</equals>
 				<equals>
@@ -153,11 +153,11 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/engine/eng-2-rev-state</property>
+					<property>systems/engines/eng-2-rev-state</property>
 					<value>1</value>
 				</equals>
 				<equals>
-					<property>fdm/jsbsim/engine/eng-2-rev-state</property>
+					<property>systems/engines/eng-2-rev-state</property>
 					<value>2</value>
 				</equals>
 				<equals>
@@ -173,11 +173,11 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/engine/eng-3-rev-state</property>
+					<property>systems/engines/eng-3-rev-state</property>
 					<value>1</value>
 				</equals>
 				<equals>
-					<property>fdm/jsbsim/engine/eng-3-rev-state</property>
+					<property>systems/engines/eng-3-rev-state</property>
 					<value>2</value>
 				</equals>
 				<equals>
@@ -194,7 +194,7 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/engine/eng-1-rev-state</property>
+					<property>systems/engines/eng-1-rev-state</property>
 					<value>2</value>
 				</equals>
 				<equals>
@@ -210,7 +210,7 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/engine/eng-2-rev-state</property>
+					<property>systems/engines/eng-2-rev-state</property>
 					<value>2</value>
 				</equals>
 				<equals>
@@ -226,7 +226,7 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/engine/eng-3-rev-state</property>
+					<property>systems/engines/eng-3-rev-state</property>
 					<value>2</value>
 				</equals>
 				<equals>
@@ -243,7 +243,7 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/engine/eng-1-rev-state</property>
+					<property>systems/engines/eng-1-rev-state</property>
 					<value>3</value>
 				</equals>
 				<equals>
@@ -259,7 +259,7 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/engine/eng-2-rev-state</property>
+					<property>systems/engines/eng-2-rev-state</property>
 					<value>3</value>
 				</equals>
 				<equals>
@@ -275,7 +275,7 @@
 		<condition>
 			<or>
 				<equals>
-					<property>fdm/jsbsim/engine/eng-3-rev-state</property>
+					<property>systems/engines/eng-3-rev-state</property>
 					<value>3</value>
 				</equals>
 				<equals>

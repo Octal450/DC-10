@@ -183,7 +183,7 @@
 		<switch name="/systems/hydraulics/l-eng-1-pump-psi">
 			<default value="40"/>
 			<test value="/systems/hydraulics/l-eng-1-pump-psi-input">
-				/controls/hydraulics/switches/l-pump-1 eq 1
+				/controls/hydraulics/l-pump-1 eq 1
 			</test>
 		</switch>
 		
@@ -209,12 +209,12 @@
 		<switch name="/systems/hydraulics/r-eng-1-pump-valve">
 			<default value="0"/>
 			<test logic="AND" value="1"> <!-- AUTO -->
-				/controls/hydraulics/switches/r-pump-1 eq 1
+				/controls/hydraulics/r-pump-1 eq 1
 				/systems/hydraulics/l-eng-1-pump-psi lt 2400
 				/systems/hydraulics/r-eng-1-pump-psi-input ge 2400
 			</test>
 			<test value="1"> <!-- ON -->
-				/controls/hydraulics/switches/r-pump-1 eq 2
+				/controls/hydraulics/r-pump-1 eq 2
 			</test>
 		</switch>
 		
@@ -287,7 +287,7 @@
 		<switch name="/systems/hydraulics/l-eng-2-pump-psi">
 			<default value="40"/>
 			<test value="/systems/hydraulics/l-eng-2-pump-psi-input">
-				/controls/hydraulics/switches/l-pump-2 eq 1
+				/controls/hydraulics/l-pump-2 eq 1
 			</test>
 		</switch>
 		
@@ -313,12 +313,12 @@
 		<switch name="/systems/hydraulics/r-eng-2-pump-valve">
 			<default value="0"/>
 			<test logic="AND" value="1"> <!-- AUTO -->
-				/controls/hydraulics/switches/r-pump-2 eq 1
+				/controls/hydraulics/r-pump-2 eq 1
 				/systems/hydraulics/l-eng-2-pump-psi lt 2400
 				/systems/hydraulics/r-eng-2-pump-psi-input ge 2400
 			</test>
 			<test value="1"> <!-- ON -->
-				/controls/hydraulics/switches/r-pump-2 eq 2
+				/controls/hydraulics/r-pump-2 eq 2
 			</test>
 		</switch>
 		
@@ -391,7 +391,7 @@
 		<switch name="/systems/hydraulics/l-eng-3-pump-psi">
 			<default value="40"/>
 			<test value="/systems/hydraulics/l-eng-3-pump-psi-input">
-				/controls/hydraulics/switches/l-pump-3 eq 1
+				/controls/hydraulics/l-pump-3 eq 1
 			</test>
 		</switch>
 		
@@ -417,12 +417,12 @@
 		<switch name="/systems/hydraulics/r-eng-3-pump-valve">
 			<default value="0"/>
 			<test logic="AND" value="1"> <!-- AUTO -->
-				/controls/hydraulics/switches/r-pump-3 eq 1
+				/controls/hydraulics/r-pump-3 eq 1
 				/systems/hydraulics/l-eng-3-pump-psi lt 2400
 				/systems/hydraulics/r-eng-3-pump-psi-input ge 2400
 			</test>
 			<test value="1"> <!-- ON -->
-				/controls/hydraulics/switches/r-pump-3 eq 2
+				/controls/hydraulics/r-pump-3 eq 2
 			</test>
 		</switch>
 		
@@ -436,11 +436,11 @@
 		<switch name="/systems/hydraulics/aux-pump-1-psi">
 			<default value="0"/>
 			<test logic="OR" value="0">
-				/controls/hydraulics/switches/aux-pump-1 ne 1
+				/controls/hydraulics/aux-pump-1 ne 1
 				/systems/failures/hydraulics/aux-pump-1 eq 1
 			</test>
 			<test logic="AND" value="0"> <!-- ADG can't do both ELEC and HYD -->
-				/controls/electrical/switches/adg-elec eq 1
+				/controls/electrical/adg-elec eq 1
 				/systems/electrical/sources/adg/output-volt ge 112
 			</test>
 			<test logic="OR" value="2960"> <!-- I know it is powered by an AC bus, but I don't know which one, so these are educated guesses -->
@@ -455,7 +455,7 @@
 		<switch name="/systems/hydraulics/aux-pump-2-psi">
 			<default value="0"/>
 			<test logic="OR" value="0">
-				/controls/hydraulics/switches/aux-pump-2 ne 1
+				/controls/hydraulics/aux-pump-2 ne 1
 				/systems/failures/hydraulics/aux-pump-2 eq 1
 			</test>
 			<test logic="OR" value="2950"> <!-- I know it is powered by an AC bus, but I don't know which one, so guesses -->
@@ -535,7 +535,7 @@
 		
 		<!-- Reversible Motor Pump 1-3 -->
 		<actuator name="/systems/hydraulics/rmp/rmp-1-3-valve">
-			<input>/controls/hydraulics/switches/rmp-1-3</input>
+			<input>/controls/hydraulics/rmp-1-3</input>
 			<rate_limit>0.25</rate_limit> <!-- 4 seconds -->
 		</actuator>
 		
@@ -557,7 +557,7 @@
 		
 		<!-- Reversible Motor Pump 2-3 -->
 		<actuator name="/systems/hydraulics/rmp/rmp-2-3-valve">
-			<input>/controls/hydraulics/switches/rmp-2-3</input>
+			<input>/controls/hydraulics/rmp-2-3</input>
 			<rate_limit>0.25</rate_limit> <!-- 4 seconds -->
 		</actuator>
 		

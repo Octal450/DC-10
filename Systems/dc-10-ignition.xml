@@ -11,7 +11,7 @@
 			<default value="0"/>
 			<test logic="AND" value="1">
 				/systems/electrical/bus/l-emer-ac ge 112
-				/controls/ignition/switches/ign lt 0
+				/controls/ignition/ign lt 0
 			</test>
 		</switch>
 		
@@ -19,7 +19,7 @@
 			<default value="0"/>
 			<test logic="AND" value="1">
 				/systems/electrical/bus/r-emer-ac ge 112
-				/controls/ignition/switches/ign gt 0
+				/controls/ignition/ign gt 0
 			</test>
 		</switch>
 		
@@ -301,7 +301,7 @@
 				/systems/ignition/starter-1 eq 1
 			</test>
 			<test value="1">
-				/controls/ignition/switches/ign-ovrd eq 1
+				/controls/ignition/ign-ovrd eq 1
 			</test>
 		</switch>
 		
@@ -315,7 +315,7 @@
 				/systems/ignition/starter-2 eq 1
 			</test>
 			<test value="1">
-				/controls/ignition/switches/ign-ovrd eq 1
+				/controls/ignition/ign-ovrd eq 1
 			</test>
 		</switch>
 		
@@ -329,7 +329,7 @@
 				/systems/ignition/starter-3 eq 1
 			</test>
 			<test value="1">
-				/controls/ignition/switches/ign-ovrd eq 1
+				/controls/ignition/ign-ovrd eq 1
 			</test>
 		</switch>
 	

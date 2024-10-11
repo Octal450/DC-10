@@ -13,7 +13,7 @@
 				fcs/slat-pos-deg ge 2
 				position/wow eq 1
 			</test>
-			<output>fcc/aileron-out-enable</output>
+			<output>/systems/fcc/aileron-out-enable</output>
 		</switch>
 	
 	</channel>
@@ -33,11 +33,11 @@
 		<switch name="hydraulics/aileron-yoke-switch">
 			<default value="/controls/flight/aileron"/>
 			<test logic="AND" value="hydraulics/aileron-small"> <!-- While in detent and CWS active, more force needed to break out -->
-				fcc/cws/active eq 1
-				fcc/cws-roll/in-detent eq 1
+				/systems/fcc/cws/active eq 1
+				/systems/fcc/cws-roll/in-detent eq 1
 			</test>
-			<test value="fcc/afs/roll-cmd">
-				fcc/afs/enabled eq 1
+			<test value="/systems/fcc/afs/roll-cmd">
+				/systems/fcc/afs/enabled eq 1
 			</test>
 		</switch>
 		
@@ -51,7 +51,7 @@
 		</summer>
 		
 		<summer name="hydraulics/aileron/output">
-			<input>fcc/roll-output</input>
+			<input>/systems/fcc/roll-output</input>
 			<input>hydraulics/aileron/trim-overall</input>
 			<clipto>
 				<min>-1.0</min>
@@ -362,11 +362,11 @@
 		<switch name="hydraulics/elevator-yoke-switch">
 			<default value="/controls/flight/elevator"/>
 			<test logic="AND" value="hydraulics/elevator-small"> <!-- While in detent and CWS active, more force needed to break out -->
-				fcc/cws/active eq 1
-				fcc/cws-pitch/in-detent eq 1
+				/systems/fcc/cws/active eq 1
+				/systems/fcc/cws-pitch/in-detent eq 1
 			</test>
-			<test value="fcc/afs/pitch-cmd">
-				fcc/afs/enabled eq 1
+			<test value="/systems/fcc/afs/pitch-cmd">
+				/systems/fcc/afs/enabled eq 1
 			</test>
 		</switch>
 		
@@ -412,7 +412,7 @@
 		
 		<switch name="hydraulics/elevator-out-l/switch">
 			<default value="hydraulics/elevator-droop"/>
-			<test logic="OR" value="fcc/elevator-output">
+			<test logic="OR" value="/systems/fcc/elevator-output">
 				/systems/hydraulics/sys-1-psi ge 2200
 				/systems/hydraulics/sys-2-psi ge 2200
 			</test>
@@ -452,7 +452,7 @@
 		
 		<switch name="hydraulics/elevator-in-l/switch">
 			<default value="hydraulics/elevator-droop"/>
-			<test logic="OR" value="fcc/elevator-output">
+			<test logic="OR" value="/systems/fcc/elevator-output">
 				/systems/hydraulics/sys-2-psi ge 2200
 				/systems/hydraulics/sys-3-aft-psi ge 2200
 			</test>
@@ -492,7 +492,7 @@
 		
 		<switch name="hydraulics/elevator-in-r/switch">
 			<default value="hydraulics/elevator-droop"/>
-			<test logic="OR" value="fcc/elevator-output">
+			<test logic="OR" value="/systems/fcc/elevator-output">
 				/systems/hydraulics/sys-1-psi ge 2200
 				/systems/hydraulics/sys-3-aft-psi ge 2200
 			</test>
@@ -532,7 +532,7 @@
 		
 		<switch name="hydraulics/elevator-out-r/switch">
 			<default value="hydraulics/elevator-droop"/>
-			<test logic="OR" value="fcc/elevator-output">
+			<test logic="OR" value="/systems/fcc/elevator-output">
 				/systems/hydraulics/sys-1-psi ge 2200
 				/systems/hydraulics/sys-2-psi ge 2200
 			</test>
@@ -602,9 +602,9 @@
 	<channel name="Rudder General">
 		
 		<switch name="hydraulics/rudder/pedal-switch">
-			<default value="fcc/yaw/rudder-nul"/>
-			<test value="fcc/yaw/afs-cmd">
-				fcc/yaw/autoland-switch eq 1
+			<default value="/systems/fcc/yaw/rudder-nul"/>
+			<test value="/systems/fcc/yaw/afs-cmd">
+				/systems/fcc/yaw/autoland-switch eq 1
 			</test>
 		</switch>
 		
@@ -614,7 +614,7 @@
 		</pure_gain>
 		
 		<summer name="hydraulics/rudder/upper-sum">
-			<input>fcc/rudder-upper-output</input>
+			<input>/systems/fcc/rudder-upper-output</input>
 			<input>hydraulics/rudder/trim</input>
 			<clipto>
 				<min>-1.0</min>
@@ -623,7 +623,7 @@
 		</summer>
 		
 		<summer name="hydraulics/rudder/lower-sum">
-			<input>fcc/rudder-lower-output</input>
+			<input>/systems/fcc/rudder-lower-output</input>
 			<input>hydraulics/rudder/trim</input>
 			<clipto>
 				<min>-1.0</min>
@@ -929,7 +929,7 @@
 				/systems/hydraulics/sys-3-psi ge 2200
 			</test>
 			<test logic="AND" value="0.0166667"> <!-- About 60 sec -->
-				/controls/hydraulics/switches/gear-gravity-ext eq 1
+				/controls/hydraulics/gear-gravity-ext eq 1
 				/accelerations/pilot-g ge 0.5
 			</test>
 		</switch>
@@ -972,7 +972,7 @@
 				/systems/hydraulics/sys-3-psi ge 2200
 			</test>
 			<test logic="AND" value="0.0222222"> <!-- About 45 sec -->
-				/controls/hydraulics/switches/gear-gravity-ext eq 1
+				/controls/hydraulics/gear-gravity-ext eq 1
 				/accelerations/pilot-g ge 0.5
 			</test>
 		</switch>
@@ -1031,7 +1031,7 @@
 				/systems/hydraulics/sys-3-psi ge 2200
 			</test>
 			<test logic="AND" value="0.0222222"> <!-- About 45 sec -->
-				/controls/hydraulics/switches/gear-gravity-ext eq 1
+				/controls/hydraulics/gear-gravity-ext eq 1
 				/accelerations/pilot-g ge 0.5
 			</test>
 		</switch>
@@ -1090,7 +1090,7 @@
 				/systems/hydraulics/sys-3-psi ge 2200
 			</test>
 			<test logic="AND" value="0.0181818"> <!-- About 55 sec -->
-				/controls/hydraulics/switches/gear-gravity-ext eq 1
+				/controls/hydraulics/gear-gravity-ext eq 1
 				/accelerations/pilot-g ge 0.5
 			</test>
 		</switch>
@@ -1226,7 +1226,7 @@
 		</pure_gain>
 		
 		<summer name="hydraulics/tiller/afs-cmd-input">
-			<input>fcc/afs/yaw-cmd</input>
+			<input>/systems/fcc/afs/yaw-cmd</input>
 			<input>hydraulics/rudder/trim</input> <!-- 13 of 30 -->
 			<clipto>
 				<min>-1.0</min>
@@ -1346,7 +1346,7 @@
 				/sim/model/autopush/connected eq 1
 			</test>
 			<test value="hydraulics/tiller/afs-cmd-deg">
-				fcc/afs/enabled eq 1
+				/systems/fcc/afs/enabled eq 1
 			</test>
 			<test value="hydraulics/tiller/tiller-cmd-deg">
 				/systems/acconfig/options/separate-tiller-axis eq 1

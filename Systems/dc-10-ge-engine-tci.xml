@@ -5,19 +5,19 @@
 
 <system name="DC-10: GE Engine/TCI">
 	
-	<property value="30">engine/limit/rated-temp</property>
-	<property value="51800">engine/limit/rated-thrust</property>
-	<property value="945">engine/egt-alert</property>
-	<property value="960">engine/egt-redline</property>
-	<property value="1">engine/epr-actual-1</property> <!-- Unused in this engine -->
-	<property value="1">engine/epr-actual-2</property> <!-- Unused in this engine -->
-	<property value="1">engine/epr-actual-3</property> <!-- Unused in this engine -->
-	<property value="119.5">engine/n1-redline</property>
-	<property value="109.5">engine/n2-redline</property>
+	<property value="30">/systems/engines/limit/rated-temp</property>
+	<property value="51800">/systems/engines/limit/rated-thrust</property>
+	<property value="945">/systems/engines/egt-alert</property>
+	<property value="960">/systems/engines/egt-redline</property>
+	<property value="1">/systems/engines/epr-actual-1</property> <!-- Unused in this engine -->
+	<property value="1">/systems/engines/epr-actual-2</property> <!-- Unused in this engine -->
+	<property value="1">/systems/engines/epr-actual-3</property> <!-- Unused in this engine -->
+	<property value="119.5">/systems/engines/n1-redline</property>
+	<property value="109.5">/systems/engines/n2-redline</property>
 	
 	<channel name="Thrust Limits">
 		
-		<fcs_function name="engine/limit/rated-thrust-n1">
+		<fcs_function name="/systems/engines/limit/rated-thrust-n1">
 			<function>
 				<table>
 					<independentVar lookup="row">/position/altitude-ft</independentVar>
@@ -32,7 +32,7 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/milthrust-unmodified"> <!-- Copy of MilThrust table in engines file -->
+		<fcs_function name="/systems/engines/limit/milthrust-unmodified"> <!-- Copy of MilThrust table in engines file -->
 			<function>
 				<table>
 					<independentVar lookup="row">velocities/mach</independentVar>
@@ -54,49 +54,49 @@
 		
 		<!-- Following functions fix a FGTurbine inaccuracy... rated thrust N1% should be rated thrust lbs -->
 		<!-- These calculations change it so that the rated power at sea level is at the correct N1% value. It still changes with altitude and mach as it should -->
-		<fcs_function name="engine/limit/fgturbine-thrust">
+		<fcs_function name="/systems/engines/limit/fgturbine-thrust">
 			<function>
 				<sum>
 					<product>
 						<property>propulsion/engine[0]/IdleThrust</property> <!-- It doesn't matter which engine, same for all -->
-						<property>engine/limit/rated-thrust</property>
+						<property>/systems/engines/limit/rated-thrust</property>
 					</product>
 					<product>
 						<difference>
-							<property>engine/limit/rated-thrust</property>
+							<property>/systems/engines/limit/rated-thrust</property>
 							<product>
 								<property>propulsion/engine[0]/IdleThrust</property> <!-- It doesn't matter which engine, same for all -->
-								<property>engine/limit/rated-thrust</property>
+								<property>/systems/engines/limit/rated-thrust</property>
 							</product>
 						</difference>
-						<property>engine/limit/milthrust-unmodified</property>
+						<property>/systems/engines/limit/milthrust-unmodified</property>
 					</product>
 				</sum>
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/rated-thrust-actual">
+		<fcs_function name="/systems/engines/limit/rated-thrust-actual">
 			<function>
 				<sum>
 					<product>
 						<property>propulsion/engine[0]/IdleThrust</property> <!-- It doesn't matter which engine, same for all -->
-						<property>engine/limit/rated-thrust</property>
+						<property>/systems/engines/limit/rated-thrust</property>
 					</product>
 					<product>
 						<product>
 							<difference>
-								<property>engine/limit/rated-thrust</property>
+								<property>/systems/engines/limit/rated-thrust</property>
 								<product>
 									<property>propulsion/engine[0]/IdleThrust</property> <!-- It doesn't matter which engine, same for all -->
-									<property>engine/limit/rated-thrust</property>
+									<property>/systems/engines/limit/rated-thrust</property>
 								</product>
 							</difference>
-							<property>engine/limit/milthrust-unmodified</property>
+							<property>/systems/engines/limit/milthrust-unmodified</property>
 						</product>
 						<pow>
 							<quotient>
 								<difference>
-									<property>engine/limit/rated-thrust-n1</property>
+									<property>/systems/engines/limit/rated-thrust-n1</property>
 									<value>22.6</value>
 								</difference>
 								<value>96.9</value>
@@ -108,7 +108,7 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/rated-thrust-factor">
+		<fcs_function name="/systems/engines/limit/rated-thrust-factor">
 			<function>
 				<ifthen>
 					<eq>
@@ -118,12 +118,12 @@
 					<value>0</value>
 					<ifthen>
 						<nq> <!-- Prevent divide by 0 -->
-							<property>engine/limit/rated-thrust-actual</property>
+							<property>/systems/engines/limit/rated-thrust-actual</property>
 							<value>0</value>
 						</nq>
 						<quotient>
-							<property>engine/limit/fgturbine-thrust</property>
-							<property>engine/limit/rated-thrust-actual</property>
+							<property>/systems/engines/limit/fgturbine-thrust</property>
+							<property>/systems/engines/limit/rated-thrust-actual</property>
 						</quotient>
 						<value>1</value>
 					</ifthen>
@@ -131,7 +131,7 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/takeoff-ref">
+		<fcs_function name="/systems/engines/limit/takeoff-ref">
 			<function>
 				<table>
 					<independentVar lookup="row">/position/altitude-ft</independentVar>
@@ -145,13 +145,13 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/takeoff">
+		<fcs_function name="/systems/engines/limit/takeoff">
 			<function>
 				<quotient>
 					<floor>
 						<sum>
 							<product>
-								<property>engine/limit/takeoff-ref</property>
+								<property>/systems/engines/limit/takeoff-ref</property>
 								<value>10</value>
 							</product>
 							<value>0.5</value> <!-- Make it round correctly -->
@@ -162,19 +162,19 @@
 			</function>
 		</fcs_function>
 		
-		<summer name="engine/limit/flex-temp-input"> <!-- (Rated - Flex) + TAT -->
-			<input>engine/limit/rated-temp</input>
+		<summer name="/systems/engines/limit/flex-temp-input"> <!-- (Rated - Flex) + TAT -->
+			<input>/systems/engines/limit/rated-temp</input>
 			<input>-engine/limit/flex-temp</input>
 			<input>propulsion/tat-c</input>
 		</summer>
 		
-		<fcs_function name="engine/limit/takeoff-flex-ref">
+		<fcs_function name="/systems/engines/limit/takeoff-flex-ref">
 			<function>
 				<min> <!-- FLEX can not increase thrust past T/O -->
-					<property>engine/limit/takeoff-ref</property>
+					<property>/systems/engines/limit/takeoff-ref</property>
 					<table>
 						<independentVar lookup="row">/position/altitude-ft</independentVar>
-						<independentVar lookup="column">engine/limit/flex-temp-input</independentVar>
+						<independentVar lookup="column">/systems/engines/limit/flex-temp-input</independentVar>
 						<tableData>
 							      -60    -30     0      30     60
 							    0   96.2  102.4  108.0  113.5  107.8
@@ -185,13 +185,13 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/takeoff-flex">
+		<fcs_function name="/systems/engines/limit/takeoff-flex">
 			<function>
 				<quotient>
 					<floor>
 						<sum>
 							<product>
-								<property>engine/limit/takeoff-flex-ref</property>
+								<property>/systems/engines/limit/takeoff-flex-ref</property>
 								<value>10</value>
 							</product>
 							<value>0.5</value> <!-- Make it round correctly -->
@@ -202,7 +202,7 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/go-around-ref">
+		<fcs_function name="/systems/engines/limit/go-around-ref">
 			<function>
 				<table>
 					<independentVar lookup="row">/position/altitude-ft</independentVar>
@@ -217,13 +217,13 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/go-around">
+		<fcs_function name="/systems/engines/limit/go-around">
 			<function>
 				<quotient>
 					<floor>
 						<sum>
 							<product>
-								<property>engine/limit/go-around-ref</property>
+								<property>/systems/engines/limit/go-around-ref</property>
 								<value>10</value>
 							</product>
 							<value>0.5</value> <!-- Make it round correctly -->
@@ -234,7 +234,7 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/mct-ref">
+		<fcs_function name="/systems/engines/limit/mct-ref">
 			<function>
 				<table>
 					<independentVar lookup="row">/position/altitude-ft</independentVar>
@@ -249,13 +249,13 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/mct">
+		<fcs_function name="/systems/engines/limit/mct">
 			<function>
 				<quotient>
 					<floor>
 						<sum>
 							<product>
-								<property>engine/limit/mct-ref</property>
+								<property>/systems/engines/limit/mct-ref</property>
 								<value>10</value>
 							</product>
 							<value>0.5</value> <!-- Make it round correctly -->
@@ -266,7 +266,7 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/climb-ref">
+		<fcs_function name="/systems/engines/limit/climb-ref">
 			<function>
 				<table>
 					<independentVar lookup="row">/position/altitude-ft</independentVar>
@@ -281,13 +281,13 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/climb">
+		<fcs_function name="/systems/engines/limit/climb">
 			<function>
 				<quotient>
 					<floor>
 						<sum>
 							<product>
-								<property>engine/limit/climb-ref</property>
+								<property>/systems/engines/limit/climb-ref</property>
 								<value>10</value>
 							</product>
 							<value>0.5</value> <!-- Make it round correctly -->
@@ -298,7 +298,7 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/cruise-ref">
+		<fcs_function name="/systems/engines/limit/cruise-ref">
 			<function>
 				<table>
 					<independentVar lookup="row">/position/altitude-ft</independentVar>
@@ -313,13 +313,13 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/cruise">
+		<fcs_function name="/systems/engines/limit/cruise">
 			<function>
 				<quotient>
 					<floor>
 						<sum>
 							<product>
-								<property>engine/limit/cruise-ref</property>
+								<property>/systems/engines/limit/cruise-ref</property>
 								<value>10</value>
 							</product>
 							<value>0.5</value> <!-- Make it round correctly -->
@@ -330,42 +330,42 @@
 			</function>
 		</fcs_function>
 		
-		<switch name="engine/limit/active">
+		<switch name="/systems/engines/limit/active">
 			<default value="100"/>
-			<test value="engine/limit/active">
-				engine/limit/active-mode-int eq -1
+			<test value="/systems/engines/limit/active">
+				/systems/engines/limit/active-mode-int eq -1
 			</test>
-			<test value="engine/limit/active">
+			<test value="/systems/engines/limit/active">
 				<test logic="OR">
-					engine/limit/active-mode-int eq 0
-					engine/limit/active-mode-int eq 1
+					/systems/engines/limit/active-mode-int eq 0
+					/systems/engines/limit/active-mode-int eq 1
 				</test>
 				/instrumentation/airspeed-indicator/indicated-speed-kt ge 30
 			</test>
-			<test value="engine/limit/takeoff">
-				engine/limit/active-mode-int eq 0
+			<test value="/systems/engines/limit/takeoff">
+				/systems/engines/limit/active-mode-int eq 0
 			</test>
-			<test value="engine/limit/takeoff-flex">
-				engine/limit/active-mode-int eq 1
+			<test value="/systems/engines/limit/takeoff-flex">
+				/systems/engines/limit/active-mode-int eq 1
 			</test>
-			<test value="engine/limit/go-around">
-				engine/limit/active-mode-int eq 2
+			<test value="/systems/engines/limit/go-around">
+				/systems/engines/limit/active-mode-int eq 2
 			</test>
-			<test value="engine/limit/mct">
-				engine/limit/active-mode-int eq 3
+			<test value="/systems/engines/limit/mct">
+				/systems/engines/limit/active-mode-int eq 3
 			</test>
-			<test value="engine/limit/climb">
-				engine/limit/active-mode-int eq 4
+			<test value="/systems/engines/limit/climb">
+				/systems/engines/limit/active-mode-int eq 4
 			</test>
-			<test value="engine/limit/cruise">
-				engine/limit/active-mode-int eq 5
+			<test value="/systems/engines/limit/cruise">
+				/systems/engines/limit/active-mode-int eq 5
 			</test>
 		</switch>
 		
-		<fcs_function name="engine/limit/active-norm">
+		<fcs_function name="/systems/engines/limit/active-norm">
 			<function>
 				<table>
-					<independentVar lookup="row">engine/limit/active</independentVar>
+					<independentVar lookup="row">/systems/engines/limit/active</independentVar>
 					<tableData>
 						 22.6  0
 						119.5  1
@@ -375,22 +375,22 @@
 			<output>/it-autoflight/settings/autothrottle-max</output>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/highest">
+		<fcs_function name="/systems/engines/limit/highest">
 			<function>
 				<max>
-					<property>engine/limit/climb</property>
-					<property>engine/limit/cruise</property>
-					<property>engine/limit/go-around</property>
-					<property>engine/limit/mct</property>
-					<property>engine/limit/takeoff</property>
+					<property>/systems/engines/limit/climb</property>
+					<property>/systems/engines/limit/cruise</property>
+					<property>/systems/engines/limit/go-around</property>
+					<property>/systems/engines/limit/mct</property>
+					<property>/systems/engines/limit/takeoff</property>
 				</max>
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/highest-norm">
+		<fcs_function name="/systems/engines/limit/highest-norm">
 			<function>
 				<table>
-					<independentVar lookup="row">engine/limit/highest</independentVar>
+					<independentVar lookup="row">/systems/engines/limit/highest</independentVar>
 					<tableData>
 						 22.6  0
 						119.5  1
@@ -399,7 +399,7 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/idle"> <!-- No rounding, this is analog -->
+		<fcs_function name="/systems/engines/limit/idle"> <!-- No rounding, this is analog -->
 			<function>
 				<ifthen>
 					<eq>
@@ -426,10 +426,10 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="engine/limit/idle-norm">
+		<fcs_function name="/systems/engines/limit/idle-norm">
 			<function>
 				<table>
-					<independentVar lookup="row">engine/limit/idle</independentVar>
+					<independentVar lookup="row">/systems/engines/limit/idle</independentVar>
 					<tableData>
 						 22.6  0
 						119.5  1
@@ -444,19 +444,19 @@
 	<channel name="Reversers">
 		
 		<!-- Engine 1 -->
-		<switch name="engine/reverse-1/position-cmd">
+		<switch name="/systems/engines/reverse-1/position-cmd">
 			<default value="0"/>
 			<test value="1">
 				/controls/engines/engine[0]/reverse-engage eq 1
 			</test>
 			<test logic="AND" value="1"> <!-- Don't stow until thrust is reduced enough -->
 				/engines/engine[0]/n1-actual ge 40
-				engine/reverse-1/position-cmd eq 1
+				/systems/engines/reverse-1/position-cmd eq 1
 			</test>
 			<output>/controls/engines/engine[0]/reverse-cmd</output>
 		</switch>
 		
-		<switch name="engine/reverse-1/position-rate">
+		<switch name="/systems/engines/reverse-1/position-rate">
 			<default value="0"/>
 			<test logic="OR" value="1">
 				/systems/pneumatics/eng-1-psi ge 20
@@ -464,19 +464,19 @@
 			</test>
 		</switch>
 		
-		<actuator name="engine/reverse-1/position-norm">
-			<input>engine/reverse-1/position-cmd</input>
-			<rate_limit>engine/reverse-1/position-rate</rate_limit>
+		<actuator name="/systems/engines/reverse-1/position-norm">
+			<input>/systems/engines/reverse-1/position-cmd</input>
+			<rate_limit>/systems/engines/reverse-1/position-rate</rate_limit>
 			<output>/engines/engine[0]/reverser-pos-norm</output>
 		</actuator>
 		
 		<pure_gain name="propulsion/engine[0]/reverser-angle-rad">
-			<input>engine/reverse-1/position-norm</input>
+			<input>/systems/engines/reverse-1/position-norm</input>
 			<gain>3.14</gain>
 		</pure_gain>
 		
-		<switch name="engine/reverse-1/interlock"> <!-- Locked until 60% open, unlocked until 20% closed -->
-			<default value="engine/reverse-1/interlock"/>
+		<switch name="/systems/engines/reverse-1/interlock"> <!-- Locked until 60% open, unlocked until 20% closed -->
+			<default value="/systems/engines/reverse-1/interlock"/>
 			<test value="0">
 				/engines/engine[0]/reverser-pos-norm ge 0.6
 			</test>
@@ -485,11 +485,11 @@
 			</test>
 		</switch>
 		
-		<fcs_function name="engine/reverse-1/throttle-rev-cmd">
+		<fcs_function name="/systems/engines/reverse-1/throttle-rev-cmd">
 			<function>
 				<ifthen>
 					<eq>
-						<property>engine/reverse-1/position-norm</property>
+						<property>/systems/engines/reverse-1/position-norm</property>
 						<value>1</value>
 					</eq>
 					<table>
@@ -509,7 +509,7 @@
 				<product>
 					<property>/controls/engines/engine[0]/reverse-engage</property>
 					<table>
-						<independentVar lookup="row">engine/reverse-1/throttle-rev-cmd</independentVar>
+						<independentVar lookup="row">/systems/engines/reverse-1/throttle-rev-cmd</independentVar>
 						<tableData>
 							0.05  0.25
 							0.82  1.00
@@ -519,46 +519,46 @@
 			</function>
 		</fcs_function>
 		
-		<switch name="engine/reverse-1/throttle-rev">
+		<switch name="/systems/engines/reverse-1/throttle-rev">
 			<default value="0"/>
 			<test value="0">
-				engine/reverse-1/interlock eq 1
+				/systems/engines/reverse-1/interlock eq 1
 			</test>
-			<test value="engine/reverse-1/throttle-rev-cmd">
+			<test value="/systems/engines/reverse-1/throttle-rev-cmd">
 				/controls/engines/engine[0]/reverse-engage eq 1
 			</test>
 		</switch>
 		
-		<switch name="engine/reverse-1/active">
+		<switch name="/systems/engines/reverse-1/active">
 			<default value="0"/>
 			<test logic="OR" value="1">
-				engine/reverse-1/position-cmd eq 1
-				engine/reverse-1/position-norm ne 0
+				/systems/engines/reverse-1/position-cmd eq 1
+				/systems/engines/reverse-1/position-norm ne 0
 			</test>
 		</switch>
 		
 		<!-- Engine 2 -->
-		<switch name="engine/reverse-2/position-cmd">
+		<switch name="/systems/engines/reverse-2/position-cmd">
 			<default value="0"/>
 			<test value="1">
 				/controls/engines/engine[1]/reverse-engage eq 1
 			</test>
 			<test logic="AND" value="1"> <!-- Don't stow until thrust is reduced enough -->
 				/engines/engine[1]/n1-actual ge 40
-				engine/reverse-2/position-cmd eq 1
+				/systems/engines/reverse-2/position-cmd eq 1
 			</test>
 			<output>/controls/engines/engine[1]/reverse-cmd</output>
 		</switch>
 		
-		<switch name="engine/reverse-2/position-cmd-wow">
-			<default value="engine/reverse-2/position-cmd"/>
+		<switch name="/systems/engines/reverse-2/position-cmd-wow">
+			<default value="/systems/engines/reverse-2/position-cmd"/>
 			<test logic="AND" value="0">
 				/gear/gear[0]/wow ne 1
-				engine/reverse-2/position-cmd-wow eq 0
+				/systems/engines/reverse-2/position-cmd-wow eq 0
 			</test>
 		</switch>
 		
-		<switch name="engine/reverse-2/position-rate">
+		<switch name="/systems/engines/reverse-2/position-rate">
 			<default value="0"/>
 			<test logic="OR" value="1">
 				/systems/pneumatics/eng-2-psi ge 20
@@ -566,19 +566,19 @@
 			</test>
 		</switch>
 		
-		<actuator name="engine/reverse-2/position-norm">
-			<input>engine/reverse-2/position-cmd-wow</input>
-			<rate_limit>engine/reverse-2/position-rate</rate_limit>
+		<actuator name="/systems/engines/reverse-2/position-norm">
+			<input>/systems/engines/reverse-2/position-cmd-wow</input>
+			<rate_limit>/systems/engines/reverse-2/position-rate</rate_limit>
 			<output>/engines/engine[1]/reverser-pos-norm</output>
 		</actuator>
 		
 		<pure_gain name="propulsion/engine[1]/reverser-angle-rad">
-			<input>engine/reverse-2/position-norm</input>
+			<input>/systems/engines/reverse-2/position-norm</input>
 			<gain>3.14</gain>
 		</pure_gain>
 		
-		<switch name="engine/reverse-2/interlock"> <!-- Locked until 60% open, unlocked until 20% closed -->
-			<default value="engine/reverse-2/interlock"/>
+		<switch name="/systems/engines/reverse-2/interlock"> <!-- Locked until 60% open, unlocked until 20% closed -->
+			<default value="/systems/engines/reverse-2/interlock"/>
 			<test value="0">
 				/engines/engine[1]/reverser-pos-norm ge 0.6
 			</test>
@@ -587,11 +587,11 @@
 			</test>
 		</switch>
 		
-		<fcs_function name="engine/reverse-2/throttle-rev-cmd">
+		<fcs_function name="/systems/engines/reverse-2/throttle-rev-cmd">
 			<function>
 				<ifthen>
 					<eq>
-						<property>engine/reverse-2/position-norm</property>
+						<property>/systems/engines/reverse-2/position-norm</property>
 						<value>1</value>
 					</eq>
 					<table>
@@ -611,7 +611,7 @@
 				<product>
 					<property>/controls/engines/engine[1]/reverse-engage</property>
 					<table>
-						<independentVar lookup="row">engine/reverse-2/throttle-rev-cmd</independentVar>
+						<independentVar lookup="row">/systems/engines/reverse-2/throttle-rev-cmd</independentVar>
 						<tableData>
 							0.05  0.25
 							0.82  1.00
@@ -621,38 +621,38 @@
 			</function>
 		</fcs_function>
 		
-		<switch name="engine/reverse-2/throttle-rev">
+		<switch name="/systems/engines/reverse-2/throttle-rev">
 			<default value="0"/>
 			<test value="0">
-				engine/reverse-2/interlock eq 1
+				/systems/engines/reverse-2/interlock eq 1
 			</test>
-			<test value="engine/reverse-2/throttle-rev-cmd">
+			<test value="/systems/engines/reverse-2/throttle-rev-cmd">
 				/controls/engines/engine[1]/reverse-engage eq 1
 			</test>
 		</switch>
 		
-		<switch name="engine/reverse-2/active">
+		<switch name="/systems/engines/reverse-2/active">
 			<default value="0"/>
 			<test logic="OR" value="1">
-				engine/reverse-2/position-cmd eq 1
-				engine/reverse-2/position-norm ne 0
+				/systems/engines/reverse-2/position-cmd eq 1
+				/systems/engines/reverse-2/position-norm ne 0
 			</test>
 		</switch>
 		
 		<!-- Engine 3 -->
-		<switch name="engine/reverse-3/position-cmd">
+		<switch name="/systems/engines/reverse-3/position-cmd">
 			<default value="0"/>
 			<test value="1">
 				/controls/engines/engine[2]/reverse-engage eq 1
 			</test>
 			<test logic="AND" value="1"> <!-- Don't stow until thrust is reduced enough -->
 				/engines/engine[2]/n1-actual ge 40
-				engine/reverse-3/position-cmd eq 1
+				/systems/engines/reverse-3/position-cmd eq 1
 			</test>
 			<output>/controls/engines/engine[2]/reverse-cmd</output>
 		</switch>
 		
-		<switch name="engine/reverse-3/position-rate">
+		<switch name="/systems/engines/reverse-3/position-rate">
 			<default value="0"/>
 			<test logic="OR" value="1">
 				/systems/pneumatics/eng-3-psi ge 20
@@ -660,19 +660,19 @@
 			</test>
 		</switch>
 		
-		<actuator name="engine/reverse-3/position-norm">
-			<input>engine/reverse-3/position-cmd</input>
-			<rate_limit>engine/reverse-3/position-rate</rate_limit>
+		<actuator name="/systems/engines/reverse-3/position-norm">
+			<input>/systems/engines/reverse-3/position-cmd</input>
+			<rate_limit>/systems/engines/reverse-3/position-rate</rate_limit>
 			<output>/engines/engine[2]/reverser-pos-norm</output>
 		</actuator>
 		
 		<pure_gain name="propulsion/engine[2]/reverser-angle-rad">
-			<input>engine/reverse-3/position-norm</input>
+			<input>/systems/engines/reverse-3/position-norm</input>
 			<gain>3.14</gain>
 		</pure_gain>
 		
-		<switch name="engine/reverse-3/interlock"> <!-- Locked until 60% open, unlocked until 20% closed -->
-			<default value="engine/reverse-3/interlock"/>
+		<switch name="/systems/engines/reverse-3/interlock"> <!-- Locked until 60% open, unlocked until 20% closed -->
+			<default value="/systems/engines/reverse-3/interlock"/>
 			<test value="0">
 				/engines/engine[2]/reverser-pos-norm ge 0.6
 			</test>
@@ -681,11 +681,11 @@
 			</test>
 		</switch>
 		
-		<fcs_function name="engine/reverse-3/throttle-rev-cmd">
+		<fcs_function name="/systems/engines/reverse-3/throttle-rev-cmd">
 			<function>
 				<ifthen>
 					<eq>
-						<property>engine/reverse-3/position-norm</property>
+						<property>/systems/engines/reverse-3/position-norm</property>
 						<value>1</value>
 					</eq>
 					<table>
@@ -705,7 +705,7 @@
 				<product>
 					<property>/controls/engines/engine[2]/reverse-engage</property>
 					<table>
-						<independentVar lookup="row">engine/reverse-3/throttle-rev-cmd</independentVar>
+						<independentVar lookup="row">/systems/engines/reverse-3/throttle-rev-cmd</independentVar>
 						<tableData>
 							0.05  0.25
 							0.82  1.00
@@ -715,21 +715,21 @@
 			</function>
 		</fcs_function>
 		
-		<switch name="engine/reverse-3/throttle-rev">
+		<switch name="/systems/engines/reverse-3/throttle-rev">
 			<default value="0"/>
 			<test value="0">
-				engine/reverse-3/interlock eq 1
+				/systems/engines/reverse-3/interlock eq 1
 			</test>
-			<test value="engine/reverse-3/throttle-rev-cmd">
+			<test value="/systems/engines/reverse-3/throttle-rev-cmd">
 				/controls/engines/engine[2]/reverse-engage eq 1
 			</test>
 		</switch>
 		
-		<switch name="engine/reverse-3/active">
+		<switch name="/systems/engines/reverse-3/active">
 			<default value="0"/>
 			<test logic="OR" value="1">
-				engine/reverse-3/position-cmd eq 1
-				engine/reverse-3/position-norm ne 0
+				/systems/engines/reverse-3/position-cmd eq 1
+				/systems/engines/reverse-3/position-norm ne 0
 			</test>
 		</switch>
 	
@@ -738,7 +738,7 @@
 	<channel name="Engine Control">
 		
 		<!-- Engine 1 -->
-		<fcs_function name="engine/limit/man-1-norm">
+		<fcs_function name="/systems/engines/limit/man-1-norm">
 			<function>
 				<table>
 					<independentVar lookup="row">/controls/engines/engine[0]/man-n1</independentVar>
@@ -750,54 +750,54 @@
 			</function>
 		</fcs_function>
 		
-		<switch name="engine/control-1/ats-max">
-			<default value="engine/limit/active-norm"/>
-			<test logic="AND" value="engine/limit/man-1-norm">
+		<switch name="/systems/engines/control-1/ats-max">
+			<default value="/systems/engines/limit/active-norm"/>
+			<test logic="AND" value="/systems/engines/limit/man-1-norm">
 				/instrumentation/n[0]/power-avail eq 1
 				/controls/engines/engine[0]/man-n1-set eq 1
-				engine/limit/man-1-norm le engine/limit/active-norm
+				/systems/engines/limit/man-1-norm le /systems/engines/limit/active-norm
 			</test>
 			<clipto>
-				<min>engine/limit/idle-norm</min>
+				<min>/systems/engines/limit/idle-norm</min>
 				<max>1.0</max>
 			</clipto>
 		</switch>
 		
-		<switch name="engine/control-1/throttle-pos">
+		<switch name="/systems/engines/control-1/throttle-pos">
 			<default value="/controls/engines/engine[0]/throttle"/>
 			<test value="0">
-				engine/reverse-1/active eq 1
+				/systems/engines/reverse-1/active eq 1
 			</test>
-			<test logic="AND" value="engine/ats-cmd-1">
+			<test logic="AND" value="/systems/engines/ats-cmd-1">
 				/it-autoflight/output/athr eq 1
 				/it-autoflight/output/thr-mode ne 3
 			</test>
 		</switch>
 		
-		<lag_filter name="engine/control-1/throttle-pos-lag">
-			<input>engine/control-1/throttle-pos</input>
+		<lag_filter name="/systems/engines/control-1/throttle-pos-lag">
+			<input>/systems/engines/control-1/throttle-pos</input>
 			<c1>20</c1>
 		</lag_filter>
 		
-		<switch name="engine/control-1/throttle-output">
-			<default value="engine/control-1/throttle-pos"/>
-			<test value="engine/reverse-1/throttle-rev">
-				engine/reverse-1/active eq 1
+		<switch name="/systems/engines/control-1/throttle-output">
+			<default value="/systems/engines/control-1/throttle-pos"/>
+			<test value="/systems/engines/reverse-1/throttle-rev">
+				/systems/engines/reverse-1/active eq 1
 			</test>
 			<clipto>
-				<min>engine/limit/idle-norm</min>
+				<min>/systems/engines/limit/idle-norm</min>
 				<max>1.0</max>
 			</clipto>
 		</switch>
 		
-		<lag_filter name="engine/control-1/throttle-fdm">
-			<input>engine/control-1/throttle-output</input>
+		<lag_filter name="/systems/engines/control-1/throttle-fdm">
+			<input>/systems/engines/control-1/throttle-output</input>
 			<c1>1.0</c1>
 			<output>fcs/throttle-pos-norm[0]</output>
 		</lag_filter>
 		
 		<!-- Engine 2 -->
-		<fcs_function name="engine/limit/man-2-norm">
+		<fcs_function name="/systems/engines/limit/man-2-norm">
 			<function>
 				<table>
 					<independentVar lookup="row">/controls/engines/engine[1]/man-n1</independentVar>
@@ -809,54 +809,54 @@
 			</function>
 		</fcs_function>
 		
-		<switch name="engine/control-2/ats-max">
-			<default value="engine/limit/active-norm"/>
-			<test logic="AND" value="engine/limit/man-2-norm">
+		<switch name="/systems/engines/control-2/ats-max">
+			<default value="/systems/engines/limit/active-norm"/>
+			<test logic="AND" value="/systems/engines/limit/man-2-norm">
 				/instrumentation/n[1]/power-avail eq 1
 				/controls/engines/engine[1]/man-n1-set eq 1
-				engine/limit/man-2-norm le engine/limit/active-norm
+				/systems/engines/limit/man-2-norm le /systems/engines/limit/active-norm
 			</test>
 			<clipto>
-				<min>engine/limit/idle-norm</min>
+				<min>/systems/engines/limit/idle-norm</min>
 				<max>1.0</max>
 			</clipto>
 		</switch>
 		
-		<switch name="engine/control-2/throttle-pos">
+		<switch name="/systems/engines/control-2/throttle-pos">
 			<default value="/controls/engines/engine[1]/throttle"/>
 			<test value="0">
-				engine/reverse-2/active eq 1
+				/systems/engines/reverse-2/active eq 1
 			</test>
-			<test logic="AND" value="engine/ats-cmd-2">
+			<test logic="AND" value="/systems/engines/ats-cmd-2">
 				/it-autoflight/output/athr eq 1
 				/it-autoflight/output/thr-mode ne 3
 			</test>
 		</switch>
 		
-		<lag_filter name="engine/control-2/throttle-pos-lag">
-			<input>engine/control-2/throttle-pos</input>
+		<lag_filter name="/systems/engines/control-2/throttle-pos-lag">
+			<input>/systems/engines/control-2/throttle-pos</input>
 			<c1>20</c1>
 		</lag_filter>
 		
-		<switch name="engine/control-2/throttle-output">
-			<default value="engine/control-2/throttle-pos"/>
-			<test value="engine/reverse-2/throttle-rev">
-				engine/reverse-2/active eq 1
+		<switch name="/systems/engines/control-2/throttle-output">
+			<default value="/systems/engines/control-2/throttle-pos"/>
+			<test value="/systems/engines/reverse-2/throttle-rev">
+				/systems/engines/reverse-2/active eq 1
 			</test>
 			<clipto>
-				<min>engine/limit/idle-norm</min>
+				<min>/systems/engines/limit/idle-norm</min>
 				<max>1.0</max>
 			</clipto>
 		</switch>
 		
-		<lag_filter name="engine/control-2/throttle-fdm">
-			<input>engine/control-2/throttle-output</input>
+		<lag_filter name="/systems/engines/control-2/throttle-fdm">
+			<input>/systems/engines/control-2/throttle-output</input>
 			<c1>1.0</c1>
 			<output>fcs/throttle-pos-norm[1]</output>
 		</lag_filter>
 		
 		<!-- Engine 3 -->
-		<fcs_function name="engine/limit/man-3-norm">
+		<fcs_function name="/systems/engines/limit/man-3-norm">
 			<function>
 				<table>
 					<independentVar lookup="row">/controls/engines/engine[2]/man-n1</independentVar>
@@ -868,59 +868,59 @@
 			</function>
 		</fcs_function>
 		
-		<switch name="engine/control-3/ats-max">
-			<default value="engine/limit/active-norm"/>
-			<test logic="AND" value="engine/limit/man-3-norm">
+		<switch name="/systems/engines/control-3/ats-max">
+			<default value="/systems/engines/limit/active-norm"/>
+			<test logic="AND" value="/systems/engines/limit/man-3-norm">
 				/instrumentation/n[2]/power-avail eq 1
 				/controls/engines/engine[2]/man-n1-set eq 1
-				engine/limit/man-3-norm le engine/limit/active-norm
+				/systems/engines/limit/man-3-norm le /systems/engines/limit/active-norm
 			</test>
 			<clipto>
-				<min>engine/limit/idle-norm</min>
+				<min>/systems/engines/limit/idle-norm</min>
 				<max>1.0</max>
 			</clipto>
 		</switch>
 		
-		<switch name="engine/control-3/throttle-pos">
+		<switch name="/systems/engines/control-3/throttle-pos">
 			<default value="/controls/engines/engine[2]/throttle"/>
 			<test value="0">
-				engine/reverse-3/active eq 1
+				/systems/engines/reverse-3/active eq 1
 			</test>
-			<test logic="AND" value="engine/ats-cmd-3">
+			<test logic="AND" value="/systems/engines/ats-cmd-3">
 				/it-autoflight/output/athr eq 1
 				/it-autoflight/output/thr-mode ne 3
 			</test>
 		</switch>
 		
-		<lag_filter name="engine/control-3/throttle-pos-lag">
-			<input>engine/control-3/throttle-pos</input>
+		<lag_filter name="/systems/engines/control-3/throttle-pos-lag">
+			<input>/systems/engines/control-3/throttle-pos</input>
 			<c1>20</c1>
 		</lag_filter>
 		
-		<switch name="engine/control-3/throttle-output">
-			<default value="engine/control-3/throttle-pos"/>
-			<test value="engine/reverse-3/throttle-rev">
-				engine/reverse-3/active eq 1
+		<switch name="/systems/engines/control-3/throttle-output">
+			<default value="/systems/engines/control-3/throttle-pos"/>
+			<test value="/systems/engines/reverse-3/throttle-rev">
+				/systems/engines/reverse-3/active eq 1
 			</test>
 			<clipto>
-				<min>engine/limit/idle-norm</min>
+				<min>/systems/engines/limit/idle-norm</min>
 				<max>1.0</max>
 			</clipto>
 		</switch>
 		
-		<lag_filter name="engine/control-3/throttle-fdm">
-			<input>engine/control-3/throttle-output</input>
+		<lag_filter name="/systems/engines/control-3/throttle-fdm">
+			<input>/systems/engines/control-3/throttle-output</input>
 			<c1>1.0</c1>
 			<output>fcs/throttle-pos-norm[2]</output>
 		</lag_filter>
 		
 		<!-- Comparator -->
-		<fcs_function name="engine/throttle-compare-max">
+		<fcs_function name="/systems/engines/throttle-compare-max">
 			<function>
 				<max> <!-- Don't use clipped -->
-					<property>engine/control-1/throttle-pos-lag</property>
-					<property>engine/control-2/throttle-pos-lag</property>
-					<property>engine/control-3/throttle-pos-lag</property>
+					<property>/systems/engines/control-1/throttle-pos-lag</property>
+					<property>/systems/engines/control-2/throttle-pos-lag</property>
+					<property>/systems/engines/control-3/throttle-pos-lag</property>
 				</max>
 			</function>
 		</fcs_function>
@@ -929,35 +929,35 @@
 	
 	<channel name="Engine Parameters" execrate="2">
 		
-		<lag_filter name="engine/n1-actual-1">
+		<lag_filter name="/systems/engines/n1-actual-1">
 			<input>/engines/engine[0]/n1</input>
 			<c1>2.25</c1>
 			<output>/engines/engine[0]/n1-actual</output>
 			<output>/engines/engine[4]/n1</output>
 		</lag_filter>
 		
-		<lag_filter name="engine/n1-actual-2">
+		<lag_filter name="/systems/engines/n1-actual-2">
 			<input>/engines/engine[1]/n1</input>
 			<c1>2.25</c1>
 			<output>/engines/engine[1]/n1-actual</output>
 			<output>/engines/engine[5]/n1</output>
 		</lag_filter>
 		
-		<lag_filter name="engine/n1-actual-3">
+		<lag_filter name="/systems/engines/n1-actual-3">
 			<input>/engines/engine[2]/n1</input>
 			<c1>2.25</c1>
 			<output>/engines/engine[2]/n1-actual</output>
 			<output>/engines/engine[6]/n1</output>
 		</lag_filter>
 		
-		<switch name="engine/egt-c1">
+		<switch name="/systems/engines/egt-c1">
 			<default value="0.35"/>
 			<test value="1000">
 				/systems/acconfig/autoconfig-running eq 1
 			</test>
 		</switch>
 		
-		<fcs_function name="engine/egt-cmd-1">
+		<fcs_function name="/systems/engines/egt-cmd-1">
 			<function>
 				<sum>
 					<property>propulsion/tat-c</property>
@@ -984,13 +984,13 @@
 			</function>
 		</fcs_function>
 		
-		<lag_filter name="engine/egt-actual-1">
-			<input>engine/egt-cmd-1</input>
-			<c1>engine/egt-c1</c1>
+		<lag_filter name="/systems/engines/egt-actual-1">
+			<input>/systems/engines/egt-cmd-1</input>
+			<c1>/systems/engines/egt-c1</c1>
 			<output>/engines/engine[0]/egt-actual</output>
 		</lag_filter>
 		
-		<fcs_function name="engine/egt-cmd-2">
+		<fcs_function name="/systems/engines/egt-cmd-2">
 			<function>
 				<sum>
 					<property>propulsion/tat-c</property>
@@ -1017,13 +1017,13 @@
 			</function>
 		</fcs_function>
 		
-		<lag_filter name="engine/egt-actual-2">
-			<input>engine/egt-cmd-2</input>
-			<c1>engine/egt-c1</c1>
+		<lag_filter name="/systems/engines/egt-actual-2">
+			<input>/systems/engines/egt-cmd-2</input>
+			<c1>/systems/engines/egt-c1</c1>
 			<output>/engines/engine[1]/egt-actual</output>
 		</lag_filter>
 		
-		<fcs_function name="engine/egt-cmd-3">
+		<fcs_function name="/systems/engines/egt-cmd-3">
 			<function>
 				<sum>
 					<property>propulsion/tat-c</property>
@@ -1050,69 +1050,69 @@
 			</function>
 		</fcs_function>
 		
-		<lag_filter name="engine/egt-actual-3">
-			<input>engine/egt-cmd-3</input>
-			<c1>engine/egt-c1</c1>
+		<lag_filter name="/systems/engines/egt-actual-3">
+			<input>/systems/engines/egt-cmd-3</input>
+			<c1>/systems/engines/egt-c1</c1>
 			<output>/engines/engine[2]/egt-actual</output>
 		</lag_filter>
 		
-		<lag_filter name="engine/n2-actual-1">
+		<lag_filter name="/systems/engines/n2-actual-1">
 			<input>/engines/engine[0]/n2</input>
 			<c1>2.25</c1>
 			<output>/engines/engine[0]/n2-actual</output>
 			<output>/engines/engine[4]/n2</output>
 		</lag_filter>
 		
-		<lag_filter name="engine/n2-actual-2">
+		<lag_filter name="/systems/engines/n2-actual-2">
 			<input>/engines/engine[1]/n2</input>
 			<c1>2.25</c1>
 			<output>/engines/engine[1]/n2-actual</output>
 			<output>/engines/engine[5]/n2</output>
 		</lag_filter>
 		
-		<lag_filter name="engine/n2-actual-3">
+		<lag_filter name="/systems/engines/n2-actual-3">
 			<input>/engines/engine[2]/n2</input>
 			<c1>2.25</c1>
 			<output>/engines/engine[2]/n2-actual</output>
 			<output>/engines/engine[6]/n2</output>
 		</lag_filter>
 		
-		<lag_filter name="engine/ff-actual-1">
+		<lag_filter name="/systems/engines/ff-actual-1">
 			<input>/engines/engine[0]/fuel-flow_pph</input>
 			<c1>3.0</c1>
 			<output>/engines/engine[0]/ff-actual</output>
 		</lag_filter>
 		
-		<lag_filter name="engine/ff-actual-2">
+		<lag_filter name="/systems/engines/ff-actual-2">
 			<input>/engines/engine[1]/fuel-flow_pph</input>
 			<c1>3.0</c1>
 			<output>/engines/engine[1]/ff-actual</output>
 		</lag_filter>
 		
-		<lag_filter name="engine/ff-actual-3">
+		<lag_filter name="/systems/engines/ff-actual-3">
 			<input>/engines/engine[2]/fuel-flow_pph</input>
 			<c1>3.0</c1>
 			<output>/engines/engine[2]/ff-actual</output>
 		</lag_filter>
 		
 		<!-- Overspeed Alert -->
-		<fcs_function name="engine/limit/overspeed-n1-input">
+		<fcs_function name="/systems/engines/limit/overspeed-n1-input">
 			<function>
 				<sum>
 					<max>
-						<property>engine/n1-actual-1</property>
-						<property>engine/n1-actual-2</property>
-						<property>engine/n1-actual-3</property>
+						<property>/systems/engines/n1-actual-1</property>
+						<property>/systems/engines/n1-actual-2</property>
+						<property>/systems/engines/n1-actual-3</property>
 					</max>
 					<value>-2</value>
 				</sum>
 			</function>
 		</fcs_function>
 		
-		<switch name="engine/limit/overspeed">
+		<switch name="/systems/engines/limit/overspeed">
 			<default value="0"/>
 			<test value="1">
-				engine/limit/overspeed-n1-input gt engine/limit/highest
+				/systems/engines/limit/overspeed-n1-input gt /systems/engines/limit/highest
 			</test>
 		</switch>
 	
@@ -1120,48 +1120,48 @@
 	
 	<channel name="Reverser Status" execrate="8">
 		
-		<switch name="engine/eng-1-rev-state">
+		<switch name="/systems/engines/eng-1-rev-state">
 			<default value="0"/>
 			<test value="3"> <!-- REV -->
-				engine/reverse-1/position-norm eq 1
+				/systems/engines/reverse-1/position-norm eq 1
 			</test>
 			<test logic="OR" value="2"> <!-- U/L -->
 				/controls/engines/engine[0]/reverse-engage eq 1
-				engine/reverse-1/position-norm gt 0.2
+				/systems/engines/reverse-1/position-norm gt 0.2
 			</test>
 			<test logic="OR" value="1"> <!-- PRES -->
 				/controls/engines/engine[0]/reverse-engage eq 1
-				engine/reverse-1/position-norm gt 0
+				/systems/engines/reverse-1/position-norm gt 0
 			</test>
 		</switch>
 		
-		<switch name="engine/eng-2-rev-state">
+		<switch name="/systems/engines/eng-2-rev-state">
 			<default value="0"/>
 			<test value="3"> <!-- REV -->
-				engine/reverse-2/position-norm eq 1
+				/systems/engines/reverse-2/position-norm eq 1
 			</test>
 			<test logic="OR" value="2"> <!-- U/L -->
 				/controls/engines/engine[1]/reverse-engage eq 1
-				engine/reverse-2/position-norm gt 0.2
+				/systems/engines/reverse-2/position-norm gt 0.2
 			</test>
 			<test logic="OR" value="1"> <!-- PRES -->
 				/controls/engines/engine[1]/reverse-engage eq 1
-				engine/reverse-2/position-norm gt 0
+				/systems/engines/reverse-2/position-norm gt 0
 			</test>
 		</switch>
 		
-		<switch name="engine/eng-3-rev-state">
+		<switch name="/systems/engines/eng-3-rev-state">
 			<default value="0"/>
 			<test value="3"> <!-- REV -->
-				engine/reverse-3/position-norm eq 1
+				/systems/engines/reverse-3/position-norm eq 1
 			</test>
 			<test logic="OR" value="2"> <!-- U/L -->
 				/controls/engines/engine[2]/reverse-engage eq 1
-				engine/reverse-3/position-norm gt 0.2
+				/systems/engines/reverse-3/position-norm gt 0.2
 			</test>
 			<test logic="OR" value="1"> <!-- PRES -->
 				/controls/engines/engine[2]/reverse-engage eq 1
-				engine/reverse-3/position-norm gt 0
+				/systems/engines/reverse-3/position-norm gt 0
 			</test>
 		</switch>
 	

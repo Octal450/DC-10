@@ -102,7 +102,7 @@
 		
 		<switch name="/instrumentation/airspeed-indicator[0]/vmo-mmo-input">
 			<default value="/instrumentation/airspeed-indicator[0]/vmo-mmo-input"/>
-			<test value="fcc/speeds/vmo-mmo">
+			<test value="/systems/fcc/speeds/vmo-mmo">
 				/instrumentation/airspeed-indicator[0]/power-avail eq 1
 			</test>
 		</switch>
@@ -219,7 +219,7 @@
 		
 		<switch name="/instrumentation/airspeed-indicator[1]/vmo-mmo-input">
 			<default value="/instrumentation/airspeed-indicator[1]/vmo-mmo-input"/>
-			<test value="fcc/speeds/vmo-mmo">
+			<test value="/systems/fcc/speeds/vmo-mmo">
 				/instrumentation/airspeed-indicator[1]/power-avail eq 1
 			</test>
 		</switch>
@@ -1761,7 +1761,7 @@
 		
 		<switch name="/instrumentation/epr[0]/epr-input">
 			<default value="/instrumentation/epr[0]/epr-input"/>
-			<test value="engine/epr-actual-1">
+			<test value="/systems/engines/epr-actual-1">
 				/instrumentation/epr[0]/power-avail eq 1
 			</test>
 		</switch>
@@ -1824,7 +1824,7 @@
 				/instrumentation/epr[0]/power-avail eq 1
 				/controls/engines/engine[0]/man-epr-set eq 1
 			</test>
-			<test value="engine/limit/active">
+			<test value="/systems/engines/limit/active">
 				/instrumentation/epr[0]/power-avail eq 1
 			</test>
 		</switch>
@@ -1847,7 +1847,7 @@
 		
 		<switch name="/instrumentation/epr[1]/epr-input">
 			<default value="/instrumentation/epr[1]/epr-input"/>
-			<test value="engine/epr-actual-2">
+			<test value="/systems/engines/epr-actual-2">
 				/instrumentation/epr[1]/power-avail eq 1
 			</test>
 		</switch>
@@ -1910,7 +1910,7 @@
 				/instrumentation/epr[1]/power-avail eq 1
 				/controls/engines/engine[1]/man-epr-set eq 1
 			</test>
-			<test value="engine/limit/active">
+			<test value="/systems/engines/limit/active">
 				/instrumentation/epr[1]/power-avail eq 1
 			</test>
 		</switch>
@@ -1933,7 +1933,7 @@
 		
 		<switch name="/instrumentation/epr[2]/epr-input">
 			<default value="/instrumentation/epr[2]/epr-input"/>
-			<test value="engine/epr-actual-3">
+			<test value="/systems/engines/epr-actual-3">
 				/instrumentation/epr[2]/power-avail eq 1
 			</test>
 		</switch>
@@ -1996,7 +1996,7 @@
 				/instrumentation/epr[2]/power-avail eq 1
 				/controls/engines/engine[2]/man-epr-set eq 1
 			</test>
-			<test value="engine/limit/active">
+			<test value="/systems/engines/limit/active">
 				/instrumentation/epr[2]/power-avail eq 1
 			</test>
 		</switch>
@@ -2023,7 +2023,7 @@
 		
 		<switch name="/instrumentation/n[0]/n1-input">
 			<default value="/instrumentation/n[0]/n1-input"/>
-			<test value="engine/n1-actual-1">
+			<test value="/systems/engines/n1-actual-1">
 				/instrumentation/n[0]/power-avail eq 1
 			</test>
 		</switch>
@@ -2066,7 +2066,7 @@
 				/instrumentation/n[0]/power-avail eq 1
 				/controls/engines/engine[0]/man-n1-set eq 1
 			</test>
-			<test value="engine/limit/active">
+			<test value="/systems/engines/limit/active">
 				/instrumentation/n[0]/power-avail eq 1
 			</test>
 		</switch>
@@ -2082,7 +2082,7 @@
 			<test value="/instrumentation/n[0]/n1-max-raw">
 				/instrumentation/n[0]/power-avail eq 0
 			</test>
-			<test logic="OR" value="engine/n1-redline">
+			<test logic="OR" value="/systems/engines/n1-redline">
 				/systems/acconfig/autoconfig-running eq 1
 				/controls/switches/eng-max-reset eq 1
 			</test>
@@ -2098,7 +2098,7 @@
 		
 		<switch name="/instrumentation/n[0]/n2-input">
 			<default value="/instrumentation/n[0]/n2-input"/>
-			<test value="engine/n2-actual-1">
+			<test value="/systems/engines/n2-actual-1">
 				/instrumentation/n[0]/power-avail eq 1
 			</test>
 		</switch>
@@ -2135,7 +2135,7 @@
 			<test value="/instrumentation/n[0]/n2-max-raw">
 				/instrumentation/n[0]/power-avail eq 0
 			</test>
-			<test logic="OR" value="engine/n2-redline">
+			<test logic="OR" value="/systems/engines/n2-redline">
 				/systems/acconfig/autoconfig-running eq 1
 				/controls/switches/eng-max-reset eq 1
 			</test>
@@ -2161,7 +2161,7 @@
 		
 		<switch name="/instrumentation/n[1]/n1-input">
 			<default value="/instrumentation/n[1]/n1-input"/>
-			<test value="engine/n1-actual-2">
+			<test value="/systems/engines/n1-actual-2">
 				/instrumentation/n[1]/power-avail eq 1
 			</test>
 		</switch>
@@ -2204,7 +2204,7 @@
 				/instrumentation/n[1]/power-avail eq 1
 				/controls/engines/engine[1]/man-n1-set eq 1
 			</test>
-			<test value="engine/limit/active">
+			<test value="/systems/engines/limit/active">
 				/instrumentation/n[1]/power-avail eq 1
 			</test>
 		</switch>
@@ -2220,7 +2220,7 @@
 			<test value="/instrumentation/n[1]/n1-max-raw">
 				/instrumentation/n[1]/power-avail eq 0
 			</test>
-			<test logic="OR" value="engine/n1-redline">
+			<test logic="OR" value="/systems/engines/n1-redline">
 				/systems/acconfig/autoconfig-running eq 1
 				/controls/switches/eng-max-reset eq 1
 			</test>
@@ -2236,7 +2236,7 @@
 		
 		<switch name="/instrumentation/n[1]/n2-input">
 			<default value="/instrumentation/n[1]/n2-input"/>
-			<test value="engine/n2-actual-2">
+			<test value="/systems/engines/n2-actual-2">
 				/instrumentation/n[1]/power-avail eq 1
 			</test>
 		</switch>
@@ -2273,7 +2273,7 @@
 			<test value="/instrumentation/n[1]/n2-max-raw">
 				/instrumentation/n[1]/power-avail eq 0
 			</test>
-			<test logic="OR" value="engine/n2-redline">
+			<test logic="OR" value="/systems/engines/n2-redline">
 				/systems/acconfig/autoconfig-running eq 1
 				/controls/switches/eng-max-reset eq 1
 			</test>
@@ -2299,7 +2299,7 @@
 		
 		<switch name="/instrumentation/n[2]/n1-input">
 			<default value="/instrumentation/n[2]/n1-input"/>
-			<test value="engine/n1-actual-3">
+			<test value="/systems/engines/n1-actual-3">
 				/instrumentation/n[2]/power-avail eq 1
 			</test>
 		</switch>
@@ -2342,7 +2342,7 @@
 				/instrumentation/n[2]/power-avail eq 1
 				/controls/engines/engine[2]/man-n1-set eq 1
 			</test>
-			<test value="engine/limit/active">
+			<test value="/systems/engines/limit/active">
 				/instrumentation/n[2]/power-avail eq 1
 			</test>
 		</switch>
@@ -2358,7 +2358,7 @@
 			<test value="/instrumentation/n[2]/n1-max-raw">
 				/instrumentation/n[2]/power-avail eq 0
 			</test>
-			<test logic="OR" value="engine/n1-redline">
+			<test logic="OR" value="/systems/engines/n1-redline">
 				/systems/acconfig/autoconfig-running eq 1
 				/controls/switches/eng-max-reset eq 1
 			</test>
@@ -2374,7 +2374,7 @@
 		
 		<switch name="/instrumentation/n[2]/n2-input">
 			<default value="/instrumentation/n[2]/n2-input"/>
-			<test value="engine/n2-actual-3">
+			<test value="/systems/engines/n2-actual-3">
 				/instrumentation/n[2]/power-avail eq 1
 			</test>
 		</switch>
@@ -2411,7 +2411,7 @@
 			<test value="/instrumentation/n[2]/n2-max-raw">
 				/instrumentation/n[2]/power-avail eq 0
 			</test>
-			<test logic="OR" value="engine/n2-redline">
+			<test logic="OR" value="/systems/engines/n2-redline">
 				/systems/acconfig/autoconfig-running eq 1
 				/controls/switches/eng-max-reset eq 1
 			</test>
@@ -2441,7 +2441,7 @@
 		
 		<switch name="/instrumentation/egt[0]/egt-input">
 			<default value="/instrumentation/egt[0]/egt-input"/>
-			<test value="engine/egt-actual-1">
+			<test value="/systems/engines/egt-actual-1">
 				/instrumentation/egt[0]/power-avail eq 1
 			</test>
 			<clipto>
@@ -2475,7 +2475,7 @@
 			<default value="0"/>
 			<test logic="AND" value="1">
 				/instrumentation/egt[0]/power-avail eq 1
-				/instrumentation/egt[0]/egt-input ge engine/egt-alert
+				/instrumentation/egt[0]/egt-input ge /systems/engines/egt-alert
 			</test>
 		</switch>
 		
@@ -2484,7 +2484,7 @@
 			<test value="/instrumentation/egt[0]/egt-max-raw">
 				/instrumentation/egt[0]/power-avail eq 0
 			</test>
-			<test logic="OR" value="engine/egt-redline">
+			<test logic="OR" value="/systems/engines/egt-redline">
 				/systems/acconfig/autoconfig-running eq 1
 				/controls/switches/eng-max-reset eq 1
 			</test>
@@ -2510,7 +2510,7 @@
 		
 		<switch name="/instrumentation/egt[1]/egt-input">
 			<default value="/instrumentation/egt[1]/egt-input"/>
-			<test value="engine/egt-actual-2">
+			<test value="/systems/engines/egt-actual-2">
 				/instrumentation/egt[1]/power-avail eq 1
 			</test>
 			<clipto>
@@ -2544,7 +2544,7 @@
 			<default value="0"/>
 			<test logic="AND" value="1">
 				/instrumentation/egt[1]/power-avail eq 1
-				/instrumentation/egt[1]/egt-input ge engine/egt-alert
+				/instrumentation/egt[1]/egt-input ge /systems/engines/egt-alert
 			</test>
 		</switch>
 		
@@ -2553,7 +2553,7 @@
 			<test value="/instrumentation/egt[1]/egt-max-raw">
 				/instrumentation/egt[1]/power-avail eq 0
 			</test>
-			<test logic="OR" value="engine/egt-redline">
+			<test logic="OR" value="/systems/engines/egt-redline">
 				/systems/acconfig/autoconfig-running eq 1
 				/controls/switches/eng-max-reset eq 1
 			</test>
@@ -2579,7 +2579,7 @@
 		
 		<switch name="/instrumentation/egt[2]/egt-input">
 			<default value="/instrumentation/egt[2]/egt-input"/>
-			<test value="engine/egt-actual-3">
+			<test value="/systems/engines/egt-actual-3">
 				/instrumentation/egt[2]/power-avail eq 1
 			</test>
 			<clipto>
@@ -2613,7 +2613,7 @@
 			<default value="0"/>
 			<test logic="AND" value="1">
 				/instrumentation/egt[2]/power-avail eq 1
-				/instrumentation/egt[2]/egt-input ge engine/egt-alert
+				/instrumentation/egt[2]/egt-input ge /systems/engines/egt-alert
 			</test>
 		</switch>
 		
@@ -2622,7 +2622,7 @@
 			<test value="/instrumentation/egt[2]/egt-max-raw">
 				/instrumentation/egt[2]/power-avail eq 0
 			</test>
-			<test logic="OR" value="engine/egt-redline">
+			<test logic="OR" value="/systems/engines/egt-redline">
 				/systems/acconfig/autoconfig-running eq 1
 				/controls/switches/eng-max-reset eq 1
 			</test>
@@ -2652,7 +2652,7 @@
 		
 		<switch name="/instrumentation/ff[0]/ff-input">
 			<default value="0"/>
-			<test value="engine/ff-actual-1">
+			<test value="/systems/engines/ff-actual-1">
 				/instrumentation/ff[0]/power-avail eq 1
 			</test>
 		</switch>
@@ -2664,7 +2664,7 @@
 		
 		<switch name="/instrumentation/ff[0]/ff-input-digit">
 			<default value="/instrumentation/ff[0]/ff-input"/>
-			<test value="engine/ff-actual-1">
+			<test value="/systems/engines/ff-actual-1">
 				/instrumentation/ff[0]/power-avail eq 1
 			</test>
 		</switch>
@@ -2703,7 +2703,7 @@
 		
 		<switch name="/instrumentation/ff[1]/ff-input">
 			<default value="0"/>
-			<test value="engine/ff-actual-2">
+			<test value="/systems/engines/ff-actual-2">
 				/instrumentation/ff[1]/power-avail eq 1
 			</test>
 		</switch>
@@ -2715,7 +2715,7 @@
 		
 		<switch name="/instrumentation/ff[1]/ff-input-digit">
 			<default value="/instrumentation/ff[1]/ff-input"/>
-			<test value="engine/ff-actual-2">
+			<test value="/systems/engines/ff-actual-2">
 				/instrumentation/ff[1]/power-avail eq 1
 			</test>
 		</switch>
@@ -2754,7 +2754,7 @@
 		
 		<switch name="/instrumentation/ff[2]/ff-input">
 			<default value="0"/>
-			<test value="engine/ff-actual-3">
+			<test value="/systems/engines/ff-actual-3">
 				/instrumentation/ff[2]/power-avail eq 1
 			</test>
 		</switch>
@@ -2766,7 +2766,7 @@
 		
 		<switch name="/instrumentation/ff[2]/ff-input-digit">
 			<default value="/instrumentation/ff[2]/ff-input"/>
-			<test value="engine/ff-actual-3">
+			<test value="/systems/engines/ff-actual-3">
 				/instrumentation/ff[2]/power-avail eq 1
 			</test>
 		</switch>
@@ -2868,7 +2868,7 @@
 		
 		<!-- GE Limit -->
 		<lag_filter name="/instrumentation/tci/limit-n1-input">
-			<input>engine/limit/active</input>
+			<input>/systems/engines/limit/active</input>
 			<c1>20</c1>
 		</lag_filter>
 		
@@ -2952,7 +2952,7 @@
 		
 		<!-- PW Limit -->
 		<lag_filter name="/instrumentation/tci/limit-epr-input">
-			<input>engine/limit/active</input>
+			<input>/systems/engines/limit/active</input>
 			<c1>20</c1>
 		</lag_filter>
 		
@@ -3002,7 +3002,7 @@
 			<test logic="AND" value="1">
 				/instrumentation/tci/power-avail eq 1
 				<test logic="OR">
-					engine/limit/active-mode-int eq 0
+					/systems/engines/limit/active-mode-int eq 0
 					/controls/switches/annun-test eq 1
 				</test>
 			</test>
@@ -3013,7 +3013,7 @@
 			<test logic="AND" value="1">
 				/instrumentation/tci/power-avail eq 1
 				<test logic="OR">
-					engine/limit/active-mode-int eq 1
+					/systems/engines/limit/active-mode-int eq 1
 					/controls/switches/annun-test eq 1
 				</test>
 			</test>
@@ -3024,7 +3024,7 @@
 			<test logic="AND" value="1">
 				/instrumentation/tci/power-avail eq 1
 				<test logic="OR">
-					engine/limit/active-mode-int eq 2
+					/systems/engines/limit/active-mode-int eq 2
 					/controls/switches/annun-test eq 1
 				</test>
 			</test>
@@ -3035,7 +3035,7 @@
 			<test logic="AND" value="1">
 				/instrumentation/tci/power-avail eq 1
 				<test logic="OR">
-					engine/limit/active-mode-int eq 3
+					/systems/engines/limit/active-mode-int eq 3
 					/controls/switches/annun-test eq 1
 				</test>
 			</test>
@@ -3046,7 +3046,7 @@
 			<test logic="AND" value="1">
 				/instrumentation/tci/power-avail eq 1
 				<test logic="OR">
-					engine/limit/active-mode-int eq 4
+					/systems/engines/limit/active-mode-int eq 4
 					/controls/switches/annun-test eq 1
 				</test>
 			</test>
@@ -3057,7 +3057,7 @@
 			<test logic="AND" value="1">
 				/instrumentation/tci/power-avail eq 1
 				<test logic="OR">
-					engine/limit/active-mode-int eq 5
+					/systems/engines/limit/active-mode-int eq 5
 					/controls/switches/annun-test eq 1
 				</test>
 			</test>
@@ -3067,7 +3067,7 @@
 			<function>
 				<sum>
 					<abs>
-						<property>engine/limit/flex-temp</property>
+						<property>/systems/engines/limit/flex-temp</property>
 					</abs>
 					<value>0.5</value> <!-- Make it round correctly -->
 				</sum>

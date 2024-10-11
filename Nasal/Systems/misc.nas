@@ -9,7 +9,7 @@ var APU = {
 	n2: props.globals.getNode("/engines/engine[3]/n2-actual"),
 	state: props.globals.getNode("/engines/engine[3]/state"),
 	Switch: {
-		master: props.globals.getNode("/controls/apu/switches/master"),
+		master: props.globals.getNode("/controls/apu/master"),
 	},
 	init: func() {
 		me.Switch.master.setValue(0);
@@ -38,6 +38,7 @@ var ENGINE = {
 	manN1: [props.globals.getNode("/controls/engines/engine[0]/man-n1"), props.globals.getNode("/controls/engines/engine[1]/man-n1"), props.globals.getNode("/controls/engines/engine[2]/man-n1")],
 	manN1Set: [props.globals.getNode("/controls/engines/engine[0]/man-n1-set"), props.globals.getNode("/controls/engines/engine[1]/man-n1-set"), props.globals.getNode("/controls/engines/engine[2]/man-n1-set")],
 	n1Temp: 0,
+	overspeed: props.globals.getNode("/systems/engines/limit/overspeed"),
 	reverseEngage: [props.globals.getNode("/controls/engines/engine[0]/reverse-engage"), props.globals.getNode("/controls/engines/engine[1]/reverse-engage"), props.globals.getNode("/controls/engines/engine[2]/reverse-engage")],
 	startCmd: [props.globals.getNode("/controls/engines/engine[0]/start-cmd"), props.globals.getNode("/controls/engines/engine[1]/start-cmd"), props.globals.getNode("/controls/engines/engine[2]/start-cmd")],
 	startSwitch: [props.globals.getNode("/controls/engines/engine[0]/start-switch"), props.globals.getNode("/controls/engines/engine[1]/start-switch"), props.globals.getNode("/controls/engines/engine[2]/start-switch")],
@@ -215,22 +216,23 @@ var FCC = {
 		ydUpperA: props.globals.getNode("/systems/failures/fcc/yd-upper-a"),
 		ydUpperB: props.globals.getNode("/systems/failures/fcc/yd-upper-b"),
 	},
-	fcc1Power: props.globals.getNode("/fdm/jsbsim/fcc/fcc1-power"),
-	fcc2Power: props.globals.getNode("/fdm/jsbsim/fcc/fcc2-power"),
+	fcc1Power: props.globals.getNode("/systems/fcc/fcc1-power"),
+	fcc2Power: props.globals.getNode("/systems/fcc/fcc2-power"),
 	Lsas: {
-		leftInActive: props.globals.getNode("/fdm/jsbsim/fcc/lsas/left-in-active"),
-		leftOutActive: props.globals.getNode("/fdm/jsbsim/fcc/lsas/left-out-active"),
-		RightInActive: props.globals.getNode("/fdm/jsbsim/fcc/lsas/right-in-active"),
-		RightOutActive: props.globals.getNode("/fdm/jsbsim/fcc/lsas/right-out-active"),
+		leftInActive: props.globals.getNode("/systems/fcc/lsas/left-in-active"),
+		leftOutActive: props.globals.getNode("/systems/fcc/lsas/left-out-active"),
+		RightInActive: props.globals.getNode("/systems/fcc/lsas/right-in-active"),
+		RightOutActive: props.globals.getNode("/systems/fcc/lsas/right-out-active"),
 	},
+	nlgWowTimer1: props.globals.getNode("/systems/fcc/nlg-timer-1/wow-timer"),
 	Switch: {
-		elevatorFeelKnob: props.globals.getNode("/controls/fcc/switches/elevator-feel"),
-		elevatorFeelMan: props.globals.getNode("/controls/fcc/switches/elevator-feel-man"),
-		flapLimit: props.globals.getNode("/controls/fcc/switches/flap-limit"),
-		ydLowerA: props.globals.getNode("/controls/fcc/switches/yd-lower-a"),
-		ydLowerB: props.globals.getNode("/controls/fcc/switches/yd-lower-b"),
-		ydUpperA: props.globals.getNode("/controls/fcc/switches/yd-upper-a"),
-		ydUpperB: props.globals.getNode("/controls/fcc/switches/yd-upper-b"),
+		elevatorFeelKnob: props.globals.getNode("/controls/fcc/elevator-feel"),
+		elevatorFeelMan: props.globals.getNode("/controls/fcc/elevator-feel-man"),
+		flapLimit: props.globals.getNode("/controls/fcc/flap-limit"),
+		ydLowerA: props.globals.getNode("/controls/fcc/yd-lower-a"),
+		ydLowerB: props.globals.getNode("/controls/fcc/yd-lower-b"),
+		ydUpperA: props.globals.getNode("/controls/fcc/yd-upper-a"),
+		ydUpperB: props.globals.getNode("/controls/fcc/yd-upper-b"),
 	},
 	init: func() {
 		me.resetFailures();
@@ -294,8 +296,8 @@ var IGNITION = {
 	starter2: props.globals.getNode("/systems/ignition/starter-2"),
 	starter3: props.globals.getNode("/systems/ignition/starter-3"),
 	Switch: {
-		ign: props.globals.getNode("/controls/ignition/switches/ign"),
-		ignOvrd: props.globals.getNode("/controls/ignition/switches/ign-ovrd"),
+		ign: props.globals.getNode("/controls/ignition/ign"),
+		ignOvrd: props.globals.getNode("/controls/ignition/ign-ovrd"),
 	},
 	init: func() {
 		me.Switch.ign.setValue(0);
@@ -319,12 +321,12 @@ var IGNITION = {
 # Thrust Limits
 var THRLIM = {
 	Limit: {
-		activeModeInt: props.globals.getNode("/fdm/jsbsim/engine/limit/active-mode-int"), # -1 NONE, 0 T/O, 1 FLX/ALTN T/O, 2 G/A, 3 MCT, 4 CL, 5 MCR/ALTN CL
-		activeNorm: props.globals.getNode("/fdm/jsbsim/engine/limit/active-norm"),
-		flexTemp: props.globals.getNode("/fdm/jsbsim/engine/limit/flex-temp"),
-		highestNorm: props.globals.getNode("/fdm/jsbsim/engine/limit/highest-norm"),
+		activeModeInt: props.globals.getNode("/systems/engines/limit/active-mode-int"), # -1 NONE, 0 T/O, 1 FLX/ALTN T/O, 2 G/A, 3 MCT, 4 CL, 5 MCR/ALTN CL
+		activeNorm: props.globals.getNode("/systems/engines/limit/active-norm"),
+		flexTemp: props.globals.getNode("/systems/engines/limit/flex-temp"),
+		highestNorm: props.globals.getNode("/systems/engines/limit/highest-norm"),
 	},
-	throttleCompareMax: props.globals.getNode("/fdm/jsbsim/engine/throttle-compare-max"),
+	throttleCompareMax: props.globals.getNode("/systems/engines/throttle-compare-max"),
 	init: func() {
 		me.Limit.activeModeInt.setValue(0);
 	},

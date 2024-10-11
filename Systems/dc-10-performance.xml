@@ -5,16 +5,16 @@
 
 <system name="DC-10: Performance"> <!-- Extra speed computations that are not computed by the FGS -->
 	
-	<property value="15">performance/flap-setting</property>
+	<property value="15">/systems/performance/flap-setting</property>
 	
 	<channel name="Performance Calculations" execrate="8">
 		
 		<!-- V2 -->
-		<fcs_function name="performance/v2">
+		<fcs_function name="/systems/performance/v2">
 			<function>
 				<table>
 					<independentVar lookup="row">inertia/weight-kg</independentVar>
-					<independentVar lookup="column">performance/flap-setting</independentVar>
+					<independentVar lookup="column">/systems/performance/flap-setting</independentVar>
 					<tableData>
 						        10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   28
 						160000  149  149  148  148  146  146  145  145  143  143  142  142  142  142  141  141  138
@@ -50,17 +50,17 @@
 		</fcs_function>
 		
 		<!-- Vref -->
-		<pure_gain name="performance/vref"> <!-- Laziness -->
-			<input>fcc/speeds/vmin</input>
+		<pure_gain name="/systems/performance/vref"> <!-- Laziness -->
+			<input>/systems/fcc/speeds/vmin</input>
 			<gain>1.0</gain>
 		</pure_gain>
 		
 		<!-- Stabilizer Computer -->
-		<fcs_function name="performance/stabilizer-deg">
+		<fcs_function name="/systems/performance/stabilizer-deg">
 			<function>
 				<table>
 					<independentVar lookup="row">inertia/cg-percent-mac</independentVar>
-					<independentVar lookup="column">performance/flap-setting</independentVar>
+					<independentVar lookup="column">/systems/performance/flap-setting</independentVar>
 					<tableData>
 							10    15    20    25    28
 						12  10.1  10.5  10.9  11.1  11.2

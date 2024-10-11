@@ -9,7 +9,7 @@
 		<input>
 			<and>
 				<equals>
-					<property>/fdm/jsbsim/fcc/fcc1-power</property>
+					<property>/systems/fcc/fcc1-power</property>
 					<value>1</value>
 				</equals>
 				<greater-than-equals> <!-- Controls -->
@@ -29,7 +29,7 @@
 		<input>
 			<and>
 				<equals>
-					<property>/fdm/jsbsim/fcc/fcc2-power</property>
+					<property>/systems/fcc/fcc2-power</property>
 					<value>1</value>
 				</equals>
 				<greater-than-equals> <!-- Controls -->
@@ -50,16 +50,16 @@
 			<and>
 				<or>
 					<equals>
-						<property>/fdm/jsbsim/fcc/fcc1-power</property>
+						<property>/systems/fcc/fcc1-power</property>
 						<value>1</value>
 					</equals>
 					<equals>
-						<property>/fdm/jsbsim/fcc/fcc2-power</property>
+						<property>/systems/fcc/fcc2-power</property>
 						<value>1</value>
 					</equals>
 				</or>
 				<not-equals>
-					<property>fdm/jsbsim/engine/limit/active-mode-int</property>
+					<property>systems/engines/limit/active-mode-int</property>
 					<value>-1</value>
 				</not-equals>
 				<or>
@@ -397,7 +397,7 @@
 			<expression>
 				<product>
 					<difference>
-						<property>/fdm/jsbsim/fcc/speeds/v2-target</property>
+						<property>/systems/fcc/speeds/v2-target</property>
 						<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
 					</difference>
 					<value>0.1</value>
@@ -1183,7 +1183,7 @@
 					<value>7</value>
 				</equals>
 			</condition>
-			<property>/fdm/jsbsim/fcc/speeds/v2-target</property>
+			<property>/systems/fcc/speeds/v2-target</property>
 		</input>
 		<input>/it-autoflight/input/kts</input>
 		<output>/it-autoflight/output/fast-slow-input</output>
@@ -1194,10 +1194,10 @@
 					<value>7</value>
 				</equals>
 			</condition>
-			<property>/fdm/jsbsim/fcc/speeds/v2-target</property>
+			<property>/systems/fcc/speeds/v2-target</property>
 		</min>
-		<min>/fdm/jsbsim/fcc/speeds/vmin</min>
-		<max>/fdm/jsbsim/fcc/speeds/vmax</max>
+		<min>/systems/fcc/speeds/vmin</min>
+		<max>/systems/fcc/speeds/vmax</max>
 	</filter>
 	
 	<filter>

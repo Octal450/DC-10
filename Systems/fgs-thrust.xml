@@ -21,7 +21,7 @@
 		<min>
 			<expression>
 				<max>
-					<property>/fdm/jsbsim/fcc/speeds/vmin</property>
+					<property>/systems/fcc/speeds/vmin</property>
 					<difference>
 						<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
 						<value>25</value>
@@ -32,7 +32,7 @@
 		<max>
 			<expression>
 				<min>
-					<property>/fdm/jsbsim/fcc/speeds/vmax</property>
+					<property>/systems/fcc/speeds/vmax</property>
 					<sum>
 						<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
 						<value>25</value>
@@ -81,9 +81,9 @@
 		<input>
 			<expression>
 				<max>
-					<property>/fdm/jsbsim/engine/control-1/ats-max</property>
-					<property>/fdm/jsbsim/engine/control-2/ats-max</property>
-					<property>/fdm/jsbsim/engine/control-3/ats-max</property>
+					<property>/systems/engines/control-1/ats-max</property>
+					<property>/systems/engines/control-2/ats-max</property>
+					<property>/systems/engines/control-3/ats-max</property>
 				</max>
 			</expression>
 		</input>
@@ -108,12 +108,12 @@
 		</enable>
 		<input>/it-autoflight/internal/athr-kts-input-lag</input>
 		<reference>/it-autoflight/internal/athr-kts</reference>
-		<output>/fdm/jsbsim/engine/ats-cmd-raw-pid</output>
+		<output>/systems/engines/ats-cmd-raw-pid</output>
 		<config>
 			<Kp>0.055</Kp>
 			<Ti>9.0</Ti>
 			<Td>0.00001</Td>
-			<u_min>/fdm/jsbsim/engine/limit/idle-norm</u_min>
+			<u_min>/systems/engines/limit/idle-norm</u_min>
 			<u_max>/it-autoflight/internal/ats-max</u_max>
 		</config>
 	</pid-controller>
@@ -137,8 +137,8 @@
 				</and>
 			</condition>
 		</enable>
-		<input>/fdm/jsbsim/engine/ats-cmd-raw-pid</input>
-		<output>/fdm/jsbsim/engine/ats-cmd-raw</output>
+		<input>/systems/engines/ats-cmd-raw-pid</input>
+		<output>/systems/engines/ats-cmd-raw</output>
 		<max-rate-of-change>0.3</max-rate-of-change>
 	</filter>
 	
@@ -161,7 +161,7 @@
 			</condition>
 		</enable>
 		<input>0</input>
-		<output>/fdm/jsbsim/engine/ats-cmd-raw</output>
+		<output>/systems/engines/ats-cmd-raw</output>
 		<max-rate-of-change>0.05</max-rate-of-change> <!-- RETARD mode is very slow apparently -->
 	</filter>
 	
@@ -184,7 +184,7 @@
 			</condition>
 		</enable>
 		<input>/it-autoflight/internal/ats-max</input>
-		<output>/fdm/jsbsim/engine/ats-cmd-raw</output>
+		<output>/systems/engines/ats-cmd-raw</output>
 		<max-rate-of-change>0.15</max-rate-of-change>
 	</filter>
 	
@@ -216,7 +216,7 @@
 				</table>
 			</expression>
 		</input>
-		<output>/fdm/jsbsim/engine/power-norm[0]</output>
+		<output>/systems/engines/power-norm[0]</output>
 	</filter>
 	
 	<filter>
@@ -247,7 +247,7 @@
 				</table>
 			</expression>
 		</input>
-		<output>/fdm/jsbsim/engine/power-norm[1]</output>
+		<output>/systems/engines/power-norm[1]</output>
 	</filter>
 	
 	<filter>
@@ -278,7 +278,7 @@
 				</table>
 			</expression>
 		</input>
-		<output>/fdm/jsbsim/engine/power-norm[2]</output>
+		<output>/systems/engines/power-norm[2]</output>
 	</filter>
 	
 	<pid-controller>
@@ -297,16 +297,16 @@
 				</and>
 			</condition>
 		</enable>
-		<input>/fdm/jsbsim/engine/power-norm[0]</input>
+		<input>/systems/engines/power-norm[0]</input>
 		<reference>
 			<expression>
 				<min> <!-- For per engine manual EPR limit -->
-					<property>/fdm/jsbsim/engine/ats-cmd-raw</property>
-					<property>/fdm/jsbsim/engine/control-1/ats-max</property>
+					<property>/systems/engines/ats-cmd-raw</property>
+					<property>/systems/engines/control-1/ats-max</property>
 				</min>
 			</expression>
 		</reference>
-		<output>/fdm/jsbsim/engine/ats-cmd[0]</output>
+		<output>/systems/engines/ats-cmd[0]</output>
 		<config>
 			<Kp>0.4</Kp>
 			<Ti>0.8</Ti>
@@ -315,7 +315,7 @@
 				<expression>
 					<max>
 						<difference>
-							<property>/fdm/jsbsim/engine/power-norm[0]</property>
+							<property>/systems/engines/power-norm[0]</property>
 							<value>0.1</value>
 						</difference>
 						<value>0</value>
@@ -326,7 +326,7 @@
 				<expression>
 					<min>
 						<sum>
-							<property>/fdm/jsbsim/engine/power-norm[0]</property>
+							<property>/systems/engines/power-norm[0]</property>
 							<value>0.1</value>
 						</sum>
 						<value>1</value>
@@ -352,16 +352,16 @@
 				</and>
 			</condition>
 		</enable>
-		<input>/fdm/jsbsim/engine/power-norm[1]</input>
+		<input>/systems/engines/power-norm[1]</input>
 		<reference>
 			<expression>
 				<min> <!-- For per engine manual EPR limit -->
-					<property>/fdm/jsbsim/engine/ats-cmd-raw</property>
-					<property>/fdm/jsbsim/engine/control-2/ats-max</property>
+					<property>/systems/engines/ats-cmd-raw</property>
+					<property>/systems/engines/control-2/ats-max</property>
 				</min>
 			</expression>
 		</reference>
-		<output>/fdm/jsbsim/engine/ats-cmd[1]</output>
+		<output>/systems/engines/ats-cmd[1]</output>
 		<config>
 			<Kp>0.4</Kp>
 			<Ti>0.8</Ti>
@@ -370,7 +370,7 @@
 				<expression>
 					<max>
 						<difference>
-							<property>/fdm/jsbsim/engine/power-norm[1]</property>
+							<property>/systems/engines/power-norm[1]</property>
 							<value>0.1</value>
 						</difference>
 						<value>0</value>
@@ -381,7 +381,7 @@
 				<expression>
 					<min>
 						<sum>
-							<property>/fdm/jsbsim/engine/power-norm[1]</property>
+							<property>/systems/engines/power-norm[1]</property>
 							<value>0.1</value>
 						</sum>
 						<value>1</value>
@@ -407,16 +407,16 @@
 				</and>
 			</condition>
 		</enable>
-		<input>/fdm/jsbsim/engine/power-norm[2]</input>
+		<input>/systems/engines/power-norm[2]</input>
 		<reference>
 			<expression>
 				<min> <!-- For per engine manual EPR limit -->
-					<property>/fdm/jsbsim/engine/ats-cmd-raw</property>
-					<property>/fdm/jsbsim/engine/control-3/ats-max</property>
+					<property>/systems/engines/ats-cmd-raw</property>
+					<property>/systems/engines/control-3/ats-max</property>
 				</min>
 			</expression>
 		</reference>
-		<output>/fdm/jsbsim/engine/ats-cmd[2]</output>
+		<output>/systems/engines/ats-cmd[2]</output>
 		<config>
 			<Kp>0.4</Kp>
 			<Ti>0.8</Ti>
@@ -425,7 +425,7 @@
 				<expression>
 					<max>
 						<difference>
-							<property>/fdm/jsbsim/engine/power-norm[2]</property>
+							<property>/systems/engines/power-norm[2]</property>
 							<value>0.1</value>
 						</difference>
 						<value>0</value>
@@ -436,7 +436,7 @@
 				<expression>
 					<min>
 						<sum>
-							<property>/fdm/jsbsim/engine/power-norm[2]</property>
+							<property>/systems/engines/power-norm[2]</property>
 							<value>0.1</value>
 						</sum>
 						<value>1</value>
@@ -464,11 +464,11 @@
 				</or>
 			</condition>
 		</enable>
-		<input>/fdm/jsbsim/engine/throttle-compare-max</input>
-		<output>/fdm/jsbsim/engine/ats-cmd[0]</output>
-		<output>/fdm/jsbsim/engine/ats-cmd[1]</output>
-		<output>/fdm/jsbsim/engine/ats-cmd[2]</output>
-		<output>/fdm/jsbsim/engine/ats-cmd-raw</output>
+		<input>/systems/engines/throttle-compare-max</input>
+		<output>/systems/engines/ats-cmd[0]</output>
+		<output>/systems/engines/ats-cmd[1]</output>
+		<output>/systems/engines/ats-cmd[2]</output>
+		<output>/systems/engines/ats-cmd-raw</output>
 	</filter>
 	
 	<!-- Engine 1 -->
@@ -489,10 +489,10 @@
 					</not-equals>
 				</and>
 			</condition>
-			<property>/fdm/jsbsim/engine/ats-cmd[0]</property>
+			<property>/systems/engines/ats-cmd[0]</property>
 		</input>
 		<input>/controls/cockpit/throttle-lever[0]</input>
-		<output>/fdm/jsbsim/engine/ats-cmd-1</output>
+		<output>/systems/engines/ats-cmd-1</output>
 		<max-rate-of-change>
 			<condition>
 				<and>
@@ -529,7 +529,7 @@
 				</and>
 			</condition>
 		</enable>
-		<input>/fdm/jsbsim/engine/ats-cmd-1</input>
+		<input>/systems/engines/ats-cmd-1</input>
 		<output>/controls/engines/engine[0]/throttle</output>
 	</filter>
 	
@@ -551,10 +551,10 @@
 					</not-equals>
 				</and>
 			</condition>
-			<property>/fdm/jsbsim/engine/ats-cmd[1]</property>
+			<property>/systems/engines/ats-cmd[1]</property>
 		</input>
 		<input>/controls/cockpit/throttle-lever[1]</input>
-		<output>/fdm/jsbsim/engine/ats-cmd-2</output>
+		<output>/systems/engines/ats-cmd-2</output>
 		<max-rate-of-change>
 			<condition>
 				<and>
@@ -591,7 +591,7 @@
 				</and>
 			</condition>
 		</enable>
-		<input>/fdm/jsbsim/engine/ats-cmd-2</input>
+		<input>/systems/engines/ats-cmd-2</input>
 		<output>/controls/engines/engine[1]/throttle</output>
 	</filter>
 	
@@ -613,10 +613,10 @@
 					</not-equals>
 				</and>
 			</condition>
-			<property>/fdm/jsbsim/engine/ats-cmd[2]</property>
+			<property>/systems/engines/ats-cmd[2]</property>
 		</input>
 		<input>/controls/cockpit/throttle-lever[2]</input>
-		<output>/fdm/jsbsim/engine/ats-cmd-3</output>
+		<output>/systems/engines/ats-cmd-3</output>
 		<max-rate-of-change>
 			<condition>
 				<and>
@@ -653,7 +653,7 @@
 				</and>
 			</condition>
 		</enable>
-		<input>/fdm/jsbsim/engine/ats-cmd-3</input>
+		<input>/systems/engines/ats-cmd-3</input>
 		<output>/controls/engines/engine[2]/throttle</output>
 	</filter>
 

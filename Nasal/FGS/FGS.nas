@@ -439,7 +439,7 @@ var ITAF = {
 					if (Text.lat.getValue() != "RLOU") { # No vert change
 						me.updateLatText("RLOU");
 					} else {
-						if (pts.Fdm.JSBSim.Fcc.nlgTimer1.wowTimer.getValue() == 1 and (Output.ap1Temp == 1 or Output.ap2Temp == 1)) { # Trip off after 1 second
+						if (systems.FCC.nlgWowTimer1.getValue() == 1 and (Output.ap1Temp == 1 or Output.ap2Temp == 1)) { # Trip off after 1 second
 							me.ap1Master(0);
 							me.ap2Master(0);
 						}

@@ -10,14 +10,14 @@
 		<switch name="/systems/apu/dc-fuel-pump">
 			<default value="0"/>
 			<test value="1">
-				/controls/apu/switches/master ge 1
+				/controls/apu/master ge 1
 			</test>
 		</switch>
 		
 		<switch name="/systems/apu/throttle-cmd-norm">
 			<default value="0"/> <!-- Idle N1 -->
 			<test value="0"> <!-- Force Idle N1 -->
-				/controls/apu/switches/master eq 0
+				/controls/apu/master eq 0
 			</test>
 			<test logic="AND" value="1"> <!-- Max N1 -->
 				<test logic="OR">
@@ -40,7 +40,7 @@
 				/systems/electrical/bus/dc-bat lt 24
 			</test>
 			<test logic="OR" value="1">
-				/controls/apu/switches/master ge 1
+				/controls/apu/master ge 1
 				/engines/engine[3]/n2-actual ge 2
 			</test>
 		</switch>
@@ -53,7 +53,7 @@
 		<switch name="/systems/apu/cutoff-cmd">
 			<default value="1"/>
 			<test logic="AND" value="0">
-				/controls/apu/switches/master ge 1
+				/controls/apu/master ge 1
 				/engines/engine[3]/n2-actual ge 10
 			</test>
 		</switch>
@@ -61,7 +61,7 @@
 		<switch name="/systems/apu/cutoff">
 			<default value="1"/>
 			<test logic="AND" value="0">
-				/controls/apu/switches/master ge 1
+				/controls/apu/master ge 1
 				/systems/acconfig/autoconfig-running eq 1
 			</test>
 			<test logic="AND" value="0">
@@ -81,7 +81,7 @@
 		</switch>
 		
 		<pure_gain name="/systems/apu/starter-run-start">
-			<input>/controls/apu/switches/master</input>
+			<input>/controls/apu/master</input>
 			<gain>1.0</gain>
 			<clipto>
 				<min>1</min>
@@ -98,10 +98,10 @@
 		<switch name="/systems/apu/starter-latch">
 			<default value="/systems/apu/starter-latch"/>
 			<test value="0">
-				/controls/apu/switches/master eq 0
+				/controls/apu/master eq 0
 			</test>
 			<test logic="AND" value="1">
-				/controls/apu/switches/master eq 2
+				/controls/apu/master eq 2
 				/systems/apu/starter-run-start-timer eq 2
 				/systems/apu/starter-avail eq 1
 			</test>
@@ -111,7 +111,7 @@
 			<default value="0"/>
 			<test logic="AND" value="1">
 				<test logic="OR">
-					/controls/apu/switches/master eq 2
+					/controls/apu/master eq 2
 					/systems/apu/starter-latch eq 1
 				</test>
 				/systems/apu/starter-avail eq 1
@@ -121,18 +121,18 @@
 		<switch name="/systems/apu/state">
 			<default value="0"/>
 			<test logic="AND" value="3">
-				/controls/apu/switches/master ge 1
+				/controls/apu/master ge 1
 				/systems/apu/cutoff eq 0
 				/engines/engine[3]/n2-actual ge 95
 			</test>
 			<test logic="AND" value="2">
-				/controls/apu/switches/master ge 1
+				/controls/apu/master ge 1
 				/engines/engine[3]/n2-actual ge 16
 				/systems/apu/cutoff eq 0
 				/systems/apu/starter eq 1
 			</test>
 			<test logic="AND" value="1">
-				/controls/apu/switches/master ge 1
+				/controls/apu/master ge 1
 				/systems/apu/starter eq 1
 			</test>
 			<output>/engines/engine[3]/state</output>

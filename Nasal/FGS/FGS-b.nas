@@ -13,7 +13,7 @@ var Fma = {
 };
 
 var Speeds = {
-	vmin: props.globals.getNode("/fdm/jsbsim/fcc/speeds/vmin"),
+	vmin: props.globals.getNode("/systems/fcc/speeds/vmin"),
 };
 
 var UpdateFma = {

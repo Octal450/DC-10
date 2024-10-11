@@ -128,11 +128,11 @@
 				/systems/electrical/bus/ac-1 lt 112
 			</test>
 			<test logic="OR" value="0"> <!-- Reset -->
-				engine/throttle-lever-feedback[1] ge 0.05
+				/systems/engines/throttle-lever-feedback[1] ge 0.05
 				spoilers/auto-speedbrake-arm-cmd eq 0
 			</test>
 			<test logic="AND" value="4"> <!-- Set --> <!-- Landing -->
-				engine/throttle-lever-feedback[1] lt 0.05
+				/systems/engines/throttle-lever-feedback[1] lt 0.05
 				spoilers/auto-speedbrake-arm-cmd eq 1
 				spoilers/main-gear-or eq 1
 				/instrumentation/airspeed-indicator/indicated-speed-kt ge 60

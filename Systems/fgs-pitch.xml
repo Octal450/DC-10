@@ -576,7 +576,7 @@
 							<entry><ind>140</ind><dep>-0.14</dep></entry>
 							<entry><ind>360</ind><dep>-0.07</dep></entry>
 						</table>
-						<property>/fdm/jsbsim/fcc/elevator-feel/gain</property> <!-- Compensate for scheduled AFS command -->
+						<property>/systems/fcc/elevator-feel/gain</property> <!-- Compensate for scheduled AFS command -->
 					</div>
 				</expression>
 			</Kp>
@@ -603,7 +603,7 @@
 			</condition>
 		</enable>
 		<input>/controls/flight/elevator</input>
-		<output>/fdm/jsbsim/fcc/afs/pitch-cmd</output>
+		<output>/systems/fcc/afs/pitch-cmd</output>
 	</filter>
 	
 	<filter>
@@ -631,7 +631,7 @@
 			<property>/it-autoflight/internal/elevator-cmd</property>
 		</input>
 		<input>0.05</input>
-		<output>/fdm/jsbsim/fcc/afs/pitch-cmd</output>
+		<output>/systems/fcc/afs/pitch-cmd</output>
 		<max-rate-of-change>1.2</max-rate-of-change>
 	</filter>
 	
@@ -650,7 +650,7 @@
 				<greater-than-equals>
 					<expression>
 						<abs>
-							<property>/fdm/jsbsim/fcc/afs/pitch-cmd</property>
+							<property>/systems/fcc/afs/pitch-cmd</property>
 						</abs>
 					</expression>
 					<value>0.05</value>
@@ -663,7 +663,7 @@
 				<less-than>
 					<expression>
 						<abs>
-							<property>/fdm/jsbsim/fcc/afs/pitch-cmd</property>
+							<property>/systems/fcc/afs/pitch-cmd</property>
 						</abs>
 					</expression>
 					<value>0.01</value>
@@ -709,7 +709,7 @@
 		<input>
 			<condition>
 				<greater-than>
-					<property>/fdm/jsbsim/fcc/afs/pitch-cmd</property>
+					<property>/systems/fcc/afs/pitch-cmd</property>
 					<value>0.001</value>
 				</greater-than>
 			</condition>
@@ -718,7 +718,7 @@
 		<input>
 			<condition>
 				<less-than>
-					<property>/fdm/jsbsim/fcc/afs/pitch-cmd</property>
+					<property>/systems/fcc/afs/pitch-cmd</property>
 					<value>-0.001</value>
 				</less-than>
 			</condition>
@@ -730,7 +730,7 @@
 		<max-rate-of-change>
 			<expression>
 				<table>
-					<abs><property>/fdm/jsbsim/fcc/afs/pitch-cmd</property></abs>
+					<abs><property>/systems/fcc/afs/pitch-cmd</property></abs>
 					<entry><ind>0.01</ind><dep>0.002</dep></entry>
 					<entry><ind>0.10</ind><dep>0.010</dep></entry>
 				</table>
@@ -744,7 +744,7 @@
 		<gain>1.0</gain>
 		<input>
 			<condition>
-				<not><property>/fdm/jsbsim/fcc/cws/enabled</property></not>
+				<not><property>/systems/fcc/cws/enabled</property></not>
 			</condition>
 			<value>0</value>
 		</input>
@@ -753,7 +753,7 @@
 				<greater-than-equals>
 					<expression>
 						<abs>
-							<property>/fdm/jsbsim/fcc/cws-pitch/output</property>
+							<property>/systems/fcc/cws-pitch/output</property>
 						</abs>
 					</expression>
 					<value>0.05</value>
@@ -766,7 +766,7 @@
 				<less-than>
 					<expression>
 						<abs>
-							<property>/fdm/jsbsim/fcc/cws-pitch/output</property>
+							<property>/systems/fcc/cws-pitch/output</property>
 						</abs>
 					</expression>
 					<value>0.01</value>
@@ -785,7 +785,7 @@
 		<enable>
 			<condition>
 				<and>
-					<property>/fdm/jsbsim/fcc/cws/enabled</property>
+					<property>/systems/fcc/cws/enabled</property>
 					<equals>
 						<property>/gear/gear[1]/wow</property>
 						<value>0</value>
@@ -808,7 +808,7 @@
 		<input>
 			<condition>
 				<greater-than>
-					<property>/fdm/jsbsim/fcc/cws-pitch/output</property>
+					<property>/systems/fcc/cws-pitch/output</property>
 					<value>0.001</value>
 				</greater-than>
 			</condition>
@@ -817,7 +817,7 @@
 		<input>
 			<condition>
 				<less-than>
-					<property>/fdm/jsbsim/fcc/cws-pitch/output</property>
+					<property>/systems/fcc/cws-pitch/output</property>
 					<value>-0.001</value>
 				</less-than>
 			</condition>
@@ -829,7 +829,7 @@
 		<max-rate-of-change>
 			<expression>
 				<table>
-					<abs><property>/fdm/jsbsim/fcc/cws-pitch/output</property></abs>
+					<abs><property>/systems/fcc/cws-pitch/output</property></abs>
 					<entry><ind>0.01</ind><dep>0.002</dep></entry>
 					<entry><ind>0.10</ind><dep>0.010</dep></entry>
 				</table>

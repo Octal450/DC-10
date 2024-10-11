@@ -54,7 +54,7 @@
 			<checkbox>
 				<label>AC Tie 1</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/ac-tie-1</property>
+				<property>/controls/electrical/ac-tie-1</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -64,7 +64,7 @@
 			<checkbox>
 				<label>AC Tie 2</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/ac-tie-1</property>
+				<property>/controls/electrical/ac-tie-1</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -74,7 +74,7 @@
 			<checkbox>
 				<label>AC Tie 3</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/ac-tie-3</property>
+				<property>/controls/electrical/ac-tie-3</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -84,7 +84,7 @@
 			<checkbox>
 				<label>ADG Elec</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/adg-elec</property>
+				<property>/controls/electrical/adg-elec</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -94,7 +94,7 @@
 			<checkbox>
 				<label>APU Gen 1</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/apu-pwr-1</property>
+				<property>/controls/electrical/apu-pwr-1</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -104,7 +104,7 @@
 			<checkbox>
 				<label>APU Gen 2</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/apu-pwr-2</property>
+				<property>/controls/electrical/apu-pwr-2</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -114,7 +114,7 @@
 			<checkbox>
 				<label>APU Gen 3</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/apu-pwr-3</property>
+				<property>/controls/electrical/apu-pwr-3</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -124,7 +124,7 @@
 			<checkbox>
 				<label>Battery</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/battery</property>
+				<property>/controls/electrical/battery</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -134,7 +134,7 @@
 			<checkbox>
 				<label>DC Tie 1</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/dc-tie-1</property>
+				<property>/controls/electrical/dc-tie-1</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -144,7 +144,7 @@
 			<checkbox>
 				<label>DC Tie 3</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/dc-tie-3</property>
+				<property>/controls/electrical/dc-tie-3</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -154,7 +154,7 @@
 			<checkbox>
 				<label>DC X Tie</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/dc-x-tie</property>
+				<property>/controls/electrical/dc-x-tie</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -164,7 +164,7 @@
 			<checkbox>
 				<label>Emergency Power</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/emer-pwr</property>
+				<property>/controls/electrical/emer-pwr</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -174,7 +174,7 @@
 			<checkbox>
 				<label>EXT Power</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/ext-pwr</property>
+				<property>/controls/electrical/ext-pwr</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -184,7 +184,7 @@
 			<checkbox>
 				<label>EXT Galley Power</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/extg-pwr</property>
+				<property>/controls/electrical/extg-pwr</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -201,7 +201,7 @@
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/electrical/switches/galley-1</property>
+							<property>/controls/electrical/galley-1</property>
 							<value>-1</value>
 						</not-equals>
 					</enable>
@@ -211,14 +211,14 @@
 					<legend>RST</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/electrical/switches/galley-1</property>
+						<property>/controls/electrical/galley-1</property>
 						<value>-1</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/electrical/switches/galley-1</property>
+							<property>/controls/electrical/galley-1</property>
 							<value>0</value>
 						</not-equals>
 					</enable>
@@ -228,14 +228,14 @@
 					<legend>OFF</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/electrical/switches/galley-1</property>
+						<property>/controls/electrical/galley-1</property>
 						<value>0</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/electrical/switches/galley-1</property>
+							<property>/controls/electrical/galley-1</property>
 							<value>1</value>
 						</not-equals>
 					</enable>
@@ -245,7 +245,7 @@
 					<legend>ON</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/electrical/switches/galley-1</property>
+						<property>/controls/electrical/galley-1</property>
 						<value>1</value>
 					</binding>
 				</button>
@@ -261,7 +261,7 @@
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/electrical/switches/galley-2</property>
+							<property>/controls/electrical/galley-2</property>
 							<value>-1</value>
 						</not-equals>
 					</enable>
@@ -271,14 +271,14 @@
 					<legend>RST</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/electrical/switches/galley-2</property>
+						<property>/controls/electrical/galley-2</property>
 						<value>-1</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/electrical/switches/galley-2</property>
+							<property>/controls/electrical/galley-2</property>
 							<value>0</value>
 						</not-equals>
 					</enable>
@@ -288,14 +288,14 @@
 					<legend>OFF</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/electrical/switches/galley-2</property>
+						<property>/controls/electrical/galley-2</property>
 						<value>0</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/electrical/switches/galley-2</property>
+							<property>/controls/electrical/galley-2</property>
 							<value>1</value>
 						</not-equals>
 					</enable>
@@ -305,7 +305,7 @@
 					<legend>ON</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/electrical/switches/galley-2</property>
+						<property>/controls/electrical/galley-2</property>
 						<value>1</value>
 					</binding>
 				</button>
@@ -321,7 +321,7 @@
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/electrical/switches/galley-3</property>
+							<property>/controls/electrical/galley-3</property>
 							<value>-1</value>
 						</not-equals>
 					</enable>
@@ -331,14 +331,14 @@
 					<legend>RST</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/electrical/switches/galley-3</property>
+						<property>/controls/electrical/galley-3</property>
 						<value>-1</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/electrical/switches/galley-3</property>
+							<property>/controls/electrical/galley-3</property>
 							<value>0</value>
 						</not-equals>
 					</enable>
@@ -348,14 +348,14 @@
 					<legend>OFF</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/electrical/switches/galley-3</property>
+						<property>/controls/electrical/galley-3</property>
 						<value>0</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/electrical/switches/galley-3</property>
+							<property>/controls/electrical/galley-3</property>
 							<value>1</value>
 						</not-equals>
 					</enable>
@@ -365,7 +365,7 @@
 					<legend>ON</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/electrical/switches/galley-3</property>
+						<property>/controls/electrical/galley-3</property>
 						<value>1</value>
 					</binding>
 				</button>
@@ -374,7 +374,7 @@
 			<checkbox>
 				<label>Gen 1</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/gen-1</property>
+				<property>/controls/electrical/gen-1</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -384,7 +384,7 @@
 			<checkbox>
 				<label>Gen 2</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/gen-2</property>
+				<property>/controls/electrical/gen-2</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -394,7 +394,7 @@
 			<checkbox>
 				<label>Gen 3</label>
 				<halign>left</halign>
-				<property>/controls/electrical/switches/gen-3</property>
+				<property>/controls/electrical/gen-3</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -425,7 +425,7 @@
 			<checkbox>
 				<label>Aux Pump 1</label>
 				<halign>left</halign>
-				<property>/controls/hydraulics/switches/aux-pump-1</property>
+				<property>/controls/hydraulics/aux-pump-1</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -435,7 +435,7 @@
 			<checkbox>
 				<label>Aux Pump 2</label>
 				<halign>left</halign>
-				<property>/controls/hydraulics/switches/aux-pump-2</property>
+				<property>/controls/hydraulics/aux-pump-2</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -445,7 +445,7 @@
 			<checkbox>
 				<label>Gear Gravity Ext</label>
 				<halign>left</halign>
-				<property>/controls/hydraulics/switches/gear-gravity-ext</property>
+				<property>/controls/hydraulics/gear-gravity-ext</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -455,7 +455,7 @@
 			<checkbox>
 				<label>L Pump 1</label>
 				<halign>left</halign>
-				<property>/controls/hydraulics/switches/l-pump-1</property>
+				<property>/controls/hydraulics/l-pump-1</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -465,7 +465,7 @@
 			<checkbox>
 				<label>L Pump 2</label>
 				<halign>left</halign>
-				<property>/controls/hydraulics/switches/l-pump-2</property>
+				<property>/controls/hydraulics/l-pump-2</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -475,7 +475,7 @@
 			<checkbox>
 				<label>L Pump 3</label>
 				<halign>left</halign>
-				<property>/controls/hydraulics/switches/l-pump-3</property>
+				<property>/controls/hydraulics/l-pump-3</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -485,7 +485,7 @@
 			<checkbox>
 				<label>R Pump 1</label>
 				<halign>left</halign>
-				<property>/controls/hydraulics/switches/r-pump-1</property>
+				<property>/controls/hydraulics/r-pump-1</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -495,7 +495,7 @@
 			<checkbox>
 				<label>R Pump 2</label>
 				<halign>left</halign>
-				<property>/controls/hydraulics/switches/r-pump-2</property>
+				<property>/controls/hydraulics/r-pump-2</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -505,7 +505,7 @@
 			<checkbox>
 				<label>R Pump 3</label>
 				<halign>left</halign>
-				<property>/controls/hydraulics/switches/r-pump-3</property>
+				<property>/controls/hydraulics/r-pump-3</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -515,7 +515,7 @@
 			<checkbox>
 				<label>RMP 1-3</label>
 				<halign>left</halign>
-				<property>/controls/hydraulics/switches/rmp-1-3</property>
+				<property>/controls/hydraulics/rmp-1-3</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -525,7 +525,7 @@
 			<checkbox>
 				<label>RMP 2-3</label>
 				<halign>left</halign>
-				<property>/controls/hydraulics/switches/rmp-2-3</property>
+				<property>/controls/hydraulics/rmp-2-3</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -549,7 +549,7 @@
 			<checkbox>
 				<label>Elevator Feel Manual</label>
 				<halign>left</halign>
-				<property>/controls/fcc/switches/elevator-feel-man</property>
+				<property>/controls/fcc/elevator-feel-man</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -566,7 +566,7 @@
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/fcc/switches/elevator-feel-man</property>
+							<property>/controls/fcc/elevator-feel-man</property>
 							<value>0</value>
 						</not-equals>
 					</enable>
@@ -576,7 +576,7 @@
 					<legend>&lt;&lt;</legend>
 					<binding>
 						<command>property-adjust</command>
-						<property>/fdm/jsbsim/fcc/elevator-feel/speed</property>
+						<property>/systems/fcc/elevator-feel/speed</property>
 						<step>-10</step>
 						<min>120</min>
 					</binding>
@@ -584,7 +584,7 @@
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/fcc/switches/elevator-feel-man</property>
+							<property>/controls/fcc/elevator-feel-man</property>
 							<value>0</value>
 						</not-equals>
 					</enable>
@@ -594,7 +594,7 @@
 					<legend>&lt;</legend>
 					<binding>
 						<command>property-adjust</command>
-						<property>/fdm/jsbsim/fcc/elevator-feel/speed</property>
+						<property>/systems/fcc/elevator-feel/speed</property>
 						<step>-1</step>
 						<min>120</min>
 					</binding>
@@ -602,7 +602,7 @@
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/fcc/switches/elevator-feel-man</property>
+							<property>/controls/fcc/elevator-feel-man</property>
 							<value>0</value>
 						</not-equals>
 					</enable>
@@ -612,7 +612,7 @@
 					<legend>&gt;</legend>
 					<binding>
 						<command>property-adjust</command>
-						<property>/fdm/jsbsim/fcc/elevator-feel/speed</property>
+						<property>/systems/fcc/elevator-feel/speed</property>
 						<step>1</step>
 						<max>300</max>
 					</binding>
@@ -620,7 +620,7 @@
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/fcc/switches/elevator-feel-man</property>
+							<property>/controls/fcc/elevator-feel-man</property>
 							<value>0</value>
 						</not-equals>
 					</enable>
@@ -630,7 +630,7 @@
 					<legend>&gt;&gt;</legend>
 					<binding>
 						<command>property-adjust</command>
-						<property>/fdm/jsbsim/fcc/elevator-feel/speed</property>
+						<property>/systems/fcc/elevator-feel/speed</property>
 						<step>10</step>
 						<max>300</max>
 					</binding>
@@ -647,7 +647,7 @@
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/fcc/switches/flap-limit</property>
+							<property>/controls/fcc/flap-limit</property>
 							<value>0</value>
 						</not-equals>
 					</enable>
@@ -657,14 +657,14 @@
 					<legend>AUTO</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/fcc/switches/flap-limit</property>
+						<property>/controls/fcc/flap-limit</property>
 						<value>0</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/fcc/switches/flap-limit</property>
+							<property>/controls/fcc/flap-limit</property>
 							<value>1</value>
 						</not-equals>
 					</enable>
@@ -674,14 +674,14 @@
 					<legend>1</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/fcc/switches/flap-limit</property>
+						<property>/controls/fcc/flap-limit</property>
 						<value>1</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/fcc/switches/flap-limit</property>
+							<property>/controls/fcc/flap-limit</property>
 							<value>2</value>
 						</not-equals>
 					</enable>
@@ -691,7 +691,7 @@
 					<legend>2</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/fcc/switches/flap-limit</property>
+						<property>/controls/fcc/flap-limit</property>
 						<value>2</value>
 					</binding>
 				</button>
@@ -700,7 +700,7 @@
 			<checkbox>
 				<label>Yaw Damper Lwr A</label>
 				<halign>left</halign>
-				<property>/controls/fcc/switches/yd-lower-a</property>
+				<property>/controls/fcc/yd-lower-a</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -710,7 +710,7 @@
 			<checkbox>
 				<label>Yaw Damper Lwr B</label>
 				<halign>left</halign>
-				<property>/controls/fcc/switches/yd-lower-b</property>
+				<property>/controls/fcc/yd-lower-b</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -720,7 +720,7 @@
 			<checkbox>
 				<label>Yaw Damper Upr A</label>
 				<halign>left</halign>
-				<property>/controls/fcc/switches/yd-upper-a</property>
+				<property>/controls/fcc/yd-upper-a</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -730,7 +730,7 @@
 			<checkbox>
 				<label>Yaw Damper Upr B</label>
 				<halign>left</halign>
-				<property>/controls/fcc/switches/yd-upper-b</property>
+				<property>/controls/fcc/yd-upper-b</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -761,7 +761,7 @@
 			<checkbox>
 				<label>Fill 1</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/fill-1</property>
+				<property>/controls/fuel/fill-1</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -771,7 +771,7 @@
 			<checkbox>
 				<label>Fill 2</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/fill-2</property>
+				<property>/controls/fuel/fill-2</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -781,7 +781,7 @@
 			<checkbox>
 				<label>Fill 3</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/fill-3</property>
+				<property>/controls/fuel/fill-3</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -791,7 +791,7 @@
 			<checkbox>
 				<label>Pump 1 Aft</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/pump-1-aft</property>
+				<property>/controls/fuel/pump-1-aft</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -801,7 +801,7 @@
 			<checkbox>
 				<label>Pump 1 Fwd</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/pump-1-fwd</property>
+				<property>/controls/fuel/pump-1-fwd</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -811,7 +811,7 @@
 			<checkbox>
 				<label>Pump 2L Aft</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/pump-2l-aft</property>
+				<property>/controls/fuel/pump-2l-aft</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -821,7 +821,7 @@
 			<checkbox>
 				<label>Pump 2R Aft</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/pump-2r-aft</property>
+				<property>/controls/fuel/pump-2r-aft</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -831,7 +831,7 @@
 			<checkbox>
 				<label>Pump 2 Fwd</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/pump-2-fwd</property>
+				<property>/controls/fuel/pump-2-fwd</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -841,7 +841,7 @@
 			<checkbox>
 				<label>Pump 3 Aft</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/pump-3-aft</property>
+				<property>/controls/fuel/pump-3-aft</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -851,7 +851,7 @@
 			<checkbox>
 				<label>Pump 3 Fwd</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/pump-3-fwd</property>
+				<property>/controls/fuel/pump-3-fwd</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -868,7 +868,7 @@
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/fuel/switches/trans-aux-l</property>
+							<property>/controls/fuel/trans-aux-l</property>
 							<value>0</value>
 						</not-equals>
 					</enable>
@@ -878,14 +878,14 @@
 					<legend>OFF</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/fuel/switches/trans-aux-l</property>
+						<property>/controls/fuel/trans-aux-l</property>
 						<value>0</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/fuel/switches/trans-aux-l</property>
+							<property>/controls/fuel/trans-aux-l</property>
 							<value>1</value>
 						</not-equals>
 					</enable>
@@ -895,14 +895,14 @@
 					<legend>ALL</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/fuel/switches/trans-aux-l</property>
+						<property>/controls/fuel/trans-aux-l</property>
 						<value>1</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/fuel/switches/trans-aux-l</property>
+							<property>/controls/fuel/trans-aux-l</property>
 							<value>2</value>
 						</not-equals>
 					</enable>
@@ -912,7 +912,7 @@
 					<legend>UPR</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/fuel/switches/trans-aux-l</property>
+						<property>/controls/fuel/trans-aux-l</property>
 						<value>2</value>
 					</binding>
 				</button>
@@ -928,7 +928,7 @@
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/fuel/switches/trans-aux-r</property>
+							<property>/controls/fuel/trans-aux-r</property>
 							<value>0</value>
 						</not-equals>
 					</enable>
@@ -938,14 +938,14 @@
 					<legend>OFF</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/fuel/switches/trans-aux-r</property>
+						<property>/controls/fuel/trans-aux-r</property>
 						<value>0</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/fuel/switches/trans-aux-r</property>
+							<property>/controls/fuel/trans-aux-r</property>
 							<value>1</value>
 						</not-equals>
 					</enable>
@@ -955,14 +955,14 @@
 					<legend>ALL</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/fuel/switches/trans-aux-r</property>
+						<property>/controls/fuel/trans-aux-r</property>
 						<value>1</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/fuel/switches/trans-aux-r</property>
+							<property>/controls/fuel/trans-aux-r</property>
 							<value>2</value>
 						</not-equals>
 					</enable>
@@ -972,7 +972,7 @@
 					<legend>UPR</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/fuel/switches/trans-aux-r</property>
+						<property>/controls/fuel/trans-aux-r</property>
 						<value>2</value>
 					</binding>
 				</button>
@@ -981,7 +981,7 @@
 			<checkbox>
 				<label>Transfer 1</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/trans-1</property>
+				<property>/controls/fuel/trans-1</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -991,7 +991,7 @@
 			<checkbox>
 				<label>Transfer 2</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/trans-2</property>
+				<property>/controls/fuel/trans-2</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -1001,7 +1001,7 @@
 			<checkbox>
 				<label>Transfer 3</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/trans-3</property>
+				<property>/controls/fuel/trans-3</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -1011,7 +1011,7 @@
 			<checkbox>
 				<label>X Feed 1</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/x-feed-1</property>
+				<property>/controls/fuel/x-feed-1</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -1021,7 +1021,7 @@
 			<checkbox>
 				<label>X Feed 2</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/x-feed-2</property>
+				<property>/controls/fuel/x-feed-2</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -1031,7 +1031,7 @@
 			<checkbox>
 				<label>X Feed 3</label>
 				<halign>left</halign>
-				<property>/controls/fuel/switches/x-feed-3</property>
+				<property>/controls/fuel/x-feed-3</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -1058,7 +1058,7 @@
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/ignition/switches/ign</property>
+							<property>/controls/ignition/ign</property>
 							<value>-1</value>
 						</not-equals>
 					</enable>
@@ -1068,14 +1068,14 @@
 					<legend>START A</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/ignition/switches/ign</property>
+						<property>/controls/ignition/ign</property>
 						<value>-1</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/ignition/switches/ign</property>
+							<property>/controls/ignition/ign</property>
 							<value>0</value>
 						</not-equals>
 					</enable>
@@ -1085,14 +1085,14 @@
 					<legend>OFF</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/ignition/switches/ign</property>
+						<property>/controls/ignition/ign</property>
 						<value>0</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/ignition/switches/ign</property>
+							<property>/controls/ignition/ign</property>
 							<value>1</value>
 						</not-equals>
 					</enable>
@@ -1102,7 +1102,7 @@
 					<legend>START B</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/ignition/switches/ign</property>
+						<property>/controls/ignition/ign</property>
 						<value>1</value>
 					</binding>
 				</button>
@@ -1171,7 +1171,7 @@
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/apu/switches/master</property>
+							<property>/controls/apu/master</property>
 							<value>0</value>
 						</not-equals>
 					</enable>
@@ -1181,14 +1181,14 @@
 					<legend>OFF</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/apu/switches/master</property>
+						<property>/controls/apu/master</property>
 						<value>0</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/apu/switches/master</property>
+							<property>/controls/apu/master</property>
 							<value>1</value>
 						</not-equals>
 					</enable>
@@ -1198,14 +1198,14 @@
 					<legend>ON</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/apu/switches/master</property>
+						<property>/controls/apu/master</property>
 						<value>1</value>
 					</binding>
 				</button>
 				<button>
 					<enable>
 						<not-equals>
-							<property>/controls/apu/switches/master</property>
+							<property>/controls/apu/master</property>
 							<value>2</value>
 						</not-equals>
 					</enable>
@@ -1215,7 +1215,7 @@
 					<legend>START</legend>
 					<binding>
 						<command>property-assign</command>
-						<property>/controls/apu/switches/master</property>
+						<property>/controls/apu/master</property>
 						<value>2</value>
 					</binding>
 					<binding>

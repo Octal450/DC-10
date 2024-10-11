@@ -464,15 +464,8 @@
 	
 	<controls n="0">
 		<apu n="0">
-			<switches n="0">
-				<master type="int">0</master>
-			</switches>
+			<master type="int">0</master>
 		</apu>
-		<autobrake n="0">
-			<active type="bool">0</active>
-			<brake-left type="double">0</brake-left>
-			<brake-right type="double">0</brake-right>
-		</autobrake>
 		<cockpit n="0">
 			<baro-rotate n="0" type="int">49984</baro-rotate> <!-- So the symbol is upright -->
 			<baro-rotate n="1" type="int">49984</baro-rotate> <!-- So the symbol is upright -->
@@ -501,32 +494,30 @@
 			<n1-cmd-rotate n="2" type="int">49984</n1-cmd-rotate> <!-- So the symbol is upright -->
 		</cockpit>
 		<electrical n="0">
-			<switches n="0">
-				<ac-tie-1 type="bool">1</ac-tie-1>
-				<ac-tie-2 type="bool">1</ac-tie-2>
-				<ac-tie-3 type="bool">1</ac-tie-3>
-				<adg-elec type="bool">0</adg-elec>
-				<apu-pwr-1 type="bool">0</apu-pwr-1>
-				<apu-pwr-2 type="bool">0</apu-pwr-2>
-				<apu-pwr-3 type="bool">0</apu-pwr-3>
-				<battery type="bool">0</battery>
-				<dc-tie-1 type="bool">1</dc-tie-1>
-				<dc-tie-3 type="bool">1</dc-tie-3>
-				<dc-x-tie type="bool">0</dc-x-tie>
-				<emer-pwr type="bool">0</emer-pwr>
-				<ext-pwr type="bool">0</ext-pwr>
-				<extg-pwr type="bool">0</extg-pwr>
-				<galley-1 type="int">1</galley-1>
-				<galley-2 type="int">1</galley-2>
-				<galley-3 type="int">1</galley-3>
-				<gen-1 type="bool">0</gen-1>
-				<gen-2 type="bool">0</gen-2>
-				<gen-3 type="bool">0</gen-3>
-				<gen-drive-1 type="bool">1</gen-drive-1>
-				<gen-drive-2 type="bool">1</gen-drive-2>
-				<gen-drive-3 type="bool">1</gen-drive-3>
-				<ground-cart type="bool">0</ground-cart>
-			</switches>
+			<ac-tie-1 type="bool">1</ac-tie-1>
+			<ac-tie-2 type="bool">1</ac-tie-2>
+			<ac-tie-3 type="bool">1</ac-tie-3>
+			<adg-elec type="bool">0</adg-elec>
+			<apu-pwr-1 type="bool">0</apu-pwr-1>
+			<apu-pwr-2 type="bool">0</apu-pwr-2>
+			<apu-pwr-3 type="bool">0</apu-pwr-3>
+			<battery type="bool">0</battery>
+			<dc-tie-1 type="bool">1</dc-tie-1>
+			<dc-tie-3 type="bool">1</dc-tie-3>
+			<dc-x-tie type="bool">0</dc-x-tie>
+			<emer-pwr type="bool">0</emer-pwr>
+			<ext-pwr type="bool">0</ext-pwr>
+			<extg-pwr type="bool">0</extg-pwr>
+			<galley-1 type="int">1</galley-1>
+			<galley-2 type="int">1</galley-2>
+			<galley-3 type="int">1</galley-3>
+			<gen-1 type="bool">0</gen-1>
+			<gen-2 type="bool">0</gen-2>
+			<gen-3 type="bool">0</gen-3>
+			<gen-drive-1 type="bool">1</gen-drive-1>
+			<gen-drive-2 type="bool">1</gen-drive-2>
+			<gen-drive-3 type="bool">1</gen-drive-3>
+			<ground-cart type="bool">0</ground-cart>
 		</electrical>
 		<engines n="0">
 			<engine n="0">
@@ -570,15 +561,13 @@
 			</engine> 
 		</engines>
 		<fcc n="0">
-			<switches n="0">
-				<flap-limit type="int">0</flap-limit>
-				<elevator-feel type="int">0</elevator-feel>
-				<elevator-feel-man type="bool">0</elevator-feel-man>
-				<yd-lower-a type="bool">1</yd-lower-a>
-				<yd-lower-b type="bool">1</yd-lower-b>
-				<yd-upper-a type="bool">1</yd-upper-a>
-				<yd-upper-b type="bool">1</yd-upper-b>
-			</switches>
+			<flap-limit type="int">0</flap-limit>
+			<elevator-feel type="int">0</elevator-feel>
+			<elevator-feel-man type="bool">0</elevator-feel-man>
+			<yd-lower-a type="bool">1</yd-lower-a>
+			<yd-lower-b type="bool">1</yd-lower-b>
+			<yd-upper-a type="bool">1</yd-upper-a>
+			<yd-upper-b type="bool">1</yd-upper-b>
 		</fcc>
 		<flight n="0">
 			<aileron-drives-tiller type="bool">0</aileron-drives-tiller>
@@ -591,26 +580,24 @@
 			<wingflex-enable type="bool">0</wingflex-enable>
 		</flight>
 		<fuel n="0">
-			<switches n="0">
-				<fill-1 type="bool">0</fill-1>
-				<fill-2 type="bool">0</fill-2>
-				<fill-3 type="bool">0</fill-3>
-				<pump-1-aft type="bool">0</pump-1-aft>
-				<pump-1-fwd type="bool">0</pump-1-fwd>
-				<pump-2l-aft type="bool">0</pump-2l-aft>
-				<pump-2r-aft type="bool">0</pump-2r-aft>
-				<pump-2-fwd type="bool">0</pump-2-fwd>
-				<pump-3-aft type="bool">0</pump-3-aft>
-				<pump-3-fwd type="bool">0</pump-3-fwd>
-				<trans-aux-l type="int">0</trans-aux-l>
-				<trans-aux-r type="int">0</trans-aux-r>
-				<trans-1 type="bool">0</trans-1>
-				<trans-2 type="bool">0</trans-2>
-				<trans-3 type="bool">0</trans-3>
-				<x-feed-1 type="bool">0</x-feed-1>
-				<x-feed-2 type="bool">0</x-feed-2>
-				<x-feed-3 type="bool">0</x-feed-3>
-			</switches>
+			<fill-1 type="bool">0</fill-1>
+			<fill-2 type="bool">0</fill-2>
+			<fill-3 type="bool">0</fill-3>
+			<pump-1-aft type="bool">0</pump-1-aft>
+			<pump-1-fwd type="bool">0</pump-1-fwd>
+			<pump-2l-aft type="bool">0</pump-2l-aft>
+			<pump-2r-aft type="bool">0</pump-2r-aft>
+			<pump-2-fwd type="bool">0</pump-2-fwd>
+			<pump-3-aft type="bool">0</pump-3-aft>
+			<pump-3-fwd type="bool">0</pump-3-fwd>
+			<trans-aux-l type="int">0</trans-aux-l>
+			<trans-aux-r type="int">0</trans-aux-r>
+			<trans-1 type="bool">0</trans-1>
+			<trans-2 type="bool">0</trans-2>
+			<trans-3 type="bool">0</trans-3>
+			<x-feed-1 type="bool">0</x-feed-1>
+			<x-feed-2 type="bool">0</x-feed-2>
+			<x-feed-3 type="bool">0</x-feed-3>
 		</fuel>
 		<gear n="0">
 			<brake-parking type="bool">0</brake-parking>
@@ -618,26 +605,22 @@
 			<lever-cockpit type="int">3</lever-cockpit>
 		</gear>
 		<hydraulics n="0">
-			<switches n="0">
-				<aux-pump-1 type="bool">0</aux-pump-1>
-				<aux-pump-2 type="bool">0</aux-pump-2>
-				<gear-gravity-ext type="bool">0</gear-gravity-ext>
-				<l-pump-1 type="bool">0</l-pump-1>
-				<l-pump-2 type="bool">0</l-pump-2>
-				<l-pump-3 type="bool">0</l-pump-3>
-				<press-test type="bool">0</press-test>
-				<r-pump-1 type="int">0</r-pump-1>
-				<r-pump-2 type="int">0</r-pump-2>
-				<r-pump-3 type="int">0</r-pump-3>
-				<rmp-1-3 type="bool">0</rmp-1-3>
-				<rmp-2-3 type="bool">0</rmp-2-3>
-			</switches>
+			<aux-pump-1 type="bool">0</aux-pump-1>
+			<aux-pump-2 type="bool">0</aux-pump-2>
+			<gear-gravity-ext type="bool">0</gear-gravity-ext>
+			<l-pump-1 type="bool">0</l-pump-1>
+			<l-pump-2 type="bool">0</l-pump-2>
+			<l-pump-3 type="bool">0</l-pump-3>
+			<press-test type="bool">0</press-test>
+			<r-pump-1 type="int">0</r-pump-1>
+			<r-pump-2 type="int">0</r-pump-2>
+			<r-pump-3 type="int">0</r-pump-3>
+			<rmp-1-3 type="bool">0</rmp-1-3>
+			<rmp-2-3 type="bool">0</rmp-2-3>
 		</hydraulics>
 		<ignition n="0">
-			<switches n="0">
-				<ign type="int">0</ign>
-				<ign-ovrd type="bool">0</ign-ovrd>
-			</switches>
+			<ign type="int">0</ign>
+			<ign-ovrd type="bool">0</ign-ovrd>
 		</ignition>
 		<lighting n="0">
 			<beacon type="bool">0</beacon>
@@ -739,30 +722,6 @@
 					<y alias="/sim/model/autopush/force-y"/>
 				</tractor>
 			</external_reactions>
-			<engine n="0">
-				<ats-cmd-1 type="double">0</ats-cmd-1>
-				<ats-cmd-2 type="double">0</ats-cmd-2>
-				<ats-cmd-3 type="double">0</ats-cmd-3>
-				<epr n="0">
-					<c1 type="double">1</c1>
-					<c2 type="double">1</c2>
-				</epr>
-				<limit n="0">
-					<active-mode type="string">T/O</active-mode>
-					<active-mode-int type="int">0</active-mode-int>
-					<flex-temp type="int">45</flex-temp>
-				</limit>
-			</engine>
-			<fcc n="0">
-				<afs n="0">
-					<pitch-cmd type="double">0</pitch-cmd>
-					<roll-cmd type="double">0</roll-cmd>
-					<yaw-cmd type="double">0</yaw-cmd>
-				</afs>
-				<elevator-feel n="0">
-					<auto type="bool">1</auto>
-				</elevator-feel>
-			</fcc>
 			<fcs n="0">
 				<slat-pos-deg type="double">0</slat-pos-deg>
 			</fcs>
@@ -1472,6 +1431,20 @@
 				<altitude-alert type="int">0</altitude-alert>
 			</logic>
 		</caws>
+		<engines n="0">
+			<ats-cmd-1 type="double">0</ats-cmd-1>
+			<ats-cmd-2 type="double">0</ats-cmd-2>
+			<ats-cmd-3 type="double">0</ats-cmd-3>
+			<epr n="0">
+				<c1 type="double">1</c1>
+				<c2 type="double">1</c2>
+			</epr>
+			<limit n="0">
+				<active-mode type="string">T/O</active-mode>
+				<active-mode-int type="int">0</active-mode-int>
+				<flex-temp type="int">45</flex-temp>
+			</limit>
+		</engines>
 		<failures n="0">
 			<electrical n="0">
 				<ac-tie-1 type="bool">0</ac-tie-1>
@@ -1525,6 +1498,16 @@
 				<sys-3-leak type="bool">0</sys-3-leak>
 			</hydraulics>
 		</failures>
+		<fcc n="0">
+			<afs n="0">
+				<pitch-cmd type="double">0</pitch-cmd>
+				<roll-cmd type="double">0</roll-cmd>
+				<yaw-cmd type="double">0</yaw-cmd>
+			</afs>
+			<elevator-feel n="0">
+				<auto type="bool">1</auto>
+			</elevator-feel>
+		</fcc>
 		<hydraulics n="0">
 			<sys-1-qty-input type="double">8</sys-1-qty-input> <!-- Randomized later in sim init -->
 			<sys-2-qty-input type="double">8</sys-2-qty-input> <!-- Randomized later in sim init -->

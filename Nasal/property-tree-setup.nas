@@ -50,16 +50,6 @@ var Fdm = {
 		Contact: {
 			anyWowOut: props.globals.getNode("/fdm/jsbsim/contact/any-wow-out"),
 		},
-		Engine: {
-			Limit: {
-				overspeed: props.globals.getNode("/fdm/jsbsim/engine/limit/overspeed"),
-			},
-		},
-		Fcc: {
-			nlgTimer1: {
-				wowTimer: props.globals.getNode("/fdm/jsbsim/fcc/nlg-timer-1/wow-timer"),
-			},
-		},
 		Fcs: {
 			flapPosDeg: props.globals.getNode("/fdm/jsbsim/fcs/flap-pos-deg"),
 			Slat: {
@@ -77,9 +67,6 @@ var Fdm = {
 		},
 		Inertia: {
 			weightLbs: props.globals.getNode("/fdm/jsbsim/inertia/weight-lbs"),
-		},
-		Performance: {
-			stabilizerDeg: props.globals.getNode("/fdm/jsbsim/performance/stabilizer-deg"),
 		},
 		Position: {
 			wow: props.globals.getNode("/fdm/jsbsim/position/wow"),
@@ -216,6 +203,9 @@ var Sim = {
 };
 
 var Systems = {
+	Performance: {
+		stabilizerDeg: props.globals.getNode("/systems/performance/stabilizer-deg"),
+	},
 	Shake: {
 		shaking: props.globals.getNode("/systems/shake/shaking"),
 	},
