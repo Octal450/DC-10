@@ -3310,7 +3310,7 @@
 		
 		<switch name="/instrumentation/flap-slat/flap-cmd-input">
 			<default value="/instrumentation/flap-slat/flap-cmd-input"/>
-			<test value="fcs/flap/cmd-deg">
+			<test value="/systems/fcs/flaps/cmd">
 				/instrumentation/flap-slat/power-avail eq 1
 			</test>
 		</switch>
@@ -3336,16 +3336,16 @@
 			<default value="2"/> <!-- Disag -->
 			<test logic="AND" value="3"> <!-- Land -->
 				fcs/slat-pos-deg ge 30.9
-				fcs/slat/cmd-deg eq 31
+				/systems/fcs/slats/cmd eq 31
 			</test>
 			<test logic="AND" value="1"> <!-- Takeoff -->
 				fcs/slat-pos-deg ge 15.9
 				fcs/slat-pos-deg le 16.1
-				fcs/slat/cmd-deg eq 16
+				/systems/fcs/slats/cmd eq 16
 			</test>
 			<test logic="AND" value="0"> <!-- Off -->
 				fcs/slat-pos-deg lt 0.1
-				fcs/slat/cmd-deg eq 0
+				/systems/fcs/slats/cmd eq 0
 			</test>
 		</switch>
 	

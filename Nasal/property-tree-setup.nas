@@ -34,21 +34,6 @@ var Fdm = {
 		Contact: {
 			anyWowOut: props.globals.getNode("/fdm/jsbsim/contact/any-wow-out"),
 		},
-		Fcs: {
-			flapPosDeg: props.globals.getNode("/fdm/jsbsim/fcs/flap-pos-deg"),
-			Slat: {
-				cmdDeg: props.globals.getNode("/fdm/jsbsim/fcs/slat/cmd-deg"),
-			},
-			slatPosDeg: props.globals.getNode("/fdm/jsbsim/fcs/slat-pos-deg"),
-		},
-		Gear: {
-			gearAllNorm: props.globals.getNode("/fdm/jsbsim/gear/gear-all-norm"),
-		},
-		Hydraulics: {
-			Stabilizer: {
-				finalDeg: props.globals.getNode("/fdm/jsbsim/hydraulics/stabilizer/final-deg"),
-			},
-		},
 		Inertia: {
 			weightLbs: props.globals.getNode("/fdm/jsbsim/inertia/weight-lbs"),
 		},

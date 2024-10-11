@@ -7,7 +7,7 @@
 	
 	<channel name="Refueling Logic">
 		
-		<switch name="fcs/boom-rate">
+		<switch name="/systems/fcs/boom-rate">
 			<default value="0"/>
 			<test logic="OR" value="0.2">
 				/systems/hydraulics/sys-1-psi ge 1500
@@ -16,22 +16,22 @@
 			</test>
 		</switch>
 		
-		<actuator name="fcs/boom-pos">
+		<actuator name="/systems/fcs/boom-pos">
 			<input>/options/boom-pos-cmd</input>
-			<rate_limit>fcs/boom-rate</rate_limit>
+			<rate_limit>/systems/fcs/boom-rate</rate_limit>
 		</actuator>
 		
-		<lag_filter name="fcs/boom-lag">
-			<input>fcs/boom-pos</input>
-			<c1>5</c1>
-			<output>fcs/boom-final</output> <!-- So it can be overidden by flight recorder -->
+		<lag_filter name="/systems/fcs/boom-lag">
+			<input>/systems/fcs/boom-pos</input>
+			<c1>5.0</c1>
+			<output>/systems/fcs/boom-final</output> <!-- So it can be overidden by flight recorder -->
 			<output>/engines/engine[7]/n1</output> <!--  Backwards compatibility -->
 		</lag_filter>
 		
-		<switch name="fcs/tanker-active">
+		<switch name="/systems/fcs/tanker-active">
 			<default value="0"/>
 			<test logic="OR" value="1">
-				fcs/boom-lag ge 0.95
+				/systems/fcs/boom-lag ge 0.95
 				/options/drogues-shown eq 1
 			</test>
 			<output>/tanker</output> <!-- Sets this property for MP -->

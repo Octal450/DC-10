@@ -228,7 +228,7 @@ var Athr = {
 	loop: func() {
 		me.tciMode = systems.THRLIM.Limit.activeModeInt.getValue();
 		Output.thrModeTemp = Output.thrMode.getValue();
-		me.retard = Output.athr.getBoolValue() and Output.vert.getValue() != 7 and pts.Position.gearAglFt.getValue() <= 50 and pts.Fdm.JSBSim.Fcs.Slat.cmdDeg.getValue() >= 28 and me.tciMode != 0 and me.tciMode != 1;
+		me.retard = Output.athr.getBoolValue() and Output.vert.getValue() != 7 and pts.Position.gearAglFt.getValue() <= 50 and systems.FCS.slatsCmd.getValue() >= 28 and me.tciMode != 0 and me.tciMode != 1;
 		
 		if (Output.thrModeTemp == 0) { # Update it as the UpdateFma only does it once
 			me.modeZeroCheck();

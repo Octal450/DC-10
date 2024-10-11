@@ -628,7 +628,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>PitchTrimIndicator</object-name>
-		<property>fdm/jsbsim/hydraulics/stabilizer/final-deg</property>
+		<property>systems/fcs/stabilizer/final-deg</property>
 		<interpolation> <!-- Negative is up -->
 			<entry><ind>  2</ind><dep> 7.5</dep></entry>
 			<entry><ind>  0</ind><dep>12.3</dep></entry>
