@@ -118,6 +118,16 @@
 		</offsets>
 	</model>
 	
+	<model>
+		<name>Pushback</name>
+		<path>Aircraft/DC-10/Models/Services/Pushback/Douglas.xml</path>
+		<offsets>
+			<x-m>-19.74</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.76</z-m>
+		</offsets>
+	</model>
+	
 	<!-- Wingflex -->	
 	<animation>
 		<type>rotate</type>
