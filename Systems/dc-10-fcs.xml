@@ -1120,7 +1120,7 @@
 	
 	<channel name="Gear Misc">
 		
-		<fcs_function name="gear/gear-all-norm">
+		<fcs_function name="/systems/gear/all-norm">
 			<function>
 				<product>
 					<property>/systems/gear/unit[0]/pos-actuator</property>
