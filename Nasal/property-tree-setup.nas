@@ -18,7 +18,7 @@ var Controls = {
 		speedbrakeArm: props.globals.getNode("/controls/flight/speedbrake-arm"),
 		speedbrakeTemp: 0,
 		slatsCmd: props.globals.getNode("/controls/flight/slats-cmd"),
-		wingflexEnable: props.globals.getNode("/controls/flight/wingflex-enable"),
+		wingflexEnable: props.globals.getNode("/sim/model/wingflex-enable"),
 	},
 	Switches: {
 		adgHandle: props.globals.getNode("/controls/switches/adg-handle"),

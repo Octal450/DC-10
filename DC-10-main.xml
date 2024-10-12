@@ -188,6 +188,7 @@
 				<nav-lights type="bool">0</nav-lights>
 			</lights>
 			<wingflex type="double">0</wingflex>
+			<wingflex-enable type="bool">0</wingflex-enable>
 		</model>
 		<multiplay n="0">
 			<generic n="0">
@@ -577,7 +578,6 @@
 			<flaps-output type="double">0</flaps-output>
 			<slats type="double">0</slats>
 			<speedbrake-arm type="bool">0</speedbrake-arm>
-			<wingflex-enable type="bool">0</wingflex-enable>
 		</flight>
 		<fuel n="0">
 			<fill-1 type="bool">0</fill-1>
