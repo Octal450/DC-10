@@ -1,7 +1,7 @@
 # McDonnell Douglas DC-10 Hydraulic System
 # Copyright (c) 2024 Josh Davidson (Octal450)
 
-var HYD = {
+var HYDRAULICS = {
 	Failures: {
 		auxPump1: props.globals.getNode("/systems/failures/hydraulics/aux-pump-1"),
 		auxPump2: props.globals.getNode("/systems/failures/hydraulics/aux-pump-2"),

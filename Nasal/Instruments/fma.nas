@@ -59,7 +59,7 @@ var canvasBase = {
 		Value.apOn = (fgs.Output.ap1.getBoolValue() and fgs.Input.fgs1Sel.getValue() == 2) or (fgs.Output.ap2.getBoolValue() and fgs.Input.fgs2Sel.getValue() == 2);
 		Value.atsOn = fgs.Output.athr.getBoolValue();
 		
-		if (systems.ELEC.Generic.fma[0].getValue() >= 24) {
+		if (systems.ELECTRICAL.Generic.fma[0].getValue() >= 24) {
 			if (Value.atsOn) {
 				thrL.update();
 				thrL.page.show();
@@ -94,7 +94,7 @@ var canvasBase = {
 			Value.hideScreen[0][3] = 1;
 		}
 		
-		if (systems.ELEC.Generic.fma[1].getValue() >= 24) {
+		if (systems.ELECTRICAL.Generic.fma[1].getValue() >= 24) {
 			if (Value.atsOn) {
 				thrR.update();
 				thrR.page.show();
