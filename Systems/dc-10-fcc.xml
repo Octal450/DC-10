@@ -177,7 +177,7 @@
 		<switch name="/systems/fcc/speeds/v2-target-ias-input">
 			<default value="/instrumentation/airspeed-indicator/indicated-speed-kt"/>
 			<test logic="AND" value="/systems/fcc/speeds/v2-target-ias-input">
-				libraries/any-engine-out eq 1
+				/systems/engines/any-engine-out eq 1
 			</test>
 		</switch>
 		
@@ -187,7 +187,7 @@
 					<sum>
 						<ifthen>
 							<eq>
-								<property>libraries/any-engine-out</property>
+								<property>/systems/engines/any-engine-out</property>
 								<value>1</value>
 							</eq>
 							<min>

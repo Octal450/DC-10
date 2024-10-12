@@ -264,7 +264,7 @@ var Athr = {
 	},
 	toCheck: func() {
 		if (Text.vert.getValue() == "T/O CLB") {
-			if (pts.Instrumentation.AirspeedIndicator.indicatedSpeedKt.getValue() < 80 and pts.Fdm.JSBSim.Position.wow.getBoolValue()) {
+			if (pts.Instrumentation.AirspeedIndicator.indicatedSpeedKt.getValue() < 80 and pts.Position.wow.getBoolValue()) {
 				if (Output.thrMode.getValue() != 2) {
 					Output.thrMode.setValue(2);
 					UpdateFma.thr();

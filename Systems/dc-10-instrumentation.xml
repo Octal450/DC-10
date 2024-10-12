@@ -811,7 +811,7 @@
 				/systems/caws/logic/altitude-alert eq 1
 				<test logic="AND">
 					/systems/caws/logic/altitude-alert eq 2
-					libraries/blink-med eq 1
+					/systems/libraries/blink-med eq 1
 				</test>
 			</test>
 		</switch>
@@ -897,7 +897,7 @@
 				/systems/caws/logic/altitude-alert eq 1
 				<test logic="AND">
 					/systems/caws/logic/altitude-alert eq 2
-					libraries/blink-med eq 1
+					/systems/libraries/blink-med eq 1
 				</test>
 			</test>
 		</switch>
@@ -990,7 +990,7 @@
 			<test logic="OR" value="1">
 				/controls/switches/annun-test eq 1
 				<test logic="AND">
-					/controls/misc/minimums-latch eq 1
+					/systems/misc/minimums-latch eq 1
 					/position/gear-agl-ft le /controls/switches/minimums
 				</test>
 			</test>
@@ -1044,7 +1044,7 @@
 			<test logic="OR" value="1">
 				/controls/switches/annun-test eq 1
 				<test logic="AND">
-					/controls/misc/minimums-latch eq 1
+					/systems/misc/minimums-latch eq 1
 					/position/gear-agl-ft le /controls/switches/minimums
 				</test>
 			</test>

@@ -110,114 +110,114 @@ var ENGINES = {
 # Base off Engine 2
 var doRevThrust = func() {
 	if ((pts.Gear.wow[1].getBoolValue() or pts.Gear.wow[2].getBoolValue()) and THRLIM.throttleCompareMax.getValue() <= 0.05) {
-		ENGINE.Controls.throttleTemp[1] = ENGINE.Controls.throttle[1].getValue();
-		if (!ENGINE.Controls.reverseEngage[0].getBoolValue() or !ENGINE.Controls.reverseEngage[1].getBoolValue() or !ENGINE.Controls.reverseEngage[2].getBoolValue()) {
-			ENGINE.Controls.reverseEngage[0].setBoolValue(1);
-			ENGINE.Controls.reverseEngage[1].setBoolValue(1);
-			ENGINE.Controls.reverseEngage[2].setBoolValue(1);
-			ENGINE.Controls.throttle[0].setValue(0);
-			ENGINE.Controls.throttle[1].setValue(0);
-			ENGINE.Controls.throttle[2].setValue(0);
-		} else if (ENGINE.Controls.throttleTemp[1] < 0.4) {
-			ENGINE.Controls.throttle[0].setValue(0.4);
-			ENGINE.Controls.throttle[1].setValue(0.4);
-			ENGINE.Controls.throttle[2].setValue(0.4);
-		} else if (ENGINE.Controls.throttleTemp[1] < 0.7) {
-			ENGINE.Controls.throttle[0].setValue(0.7);
-			ENGINE.Controls.throttle[1].setValue(0.7);
-			ENGINE.Controls.throttle[2].setValue(0.7);
-		} else if (ENGINE.Controls.throttleTemp[1] < 1) {
-			ENGINE.Controls.throttle[0].setValue(1);
-			ENGINE.Controls.throttle[1].setValue(1);
-			ENGINE.Controls.throttle[2].setValue(1);
+		ENGINES.Controls.throttleTemp[1] = ENGINES.Controls.throttle[1].getValue();
+		if (!ENGINES.Controls.reverseEngage[0].getBoolValue() or !ENGINES.Controls.reverseEngage[1].getBoolValue() or !ENGINES.Controls.reverseEngage[2].getBoolValue()) {
+			ENGINES.Controls.reverseEngage[0].setBoolValue(1);
+			ENGINES.Controls.reverseEngage[1].setBoolValue(1);
+			ENGINES.Controls.reverseEngage[2].setBoolValue(1);
+			ENGINES.Controls.throttle[0].setValue(0);
+			ENGINES.Controls.throttle[1].setValue(0);
+			ENGINES.Controls.throttle[2].setValue(0);
+		} else if (ENGINES.Controls.throttleTemp[1] < 0.4) {
+			ENGINES.Controls.throttle[0].setValue(0.4);
+			ENGINES.Controls.throttle[1].setValue(0.4);
+			ENGINES.Controls.throttle[2].setValue(0.4);
+		} else if (ENGINES.Controls.throttleTemp[1] < 0.7) {
+			ENGINES.Controls.throttle[0].setValue(0.7);
+			ENGINES.Controls.throttle[1].setValue(0.7);
+			ENGINES.Controls.throttle[2].setValue(0.7);
+		} else if (ENGINES.Controls.throttleTemp[1] < 1) {
+			ENGINES.Controls.throttle[0].setValue(1);
+			ENGINES.Controls.throttle[1].setValue(1);
+			ENGINES.Controls.throttle[2].setValue(1);
 		}
 	} else {
-		ENGINE.Controls.throttle[0].setValue(0);
-		ENGINE.Controls.throttle[1].setValue(0);
-		ENGINE.Controls.throttle[2].setValue(0);
-		ENGINE.Controls.reverseEngage[0].setBoolValue(0);
-		ENGINE.Controls.reverseEngage[1].setBoolValue(0);
-		ENGINE.Controls.reverseEngage[2].setBoolValue(0);
+		ENGINES.Controls.throttle[0].setValue(0);
+		ENGINES.Controls.throttle[1].setValue(0);
+		ENGINES.Controls.throttle[2].setValue(0);
+		ENGINES.Controls.reverseEngage[0].setBoolValue(0);
+		ENGINES.Controls.reverseEngage[1].setBoolValue(0);
+		ENGINES.Controls.reverseEngage[2].setBoolValue(0);
 	}
 }
 
 var unRevThrust = func() {
 	if ((pts.Gear.wow[1].getBoolValue() or pts.Gear.wow[2].getBoolValue()) and THRLIM.throttleCompareMax.getValue() <= 0.05) {
-		if (ENGINE.Controls.reverseEngage[0].getBoolValue() or ENGINE.Controls.reverseEngage[1].getBoolValue() or ENGINE.Controls.reverseEngage[2].getBoolValue()) {
-			ENGINE.Controls.throttleTemp[1] = ENGINE.Controls.throttle[1].getValue();
-			if (ENGINE.Controls.throttleTemp[1] > 0.7) {
-				ENGINE.Controls.throttle[0].setValue(0.7);
-				ENGINE.Controls.throttle[1].setValue(0.7);
-				ENGINE.Controls.throttle[2].setValue(0.7);
-			} else if (ENGINE.Controls.throttleTemp[1] > 0.4) {
-				ENGINE.Controls.throttle[0].setValue(0.4);
-				ENGINE.Controls.throttle[1].setValue(0.4);
-				ENGINE.Controls.throttle[2].setValue(0.4);
-			} else if (ENGINE.Controls.throttleTemp[1] > 0.05) {
-				ENGINE.Controls.throttle[0].setValue(0);
-				ENGINE.Controls.throttle[1].setValue(0);
-				ENGINE.Controls.throttle[2].setValue(0);
+		if (ENGINES.Controls.reverseEngage[0].getBoolValue() or ENGINES.Controls.reverseEngage[1].getBoolValue() or ENGINES.Controls.reverseEngage[2].getBoolValue()) {
+			ENGINES.Controls.throttleTemp[1] = ENGINES.Controls.throttle[1].getValue();
+			if (ENGINES.Controls.throttleTemp[1] > 0.7) {
+				ENGINES.Controls.throttle[0].setValue(0.7);
+				ENGINES.Controls.throttle[1].setValue(0.7);
+				ENGINES.Controls.throttle[2].setValue(0.7);
+			} else if (ENGINES.Controls.throttleTemp[1] > 0.4) {
+				ENGINES.Controls.throttle[0].setValue(0.4);
+				ENGINES.Controls.throttle[1].setValue(0.4);
+				ENGINES.Controls.throttle[2].setValue(0.4);
+			} else if (ENGINES.Controls.throttleTemp[1] > 0.05) {
+				ENGINES.Controls.throttle[0].setValue(0);
+				ENGINES.Controls.throttle[1].setValue(0);
+				ENGINES.Controls.throttle[2].setValue(0);
 			} else {
-				ENGINE.Controls.throttle[0].setValue(0);
-				ENGINE.Controls.throttle[1].setValue(0);
-				ENGINE.Controls.throttle[2].setValue(0);
-				ENGINE.Controls.reverseEngage[0].setBoolValue(0);
-				ENGINE.Controls.reverseEngage[1].setBoolValue(0);
-				ENGINE.Controls.reverseEngage[2].setBoolValue(0);
+				ENGINES.Controls.throttle[0].setValue(0);
+				ENGINES.Controls.throttle[1].setValue(0);
+				ENGINES.Controls.throttle[2].setValue(0);
+				ENGINES.Controls.reverseEngage[0].setBoolValue(0);
+				ENGINES.Controls.reverseEngage[1].setBoolValue(0);
+				ENGINES.Controls.reverseEngage[2].setBoolValue(0);
 			}
 		}
 	} else {
-		ENGINE.Controls.throttle[0].setValue(0);
-		ENGINE.Controls.throttle[1].setValue(0);
-		ENGINE.Controls.throttle[2].setValue(0);
-		ENGINE.Controls.reverseEngage[0].setBoolValue(0);
-		ENGINE.Controls.reverseEngage[1].setBoolValue(0);
-		ENGINE.Controls.reverseEngage[2].setBoolValue(0);
+		ENGINES.Controls.throttle[0].setValue(0);
+		ENGINES.Controls.throttle[1].setValue(0);
+		ENGINES.Controls.throttle[2].setValue(0);
+		ENGINES.Controls.reverseEngage[0].setBoolValue(0);
+		ENGINES.Controls.reverseEngage[1].setBoolValue(0);
+		ENGINES.Controls.reverseEngage[2].setBoolValue(0);
 	}
 }
 
 var toggleRevThrust = func() {
 	if ((pts.Gear.wow[1].getBoolValue() or pts.Gear.wow[2].getBoolValue()) and THRLIM.throttleCompareMax.getValue() <= 0.05) {
-		if (ENGINE.Controls.reverseEngage[0].getBoolValue() or ENGINE.Controls.reverseEngage[1].getBoolValue() or ENGINE.Controls.reverseEngage[2].getBoolValue()) {
-			ENGINE.Controls.throttle[0].setValue(0);
-			ENGINE.Controls.throttle[1].setValue(0);
-			ENGINE.Controls.throttle[2].setValue(0);
-			ENGINE.Controls.reverseEngage[0].setBoolValue(0);
-			ENGINE.Controls.reverseEngage[1].setBoolValue(0);
-			ENGINE.Controls.reverseEngage[2].setBoolValue(0);
+		if (ENGINES.Controls.reverseEngage[0].getBoolValue() or ENGINES.Controls.reverseEngage[1].getBoolValue() or ENGINES.Controls.reverseEngage[2].getBoolValue()) {
+			ENGINES.Controls.throttle[0].setValue(0);
+			ENGINES.Controls.throttle[1].setValue(0);
+			ENGINES.Controls.throttle[2].setValue(0);
+			ENGINES.Controls.reverseEngage[0].setBoolValue(0);
+			ENGINES.Controls.reverseEngage[1].setBoolValue(0);
+			ENGINES.Controls.reverseEngage[2].setBoolValue(0);
 		} else {
-			ENGINE.Controls.reverseEngage[0].setBoolValue(1);
-			ENGINE.Controls.reverseEngage[1].setBoolValue(1);
-			ENGINE.Controls.reverseEngage[2].setBoolValue(1);
+			ENGINES.Controls.reverseEngage[0].setBoolValue(1);
+			ENGINES.Controls.reverseEngage[1].setBoolValue(1);
+			ENGINES.Controls.reverseEngage[2].setBoolValue(1);
 		}
 	} else {
-		ENGINE.Controls.throttle[0].setValue(0);
-		ENGINE.Controls.throttle[1].setValue(0);
-		ENGINE.Controls.throttle[2].setValue(0);
-		ENGINE.Controls.reverseEngage[0].setBoolValue(0);
-		ENGINE.Controls.reverseEngage[1].setBoolValue(0);
-		ENGINE.Controls.reverseEngage[2].setBoolValue(0);
+		ENGINES.Controls.throttle[0].setValue(0);
+		ENGINES.Controls.throttle[1].setValue(0);
+		ENGINES.Controls.throttle[2].setValue(0);
+		ENGINES.Controls.reverseEngage[0].setBoolValue(0);
+		ENGINES.Controls.reverseEngage[1].setBoolValue(0);
+		ENGINES.Controls.reverseEngage[2].setBoolValue(0);
 	}
 }
 
 var doIdleThrust = func() {
-	ENGINE.Controls.throttle[0].setValue(0);
-	ENGINE.Controls.throttle[1].setValue(0);
-	ENGINE.Controls.throttle[2].setValue(0);
+	ENGINES.Controls.throttle[0].setValue(0);
+	ENGINES.Controls.throttle[1].setValue(0);
+	ENGINES.Controls.throttle[2].setValue(0);
 }
 
 var doLimitThrust = func() {
 	var active = THRLIM.Limit.activeNorm.getValue();
-	ENGINE.Controls.throttle[0].setValue(active);
-	ENGINE.Controls.throttle[1].setValue(active);
-	ENGINE.Controls.throttle[2].setValue(active);
+	ENGINES.Controls.throttle[0].setValue(active);
+	ENGINES.Controls.throttle[1].setValue(active);
+	ENGINES.Controls.throttle[2].setValue(active);
 }
 
 var doFullThrust = func() {
 	var highest = THRLIM.Limit.highestNorm.getValue();
-	ENGINE.Controls.throttle[0].setValue(highest);
-	ENGINE.Controls.throttle[1].setValue(highest);
-	ENGINE.Controls.throttle[2].setValue(highest);
+	ENGINES.Controls.throttle[0].setValue(highest);
+	ENGINES.Controls.throttle[1].setValue(highest);
+	ENGINES.Controls.throttle[2].setValue(highest);
 }
 
 # Flight Control Computers
@@ -323,11 +323,11 @@ var IGNITION = {
 		me.Controls.ignOvrd.setBoolValue(0);
 	},
 	fastStart: func(n) {
-		ENGINE.Controls.cutoff[n].setBoolValue(0);
+		ENGINES.Controls.cutoff[n].setBoolValue(0);
 		pts.Fdm.JSBSim.Propulsion.setRunning.setValue(n);
 	},
 	fastStop: func(n) {
-		ENGINE.Controls.cutoff[n].setBoolValue(1);
+		ENGINES.Controls.cutoff[n].setBoolValue(1);
 		settimer(func() { # Required delay
 			if (systems.ENGINES.n2[n].getValue() > 1) {
 				pts.Fdm.JSBSim.Propulsion.ENGINES.n1[n].setValue(0.1);

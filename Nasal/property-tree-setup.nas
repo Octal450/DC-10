@@ -33,10 +33,6 @@ var Fdm = {
 		Inertia: {
 			weightLbs: props.globals.getNode("/fdm/jsbsim/inertia/weight-lbs"),
 		},
-		Position: {
-			wow: props.globals.getNode("/fdm/jsbsim/position/wow"),
-			wowTemp: 0,
-		},
 		Propulsion: {
 			Engine: {
 				n1: [props.globals.getNode("/fdm/jsbsim/propulsion/engine[0]/n1"), props.globals.getNode("/fdm/jsbsim/propulsion/engine[1]/n1"), props.globals.getNode("/fdm/jsbsim/propulsion/engine[2]/n1"), props.globals.getNode("/fdm/jsbsim/propulsion/engine[3]/n1")],
@@ -111,6 +107,8 @@ var Payload = {
 
 var Position = {
 	gearAglFt: props.globals.getNode("/position/gear-agl-ft"),
+	wow: props.globals.getNode("/position/wow"),
+	wowTemp: 0,
 };
 
 var Services = {
