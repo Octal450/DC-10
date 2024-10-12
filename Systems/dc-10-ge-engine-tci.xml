@@ -408,7 +408,7 @@
 					</eq>
 					<table>
 						<independentVar lookup="row">velocities/mach</independentVar>
-						<independentVar lookup="column">/controls/flight/flaps-input</independentVar> <!-- Take advantage of table interpolation, values same -->
+						<independentVar lookup="column">/systems/fcs/flaps/input</independentVar> <!-- Take advantage of table interpolation, values same -->
 						<independentVar lookup="table">/position/altitude-ft</independentVar>
 						<tableData breakPoint="0">
 							      0     1

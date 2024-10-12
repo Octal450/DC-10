@@ -743,7 +743,7 @@
 			</function>
 		</fcs_function>
 		
-		<switch name="/controls/flight/flaps-input">
+		<switch name="/systems/fcs/flaps/input">
 			<default value="0"/> <!-- UP/RET -->
 			<test logic="AND" value="1"> <!-- UP/EXT -->
 				/systems/fcs/flaps/fixed ge 0.20
@@ -784,26 +784,26 @@
 		<switch name="/systems/fcs/flaps/cmd">
 			<default value="0"/>
 			<test value="/systems/fcs/flaps/dial-a-flap-cmd">
-				/controls/flight/flaps-input eq 2
+				/systems/fcs/flaps/input eq 2
 			</test>
 			<test value="22">
-				/controls/flight/flaps-input eq 3
+				/systems/fcs/flaps/input eq 3
 			</test>
 			<test value="35">
-				/controls/flight/flaps-input eq 4
+				/systems/fcs/flaps/input eq 4
 			</test>
 			<test value="50">
-				/controls/flight/flaps-input eq 5
+				/systems/fcs/flaps/input eq 5
 			</test>
 		</switch>
 		
 		<switch name="/systems/fcs/slats/cmd">
 			<default value="0"/>
 			<test value="31">
-				/controls/flight/flaps-input ge 4
+				/systems/fcs/flaps/input ge 4
 			</test>
 			<test value="16">
-				/controls/flight/flaps-input ge 1
+				/systems/fcs/flaps/input ge 1
 			</test>
 		</switch>
 	

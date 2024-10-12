@@ -433,7 +433,7 @@ var Sound = {
 	},
 };
 
-setlistener("/controls/flight/flaps-input", func() {
+setlistener("/systems/fcs/flaps/input", func() {
 	if (pts.Sim.Sound.flapsClick.getBoolValue()) {
 		return;
 	}
