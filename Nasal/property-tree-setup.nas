@@ -18,7 +18,6 @@ var Controls = {
 		speedbrakeArm: props.globals.getNode("/controls/flight/speedbrake-arm"),
 		speedbrakeTemp: 0,
 		slatsCmd: props.globals.getNode("/controls/flight/slats-cmd"),
-		wingflexEnable: props.globals.getNode("/sim/model/wingflex-enable"),
 	},
 	Switches: {
 		adgHandle: props.globals.getNode("/controls/switches/adg-handle"),
@@ -139,6 +138,9 @@ var Sim = {
 		zOffsetM: props.globals.getNode("/sim/current-view/z-offset-m", 1),
 		zOffsetMaxM: props.globals.getNode("/sim/current-view/z-offset-max-m", 1),
 		zOffsetMinM: props.globals.getNode("/sim/current-view/z-offset-min-m", 1),
+	},
+	Model: {
+		wingflexEnable: props.globals.getNode("/sim/model/wingflex-enable"),
 	},
 	Rendering: {
 		Headshake: {
