@@ -726,7 +726,7 @@
 	
 	<channel name="Flaps/Slats Control"> <!-- TODO: Flaps and slats should have separate levers -->
 		
-		<fcs_function name="/controls/flight/flaps-fixed"> <!-- Rounds to 4 figures to fix a potential problem -->
+		<fcs_function name="/systems/fcs/flaps/fixed"> <!-- Rounds to 4 figures to fix a potential problem -->
 			<function>
 				<quotient>
 					<floor>
@@ -746,23 +746,23 @@
 		<switch name="/controls/flight/flaps-input">
 			<default value="0"/> <!-- UP/RET -->
 			<test logic="AND" value="1"> <!-- UP/EXT -->
-				/controls/flight/flaps-fixed ge 0.20
-				/controls/flight/flaps-fixed lt 0.36
+				/systems/fcs/flaps/fixed ge 0.20
+				/systems/fcs/flaps/fixed lt 0.36
 			</test>
 			<test logic="AND" value="2"> <!-- 10-25/EXT -->
-				/controls/flight/flaps-fixed ge 0.36
-				/controls/flight/flaps-fixed lt 0.52
+				/systems/fcs/flaps/fixed ge 0.36
+				/systems/fcs/flaps/fixed lt 0.52
 			</test>
 			<test logic="AND" value="3"> <!-- 22/EXT -->
-				/controls/flight/flaps-fixed ge 0.52
-				/controls/flight/flaps-fixed lt 0.68
+				/systems/fcs/flaps/fixed ge 0.52
+				/systems/fcs/flaps/fixed lt 0.68
 			</test>
 			<test logic="AND" value="4"> <!-- 35/EXT -->
-				/controls/flight/flaps-fixed ge 0.68
-				/controls/flight/flaps-fixed lt 0.84
+				/systems/fcs/flaps/fixed ge 0.68
+				/systems/fcs/flaps/fixed lt 0.84
 			</test>
 			<test value="5"> <!-- 50/EXT -->
-				/controls/flight/flaps-fixed ge 0.84
+				/systems/fcs/flaps/fixed ge 0.84
 			</test>
 		</switch>
 		
