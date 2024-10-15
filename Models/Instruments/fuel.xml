@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>fuel.ac</path>
+	
+	<animation>
+		<type>scale</type>
+		<x-offset>0.95</x-offset>
+		<y-offset>0.95</y-offset>
+		<z-offset>0.95</z-offset>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Flags</object-name>
+		<condition>
+			<not-equals>
+				<property>instrumentation/fuel-gw/power-avail</property>
+				<value>1</value>
+			</not-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>LightingGroup</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>0.6</green>
+			<blue>0.3</blue>
+			<factor-prop>controls/lighting/capt-panel-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>Fuel1</object-name>
+		<property>instrumentation/fuel-gw/fuel-lbs</property>
+		<factor>0.000001</factor>
+		<step>100000</step>
+		<scroll>100</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Fuel2</object-name>
+		<property>instrumentation/fuel-gw/fuel-lbs</property>
+		<factor>0.00001</factor>
+		<step>10000</step>
+		<scroll>100</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Fuel3</object-name>
+		<property>instrumentation/fuel-gw/fuel-lbs</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<scroll>100</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Fuel4</object-name>
+		<property>instrumentation/fuel-gw/fuel-lbs</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<scroll>100</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>Gw1</object-name>
+		<property>instrumentation/fuel-gw/gw-lbs</property>
+		<factor>0.000001</factor>
+		<step>100000</step>
+		<scroll>100</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Gw2</object-name>
+		<property>instrumentation/fuel-gw/gw-lbs</property>
+		<factor>0.00001</factor>
+		<step>10000</step>
+		<scroll>100</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Gw3</object-name>
+		<property>instrumentation/fuel-gw/gw-lbs</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<scroll>100</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Gw4</object-name>
+		<property>instrumentation/fuel-gw/gw-lbs</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<scroll>100</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

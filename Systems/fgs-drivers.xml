@@ -1063,7 +1063,12 @@
 					</greater-than-equals>
 				</and>
 			</condition>
-			<value>6</value>
+			<expression>
+				<difference>
+					<value>6</value>
+					<property>/orientation/pitch-deg</property>
+				</difference>
+			</expression>
 		</input>
 		<input>0</input>
 		<output>/it-autoflight/fd/pitch-bar-takeoff-cmd</output>

@@ -1,7 +1,7 @@
 AC3Db
 MATERIAL "ac3dmat1.002" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 64  trans 0
 OBJECT world
-kids 7
+kids 6
 OBJECT poly
 name "Alert"
 data 10
@@ -1824,12 +1824,6 @@ refs 3
 18 0.672242 0.915741
 33 0.818131 0.818236
 17 0.5 0.5
-kids 0
-OBJECT poly
-name "Cube.021"
-data 8
-Cube.001
-crease 40.000000
 kids 0
 OBJECT group
 name "LightingGroup"

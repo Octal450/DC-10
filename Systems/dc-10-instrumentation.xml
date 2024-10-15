@@ -1747,6 +1747,77 @@
 	
 	</channel>
 	
+	<channel name="Fuel/GW Gauge" execrate="4">
+		
+		<switch name="/instrumentation/fuel-gw/power-avail">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				/systems/electrical/bus/l-emer-dc ge 24
+				/systems/electrical/bus/r-emer-dc ge 24
+				/systems/acconfig/autoconfig-running eq 1
+			</test>
+		</switch>
+		
+		<fcs_function name="/instrumentation/fuel-gw/fuel-lbs-calc">
+			<function>
+				<product>
+					<floor>
+						<sum>
+							<quotient>
+								<property>/consumables/fuel/total-fuel-lbs</property>
+								<value>100</value>
+							</quotient>
+							<value>0.5</value>
+						</sum>
+					</floor>
+					<value>100</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<switch name="/instrumentation/fuel-gw/fuel-lbs-input">
+			<default value="/instrumentation/fuel-gw/fuel-lbs-input"/>
+			<test value="/instrumentation/fuel-gw/fuel-lbs-calc">
+				/instrumentation/fuel-gw/power-avail eq 1
+			</test>
+		</switch>
+		
+		<lag_filter name="/instrumentation/fuel-gw/fuel-lbs">
+			<input>/instrumentation/fuel-gw/fuel-lbs-input</input>
+			<c1>30</c1>
+		</lag_filter>
+		
+		<fcs_function name="/instrumentation/fuel-gw/gw-lbs-calc">
+			<function>
+				<product>
+					<floor>
+						<sum>
+							<quotient>
+								<property>inertia/weight-lbs</property>
+								<value>100</value>
+							</quotient>
+							<value>0.5</value>
+						</sum>
+					</floor>
+					<value>100</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<switch name="/instrumentation/fuel-gw/gw-lbs-input">
+			<default value="/instrumentation/fuel-gw/gw-lbs-input"/>
+			<test value="/instrumentation/fuel-gw/gw-lbs-calc">
+				/instrumentation/fuel-gw/power-avail eq 1
+			</test>
+		</switch>
+		
+		<lag_filter name="/instrumentation/fuel-gw/gw-lbs">
+			<input>/instrumentation/fuel-gw/gw-lbs-input</input>
+			<c1>30</c1>
+		</lag_filter>
+	
+	</channel>
+	
 	<channel name="EPR Gauges" execrate="4">
 		
 		<!-- EPR Gauge 1 -->

@@ -173,6 +173,16 @@
 	</model>
 	
 	<model>
+		<path>Aircraft/DC-10/Models/Instruments/fuel.xml</path>
+		<offsets>
+			<x-m>-3.048</x-m>
+			<y-m>-0.31998</y-m>
+			<z-m>0.875</z-m>
+			<pitch-deg>-10</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
 		<path>Aircraft/DC-10/Models/Instruments/DME/dme1.xml</path>
 		<offsets>
 			<x-m>-3.038</x-m>
