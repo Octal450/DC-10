@@ -539,8 +539,6 @@
 				<man-epr-set type="bool">0</man-epr-set>
 				<man-n1 type="double">110</man-n1>
 				<man-n1-set type="bool">0</man-n1-set>
-				<reverse-cmd type="bool">0</reverse-cmd>
-				<reverse-engage type="bool">0</reverse-engage>
 				<starter type="bool">0</starter>
 				<start-cmd type="bool">0</start-cmd>
 				<start-switch type="bool">0</start-switch>
@@ -552,8 +550,6 @@
 				<man-epr-set type="bool">0</man-epr-set>
 				<man-n1 type="double">110</man-n1>
 				<man-n1-set type="bool">0</man-n1-set>
-				<reverse-cmd type="bool">0</reverse-cmd>
-				<reverse-engage type="bool">0</reverse-engage>
 				<starter type="bool">0</starter>
 				<start-cmd type="bool">0</start-cmd>
 				<start-switch type="bool">0</start-switch>
@@ -565,8 +561,6 @@
 				<man-epr-set type="bool">0</man-epr-set>
 				<man-n1 type="double">110</man-n1>
 				<man-n1-set type="bool">0</man-n1-set>
-				<reverse-cmd type="bool">0</reverse-cmd>
-				<reverse-engage type="bool">0</reverse-engage>
 				<starter type="bool">0</starter>
 				<start-cmd type="bool">0</start-cmd>
 				<start-switch type="bool">0</start-switch>
@@ -1488,6 +1482,18 @@
 				<active-mode-int type="int">0</active-mode-int>
 				<flex-temp type="int">45</flex-temp>
 			</limit>
+			<reverse-1 n="0">
+				<engage type="bool">0</engage>
+				<position-cmd-out type="bool">0</position-cmd-out>
+			</reverse-1>
+			<reverse-2 n="0">
+				<engage type="bool">0</engage>
+				<position-cmd-out type="bool">0</position-cmd-out>
+			</reverse-2>
+			<reverse-3 n="0">
+				<engage type="bool">0</engage>
+				<position-cmd-out type="bool">0</position-cmd-out>
+			</reverse-3>
 		</engines>
 		<failures n="0">
 			<electrical n="0">
