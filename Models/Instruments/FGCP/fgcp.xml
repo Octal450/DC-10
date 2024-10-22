@@ -936,26 +936,26 @@
 	<!-- Lateral Buttons -->
 	<animation>
 		<type>pick</type>
-		<object-name>Ins</object-name>
+		<object-name>Fms</object-name>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>nasal</command>
 				<script>
-					cockpit.ApPanel.ins();
+					cockpit.ApPanel.fms();
 					libraries.Sound.btn1();
 				</script>
 			</binding>
 			<binding>
 				<command>property-assign</command>
-				<property>controls/cockpit/fgcp/ins</property>
+				<property>controls/cockpit/fgcp/fms</property>
 				<value>1</value>
 			</binding>
 			<mod-up>
 				<binding>
 					<command>property-assign</command>
-					<property>controls/cockpit/fgcp/ins</property>
+					<property>controls/cockpit/fgcp/fms</property>
 					<value>0</value>
 				</binding>
 			</mod-up>
@@ -963,8 +963,8 @@
 	</animation>
 	<animation>
 		<type>translate</type>
-		<object-name>Ins</object-name>
-		<property>controls/cockpit/fgcp/ins</property>
+		<object-name>Fms</object-name>
+		<property>controls/cockpit/fgcp/fms</property>
 		<factor>-0.001</factor>
 		<axis>
 			<x>1</x>

@@ -111,7 +111,7 @@ var ApPanel = {
 			fgs.Input.hdg.setValue(me.hdgTemp);
 		}
 	},
-	ins: func() {
+	fms: func() {
 		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
 			fgs.Input.lat.setValue(1);
 		}

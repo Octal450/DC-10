@@ -29,9 +29,9 @@
      inkscape:window-height="1009"
      id="namedview8"
      showgrid="false"
-     inkscape:zoom="2.0000001"
-     inkscape:cx="520.17844"
-     inkscape:cy="75.120722"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="322.20973"
+     inkscape:cy="95.644936"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -409,7 +409,7 @@
     </g>
     <g
        inkscape:label="#g4345"
-       id="Ins"
+       id="Fms"
        transform="matrix(1.0124475,0,0,1.0124475,184.68494,56.030439)">
       <rect
          y="926.98315"
@@ -438,7 +438,7 @@
            style="font-size:11.83093929px;line-height:89.99999762%;text-align:center;text-anchor:middle;fill:#ffffff"
            y="918.51721"
            x="74.398094"
-           sodipodi:role="line">INS</tspan></text>
+           sodipodi:role="line">FMS</tspan></text>
     </g>
     <g
        transform="matrix(1.0124475,0,0,1.0124475,272.77594,56.030439)"

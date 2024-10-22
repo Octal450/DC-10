@@ -21,7 +21,7 @@ var fgcpCanvas = {
 	},
 	getKeys: func() {
 		return ["Ap1", "Ap2", "ApDisc", "Alt_green", "AltKnob", "AltMinus", "AltPlus", "Alt_10_disp", "Alt_100_disp", "Alt_1000_disp", "Alt_10000_disp", "Ats1", "Ats2", "AtsDisc", "Bank5", "Bank10", "Bank15", "Bank20", "Bank25", "BankLimit", "EprN1",
-		"EprN1Text", "Fd1", "Fd2", "HdgKnob", "HdgMinus", "HdgPlus", "Hdg_1_disp", "Hdg_10_disp", "Hdg_100_disp", "Ias", "Ils", "Ins", "Land", "Mach", "Reset", "SpdKnob", "SpdMinus", "SpdPlus", "Spd_1_disp", "Spd_10_disp", "Spd_100_disp", "Toga", "Turb",
+		"EprN1Text", "Fd1", "Fd2", "Fms", "HdgKnob", "HdgMinus", "HdgPlus", "Hdg_1_disp", "Hdg_10_disp", "Hdg_100_disp", "Ias", "Ils", "Land", "Mach", "Reset", "SpdKnob", "SpdMinus", "SpdPlus", "Spd_1_disp", "Spd_10_disp", "Spd_100_disp", "Toga", "Turb",
 		"VorLoc", "VsKnob", "VsMinus", "VsPlus", "VsKnobRef", "VsKnobText"];
 	},
 	close: func() {
@@ -80,8 +80,8 @@ var fgcpCanvas = {
 		});
 		
 		# Lateral Buttons
-		me["Ins"].addEventListener("click", func(e) {
-			cockpit.ApPanel.ins();
+		me["Fms"].addEventListener("click", func(e) {
+			cockpit.ApPanel.fms();
 		});
 		me["VorLoc"].addEventListener("click", func(e) {
 			cockpit.ApPanel.vorLoc();

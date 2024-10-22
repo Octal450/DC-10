@@ -8,9 +8,6 @@
 	
 	<effect>
 		<inherits-from>Effects/model-transparent</inherits-from>
-		<object-name>arm1.screen</object-name>
-		<object-name>pitch1.screen</object-name>
-		<object-name>roll1.screen</object-name>
 		<object-name>thr1.screen</object-name>
 	</effect>
 

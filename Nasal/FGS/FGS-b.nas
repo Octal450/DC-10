@@ -36,7 +36,7 @@ var UpdateFma = {
 				Fma.rollB.setValue("SEL");
 			}
 		} else if (me.latText == "LNAV") {
-			Fma.rollA.setValue("INS");
+			Fma.rollA.setValue("FMS");
 			Fma.rollB.setValue("TRK");
 		} else if (me.latText == "LOC") {
 			if (pts.Instrumentation.Nav.navLoc[ITAF.activeRadioSel()].getBoolValue()) {
@@ -125,7 +125,7 @@ var UpdateFma = {
 			}
 			me.altArm();
 		} else if (Output.lnavArm.getBoolValue()) {
-			Fma.armA.setValue("INS");
+			Fma.armA.setValue("FMS");
 			me.altArm();
 		} else {
 			Fma.armA.setValue("");
