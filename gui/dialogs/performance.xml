@@ -20,6 +20,7 @@
 			setprop("/sim/gui/dialogs/performance/v2-round", math.round(getprop("/systems/performance/v2")));
 			setprop("/sim/gui/dialogs/performance/stabilizer-deg-round", sprintf("%4.1f", math.round(getprop("/systems/performance/stabilizer-deg"), 0.1)) ~ " DEG");
 			
+			setprop("/sim/gui/dialogs/performance/vapp-round", math.round(getprop("/systems/performance/vapp")));
 			setprop("/sim/gui/dialogs/performance/vref-round", math.round(getprop("/systems/performance/vref")));
 			
 			var loop = maketimer(0.1, func() {
@@ -33,6 +34,7 @@
 				setprop("/sim/gui/dialogs/performance/v2-round", math.round(getprop("/systems/performance/v2")));
 				setprop("/sim/gui/dialogs/performance/stabilizer-deg-round", sprintf("%4.1f", math.round(getprop("/systems/performance/stabilizer-deg"), 0.1)) ~ " DEG");
 				
+				setprop("/sim/gui/dialogs/performance/vapp-round", math.round(getprop("/systems/performance/vapp")));
 				setprop("/sim/gui/dialogs/performance/vref-round", math.round(getprop("/systems/performance/vref")));
 			});
 			loop.start();
@@ -205,18 +207,118 @@
 			<live>true</live>
 			<property>/sim/gui/dialogs/performance/v2-round</property>
 		</text>
+		
+		<text>
+			<row>3</row>
+			<col>0</col>
+			<label>T/O STAB: </label>
+		</text>
+		<text>
+			<row>3</row>
+			<col>1</col>
+			<label>9999999</label>
+			<live>true</live>
+			<property>/sim/gui/dialogs/performance/stabilizer-deg-round</property>
+		</text>
 	</group>
 	
 	<hrule/>
 	
-	<text>
-		<row>0</row>
-		<col>0</col>
-		<label>Based on current flap setting:</label>
-	</text>
+	<group>
+		<layout>table</layout>
+		
+		<text>
+			<row>0</row>
+			<col>0</col>
+			<label>Landing Flap:</label>
+		</text>
+		
+		<button>
+			<row>0</row>
+			<col>1</col>
+			<pref-width>25</pref-width>
+			<pref-height>25</pref-height>
+			<legend>&lt;</legend>
+			<binding>
+				<condition>
+					<greater-than>
+						<property>/systems/performance/land-flaps</property>
+						<value>0</value>
+					</greater-than>
+				</condition>
+				<command>property-cycle</command>
+				<property>/systems/performance/land-flaps</property>
+				<value>50</value>
+				<value>35</value>
+				<value>22</value>
+				<value>15</value>
+				<value>0</value>
+			</binding>
+		</button>
+		
+		<input>
+			<row>0</row>
+			<col>2</col>
+			<pref-width>50</pref-width>
+			<property>/systems/performance/land-flaps</property>
+			<live>true</live>
+		</input>
+		
+		<button>
+			<row>0</row>
+			<col>3</col>
+			<pref-width>25</pref-width>
+			<pref-height>25</pref-height>
+			<legend>&gt;</legend>
+			<binding>
+				<condition>
+					<less-than>
+						<property>/systems/performance/land-flaps</property>
+						<value>50</value>
+					</less-than>
+				</condition>
+				<command>property-cycle</command>
+				<property>/systems/performance/land-flaps</property>
+				<value>0</value>
+				<value>15</value>
+				<value>22</value>
+				<value>35</value>
+				<value>50</value>
+			</binding>
+		</button>
+	</group>
 	
 	<group>
 		<layout>table</layout>
+		
+		<checkbox>
+			<label>Slats Retracted Landing</label>
+			<halign>left</halign>
+			<property>/systems/performance/land-no-slats</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+	</group>
+	
+	<hrule/>
+	
+	<group>
+		<layout>table</layout>
+		
+		<text>
+			<row>0</row>
+			<col>0</col>
+			<label>VAPP: </label>
+		</text>
+		<text>
+			<row>0</row>
+			<col>1</col>
+			<label>999</label>
+			<live>true</live>
+			<property>/sim/gui/dialogs/performance/vapp-round</property>
+		</text>
 		
 		<text>
 			<row>1</row>

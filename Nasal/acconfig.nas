@@ -300,6 +300,14 @@ var PANEL = {
 			pts.Controls.Flight.speedbrakeArm.setBoolValue(0);
 		}
 		systems.GEAR.Controls.leverCockpit.setValue(3);
+		
+		# Performance Applet Reset
+		pts.Systems.Performance.landFlaps.setValue(35);
+		pts.Systems.Performance.landNoSlats.setBoolValue(0);
+		pts.Systems.Performance.toFlaps.setValue(15);
+		#settimer(func() { # Ensure it recomputes
+		#	cockpit.setAsiBugs(0);
+		#}, 0.5);
 	},
 	coldDark: func(s = 0) {
 		me.panelBase(0);

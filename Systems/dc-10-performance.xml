@@ -6,6 +6,8 @@
 <system name="DC-10: Performance"> <!-- Extra speed computations that are not computed by the FGS -->
 	
 	<property value="15">/systems/performance/to-flaps</property>
+	<property value="35">/systems/performance/land-flaps</property>
+	<property value="0">/systems/performance/land-no-slats</property>
 	
 	<channel name="Performance Calculations" execrate="8"> <!-- Adapted from MD-11 as I have minimal data -->
 		
@@ -285,11 +287,69 @@
 			</function>
 		</fcs_function>
 		
-		<!-- Vref -->
-		<pure_gain name="/systems/performance/vref"> <!-- Laziness -->
-			<input>/systems/fcc/speeds/vmin</input>
-			<gain>1.0</gain>
-		</pure_gain>
+		<!-- Vref/Vapp -->
+		<switch name="/systems/performance/land-slats">
+			<default value="31"/>
+			<test value="0">
+				/systems/performance/land-no-slats eq 1
+			</test>
+		</switch>
+		
+		<fcs_function name="/systems/performance/vref">
+			<function>
+				<product>
+					<difference>
+						<table>
+							<independentVar lookup="row">inertia/weight-kg</independentVar>
+							<independentVar lookup="column">/systems/performance/land-flaps</independentVar>
+							<independentVar lookup="table">/systems/performance/land-slats</independentVar>
+							<tableData breakPoint="0">
+								        0       15      25      28      35      50
+								140000  144.22  136.92  132.31  131.54  129.88  128.22
+								160000  153.53  145.38  141.54  140.77  138.99  136.26
+								180000  162.38  153.85  149.23  148.46  146.31  142.91
+								200000  170.63  161.54  156.92  155.38  152.93  147.24
+								220000  178.56  169.23  163.85  163.08  156.15  149.61
+								240000  185.73  176.15  170.77  170.01  161.15  149.61
+								260000  193.14  183.08  177.69  176.53  161.15  149.61
+								280000  199.93  190.01  184.23  176.53  161.15  149.61
+							</tableData>
+							<tableData breakPoint="31">
+								        0       10      15      20      25      28      35      50
+								140000  119.19  115.99  113.85  112.33  111.47  110.89  109.48  108.07
+								160000  126.75  123.24  120.95  119.42  118.40  117.69  116.19  113.89
+								180000  133.92  130.11  127.59  126.06  125.02  124.36  122.55  119.68
+								200000  140.64  136.67  134.15  132.47  131.34  130.63  128.56  124.98
+								220000  147.05  142.62  140.41  138.35  137.30  136.55  134.34  130.14
+								240000  153.07  148.65  145.98  143.99  142.82  142.07  139.77  135.00
+								260000  158.87  154.52  151.62  149.56  148.16  147.37  145.03  139.77
+								280000  164.52  159.94  156.74  154.74  153.33  152.58  150.24  144.19
+							</tableData>
+						</table>
+						<value>15</value>
+					</difference>
+					<sum>
+						<value>1.3</value>
+						<table>
+							<independentVar lookup="row">atmosphere/density-altitude</independentVar>
+							<tableData>
+									0  0.0000
+								45000  0.2302
+							</tableData>
+						</table>
+					</sum>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/systems/performance/vapp">
+			<function>
+				<sum>
+					<property>/systems/performance/vref</property>
+					<value>5</value>
+				</sum>
+			</function>
+		</fcs_function>
 		
 		<!-- Stabilizer Computer -->
 		<fcs_function name="/systems/performance/stabilizer-deg">

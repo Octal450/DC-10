@@ -170,7 +170,15 @@ var Sim = {
 
 var Systems = {
 	Performance: {
+		flapRetract: props.globals.getNode("/systems/performance/flap-retract"),
+		landFlaps: props.globals.getNode("/systems/performance/land-flaps"),
+		landNoSlats: props.globals.getNode("/systems/performance/land-no-slats"),
+		minManeuver: props.globals.getNode("/systems/performance/min-maneuver"),
+		slatRetract: props.globals.getNode("/systems/performance/slat-retract"),
 		stabilizerDeg: props.globals.getNode("/systems/performance/stabilizer-deg"),
+		toFlaps: props.globals.getNode("/systems/performance/to-flaps"),
+		v1: props.globals.getNode("/systems/performance/v1"),
+		vapp: props.globals.getNode("/systems/performance/vapp"),
 	},
 	Shake: {
 		shaking: props.globals.getNode("/systems/shake/shaking"),
