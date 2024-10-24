@@ -120,7 +120,7 @@
 					<quotient>
 						<difference>
 							<product>
-								<property>inertia/cg-x-in</property>
+								<property>inertia/zfwcg-x-in</property>
 								<value>0.0254</value> <!-- Inches to meters -->
 							</product>
 							<value>-0.21384</value> <!-- Offset -->
