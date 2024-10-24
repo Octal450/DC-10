@@ -15,6 +15,10 @@
 			
 			setprop("/sim/gui/dialogs/performance/current-stabilizer-deg-round", sprintf("%4.1f", math.round(getprop("/systems/fcs/stabilizer/final-deg"), 0.1) * -1) ~ " DEG");
 			
+			setprop("/sim/gui/dialogs/performance/flap-retract-round", math.round(getprop("/systems/performance/flap-retract")));
+			setprop("/sim/gui/dialogs/performance/slat-retract-round", math.round(getprop("/systems/performance/slat-retract")));
+			setprop("/sim/gui/dialogs/performance/min-maneuver-round", math.round(getprop("/systems/performance/min-maneuver")));
+			
 			setprop("/sim/gui/dialogs/performance/v1-round", math.round(getprop("/systems/performance/v1")));
 			setprop("/sim/gui/dialogs/performance/vr-round", math.round(getprop("/systems/performance/vr")));
 			setprop("/sim/gui/dialogs/performance/v2-round", math.round(getprop("/systems/performance/v2")));
@@ -28,6 +32,10 @@
 				setprop("/sim/gui/dialogs/performance/zfwcg-percent-mac", sprintf("%4.1f", math.round(getprop("/fdm/jsbsim/inertia/zfwcg-percent-mac"), 0.1)) ~ "% MAC");
 				
 				setprop("/sim/gui/dialogs/performance/current-stabilizer-deg-round", sprintf("%4.1f", math.round(getprop("/systems/fcs/stabilizer/final-deg"), 0.1) * -1) ~ " DEG");
+				
+				setprop("/sim/gui/dialogs/performance/flap-retract-round", math.round(getprop("/systems/performance/flap-retract")));
+				setprop("/sim/gui/dialogs/performance/slat-retract-round", math.round(getprop("/systems/performance/slat-retract")));
+				setprop("/sim/gui/dialogs/performance/min-maneuver-round", math.round(getprop("/systems/performance/min-maneuver")));
 				
 				setprop("/sim/gui/dialogs/performance/v1-round", math.round(getprop("/systems/performance/v1")));
 				setprop("/sim/gui/dialogs/performance/vr-round", math.round(getprop("/systems/performance/vr")));
@@ -111,6 +119,51 @@
 			<label>9999999</label>
 			<live>true</live>
 			<property>/sim/gui/dialogs/performance/current-stabilizer-deg-round</property>
+		</text>
+	</group>
+	
+	<hrule/>
+	
+	<group>
+		<layout>table</layout>
+		
+		<text>
+			<row>0</row>
+			<col>0</col>
+			<label>FLAP RET: </label>
+		</text>
+		<text>
+			<row>0</row>
+			<col>1</col>
+			<label>999</label>
+			<live>true</live>
+			<property>/sim/gui/dialogs/performance/flap-retract-round</property>
+		</text>
+		
+		<text>
+			<row>1</row>
+			<col>0</col>
+			<label>SLAT RET: </label>
+		</text>
+		<text>
+			<row>1</row>
+			<col>1</col>
+			<label>999</label>
+			<live>true</live>
+			<property>/sim/gui/dialogs/performance/slat-retract-round</property>
+		</text>
+		
+		<text>
+			<row>2</row>
+			<col>0</col>
+			<label>CLEAN MNVR: </label>
+		</text>
+		<text>
+			<row>2</row>
+			<col>1</col>
+			<label>999</label>
+			<live>true</live>
+			<property>/sim/gui/dialogs/performance/min-maneuver-round</property>
 		</text>
 	</group>
 	
@@ -221,6 +274,16 @@
 			<property>/sim/gui/dialogs/performance/stabilizer-deg-round</property>
 		</text>
 	</group>
+	
+	<button>
+		<pref-width>190</pref-width>
+		<pref-height>25</pref-height>
+		<legend>Set Takeoff ASI Bugs</legend>
+		<binding>
+			<command>nasal</command>
+			<script>cockpit.setAsiBugs(0);</script>
+		</binding>
+	</button>
 	
 	<hrule/>
 	
@@ -333,5 +396,15 @@
 			<property>/sim/gui/dialogs/performance/vref-round</property>
 		</text>
 	</group>
+	
+	<button>
+		<pref-width>190</pref-width>
+		<pref-height>25</pref-height>
+		<legend>Set Landing ASI Bugs</legend>
+		<binding>
+			<command>nasal</command>
+			<script>cockpit.setAsiBugs(1);</script>
+		</binding>
+	</button>
 
 </PropertyList>

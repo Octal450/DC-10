@@ -277,13 +277,88 @@
 			</function>
 		</fcs_function>
 		
-		<!-- Vfr -->
-		<fcs_function name="/systems/performance/vfr">
+		<!-- Retract Speeds -->
+		<fcs_function name="/systems/performance/flap-retract">
 			<function>
 				<sum>
 					<property>/systems/performance/v2</property>
 					<value>10</value>
 				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/systems/performance/slat-retract">
+			<function>
+				<table>
+					<independentVar lookup="row">inertia/weight-kg</independentVar>
+					<tableData>
+						160000  190
+						165000  193
+						170000  196
+						175000  199
+						180000  202
+						185000  205
+						190000  207
+						195000  210
+						200000  213
+						205000  216
+						210000  218
+						215000  221
+						220000  223
+						225000  226
+						230000  228
+						235000  231
+						240000  233
+						245000  236
+						250000  238
+						255000  241
+						260000  243
+						265000  245
+						270000  247
+						275000  250
+						280000  252
+						285000  254
+						290000  256
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
+		<!-- Min Clean Maneuver -->
+		<fcs_function name="/systems/performance/min-maneuver">
+			<function>
+				<table>
+					<independentVar lookup="row">inertia/weight-kg</independentVar>
+					<tableData>
+						160000  214
+						165000  217
+						170000  220
+						175000  223
+						180000  226
+						185000  229
+						190000  232
+						195000  235
+						200000  238
+						205000  241
+						210000  244
+						215000  247
+						220000  250
+						225000  253
+						230000  256
+						235000  259
+						240000  262
+						245000  265
+						250000  268
+						255000  270
+						260000  273
+						265000  276
+						270000  279
+						275000  282
+						280000  285
+						285000  288
+						290000  291
+					</tableData>
+				</table>
 			</function>
 		</fcs_function>
 		
