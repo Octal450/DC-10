@@ -9,9 +9,26 @@
 		<description>DC-10-40 FDE with JT9D-59A Engines</description>
 	</fileheader>
 	
-	<metrics file="FDE/Config/dc-10-metrics"/>
-	<mass_balance file="FDE/Config/dc-10-mass-balance"/>
+	<aerodynamics file="FDE/Config/dc-10-aerodynamics.xml"/>
+	<external_reactions file="FDE/Config/dc-10-external-reactions"/>
 	<ground_reactions file="FDE/Config/dc-10-ground-reactions"/>
+	<mass_balance file="FDE/Config/dc-10-mass-balance"/>
+	<metrics file="FDE/Config/dc-10-metrics"/>
+	
+	<system file="dc-10-libraries"/>
+	<system file="dc-10-electrical"/>
+	<system file="dc-10-fuel"/>
+	<system file="dc-10-hydraulics"/>
+	<system file="dc-10-fcc"/>
+	<system file="dc-10-fcs"/>
+	<system file="dc-10-spoiler"/>
+	<system file="dc-10-ignition"/>
+	<system file="dc-10-pw-engine-tci"/>
+	<system file="dc-10-apu"/>
+	<system file="dc-10-misc"/>
+	<system file="dc-10-performance"/>
+	<system file="dc-10-cockpit"/>
+	<system file="dc-10-instrumentation"/>
 	
 	<propulsion>
 		<engine file="jt9d-59a_1">
@@ -215,24 +232,5 @@
 			<type>JET-A1</type>
 		</tank>
 	</propulsion>
-	
-	<system file="dc-10-libraries"/>
-	<system file="dc-10-electrical"/>
-	<system file="dc-10-fuel"/>
-	<system file="dc-10-hydraulics"/>
-	<system file="dc-10-fcc"/>
-	<system file="dc-10-fcs"/>
-	<system file="dc-10-spoiler"/>
-	<system file="dc-10-ignition"/>
-	<system file="dc-10-pw-engine-tci"/>
-	<system file="dc-10-apu"/>
-	<system file="dc-10-misc"/>
-	<system file="dc-10-performance"/>
-	<system file="dc-10-cockpit"/>
-	<system file="dc-10-instrumentation"/>
-	
-	<flight_control name="none"/>
-	<aerodynamics file="FDE/Config/dc-10-aerodynamics.xml"/>
-	<external_reactions file="FDE/Config/dc-10-external-reactions"/>
 
 </fdm_config>
