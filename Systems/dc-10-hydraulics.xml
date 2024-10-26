@@ -206,7 +206,7 @@
 			</function>
 		</fcs_function>
 		
-		<switch name="/systems/hydraulics/r-eng-1-pump-valve">
+		<switch name="/systems/hydraulics/r-eng-1-pump-cmd">
 			<default value="0"/>
 			<test logic="AND" value="1"> <!-- AUTO -->
 				/controls/hydraulics/r-pump-1 eq 1
@@ -221,7 +221,7 @@
 		<switch name="/systems/hydraulics/r-eng-1-pump-psi">
 			<default value="40"/>
 			<test value="/systems/hydraulics/r-eng-1-pump-psi-input">
-				/systems/hydraulics/r-eng-1-pump-valve eq 1
+				/systems/hydraulics/r-eng-1-pump-cmd eq 1
 			</test>
 		</switch>
 		
@@ -310,7 +310,7 @@
 			</function>
 		</fcs_function>
 		
-		<switch name="/systems/hydraulics/r-eng-2-pump-valve">
+		<switch name="/systems/hydraulics/r-eng-2-pump-cmd">
 			<default value="0"/>
 			<test logic="AND" value="1"> <!-- AUTO -->
 				/controls/hydraulics/r-pump-2 eq 1
@@ -325,7 +325,7 @@
 		<switch name="/systems/hydraulics/r-eng-2-pump-psi">
 			<default value="40"/>
 			<test value="/systems/hydraulics/r-eng-2-pump-psi-input">
-				/systems/hydraulics/r-eng-2-pump-valve eq 1
+				/systems/hydraulics/r-eng-2-pump-cmd eq 1
 			</test>
 		</switch>
 		
@@ -414,7 +414,7 @@
 			</function>
 		</fcs_function>
 		
-		<switch name="/systems/hydraulics/r-eng-3-pump-valve">
+		<switch name="/systems/hydraulics/r-eng-3-pump-cmd">
 			<default value="0"/>
 			<test logic="AND" value="1"> <!-- AUTO -->
 				/controls/hydraulics/r-pump-3 eq 1
@@ -429,7 +429,7 @@
 		<switch name="/systems/hydraulics/r-eng-3-pump-psi">
 			<default value="40"/>
 			<test value="/systems/hydraulics/r-eng-3-pump-psi-input">
-				/systems/hydraulics/r-eng-3-pump-valve eq 1
+				/systems/hydraulics/r-eng-3-pump-cmd eq 1
 			</test>
 		</switch>
 		
