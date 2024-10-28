@@ -1587,6 +1587,7 @@
 		</pts>
 		<libraries>
 			<file>Aircraft/DC-10/Nasal/libraries.nas</file>
+			<file>Aircraft/DC-10/Nasal/hack-canvas.nas</file>
 			<file>Aircraft/DC-10/Nasal/thunder-effects.nas</file>
 			<file>Aircraft/DC-10/Nasal/view-controller.nas</file>
 		</libraries>
