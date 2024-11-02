@@ -383,7 +383,7 @@ var ITAF = {
 			Internal.selfCheckTime = Misc.elapsedSec.getValue();
 		}
 		
-		if (Output.thrMode.getValue() == 1) { # No longer considered
+		if (Output.thrMode.getValue() != 1) { # No longer considered
 			Internal.athrLatch = Output.athrTemp;
 		}
 		
