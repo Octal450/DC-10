@@ -139,7 +139,7 @@ var Internal = {
 	altDiff: 0,
 	altPredicted: props.globals.initNode("/it-autoflight/internal/altitude-predicted", 0, "DOUBLE"),
 	altTemp: 0,
-	atrCmd: props.globals.getNode("/fdm/jsbsim/dfgs/atr/cmd"),
+	athrLatch: 0,
 	bankLimit: props.globals.initNode("/it-autoflight/internal/bank-limit", 25, "INT"),
 	bankLimitAuto: props.globals.initNode("/it-autoflight/internal/bank-limit-auto", 0, "DOUBLE"),
 	bankLimitMax: [5, 10, 15, 20, 25],
@@ -383,9 +383,13 @@ var ITAF = {
 			Internal.selfCheckTime = Misc.elapsedSec.getValue();
 		}
 		
+		if (Output.thrMode.getValue() == 1) { # No longer considered
+			Internal.athrLatch = Output.athrTemp;
+		}
+		
 		Input.autoLandTemp = Input.autoLand.getBoolValue();
 		if (Internal.canAutoland and Internal.landModeActive and Internal.selfCheckStatus == 2 and Position.gearAglFtTemp <= 1500) {
-			if (Output.ap1Temp == 1 and Input.fgs1Sel.getValue() == 2 and Output.ap2Temp == 1 and Input.fgs2Sel.getValue() == 2 and Input.autoLandTemp and (Output.athr.getBoolValue() or Output.thrMode.getValue() == 1)) {
+			if (Output.ap1Temp == 1 and Input.fgs1Sel.getValue() == 2 and Output.ap2Temp == 1 and Input.fgs2Sel.getValue() == 2 and Input.autoLandTemp and Internal.athrLatch) {
 				if (Internal.landCondition != "DUAL") {
 					Internal.landCondition = "DUAL";
 					UpdateFma.arm();
