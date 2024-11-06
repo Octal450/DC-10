@@ -194,9 +194,9 @@ var Output = {
 };
 
 var Text = {
-	land: props.globals.initNode("/it-autoflight/mode/land", "OFF", "STRING"),
-	lat: props.globals.initNode("/it-autoflight/mode/lat", "HDG", "STRING"),
-	vert: props.globals.initNode("/it-autoflight/mode/vert", "V/S", "STRING"),
+	land: props.globals.initNode("/it-autoflight/text/land", "OFF", "STRING"),
+	lat: props.globals.initNode("/it-autoflight/text/lat", "HDG", "STRING"),
+	vert: props.globals.initNode("/it-autoflight/text/vert", "V/S", "STRING"),
 	vertTemp: "V/S",
 };
 
