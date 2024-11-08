@@ -440,8 +440,8 @@ var ITAF = {
 				}
 			} else if (Output.vertTemp == 6) {
 				if (Gear.wow1Temp and Gear.wow2Temp) {
-					if (Text.lat.getValue() != "RLOU") { # No vert change
-						me.updateLatText("RLOU");
+					if (Text.lat.getValue() != "ROLLOUT") { # No vert change
+						me.updateLatText("ROLLOUT");
 					} else {
 						if (systems.FCC.nlgWowTimer1.getValue() == 1 and (Output.ap1Temp == 1 or Output.ap2Temp == 1)) { # Trip off after 1 second
 							me.ap1Master(0);
@@ -642,7 +642,7 @@ var ITAF = {
 				apKill.start();
 			}
 			
-			if (Text.lat.getValue() == "RLOU") {
+			if (Text.lat.getValue() == "ROLLOUT") {
 				me.init(1);
 			}
 		}
@@ -768,7 +768,7 @@ var ITAF = {
 			me.updateLocArm(0);
 			me.updateGsArm(0, 1); # Don't disarm autoland
 			Output.lat.setValue(4);
-			me.updateLatText("ALGN");
+			me.updateLatText("ALIGN");
 		} else if (n == 5) { # T/O or G/A, text is set by TOGA selector
 			me.updateLnavArm(0);
 			me.updateLocArm(0);

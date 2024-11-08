@@ -46,10 +46,10 @@ var UpdateFma = {
 			}
 			me.locUpdate();
 			locUpdateT.start();
-		} else if (me.latText == "ALGN") {
+		} else if (me.latText == "ALIGN") {
 			Fma.rollA.setValue("ALGN");
 			Fma.rollB.setValue("");
-		} else if (me.latText == "RLOU") {
+		} else if (me.latText == "ROLLOUT") {
 			Fma.rollA.setValue("ROLL");
 			Fma.rollB.setValue("OUT");
 		} else if (me.latText == "T/O") {
