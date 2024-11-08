@@ -304,10 +304,10 @@
 					<independentVar lookup="row">/position/altitude-ft</independentVar>
 					<independentVar lookup="column">propulsion/tat-c</independentVar>
 					<tableData>
-						      -60   -30     0      30     60
-						    0  86.8   86.8   92.0   97.0  94.9
-						10000  94.7   94.7  100.0  101.2  94.9
-						45000  99.4  100.2   99.3   99.9  94.9
+						      -60    -30     0      30     60
+						    0   88.5   88.5   93.8   98.9  96.8
+						10000   96.6   96.6  102.0  103.2  96.8
+						45000  101.4  102.2  101.3  101.9  96.8
 					</tableData>
 				</table>
 			</function>
