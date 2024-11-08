@@ -538,12 +538,12 @@
 		<!-- Lower Aux Tank to Upper Aux Tank -->
 		<switch name="/systems/fuel/internal/aux-tank-lower-upper">
 			<default value="0"/>
-			<test logic="AND" value="27">
+			<test logic="AND" value="63">
 				/systems/fuel/trans-aux-lower-l eq 1
 				propulsion/tank[6]/contents-lbs gt 10
 				propulsion/tank[5]/contents-lbs lt 70940
 			</test>
-			<test logic="AND" value="27">
+			<test logic="AND" value="63">
 				/systems/fuel/trans-aux-lower-r eq 1
 				propulsion/tank[6]/contents-lbs gt 10
 				propulsion/tank[5]/contents-lbs lt 70940
