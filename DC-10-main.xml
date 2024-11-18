@@ -1409,6 +1409,12 @@
 		<drogues-shown type="bool">0</drogues-shown>
 	</options>
 	
+	<payload n="0">
+		<armament n="0">
+			<msg type="bool">0</msg>
+		</armament>
+	</payload>
+	
 	<position n="0">
 		<wow type="bool">1</wow>
 	</position>

@@ -92,7 +92,7 @@
 			<MLW-count type="int">0</MLW-count>
 			<MLW-launcher type="string"></MLW-launcher>
 			<models type="string">Aircraft/DC-10/Models/Damage/</models>
-			<msg type="bool">0</msg>
+			<!--msg type="bool">0</msg--> <!-- Moved to -main -->
 			<spike type="bool">0</spike>
 		</armament>
 		<d-config n="0">
