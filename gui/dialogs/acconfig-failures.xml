@@ -64,7 +64,7 @@
 				<property>/payload/armament/msg</property>
 			</visible>
 			<halign>left</halign>
-			<label>Not available while Allow Damage is enabled in Aircraft Config Center</label>
+			<label>Not available while Allow Damage is enabled in Aircraft Configuration Center</label>
 		</text>
 	</group>
 	

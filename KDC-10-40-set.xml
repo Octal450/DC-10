@@ -11,7 +11,7 @@
 		<menubar>
 			<default>
 				<menu n="101">
-					<item n="2">
+					<item n="8">
 						<label>Toggle Drogues</label>
 						<binding>
 							<command>property-toggle</command>
