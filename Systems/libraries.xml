@@ -68,61 +68,13 @@
 	</filter>
 	
 	<predict-simple>
-		<name>Gear AGL Altitude</name>
+		<name>Gear AGL Altitude Predictor</name>
 		<debug>false</debug>
 		<input>/position/gear-agl-ft</input>
 		<output>/position/gear-agl-ft-2-sec</output>
 		<seconds>2.0</seconds>
 		<filter-gain>0.0</filter-gain>
 	</predict-simple>
-	
-	<filter>
-		<name>Minimums Minus 50</name>
-		<type>gain</type>
-		<gain>1.0</gain>
-		<update-interval-secs>0.1</update-interval-secs>
-		<input> 
-			<expression>
-				<difference>
-					<property>/controls/switches/minimums</property>
-					<value>50</value>
-				</difference>
-			</expression>
-		</input>
-		<output>/systems/misc/minimums-minus-50</output>
-	</filter>
-	
-	<filter>
-		<name>Minimums Plus 50</name>
-		<type>gain</type>
-		<gain>1.0</gain>
-		<update-interval-secs>0.1</update-interval-secs>
-		<input>
-			<expression>
-				<sum>
-					<property>/controls/switches/minimums</property>
-					<value>50</value>
-				</sum>
-			</expression>
-		</input>
-		<output>/systems/misc/minimums-plus-50</output>
-	</filter>
-	
-	<filter>
-		<name>Minimums Plus 100</name>
-		<type>gain</type>
-		<gain>1.0</gain>
-		<update-interval-secs>0.1</update-interval-secs>
-		<input>
-			<expression>
-				<sum>
-					<property>/controls/switches/minimums</property>
-					<value>100</value>
-				</sum>
-			</expression>
-		</input>
-		<output>/systems/misc/minimums-plus-100</output>
-	</filter>
 
 	<filter>
 		<name>Wingflex</name>

@@ -53,7 +53,7 @@ var canvasBase = {
 		if (n == 0) Value.fdOn = fgs.Output.fd1.getBoolValue();
 		if (n == 1) Value.fdOn = fgs.Output.fd2.getBoolValue();
 		
-		if (systems.ELECTRICAL.Generic.fma[n].getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fma[n].getValue() >= 24) {
 			for (var w = 0; w <= 3; w = w + 1) {
 				if (w == 3 and fgs.Output.vert.getValue() == 1 and abs(fgs.Input.vs.getValue()) < 50) {
 					Value.line1[w] = "ALT";

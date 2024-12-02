@@ -80,7 +80,7 @@ var ApPanel = {
 		}
 	},
 	spdPull: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			me.vertTemp = fgs.Output.vert.getValue();
 			fgs.Athr.setMode(0); # Thrust
 			if (me.vertTemp == 4 or me.vertTemp == 7) {
@@ -99,17 +99,17 @@ var ApPanel = {
 		}
 	},
 	eprN1: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			fgs.Athr.setMode(2); # EPR/N1 Limit
 		}
 	},
 	hdgPush: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			fgs.Input.lat.setValue(3);
 		}
 	},
 	hdgPull: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			fgs.Input.lat.setValue(0);
 		}
 	},
@@ -124,17 +124,17 @@ var ApPanel = {
 		}
 	},
 	fms: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			fgs.Input.lat.setValue(1);
 		}
 	},
 	vorLoc: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			fgs.Input.lat.setValue(2);
 		}
 	},
 	ils: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			fgs.ITAF.updateAutoLand(0);
 			fgs.Input.vert.setValue(2);
 		}
@@ -155,12 +155,12 @@ var ApPanel = {
 		}
 	},
 	altPush: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			fgs.Input.altArmed.setBoolValue(0);
 		}
 	},
 	altPull: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			me.vertTemp = fgs.Output.vert.getValue();
 			if (me.vertTemp != 2 and me.vertTemp != 6) {
 				fgs.Input.altArmed.setBoolValue(1);
@@ -168,7 +168,7 @@ var ApPanel = {
 		}
 	},
 	altAdjust: func(d) {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			fgs.Input.altArmed.setBoolValue(0);
 			systems.WARNINGS.altitudeAlertCaptured.setValue(0); # Reset out of captured state
 			if (systems.WARNINGS.altitudeAlert.getValue() == 2) systems.WARNINGS.altitudeAlert.setValue(0); # Cancel altitude alert deviation alarm
@@ -185,13 +185,13 @@ var ApPanel = {
 		}
 	},
 	reset: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			systems.WARNINGS.altitudeAlertCaptured.setValue(0); # Reset out of captured state
 			if (systems.WARNINGS.altitudeAlert.getValue() == 2) systems.WARNINGS.altitudeAlert.setValue(0); # Cancel altitude alert deviation alarm
 		}
 	},
 	ias: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			fgs.Input.ktsMachFlch.setBoolValue(0);
 			if (fgs.Output.vert.getValue() != 4) {
 				fgs.Input.vert.setValue(4);
@@ -199,7 +199,7 @@ var ApPanel = {
 		}
 	},
 	mach: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			fgs.Input.ktsMachFlch.setBoolValue(1);
 			if (fgs.Output.vert.getValue() != 4) {
 				fgs.Input.vert.setValue(4);
@@ -207,7 +207,7 @@ var ApPanel = {
 		}
 	},
 	land: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			if ((fgs.Output.ap1Temp == 1 and fgs.Input.fgs1Sel.getValue() == 2) or (fgs.Output.ap2Temp == 1 and fgs.Input.fgs2Sel.getValue() == 2)) {
 				fgs.ITAF.updateAutoLand(1);
 				fgs.Input.vert.setValue(2);
@@ -215,7 +215,7 @@ var ApPanel = {
 		}
 	},
 	turb: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			if (fgs.Input.fgs1Sel.getValue() == 2) {
 				fgs.Input.fgs1Sel.setValue(1);
 				# Sound AP alarm
@@ -228,7 +228,7 @@ var ApPanel = {
 		}
 	},
 	toga: func() {
-		if (systems.ELECTRICAL.Generic.fgcp.getValue() >= 24) {
+		if (systems.ELECTRICAL.Outputs.fgcp.getValue() >= 24) {
 			fgs.Input.toga.setValue(1);
 		}
 	},

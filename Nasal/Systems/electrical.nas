@@ -48,7 +48,7 @@ var ELECTRICAL = {
 		gen2: props.globals.getNode("/systems/failures/electrical/gen-2"),
 		gen3: props.globals.getNode("/systems/failures/electrical/gen-3"),
 	},
-	Generic: {
+	Outputs: {
 		efis: props.globals.initNode("/systems/electrical/outputs/efis", 0, "DOUBLE"),
 		fgcp: props.globals.initNode("/systems/electrical/outputs/fgcp", 0, "DOUBLE"),
 		fma: [props.globals.initNode("/systems/electrical/outputs/fma[0]", 0, "DOUBLE"), props.globals.initNode("/systems/electrical/outputs/fma[1]", 0, "DOUBLE")],
