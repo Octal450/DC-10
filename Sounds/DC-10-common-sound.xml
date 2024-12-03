@@ -3,6 +3,7 @@
 <!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
 
 <PropertyList>
+	
 	<fx>
 		
 		<switch>
@@ -767,4 +768,5 @@
 		</caws>
 	
 	</fx>
+
 </PropertyList>
