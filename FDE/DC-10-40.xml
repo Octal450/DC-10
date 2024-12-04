@@ -23,7 +23,7 @@
 	<system file="dc-10-fcs"/>
 	<system file="dc-10-spoiler"/>
 	<system file="dc-10-ignition"/>
-	<system file="dc-10-pw-engine-tci"/>
+	<system file="dc-10-pw-engine-thrlim"/>
 	<system file="dc-10-apu"/>
 	<system file="dc-10-misc"/>
 	<system file="dc-10-performance"/>

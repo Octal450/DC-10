@@ -23,7 +23,7 @@
 	<system file="dc-10-fcs"/>
 	<system file="dc-10-spoiler"/>
 	<system file="dc-10-ignition"/>
-	<system file="dc-10-ge-engine-tci"/>
+	<system file="dc-10-ge-engine-thrlim"/>
 	<system file="dc-10-apu"/>
 	<system file="dc-10-tanker"/>
 	<system file="dc-10-misc"/>

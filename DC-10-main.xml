@@ -1624,10 +1624,17 @@
 			<file>Aircraft/DC-10/Nasal/acconfig.nas</file>
 		</acconfig>
 		<systems>
+			<file>Aircraft/DC-10/Nasal/Systems/apu.nas</file>
 			<file>Aircraft/DC-10/Nasal/Systems/electrical.nas</file>
+			<file>Aircraft/DC-10/Nasal/Systems/engines.nas</file>
+			<file>Aircraft/DC-10/Nasal/Systems/fcc.nas</file>
+			<file>Aircraft/DC-10/Nasal/Systems/fcs.nas</file>
 			<file>Aircraft/DC-10/Nasal/Systems/fuel.nas</file>
+			<file>Aircraft/DC-10/Nasal/Systems/gear.nas</file>
 			<file>Aircraft/DC-10/Nasal/Systems/hydraulics.nas</file>
-			<file>Aircraft/DC-10/Nasal/Systems/misc.nas</file>
+			<file>Aircraft/DC-10/Nasal/Systems/ignition.nas</file>
+			<file>Aircraft/DC-10/Nasal/Systems/thrlim.nas</file>
+			<file>Aircraft/DC-10/Nasal/Systems/warnings.nas</file>
 		</systems>
 		<fgs>
 			<file>Aircraft/DC-10/Nasal/FGS/FGS.nas</file>
