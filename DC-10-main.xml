@@ -149,10 +149,10 @@
 				<menu n="104">
 					<label>Documentation</label>
 					<item>
-						<label>Autoflight and FCC</label>
+						<label>Auto Flight and FCC</label>
 						<binding>
 							<command>open-browser</command>
-							<path>Aircraft/DC-10/Docs/Autoflight_and_FCC.pdf</path>
+							<path>Aircraft/DC-10/Docs/Auto_Flight_and_FCC.pdf</path>
 						</binding>
 					</item>
 					<item>
