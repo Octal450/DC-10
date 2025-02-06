@@ -228,7 +228,8 @@ var Athr = {
 	loop: func() {
 		me.tciMode = systems.THRLIM.Limit.activeModeInt.getValue();
 		Output.thrModeTemp = Output.thrMode.getValue();
-		me.retard = Output.athr.getBoolValue() and Output.vert.getValue() != 7 and pts.Position.gearAglFt.getValue() <= 50 and systems.FCS.slatsCmd.getValue() >= 28 and me.tciMode != 0 and me.tciMode != 1;
+		Output.vertTemp = Output.vert.getValue();
+		me.retard = Output.athr.getBoolValue() and Output.vertTemp != 7 and Output.vertTemp != 8 and pts.Position.gearAglFt.getValue() <= 50 and systems.FCS.slatsCmd.getValue() >= 28 and me.tciMode != 0 and me.tciMode != 1;
 		
 		if (Output.thrModeTemp == 0) { # Update it as the UpdateFma only does it once
 			me.modeZeroCheck();
@@ -254,16 +255,17 @@ var Athr = {
 	},
 	setMode: func(n) { # 0 Thrust, 1 Retard, 2 EPR/N1 Limit, 3 Clamp
 		me.tciMode = systems.THRLIM.Limit.activeModeInt.getValue();
+		Output.vertTemp = Output.vert.getValue();
 		
 		if (me.tciMode == 0 or me.tciMode == 1) {
 			me.toCheck();
-		} else if (!me.retard or fgs.Output.vert.getValue() == 7) {
+		} else if (!me.retard or Output.vertTemp == 7 or Output.vertTemp == 8) {
 			Output.thrMode.setValue(n);
 		}
 		UpdateFma.thr();
 	},
 	toCheck: func() {
-		if (Text.vert.getValue() == "T/O CLB") {
+		if (Output.vert.getValue() == 7) {
 			if (pts.Instrumentation.AirspeedIndicator.indicatedSpeedKt.getValue() < 80 and pts.Position.wow.getBoolValue()) {
 				if (Output.thrMode.getValue() != 2) {
 					Output.thrMode.setValue(2);

@@ -313,8 +313,8 @@ var ITAF = {
 			me.checkRadioReversion(Output.latTemp, Output.vertTemp);
 		}
 		
-		# Takeoff Lateral Reversion
-		if (Output.latTemp == 5 and Output.vertTemp != 7) {
+		# Takeoff/Go Around Lateral Reversion
+		if (Output.latTemp == 5 and Output.vertTemp != 7 and Output.vertTemp != 8) {
 			me.setLatMode(3);
 		}
 		
@@ -832,11 +832,20 @@ var ITAF = {
 			me.updateGsArm(0, 1); # Don't disarm autoland
 			Output.vert.setValue(6);
 			me.updateVertText("FLARE");
-		} else if (n == 7) { # T/O CLB or G/A CLB, text is set by TOGA selector
+		} else if (n == 7) { # T/O CLB
 			Internal.flchActive = 0;
 			Internal.altCaptureActive = 0;
 			me.updateGsArm(0);
 			Output.vert.setValue(7);
+			me.updateVertText("T/O CLB");
+			Athr.setMode(2); # EPR Lim
+			Input.ktsMachFlch.setBoolValue(0);
+		} else if (n == 8) { # G/A CLB
+			Internal.flchActive = 0;
+			Internal.altCaptureActive = 0;
+			me.updateGsArm(0);
+			Output.vert.setValue(8);
+			me.updateVertText("G/A CLB");
 			Athr.setMode(2); # EPR Lim
 			Input.ktsMachFlch.setBoolValue(0);
 		} else if (n == 9) { # TURB
@@ -1008,13 +1017,11 @@ var ITAF = {
 				me.updateLatText("T/O");
 			}
 			me.setVertMode(7);
-			me.updateVertText("T/O CLB");
-		} else if (Output.vertTemp != 7) {
+		} else if (Output.vertTemp != 8) {
 			systems.THRLIM.setMode(2); # G/A
 			me.setLatMode(5);
 			me.updateLatText("G/A");
-			me.setVertMode(7); # Must be before kicking AP off
-			me.updateVertText("G/A CLB");
+			me.setVertMode(8); # Must be before kicking AP off
 			if (Gear.wow1.getBoolValue() or Gear.wow2.getBoolValue()) {
 				me.ap1Master(0);
 				me.ap2Master(0);
@@ -1144,7 +1151,7 @@ setlistener("/it-autoflight/input/fd2", func() {
 });
 
 setlistener("/it-autoflight/input/kts-mach-flch", func() {
-	if (Output.vert.getValue() == 7) { # Mach is not allowed in Mode 7, and don't sync
+	if (Output.vertTemp == 7 or Output.vertTemp == 8) { # Mach is not allowed in Mode 7/8, and don't sync
 		if (Input.ktsMachFlch.getBoolValue()) {
 			Input.ktsMachFlch.setBoolValue(0);
 		}

@@ -84,6 +84,10 @@
 						<property>/it-autoflight/output/vert</property>
 						<value>7</value>
 					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>8</value>
+					</equals>
 				</or>
 			</and>
 		</input>
@@ -177,10 +181,16 @@
 		</min>
 		<min>
 			<condition>
-				<equals>
-					<property>/it-autoflight/output/vert</property>
-					<value>7</value>
-				</equals>
+				<or>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>7</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>8</value>
+					</equals>
+				</or>
 			</condition>
 			<value>120</value>
 		</min>
@@ -267,6 +277,10 @@
 					<equals>
 						<property>/it-autoflight/output/vert</property>
 						<value>7</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>8</value>
 					</equals>
 				</or>
 			</condition>
