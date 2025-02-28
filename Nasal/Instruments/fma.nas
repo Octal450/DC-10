@@ -1,5 +1,5 @@
 # McDonnell Douglas DC-10 FMA
-# Copyright (c) 2024 Josh Davidson (Octal450)
+# Copyright (c) 2025 Josh Davidson (Octal450)
 
 var fmaL = nil;
 var fmaLDisplay = nil;

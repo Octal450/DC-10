@@ -1,5 +1,5 @@
 # McDonnell Douglas DC-10 FGS
-# Copyright (c) 2024 Josh Davidson (Octal450)
+# Copyright (c) 2025 Josh Davidson (Octal450)
 
 var Fma = {
 	armA: props.globals.initNode("/instrumentation/fma/arm-mode-a", "", "STRING"),
