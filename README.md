@@ -9,7 +9,7 @@ Present pack includes the following McDonnell Douglas DC-10 variants:
 - KC-10A (GE CF6-50C2)
 - KDC-10-40 (PW JT9D-59A)
 
-FlightGear 2020.3.14 or later is supported. For more info, please see the [project wiki page](https://wiki.flightgear.org/McDonnell_Douglas_DC-10).
+FlightGear 2024.1.1 or later is supported. For more info, please see the [project wiki page](https://wiki.flightgear.org/McDonnell_Douglas_DC-10).
 
 ## Frequently Asked Questions
 For frequently asked questions about this project, please refer to our [FAQ page](https://github.com/Octal450/DC-10/blob/master/Docs/FAQ.md).
