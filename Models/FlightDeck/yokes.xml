@@ -26,7 +26,7 @@
 		<object-name>yoke.autodsg</object-name>
 		<object-name>yoke.piece</object-name>
 		<property>controls/cockpit/elevator-yoke</property>
-		<factor>-15</factor>
+		<factor>-12</factor>
 		<center>
 			<x-m>-27.3315</x-m>
 			<y-m>-0.524</y-m>
@@ -121,7 +121,7 @@
 		<object-name>yoke.nosedown.right</object-name>
 		<object-name>yoke.autodsg.right</object-name>
 		<property>controls/cockpit/elevator-yoke</property>
-		<factor>-15</factor>
+		<factor>-12</factor>
 		<center>
 			<x-m>-27.3315</x-m>
 			<y-m>0.524</y-m>
