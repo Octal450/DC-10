@@ -389,7 +389,8 @@ var ITAF = {
 		
 		Input.autoLandTemp = Input.autoLand.getBoolValue();
 		if (Internal.canAutoland and Internal.landModeActive and Internal.selfCheckStatus == 2 and Position.gearAglFtTemp <= 1500) {
-			if (Output.ap1Temp == 1 and Input.fgs1Sel.getValue() == 2 and Output.ap2Temp == 1 and Input.fgs2Sel.getValue() == 2 and Input.autoLandTemp and Internal.athrLatch) {
+			if (Output.ap1Temp == 1 and Input.fgs1Sel.getValue() == 2 and Output.ap2Temp == 1 and Input.fgs2Sel.getValue() == 2 and Input.autoLandTemp and Internal.athrLatch and !systems.ELECTRICAL.Controls.acTie1.getBoolValue()
+			and !systems.ELECTRICAL.Controls.acTie2.getBoolValue() and !systems.ELECTRICAL.Controls.acTie3.getBoolValue() and !systems.ELECTRICAL.Controls.dcTie1.getBoolValue() and !systems.ELECTRICAL.Controls.dcTie3.getBoolValue()) {
 				if (Internal.landCondition != "DUAL") {
 					Internal.landCondition = "DUAL";
 					UpdateFma.arm();

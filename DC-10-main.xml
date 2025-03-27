@@ -1425,6 +1425,9 @@
 			<lat type="int">0</lat>
 			<vert type="int">0</vert>
 		</output>
+		<sound n="0">
+			<apoff type="bool">0</apoff>
+		</sound>
 	</it-autoflight>
 	
 	<options n="0">

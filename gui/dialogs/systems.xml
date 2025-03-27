@@ -64,7 +64,7 @@
 			<checkbox>
 				<label>AC Tie 2</label>
 				<halign>left</halign>
-				<property>/controls/electrical/ac-tie-1</property>
+				<property>/controls/electrical/ac-tie-2</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
