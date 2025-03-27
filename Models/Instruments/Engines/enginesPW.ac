@@ -8991,7 +8991,7 @@ name "EPR1.lines"
 loc -3.3415e-05 0.0416303 0.13134
 data 9
 epr3.mesh
-texture "digits.png"
+texture "digits-roll.jpg"
 crease 45.000000
 numvert 4
 0 0.0154283 -0.00782719
@@ -9251,7 +9251,7 @@ name "EPR2.lines"
 loc -3.34151e-05 0.0416303 0.0640391
 data 9
 epr3.mesh
-texture "digits.png"
+texture "digits-roll.jpg"
 crease 45.000000
 numvert 4
 0 0.0154283 -0.00782719
@@ -9532,7 +9532,7 @@ name "EPR3.lines"
 loc -3.34151e-05 0.0416303 -0.00326087
 data 9
 epr3.mesh
-texture "digits.png"
+texture "digits-roll.jpg"
 crease 45.000000
 numvert 4
 0 0.00304329 -0.00782719
