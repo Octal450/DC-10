@@ -4,7 +4,7 @@
 var CONFIG = {
 	minFgfs: split(".", getprop("/sim/minimum-fg-version")),
 	minFgfsString: getprop("/sim/minimum-fg-version"),
-	minOptionsRevision: 90, # Minimum revision of supported options
+	minOptionsRevision: 102, # Minimum revision of supported options
 	noUpdateCheck: 0, # Disable ACCONFIG update checks
 };
 
@@ -219,7 +219,6 @@ var OPTIONS = {
 			# These aren't stored in acconfig themselves, so we move them there
 			setprop("/sim/model/autopush/route/show", getprop("/systems/acconfig/options/autopush/show-route"));
 			setprop("/sim/model/autopush/route/show-wingtip", getprop("/systems/acconfig/options/autopush/show-wingtip"));
-			setprop("/payload/armament/msg", getprop("/systems/acconfig/options/damage"));
 			print("System: Options loaded successfully!");
 		}
 	},
@@ -227,7 +226,6 @@ var OPTIONS = {
 		# These aren't stored in acconfig themselves, so we move them there
 		setprop("/systems/acconfig/options/autopush/show-route", getprop("/sim/model/autopush/route/show"));
 		setprop("/systems/acconfig/options/autopush/show-wingtip", getprop("/sim/model/autopush/route/show-wingtip"));
-		setprop("/systems/acconfig/options/damage", getprop("/payload/armament/msg"));
 		
 		io.write_properties(getprop("/sim/fg-home") ~ "/Export/DC-10-options.xml", "/systems/acconfig/options");
 	},

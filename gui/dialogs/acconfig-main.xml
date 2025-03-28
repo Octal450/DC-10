@@ -357,10 +357,6 @@
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
-				<binding>
-					<command>nasal</command>
-					<script>acconfig.OPTIONS.write();</script>
-				</binding>
 				<live>true</live>
 			</checkbox>
 			
