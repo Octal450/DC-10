@@ -154,6 +154,11 @@
 		<ignition n="0">
 			<starter-cutoff-n2 type="double">45</starter-cutoff-n2>
 		</ignition>
+ 		<refuel n="0">
+ 			<max-fuel-transfer-lbs-min type="double">6000</max-fuel-transfer-lbs-min>
+ 			<serviceable type="bool">false</serviceable> <!-- Doesn't work properly yet -->
+ 			<type type="string">boom</type>
+ 		</refuel>
 	</systems>
     
 	<nasal n="0">
