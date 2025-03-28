@@ -938,7 +938,7 @@
 		
 		<actuator name="/systems/fcc/cws-roll/input-slow">
 			<input>/systems/fcc/cws-roll/input-switch</input>
-			<rate_limit>1.0</rate_limit>
+			<rate_limit>1.5</rate_limit>
 		</actuator>
 		
 		<lag_filter name="/systems/fcc/cws-roll/input-demand">
@@ -1095,7 +1095,7 @@
 		
 		<actuator name="/systems/fcc/cws-pitch/input-slow">
 			<input>/systems/fcc/cws-pitch/input-gain</input>
-			<rate_limit>1.0</rate_limit>
+			<rate_limit>1.5</rate_limit>
 		</actuator>
 		
 		<lag_filter name="/systems/fcc/cws-pitch/input-demand">

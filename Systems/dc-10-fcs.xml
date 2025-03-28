@@ -20,10 +20,38 @@
 	
 	<channel name="Aileron General">
 		
-		<pure_gain name="/systems/fcs/aileron-small">
-			<input>/controls/flight/aileron</input>
-			<gain>0.25</gain>
-		</pure_gain>
+		<fcs_function name="/systems/fcs/aileron-cws"> <!-- Pretends to be pilot force summed with CWS -->
+			<function>
+				<sum>
+					<product>
+						<property>/controls/flight/aileron</property>
+						<table>
+							<independentVar lookup="row">/systems/fcc/cws-roll/in-detent</independentVar>
+							<tableData>
+								0  1.00
+								1  0.25
+							</tableData>
+						</table>
+					</product>
+					<product>
+						<difference>
+							<property>/systems/fcc/cws-roll/output</property>
+							<product>
+								<property>/controls/flight/aileron</property>
+								<table>
+									<independentVar lookup="row">/systems/fcc/cws-roll/in-detent</independentVar>
+									<tableData>
+										0  1
+										1  0
+									</tableData>
+								</table>
+							</product>
+						</difference>
+						<value>0.25</value>
+					</product>
+				</sum>
+			</function>
+		</fcs_function>
 		
 		<pure_gain name="/systems/fcs/ailerons/trim-overall">
 			<input>/controls/flight/aileron-trim</input>
@@ -32,9 +60,8 @@
 		
 		<switch name="/systems/fcs/aileron-yoke-switch">
 			<default value="/controls/flight/aileron"/>
-			<test logic="AND" value="/systems/fcs/aileron-small"> <!-- While in detent and CWS active, more force needed to break out -->
+			<test value="/systems/fcs/aileron-cws"> <!-- CWS is a parallel function, thus we sum pilot input and CWS command -->
 				/systems/fcc/cws/active eq 1
-				/systems/fcc/cws-roll/in-detent eq 1
 			</test>
 			<test value="/systems/fcc/afs/roll-cmd">
 				/systems/fcc/afs/enabled eq 1
@@ -354,16 +381,43 @@
 	
 	<channel name="Elevator General">
 		
-		<pure_gain name="/systems/fcs/elevator-small">
-			<input>/controls/flight/elevator</input>
-			<gain>0.25</gain>
-		</pure_gain>
+		<fcs_function name="/systems/fcs/elevator-cws"> <!-- Pretends to be pilot force summed with CWS -->
+			<function>
+				<sum>
+					<product>
+						<property>/controls/flight/elevator</property>
+						<table>
+							<independentVar lookup="row">/systems/fcc/cws-pitch/in-detent</independentVar>
+							<tableData>
+								0  1.00
+								1  0.25
+							</tableData>
+						</table>
+					</product>
+					<product>
+						<difference>
+							<property>/systems/fcc/cws-pitch/output</property>
+							<product>
+								<property>/controls/flight/elevator</property>
+								<table>
+									<independentVar lookup="row">/systems/fcc/cws-pitch/in-detent</independentVar>
+									<tableData>
+										0  1
+										1  0
+									</tableData>
+								</table>
+							</product>
+						</difference>
+						<value>0.25</value>
+					</product>
+				</sum>
+			</function>
+		</fcs_function>
 		
 		<switch name="/systems/fcs/elevator-yoke-switch">
 			<default value="/controls/flight/elevator"/>
-			<test logic="AND" value="/systems/fcs/elevator-small"> <!-- While in detent and CWS active, more force needed to break out -->
+			<test value="/systems/fcs/elevator-cws"> <!-- CWS is a parallel function, thus we sum pilot input and CWS command -->
 				/systems/fcc/cws/active eq 1
-				/systems/fcc/cws-pitch/in-detent eq 1
 			</test>
 			<test value="/systems/fcc/afs/pitch-cmd">
 				/systems/fcc/afs/enabled eq 1
