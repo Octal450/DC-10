@@ -18,7 +18,7 @@
 	<idlen1>24.7</idlen1>
 	<idlen2>58.9</idlen2>
 	<maxn1>105.0</maxn1>
-	<maxn2>102.6</maxn2>
+	<maxn2>99</maxn2>
 	<augmented>0</augmented>
 	<injected>0</injected>
 	
@@ -56,36 +56,36 @@
 		</table>
 	</function>
 	
-	<function name="N2SpoolUp"> <!-- N1 to N2 factor 0.492260061919505 -->
+	<function name="N2SpoolUp"> <!-- N1 to N2 factor 0.499377334993773 -->
 		<table>
 			<independentVar lookup="row">propulsion/engine[0]/n1</independentVar>
 			<independentVar lookup="column">/systems/acconfig/autoconfig-running</independentVar>
 			<tableData>
 				      0    1
-				 24   0.6  27
-				 28   1.4  27
-				 46   4.8  27
-				 68   7.6  27
-				 80   9.7  27
-				 94  10.5  27
-				103  11.6  27
+				 24   0.5  25
+				 28   1.4  25
+				 46   4.8  25
+				 68   7.7  25
+				 80   9.8  25
+				 94  10.7  25
+				103  11.8  25
 			</tableData>
 		</table>
 	</function>
 	
-	<function name="N2SpoolDown"> <!-- N1 to N2 factor 0.492260061919505 -->
+	<function name="N2SpoolDown"> <!-- N1 to N2 factor 0.499377334993773 -->
 		<table>
 			<independentVar lookup="row">propulsion/engine[0]/n1</independentVar>
 			<independentVar lookup="column">/systems/acconfig/autoconfig-running</independentVar>
 			<tableData>
 				      0    1
-				 24   0.6  27
-				 28   1.4  27
-				 46   4.8  27
-				 68   7.6  27
-				 80   9.7  27
-				 94  10.5  27
-				103  11.6  27
+				 24   0.5  25
+				 28   1.4  25
+				 46   4.8  25
+				 68   7.7  25
+				 80   9.8  25
+				 94  10.7  25
+				103  11.8  25
 			</tableData>
 		</table>
 	</function>

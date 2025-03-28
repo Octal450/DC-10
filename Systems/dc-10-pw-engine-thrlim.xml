@@ -10,7 +10,7 @@
 	<property value="670">/systems/engines/egt-alert</property>
 	<property value="685">/systems/engines/egt-redline</property>
 	<property value="105">/systems/engines/n1-redline</property>
-	<property value="102.6">/systems/engines/n2-redline</property>
+	<property value="99">/systems/engines/n2-redline</property>
 	
 	<channel name="Thrust Limits">
 		
@@ -1637,18 +1637,18 @@
 						<independentVar lookup="column">atmosphere/density-altitude</independentVar>
 						<independentVar lookup="table">/controls/engines/engine[0]/cutoff</independentVar>
 						<tableData breakPoint="0">
-							         0    50000
-							 10.0    0    0
-							 35.0  520  390
-							 50.0  515  385
-							 58.9  405  270
-							102.6  610  520
+							        0    50000
+							10.0    0    0
+							35.0  520  390
+							50.0  515  385
+							58.9  405  270
+							99.0  610  520
 						</tableData>
 						<tableData breakPoint="1">
-							       0    50000
-							 30.0  0    0
-							 58.9  405  270
-							102.6  610  520
+							      0    50000
+							30.0  0    0
+							58.9  405  270
+							99.0  610  520
 						</tableData>
 					</table>
 				</sum>
@@ -1670,18 +1670,18 @@
 						<independentVar lookup="column">atmosphere/density-altitude</independentVar>
 						<independentVar lookup="table">/controls/engines/engine[1]/cutoff</independentVar>
 						<tableData breakPoint="0">
-							         0    50000
-							 10.0    0    0
-							 35.0  520  390
-							 50.0  515  385
-							 58.9  405  270
-							102.6  610  520
+							        0    50000
+							10.0    0    0
+							35.0  520  390
+							50.0  515  385
+							58.9  405  270
+							99.0  610  520
 						</tableData>
 						<tableData breakPoint="1">
-							       0    50000
-							 30.0  0    0
-							 58.9  405  270
-							102.6  610  520
+							      0    50000
+							30.0  0    0
+							58.9  405  270
+							99.0  610  520
 						</tableData>
 					</table>
 				</sum>
@@ -1703,18 +1703,18 @@
 						<independentVar lookup="column">atmosphere/density-altitude</independentVar>
 						<independentVar lookup="table">/controls/engines/engine[2]/cutoff</independentVar>
 						<tableData breakPoint="0">
-							         0    50000
-							 10.0    0    0
-							 35.0  520  390
-							 50.0  515  385
-							 58.9  405  270
-							102.6  610  520
+							        0    50000
+							10.0    0    0
+							35.0  520  390
+							50.0  515  385
+							58.9  405  270
+							99.0  610  520
 						</tableData>
 						<tableData breakPoint="1">
-							       0    50000
-							 30.0  0    0
-							 58.9  405  270
-							102.6  610  520
+							      0    50000
+							30.0  0    0
+							58.9  405  270
+							99.0  610  520
 						</tableData>
 					</table>
 				</sum>
