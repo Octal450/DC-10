@@ -736,6 +736,95 @@
 				</binding>
 				<live>true</live>
 			</checkbox>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+				<text>
+					<label>APU</label>
+				</text>
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+			</group>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<text>
+					<label>99</label>
+					<live>true</live>
+					<property>/systems/apu/n1-actual-round</property>
+				</text>
+				<text>
+					<label>% N1</label>
+				</text>
+				
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/apu/master</property>
+							<value>0</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>40</pref-width>
+					<pref-height>20</pref-height>
+					<legend>OFF</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/apu/master</property>
+						<value>0</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/apu/master</property>
+							<value>1</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>40</pref-width>
+					<pref-height>20</pref-height>
+					<legend>ON</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/apu/master</property>
+						<value>1</value>
+					</binding>
+				</button>
+				<button>
+					<enable>
+						<not-equals>
+							<property>/controls/apu/master</property>
+							<value>2</value>
+						</not-equals>
+					</enable>
+					<halign>left</halign>
+					<pref-width>55</pref-width>
+					<pref-height>20</pref-height>
+					<legend>START</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/controls/apu/master</property>
+						<value>2</value>
+					</binding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							settimer(func {
+								if (systems.APU.Controls.master.getValue() == 2) {
+									systems.APU.Controls.master.setValue(1);
+								}
+							}, 5);
+						</script>
+					</binding>
+				</button>
+			</group>
 		
 		</group>
 		
@@ -1145,90 +1234,32 @@
 			<group>
 				<layout>hbox</layout>
 				
-				<hrule>
-					<stretch>true</stretch>
-				</hrule>
 				<text>
-					<label>APU</label>
+					<label>99</label>
+					<live>true</live>
+					<property>/systems/engines/n2-actual-1-round</property>
 				</text>
-				<hrule>
-					<stretch>true</stretch>
-				</hrule>
-			</group>
-			
-			<group>
-				<layout>hbox</layout>
+				<text>
+					<label>% N2</label>
+				</text>
 				
 				<text>
 					<label>99</label>
 					<live>true</live>
-					<property>/systems/apu/n1-actual-round</property>
+					<property>/systems/engines/n2-actual-2-round</property>
 				</text>
 				<text>
-					<label>% N1</label>
+					<label>% N2</label>
 				</text>
 				
-				<button>
-					<enable>
-						<not-equals>
-							<property>/controls/apu/master</property>
-							<value>0</value>
-						</not-equals>
-					</enable>
-					<halign>left</halign>
-					<pref-width>40</pref-width>
-					<pref-height>20</pref-height>
-					<legend>OFF</legend>
-					<binding>
-						<command>property-assign</command>
-						<property>/controls/apu/master</property>
-						<value>0</value>
-					</binding>
-				</button>
-				<button>
-					<enable>
-						<not-equals>
-							<property>/controls/apu/master</property>
-							<value>1</value>
-						</not-equals>
-					</enable>
-					<halign>left</halign>
-					<pref-width>40</pref-width>
-					<pref-height>20</pref-height>
-					<legend>ON</legend>
-					<binding>
-						<command>property-assign</command>
-						<property>/controls/apu/master</property>
-						<value>1</value>
-					</binding>
-				</button>
-				<button>
-					<enable>
-						<not-equals>
-							<property>/controls/apu/master</property>
-							<value>2</value>
-						</not-equals>
-					</enable>
-					<halign>left</halign>
-					<pref-width>55</pref-width>
-					<pref-height>20</pref-height>
-					<legend>START</legend>
-					<binding>
-						<command>property-assign</command>
-						<property>/controls/apu/master</property>
-						<value>2</value>
-					</binding>
-					<binding>
-						<command>nasal</command>
-						<script>
-							settimer(func {
-								if (systems.APU.Controls.master.getValue() == 2) {
-									systems.APU.Controls.master.setValue(1);
-								}
-							}, 5);
-						</script>
-					</binding>
-				</button>
+				<text>
+					<label>99</label>
+					<live>true</live>
+					<property>/systems/engines/n2-actual-3-round</property>
+				</text>
+				<text>
+					<label>% N2</label>
+				</text>
 			</group>
 		
 		</group>

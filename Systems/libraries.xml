@@ -245,5 +245,59 @@
 		</input>
 		<output>/systems/apu/n1-actual-round</output>
 	</filter>
+	
+	<filter>
+		<name>Eng 1 N2 thing</name>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<update-interval-secs>0.1</update-interval-secs>
+		<input> 
+			<expression>
+				<floor>
+					<sum>
+						<property>/systems/engines/n2-actual-1</property>
+						<value>0.5</value>
+					</sum>
+				</floor>
+			</expression>
+		</input>
+		<output>/systems/engines/n2-actual-1-round</output>
+	</filter>
+	
+	<filter>
+		<name>Eng 2 N2 thing</name>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<update-interval-secs>0.1</update-interval-secs>
+		<input> 
+			<expression>
+				<floor>
+					<sum>
+						<property>/systems/engines/n2-actual-2</property>
+						<value>0.5</value>
+					</sum>
+				</floor>
+			</expression>
+		</input>
+		<output>/systems/engines/n2-actual-2-round</output>
+	</filter>
+	
+	<filter>
+		<name>Eng 3 N2 thing</name>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<update-interval-secs>0.1</update-interval-secs>
+		<input> 
+			<expression>
+				<floor>
+					<sum>
+						<property>/systems/engines/n2-actual-3</property>
+						<value>0.5</value>
+					</sum>
+				</floor>
+			</expression>
+		</input>
+		<output>/systems/engines/n2-actual-3-round</output>
+	</filter>
 
 </PropertyList>
