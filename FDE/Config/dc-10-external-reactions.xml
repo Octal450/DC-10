@@ -7,7 +7,7 @@
 	
 	<force name="tractor" frame="BODY">
 		<location unit="M">
-			<x>-18.2427</x>
+			<x>-18.24</x>
 			<y>0</y>
 			<z>3.45158</z>
 		</location>
