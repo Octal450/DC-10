@@ -4,14 +4,16 @@
 # Resets buttons to the default values
 var variousReset = func() {
 	pts.Controls.Flight.dialAFlap.setValue(15); 
-	#pts.Controls.Lighting.beacon.setBoolValue(0);
-	#pts.Controls.Lighting.emerLt.setValue(0);
-	#pts.Controls.Lighting.landingLightL.setValue(0);
-	#pts.Controls.Lighting.landingLightN.setValue(0);
-	#pts.Controls.Lighting.landingLightR.setValue(0);
-	#pts.Controls.Lighting.logoLights.setBoolValue(0);
-	#pts.Controls.Lighting.navLights.setBoolValue(0);
-	#pts.Controls.Lighting.strobe.setBoolValue(0);
+	pts.Controls.Lighting.beacon.setBoolValue(0);
+	pts.Controls.Lighting.landingLightL.setValue(0);
+	pts.Controls.Lighting.landingLightN.setValue(0);
+	pts.Controls.Lighting.landingLightR.setValue(0);
+	pts.Controls.Lighting.logoLights.setBoolValue(0);
+	pts.Controls.Lighting.navLights.setBoolValue(0);
+	pts.Controls.Lighting.strobeLights.setBoolValue(0);
+	pts.Controls.Lighting.turnoffLightL.setBoolValue(0);
+	pts.Controls.Lighting.turnoffLightR.setBoolValue(0);
+	pts.Controls.Lighting.wingLights.setValue(0);
 	pts.Controls.Switches.adgHandle.setValue(0);
 	pts.Controls.Switches.minimums.setValue(200);
 	pts.Controls.Switches.noSmokingSign.setValue(1); # Smoking is bad!

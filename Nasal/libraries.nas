@@ -86,36 +86,8 @@ var slowLoop = maketimer(1, func() {
 	}
 });
 
-canvas.Text._lastText = canvas.Text["_lastText"];
-canvas.Text.setText = func(text) {
-	if (text == me._lastText and text != nil and size(text) == size(me._lastText)) {
-		return me;
-	}
-	me._lastText = text;
-	me.set("text", typeof(text) == "scalar" ? text : "");
-};
-canvas.Element._lastVisible = nil;
-canvas.Element.show = func() {
-	if (1 == me._lastVisible) {
-		return me;
-	}
-	me._lastVisible = 1;
-	me.setBool("visible", 1);
-};
-canvas.Element.hide = func() {
-	if (0 == me._lastVisible) {
-		return me;
-	}
-	me._lastVisible = 0;
-	me.setBool("visible", 0);
-};
-canvas.Element.setVisible = func(vis) {
-	if (vis == me._lastVisible) {
-		return me;
-	}
-	me._lastVisible = vis;
-	me.setBool("visible", vis);
-};
+var beacon = aircraft.light.new("/sim/model/lights/beacon", [0.1, 1], "/systems/exterior-lights/beacon");
+var strobe = aircraft.light.new("/sim/model/lights/strobe", [0.05, 0.05, 0.05, 1.0], "/systems/exterior-lights/strobe-lights");
 
 # Custom controls.nas overrides
 controls.autopilotDisconnect = func() {
@@ -158,39 +130,39 @@ controls.flapsDown = func(step) {
 var leverCockpit = 3;
 controls.gearDown = func(d) { # Requires a mod-up
 	pts.Position.wowTemp = pts.Position.wow.getBoolValue();
-	leverCockpit = systems.GEAR.Controls.leverCockpit.getValue();
+	leverCockpit = systems.GEAR.Controls.lever.getValue();
 	if (d < 0) {
 		if (pts.Position.wowTemp) {
 			if (leverCockpit == 3) {
-				systems.GEAR.Controls.leverCockpit.setValue(2);
+				systems.GEAR.Controls.lever.setValue(2);
 			} else if (leverCockpit == 0) {
-				systems.GEAR.Controls.leverCockpit.setValue(1);
+				systems.GEAR.Controls.lever.setValue(1);
 			}
 		} else {
-			systems.GEAR.Controls.leverCockpit.setValue(0);
+			systems.GEAR.Controls.lever.setValue(0);
 		}
 	} else if (d > 0) {
 		if (pts.Position.wowTemp) {
 			if (leverCockpit == 3) {
-				systems.GEAR.Controls.leverCockpit.setValue(2);
+				systems.GEAR.Controls.lever.setValue(2);
 			} else if (leverCockpit == 0) {
-				systems.GEAR.Controls.leverCockpit.setValue(1);
+				systems.GEAR.Controls.lever.setValue(1);
 			}
 		} else {
-			systems.GEAR.Controls.leverCockpit.setValue(3);
+			systems.GEAR.Controls.lever.setValue(3);
 		}
 	} else {
 		if (leverCockpit == 2) {
-			systems.GEAR.Controls.leverCockpit.setValue(3);
+			systems.GEAR.Controls.lever.setValue(3);
 		} else if (leverCockpit == 1) {
-			systems.GEAR.Controls.leverCockpit.setValue(0);
+			systems.GEAR.Controls.lever.setValue(0);
 		}
 	}
 }
 
 controls.gearDownSmart = func(d) { # Used by cockpit, requires a mod-up
 	if (d) {
-		if (systems.GEAR.Controls.leverCockpit.getValue() >= 2) {
+		if (systems.GEAR.Controls.lever.getValue() >= 2) {
 			controls.gearDown(-1);
 		} else {
 			controls.gearDown(1);
@@ -202,13 +174,13 @@ controls.gearDownSmart = func(d) { # Used by cockpit, requires a mod-up
 
 controls.gearToggle = func() {
 	if (!pts.Position.wow.getBoolValue()) {
-		if (systems.GEAR.Controls.leverCockpit.getValue() >= 2) {
-			systems.GEAR.Controls.leverCockpit.setValue(0);
+		if (systems.GEAR.Controls.lever.getValue() >= 2) {
+			systems.GEAR.Controls.lever.setValue(0);
 		} else {
-			systems.GEAR.Controls.leverCockpit.setValue(3);
+			systems.GEAR.Controls.lever.setValue(3);
 		}
 	} else {
-		systems.GEAR.Controls.leverCockpit.setValue(3);
+		systems.GEAR.Controls.lever.setValue(3);
 	}
 }
 

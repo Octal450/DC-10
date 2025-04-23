@@ -86,7 +86,7 @@
 		</lag_filter>
 		
 		<actuator name="/controls/cockpit/gear-lever">
-			<input>/controls/gear/lever-cockpit</input>
+			<input>/controls/gear/lever</input>
 			<rate_limit>4.5</rate_limit>
 			<lag>20</lag>
 		</actuator>
@@ -194,6 +194,38 @@
 			<c1>20</c1>
 			<output>/systems/engines/throttle-lever-feedback[2]</output>
 		</lag_filter>
+	
+	</channel>
+	
+	<channel name="Cockpit Lighting" execrate="8">
+		
+		<switch name="/systems/lighting/capt-panel">
+			<default value="0"/>
+			<test value="/controls/lighting/capt-panel">
+				/systems/electrical/bus/l-emer-ac ge 112
+			</test>
+		</switch>
+		
+		<switch name="/systems/lighting/center-panel">
+			<default value="0"/>
+			<test value="/controls/lighting/center-panel">
+				/systems/electrical/bus/l-emer-ac ge 112
+			</test>
+		</switch>
+		
+		<switch name="/systems/lighting/fcp-panel">
+			<default value="0"/>
+			<test value="/controls/lighting/fcp-panel">
+				/systems/electrical/bus/r-emer-ac ge 112
+			</test>
+		</switch>
+		
+		<switch name="/systems/lighting/fo-panel">
+			<default value="0"/>
+			<test value="/controls/lighting/fo-panel">
+				/systems/electrical/bus/r-emer-ac ge 112
+			</test>
+		</switch>
 	
 	</channel>
 	

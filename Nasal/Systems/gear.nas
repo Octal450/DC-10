@@ -8,7 +8,6 @@ var GEAR = {
 		brakeRight: props.globals.getNode("/controls/gear/brake-right"),
 		centerGearUp: props.globals.getNode("/controls/gear/center-gear-up"),
 		lever: props.globals.getNode("/controls/gear/lever"),
-		leverCockpit: props.globals.getNode("/controls/gear/lever-cockpit"),
 	},
 	Failures: {
 		centerActuator: props.globals.getNode("/systems/failures/gear/center-actuator"),

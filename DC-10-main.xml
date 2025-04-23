@@ -121,6 +121,13 @@
 							<dialog-name>systems-gui</dialog-name>
 						</binding>
 					</item>
+					<item>
+						<label>Lighting Panel</label>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>lighting-gui</dialog-name>
+						</binding>
+					</item>
 				</menu>
 				<menu n="103">
 					<label>Navigation</label>
@@ -233,14 +240,6 @@
 				<float n="22" alias="/systems/fcs/spoiler-r4/final-deg"/>
 				<float n="23" alias="/systems/fcs/spoiler-r5/final-deg"/>
 				<float n="24" alias="/systems/fcs/stabilizer/final-deg"/>
-				<int n="0" alias="/sim/model/lights/strobe/state"/>
-				<int n="1" alias="/sim/model/lights/beacon/state"/>
-				<int n="2" alias="/controls/lighting/landing-lights-n"/>
-				<int n="3" alias="/sim/model/lights/logo-lights"/>
-				<int n="5" alias="/controls/lighting/landing-lights-l"/>
-				<int n="6" alias="/controls/lighting/landing-lights-r"/>
-				<int n="7" alias="/sim/model/lights/nav-lights"/>
-				<int n="8" alias="/controls/lighting/wing-lights"/>
 			</generic>
 		</multiplay>
 		<rating>
@@ -622,7 +621,7 @@
 		<gear n="0">
 			<brake-parking type="bool">0</brake-parking>
 			<center-gear-up type="bool">0</center-gear-up>
-			<lever-cockpit type="int">3</lever-cockpit>
+			<lever type="int">3</lever>
 		</gear>
 		<hydraulics n="0">
 			<aux-pump-1 type="bool">0</aux-pump-1>
@@ -644,21 +643,19 @@
 		</ignition>
 		<lighting n="0">
 			<beacon type="bool">0</beacon>
-			<capt-digital-norm type="double">1</capt-digital-norm>
-			<fcp-integ-knb type="double">0</fcp-integ-knb>
-			<fo-digital-norm type="double">1</fo-digital-norm>
+			<capt-panel type="double">0</capt-panel>
+			<center-panel type="double">0</center-panel>
+			<fcp-panel type="double">0</fcp-panel>
+			<fo-panel type="double">0</fo-panel>
 			<landing-light-l type="double">0</landing-light-l>
 			<landing-light-n type="double">0</landing-light-n>
 			<landing-light-r type="double">0</landing-light-r>
-			<land-ext-l type="double">0</land-ext-l>
-			<land-ext-r type="double">0</land-ext-r>
-			<land-on-l type="double">0</land-on-l>
-			<land-on-r type="double">0</land-on-r>
 			<logo-lights type="bool">0</logo-lights>
-			<main-integ-knb type="double">0</main-integ-knb>
 			<nav-lights type="bool">0</nav-lights>
-			<overhead-integ-knb type="double">0</overhead-integ-knb>
-			<strobe type="bool">0</strobe>
+			<strobe-lights type="bool">0</strobe-lights>
+			<turnoff-light-l type="bool">0</turnoff-light-l>
+			<turnoff-light-r type="bool">0</turnoff-light-r>
+			<wing-lights type="double">0</wing-lights>
 		</lighting>
 		<switches n="0">
 			<adg-handle type="double">0</adg-handle>

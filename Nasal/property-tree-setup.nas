@@ -16,6 +16,18 @@ var Controls = {
 		speedbrakeArm: props.globals.getNode("/controls/flight/speedbrake-arm"),
 		speedbrakeTemp: 0,
 	},
+	Lighting: {
+		beacon: props.globals.getNode("/controls/lighting/beacon"),
+		landingLightL: props.globals.getNode("/controls/lighting/landing-light-l"),
+		landingLightN: props.globals.getNode("/controls/lighting/landing-light-n"),
+		landingLightR: props.globals.getNode("/controls/lighting/landing-light-r"),
+		logoLights: props.globals.getNode("/controls/lighting/logo-lights"),
+		navLights: props.globals.getNode("/controls/lighting/nav-lights"),
+		strobeLights: props.globals.getNode("/controls/lighting/strobe-lights"),
+		turnoffLightL: props.globals.getNode("/controls/lighting/turnoff-light-l"),
+		turnoffLightR: props.globals.getNode("/controls/lighting/turnoff-light-r"),
+		wingLights: props.globals.getNode("/controls/lighting/wing-lights"),
+	},
 	Switches: {
 		adgHandle: props.globals.getNode("/controls/switches/adg-handle"),
 		annunTest: props.globals.getNode("/controls/switches/annun-test"),

@@ -194,7 +194,7 @@
 	
 	<!-- Center Instruments -->
 	<model>
-		<path>Aircraft/DC-10/Models/Instruments/FGCP/fgcp.xml</path>
+		<path>Aircraft/DC-10/Models/Instruments/FCP/fcp.xml</path>
 		<offsets>
 			<x-m>-3.035</x-m>
 			<y-m>0</y-m>

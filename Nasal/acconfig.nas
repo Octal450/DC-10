@@ -282,7 +282,7 @@ var PANEL = {
 			pts.Controls.Flight.flaps.setValue(0);
 			pts.Controls.Flight.speedbrakeArm.setBoolValue(0);
 		}
-		systems.GEAR.Controls.leverCockpit.setValue(3);
+		systems.GEAR.Controls.lever.setValue(3);
 		
 		# Performance Applet Reset
 		pts.Systems.Performance.landFlaps.setValue(35);
@@ -319,8 +319,8 @@ var PANEL = {
 		pts.Services.Chocks.enable.setBoolValue(1);
 		systems.ELECTRICAL.Controls.battery.setBoolValue(1);
 		systems.APU.fastStart();
-		#pts.Controls.Lighting.beacon.setBoolValue(1);
-		#pts.Controls.Lighting.navLights.setBoolValue(1);
+		pts.Controls.Lighting.beacon.setBoolValue(1);
+		pts.Controls.Lighting.navLights.setBoolValue(1);
 		pts.Controls.Switches.seatbeltSign.setBoolValue(1);
 		
 		systems.IGNITION.fastStop(0);
@@ -360,8 +360,8 @@ var PANEL = {
 		systems.ELECTRICAL.Controls.extPwr.setBoolValue(1);
 		systems.ELECTRICAL.Controls.extGPwr.setBoolValue(1);
 		pts.Controls.Switches.seatbeltSign.setBoolValue(1);
-		#pts.Controls.Lighting.beacon.setBoolValue(1);
-		#pts.Controls.Lighting.navLights.setBoolValue(1);
+		pts.Controls.Lighting.beacon.setBoolValue(1);
+		pts.Controls.Lighting.navLights.setBoolValue(1);
 		systems.FUEL.Controls.pump1Aft.setBoolValue(1);
 		systems.FUEL.Controls.pump1Fwd.setBoolValue(1);
 		systems.FUEL.Controls.pump2LAft.setBoolValue(1);
@@ -405,11 +405,12 @@ var PANEL = {
 				fgs.Input.fd2.setBoolValue(1);
 				
 				if (t == 1) {
-					#pts.Controls.Lighting.strobe.setBoolValue(1);
-					#pts.Controls.Lighting.landingLightL.setValue(1);
-					#pts.Controls.Lighting.landingLightN.setValue(1);
-					#pts.Controls.Lighting.landingLightR.setValue(1);
+					pts.Controls.Lighting.strobeLights.setBoolValue(1);
+					pts.Controls.Lighting.landingLightL.setValue(1);
+					pts.Controls.Lighting.landingLightN.setValue(1);
+					pts.Controls.Lighting.landingLightR.setValue(1);
 				} else {
+					pts.Controls.Lighting.landingLightN.setValue(1); # Just until the physical switches are implemented
 					#pts.Controls.Lighting.landingLightL.setValue(0.5);
 					#pts.Controls.Lighting.landingLightN.setValue(0.5);
 					#pts.Controls.Lighting.landingLightR.setValue(0.5);

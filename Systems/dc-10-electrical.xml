@@ -1978,28 +1978,6 @@
 			<output>/systems/electrical/outputs/tci</output>
 			<output>/systems/electrical/outputs/turn-coordinator</output>
 		</switch>
-		
-		<!-- Lighting Power -->
-		<switch name="/controls/lighting/fcp-integ-norm">
-			<default value="0"/>
-			<test value="/controls/lighting/fcp-integ-knb">
-				/systems/electrical/generic/pwr ge 24
-			</test>
-		</switch>
-		
-		<switch name="/controls/lighting/main-integ-norm">
-			<default value="0"/>
-			<test value="/controls/lighting/main-integ-knb">
-				/systems/electrical/generic/pwr ge 24
-			</test>
-		</switch>
-		
-		<switch name="/controls/lighting/overhead-integ-norm">
-			<default value="0"/>
-			<test value="/controls/lighting/overhead-integ-knb">
-				/systems/electrical/generic/pwr ge 24
-			</test>
-		</switch>
 	
 	</channel>
 

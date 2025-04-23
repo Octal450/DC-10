@@ -4,7 +4,7 @@
 
 <PropertyList>
 	
-	<path>fgcp.ac</path>
+	<path>fcp.ac</path>
 	
 	<animation>
 		<type>material</type>
@@ -14,7 +14,7 @@
 			<red>0.6</red>
 			<green>0.45</green>
 			<blue>0.3</blue>
-			<factor-prop>controls/lighting/main-panel-norm</factor-prop>
+			<factor-prop>controls/lighting/fcp-panel</factor-prop>
 		</emission>
 	</animation>
 	

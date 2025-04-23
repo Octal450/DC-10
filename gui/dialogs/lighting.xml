@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2025 Josh Davidson (Octal450) -->
+
+<PropertyList>
+
+	<name>lighting-gui</name>
+	<layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+		
+        <text>
+            <halign>left</halign>
+            <label>Aircraft Lighting</label>
+        </text>
+		
+		<empty><stretch>1</stretch></empty>
+		
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+	
+    <hrule/>
+	
+	<text>
+		<halign>left</halign>
+		<label>Toggle aircraft lighting</label>
+	</text>
+	
+	<group>
+		<layout>vbox</layout>
+		
+		<group>
+			<layout>hbox</layout>
+			
+			<hrule>
+				<stretch>true</stretch>
+			</hrule>
+			<text>
+				<label>Interior</label>
+			</text>
+			<hrule>
+				<stretch>true</stretch>
+			</hrule>
+		</group>
+		
+		<checkbox>
+			<label>Captain's Panel</label>
+			<halign>left</halign>
+			<property>/controls/lighting/capt-panel</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+		
+		<checkbox>
+			<label>Center Panel</label>
+			<halign>left</halign>
+			<property>/controls/lighting/center-panel</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+		
+		<checkbox>
+			<label>Flight Control Panel</label>
+			<halign>left</halign>
+			<property>/controls/lighting/fcp-panel</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+		
+		<checkbox>
+			<label>First Officer's Panel</label>
+			<halign>left</halign>
+			<property>/controls/lighting/fo-panel</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+	</group>
+	
+	<group>
+		<layout>vbox</layout>
+		
+		<group>
+			<layout>hbox</layout>
+			
+			<hrule>
+				<stretch>true</stretch>
+			</hrule>
+			<text>
+				<label>Exterior</label>
+			</text>
+			<hrule>
+				<stretch>true</stretch>
+			</hrule>
+		</group>
+		
+		<checkbox>
+			<label>Left Landing Light</label>
+			<halign>left</halign>
+			<property>/controls/lighting/landing-light-l</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+		
+		<checkbox>
+			<label>Nose Landing Light</label>
+			<halign>left</halign>
+			<property>/controls/lighting/landing-light-n</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+		
+		<checkbox>
+			<label>Right Landing Light</label>
+			<halign>left</halign>
+			<property>/controls/lighting/landing-light-r</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+		
+		<checkbox>
+			<label>Nav Lights</label>
+			<halign>left</halign>
+			<property>/controls/lighting/nav-lights</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+		
+		<checkbox>
+			<label>Beacon</label>
+			<halign>left</halign>
+			<property>/controls/lighting/beacon</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+		
+		<checkbox>
+			<label>Hi-Int Lights</label>
+			<halign>left</halign>
+			<property>/controls/lighting/strobe-lights</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+		
+		<checkbox>
+			<label>Logo Lights</label>
+			<halign>left</halign>
+			<property>/controls/lighting/logo-lights</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+	</group>
+
+</PropertyList>
