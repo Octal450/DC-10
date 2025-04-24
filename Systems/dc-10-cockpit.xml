@@ -199,33 +199,53 @@
 	
 	<channel name="Cockpit Lighting" execrate="8">
 		
-		<switch name="/systems/lighting/capt-panel">
+		<switch name="/systems/lighting/capt-panel-cmd">
 			<default value="0"/>
 			<test value="/controls/lighting/capt-panel">
 				/systems/electrical/bus/l-emer-ac ge 112
 			</test>
 		</switch>
 		
-		<switch name="/systems/lighting/center-panel">
+		<lag_filter name="/systems/lighting/capt-panel">
+			<input>/systems/lighting/capt-panel-cmd</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<switch name="/systems/lighting/center-panel-cmd">
 			<default value="0"/>
 			<test value="/controls/lighting/center-panel">
 				/systems/electrical/bus/l-emer-ac ge 112
 			</test>
 		</switch>
 		
-		<switch name="/systems/lighting/fcp-panel">
+		<lag_filter name="/systems/lighting/center-panel">
+			<input>/systems/lighting/center-panel-cmd</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<switch name="/systems/lighting/fcp-panel-cmd">
 			<default value="0"/>
 			<test value="/controls/lighting/fcp-panel">
 				/systems/electrical/bus/r-emer-ac ge 112
 			</test>
 		</switch>
 		
-		<switch name="/systems/lighting/fo-panel">
+		<lag_filter name="/systems/lighting/fcp-panel">
+			<input>/systems/lighting/fcp-panel-cmd</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<switch name="/systems/lighting/fo-panel-cmd">
 			<default value="0"/>
 			<test value="/controls/lighting/fo-panel">
 				/systems/electrical/bus/r-emer-ac ge 112
 			</test>
 		</switch>
+		
+		<lag_filter name="/systems/lighting/fo-panel">
+			<input>/systems/lighting/fo-panel-cmd</input>
+			<c1>20</c1>
+		</lag_filter>
 	
 	</channel>
 	
