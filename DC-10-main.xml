@@ -276,7 +276,7 @@
 			</autopilot>
 			<!-- 6 is sound -->
 			<autopilot n="7">
-				<path>Aircraft/DC-10/Sounds/DC-10-common-sound-control.xml</path>
+				<path>Aircraft/DC-10/Sounds/common-sound-control.xml</path>
 			</autopilot>
 		</systems>
 		<tags>
