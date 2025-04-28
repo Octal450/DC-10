@@ -36,18 +36,6 @@ var ELECTRICAL = {
 		rEmerAc: props.globals.getNode("/systems/electrical/bus/r-emer-ac"),
 		rEmerDc: props.globals.getNode("/systems/electrical/bus/r-emer-dc"),
 	},
-	Failures: {
-		acTie1: props.globals.getNode("/systems/failures/electrical/ac-tie-1"),
-		acTie2: props.globals.getNode("/systems/failures/electrical/ac-tie-2"),
-		acTie3: props.globals.getNode("/systems/failures/electrical/ac-tie-3"),
-		apu: props.globals.getNode("/systems/failures/electrical/apu"),
-		battery: props.globals.getNode("/systems/failures/electrical/battery"),
-		dcTie1: props.globals.getNode("/systems/failures/electrical/dc-tie-1"),
-		dcTie3: props.globals.getNode("/systems/failures/electrical/dc-tie-3"),
-		gen1: props.globals.getNode("/systems/failures/electrical/gen-1"),
-		gen2: props.globals.getNode("/systems/failures/electrical/gen-2"),
-		gen3: props.globals.getNode("/systems/failures/electrical/gen-3"),
-	},
 	Outputs: {
 		efis: props.globals.initNode("/systems/electrical/outputs/efis", 0, "DOUBLE"),
 		fgcp: props.globals.initNode("/systems/electrical/outputs/fgcp", 0, "DOUBLE"),
@@ -146,6 +134,23 @@ var ELECTRICAL = {
 		groundCart: props.globals.getNode("/controls/electrical/ground-cart"),
 		smokeElecAir: props.globals.getNode("/controls/electrical/smoke-elec-air"),
 	},
+	Failures: {
+		acTie1: props.globals.getNode("/systems/failures/electrical/ac-tie-1"),
+		acTie2: props.globals.getNode("/systems/failures/electrical/ac-tie-2"),
+		acTie3: props.globals.getNode("/systems/failures/electrical/ac-tie-3"),
+		apu: props.globals.getNode("/systems/failures/electrical/apu"),
+		battery: props.globals.getNode("/systems/failures/electrical/battery"),
+		dcTie1: props.globals.getNode("/systems/failures/electrical/dc-tie-1"),
+		dcTie3: props.globals.getNode("/systems/failures/electrical/dc-tie-3"),
+		gen1: props.globals.getNode("/systems/failures/electrical/gen-1"),
+		gen2: props.globals.getNode("/systems/failures/electrical/gen-2"),
+		gen3: props.globals.getNode("/systems/failures/electrical/gen-3"),
+		si: props.globals.getNode("/systems/failures/electrical/si"),
+		tr1: props.globals.getNode("/systems/failures/electrical/tr-1"),
+		tr2a: props.globals.getNode("/systems/failures/electrical/tr-2a"),
+		tr2b: props.globals.getNode("/systems/failures/electrical/tr-2b"),
+		tr3: props.globals.getNode("/systems/failures/electrical/tr-3"),
+	},
 	init: func() {
 		me.resetFailures();
 		me.Controls.acTie1.setBoolValue(1);
@@ -189,5 +194,10 @@ var ELECTRICAL = {
 		me.Failures.gen1.setBoolValue(0);
 		me.Failures.gen2.setBoolValue(0);
 		me.Failures.gen3.setBoolValue(0);
+		me.Failures.si.setBoolValue(0);
+		me.Failures.tr1.setBoolValue(0);
+		me.Failures.tr2a.setBoolValue(0);
+		me.Failures.tr2b.setBoolValue(0);
+		me.Failures.tr3.setBoolValue(0);
 	},
 };

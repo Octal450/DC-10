@@ -2,13 +2,6 @@
 # Copyright (c) 2025 Josh Davidson (Octal450)
 
 var FUEL = {
-	Failures: {
-		pumpsAuxL: props.globals.getNode("/systems/failures/fuel/pumps-aux-l"),
-		pumpsAuxR: props.globals.getNode("/systems/failures/fuel/pumps-aux-r"),
-		pumps1: props.globals.getNode("/systems/failures/fuel/pumps-1"),
-		pumps2: props.globals.getNode("/systems/failures/fuel/pumps-2"),
-		pumps3: props.globals.getNode("/systems/failures/fuel/pumps-3"),
-	},
 	Controls: {
 		fill1: props.globals.getNode("/controls/fuel/fill-1"),
 		fill2: props.globals.getNode("/controls/fuel/fill-2"),
@@ -28,6 +21,13 @@ var FUEL = {
 		xFeed1: props.globals.getNode("/controls/fuel/x-feed-1"),
 		xFeed2: props.globals.getNode("/controls/fuel/x-feed-2"),
 		xFeed3: props.globals.getNode("/controls/fuel/x-feed-3"),
+	},
+	Failures: {
+		pumpsAuxL: props.globals.getNode("/systems/failures/fuel/pumps-aux-l"),
+		pumpsAuxR: props.globals.getNode("/systems/failures/fuel/pumps-aux-r"),
+		pumps1: props.globals.getNode("/systems/failures/fuel/pumps-1"),
+		pumps2: props.globals.getNode("/systems/failures/fuel/pumps-2"),
+		pumps3: props.globals.getNode("/systems/failures/fuel/pumps-3"),
 	},
 	init: func() {
 		me.resetFailures();

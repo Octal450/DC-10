@@ -2,24 +2,6 @@
 # Copyright (c) 2025 Josh Davidson (Octal450)
 
 var HYDRAULICS = {
-	Failures: {
-		auxPump1: props.globals.getNode("/systems/failures/hydraulics/aux-pump-1"),
-		auxPump2: props.globals.getNode("/systems/failures/hydraulics/aux-pump-2"),
-		catastrophicAft: props.globals.getNode("/systems/failures/hydraulics/catastrophic-aft"),
-		lPump1: props.globals.getNode("/systems/failures/hydraulics/l-pump-1"),
-		lPump2: props.globals.getNode("/systems/failures/hydraulics/l-pump-2"),
-		lPump3: props.globals.getNode("/systems/failures/hydraulics/l-pump-3"),
-		nrmp21: props.globals.getNode("/systems/failures/hydraulics/nrmp-2-1"),
-		nrmp32: props.globals.getNode("/systems/failures/hydraulics/nrmp-3-2"),
-		rPump1: props.globals.getNode("/systems/failures/hydraulics/r-pump-1"),
-		rPump2: props.globals.getNode("/systems/failures/hydraulics/r-pump-2"),
-		rPump3: props.globals.getNode("/systems/failures/hydraulics/r-pump-3"),
-		rmp13: props.globals.getNode("/systems/failures/hydraulics/rmp-1-3"),
-		rmp23: props.globals.getNode("/systems/failures/hydraulics/rmp-2-3"),
-		sys1Leak: props.globals.getNode("/systems/failures/hydraulics/sys-1-leak"),
-		sys2Leak: props.globals.getNode("/systems/failures/hydraulics/sys-2-leak"),
-		sys3Leak: props.globals.getNode("/systems/failures/hydraulics/sys-3-leak"),
-	},
 	Psi: {
 		auxPump1: props.globals.getNode("/systems/hydraulics/aux-pump-1-psi"),
 		auxPump2: props.globals.getNode("/systems/hydraulics/aux-pump-2-psi"),
@@ -56,6 +38,24 @@ var HYDRAULICS = {
 		rPump3: props.globals.getNode("/controls/hydraulics/r-pump-3"),
 		rmp13: props.globals.getNode("/controls/hydraulics/rmp-1-3"),
 		rmp23: props.globals.getNode("/controls/hydraulics/rmp-2-3"),
+	},
+	Failures: {
+		auxPump1: props.globals.getNode("/systems/failures/hydraulics/aux-pump-1"),
+		auxPump2: props.globals.getNode("/systems/failures/hydraulics/aux-pump-2"),
+		catastrophicAft: props.globals.getNode("/systems/failures/hydraulics/catastrophic-aft"),
+		lPump1: props.globals.getNode("/systems/failures/hydraulics/l-pump-1"),
+		lPump2: props.globals.getNode("/systems/failures/hydraulics/l-pump-2"),
+		lPump3: props.globals.getNode("/systems/failures/hydraulics/l-pump-3"),
+		nrmp21: props.globals.getNode("/systems/failures/hydraulics/nrmp-2-1"),
+		nrmp32: props.globals.getNode("/systems/failures/hydraulics/nrmp-3-2"),
+		rPump1: props.globals.getNode("/systems/failures/hydraulics/r-pump-1"),
+		rPump2: props.globals.getNode("/systems/failures/hydraulics/r-pump-2"),
+		rPump3: props.globals.getNode("/systems/failures/hydraulics/r-pump-3"),
+		rmp13: props.globals.getNode("/systems/failures/hydraulics/rmp-1-3"),
+		rmp23: props.globals.getNode("/systems/failures/hydraulics/rmp-2-3"),
+		sys1Leak: props.globals.getNode("/systems/failures/hydraulics/sys-1-leak"),
+		sys2Leak: props.globals.getNode("/systems/failures/hydraulics/sys-2-leak"),
+		sys3Leak: props.globals.getNode("/systems/failures/hydraulics/sys-3-leak"),
 	},
 	init: func() {
 		me.resetFailures();
