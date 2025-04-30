@@ -33,30 +33,13 @@
 	</animation>
 	
 	<animation>
-		<type>material</type>
-		<object-name>Display</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>controls/lighting/capt-digital-norm</factor-prop>
-		</emission>
-	</animation>
-	
-	<animation>
 		<type>select</type>
 		<object-name>Display</object-name>
 		<condition>
-			<and>
-				<equals>
-					<property>instrumentation/hsi[0]/power-avail</property>
-					<value>1</value>
-				</equals>
-				<greater-than>
-					<property>controls/lighting/capt-digital-norm</property>
-					<value>0.01</value>
-				</greater-than>
-			</and>
+			<equals>
+				<property>instrumentation/hsi[0]/power-avail</property>
+				<value>1</value>
+			</equals>
 		</condition>
 	</animation>
 	
