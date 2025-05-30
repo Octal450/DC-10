@@ -1604,16 +1604,27 @@
 			<c1>15</c1>
 		</lag_filter>
 		
-		<switch name="/instrumentation/hsi[1]/indicated-groundspeed">
-			<default value="/velocities/groundspeed-kt"/>
-			<test value="888">
-				/controls/switches/annun-test eq 1
-			</test>
+		<fcs_function name="/instrumentation/hsi[1]/indicated-groundspeed">
+			<function>
+				<ifthen>
+					<eq>
+						<property>/controls/switches/annun-test</property>
+						<value>1</value>
+					</eq>
+					<value>888</value>
+					<floor>
+						<sum>
+							<property>/velocities/groundspeed-kt</property>
+							<value>0.5</value>
+						</sum>
+					</floor>
+				</ifthen>
+			</function>
 			<clipto>
 				<min>0</min>
 				<max>999</max>
 			</clipto>
-		</switch>
+		</fcs_function>
 		
 		<switch name="/instrumentation/hsi[1]/dist-available">
 			<default value="0"/>
@@ -1623,16 +1634,27 @@
 			</test>
 		</switch>
 		
-		<switch name="/instrumentation/hsi[1]/indicated-distance-nm">
-			<default value="/autopilot/route-manager/wp[0]/dist"/>
-			<test value="888">
-				/controls/switches/annun-test eq 1
-			</test>
+		<fcs_function name="/instrumentation/hsi[1]/indicated-distance-nm">
+			<function>
+				<ifthen>
+					<eq>
+						<property>/controls/switches/annun-test</property>
+						<value>1</value>
+					</eq>
+					<value>888</value>
+					<floor>
+						<sum>
+							<property>/autopilot/route-manager/wp[0]/dist</property>
+							<value>0.5</value>
+						</sum>
+					</floor>
+				</ifthen>
+			</function>
 			<clipto>
 				<min>0</min>
 				<max>999</max>
 			</clipto>
-		</switch>
+		</fcs_function>
 	
 	</channel>
 	
