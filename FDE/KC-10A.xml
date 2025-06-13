@@ -2,7 +2,7 @@
 
 <!-- Copyright (c) 2025 Josh Davidson (Octal450) -->
 
-<fdm_config name="KC-10A-GE" version="2.0" release="BETA">
+<fdm_config name="KC-10A" version="2.0" release="BETA">
 	
 	<fileheader>
 		<author>Josh Davidson (Octal450)</author>
