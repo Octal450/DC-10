@@ -996,7 +996,7 @@
 		</switch>
 		
 		<actuator name="/systems/gear/unit[0]/pos-actuator">
-			<input>/controls/gear/lever</input>
+			<input>/systems/gear/cmd</input>
 			<rate_limit sense="incr">/systems/gear/unit[0]/rate-incr</rate_limit>
 			<rate_limit sense="decr">/systems/gear/unit[0]/rate-decr</rate_limit>
 			<output>gear/unit[0]/pos-norm</output>
@@ -1039,7 +1039,7 @@
 		</switch>
 		
 		<actuator name="/systems/gear/unit[1]/pos-actuator">
-			<input>/controls/gear/lever</input>
+			<input>/systems/gear/cmd</input>
 			<rate_limit sense="incr">/systems/gear/unit[1]/rate-incr</rate_limit>
 			<rate_limit sense="decr">/systems/gear/unit[1]/rate-decr</rate_limit>
 			<output>gear/unit[1]/pos-norm</output>
@@ -1098,7 +1098,7 @@
 		</switch>
 		
 		<actuator name="/systems/gear/unit[2]/pos-actuator">
-			<input>/controls/gear/lever</input>
+			<input>/systems/gear/cmd</input>
 			<rate_limit sense="incr">/systems/gear/unit[2]/rate-incr</rate_limit>
 			<rate_limit sense="decr">/systems/gear/unit[2]/rate-decr</rate_limit>
 			<output>gear/unit[2]/pos-norm</output>
@@ -1157,7 +1157,7 @@
 		</switch>
 		
 		<actuator name="/systems/gear/unit[3]/pos-actuator">
-			<input>/controls/gear/lever-center</input>
+			<input>/systems/gear/cmd</input>
 			<rate_limit sense="incr">/systems/gear/unit[3]/rate-incr</rate_limit>
 			<rate_limit sense="decr">/systems/gear/unit[3]/rate-decr</rate_limit>
 			<output>gear/unit[3]/pos-norm</output>
