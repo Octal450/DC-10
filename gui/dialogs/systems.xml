@@ -949,6 +949,9 @@
 			
 			<group>
 				<layout>hbox</layout>
+				<visible>
+					<not><property>options/series-10</property></not>
+				</visible>
 				
 				<text>
 					<label>Pumps Aux L</label>
@@ -1009,6 +1012,9 @@
 			
 			<group>
 				<layout>hbox</layout>
+				<visible>
+					<not><property>options/series-10</property></not>
+				</visible>
 				
 				<text>
 					<label>Pumps Aux R</label>

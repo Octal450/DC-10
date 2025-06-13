@@ -2,17 +2,17 @@
 
 <!-- Copyright (c) 2025 Josh Davidson (Octal450) -->
 
-<fdm_config name="DC-10-30-GE" version="2.0" release="BETA">
+<fdm_config name="DC-10-10-GE" version="2.0" release="BETA">
 	
 	<fileheader>
 		<author>Josh Davidson (Octal450)</author>
-		<description>DC-10-30 FDE with CF6-50C2 Engines</description>
+		<description>DC-10-10 FDE with CF6-6D Engines</description>
 	</fileheader>
 	
 	<aerodynamics file="FDE/Config/dc-10-aerodynamics.xml"/>
 	<external_reactions file="FDE/Config/dc-10-external-reactions"/>
 	<ground_reactions file="FDE/Config/dc-10-ground-reactions"/>
-	<mass_balance file="FDE/Config/dc-10-mass-balance"/>
+	<mass_balance file="FDE/Config/dc-10-10-mass-balance"/>
 	<metrics file="FDE/Config/dc-10-metrics"/>
 	
 	<system file="dc-10-libraries"/>
@@ -23,7 +23,7 @@
 	<system file="dc-10-fcs"/>
 	<system file="dc-10-spoiler"/>
 	<system file="dc-10-ignition"/>
-	<system file="dc-10-ge-50c2-engine-thrlim"/>
+	<system file="dc-10-ge-6d-engine-thrlim"/>
 	<system file="dc-10-apu"/>
 	<system file="dc-10-misc"/>
 	<system file="dc-10-performance"/>
@@ -31,7 +31,7 @@
 	<system file="dc-10-instrumentation"/>
 	
 	<propulsion>
-		<engine file="cf6-50c2_1">
+		<engine file="cf6-6d_1">
 			<feed>7</feed>
 			<thruster file="direct">
 				<location unit="M">
@@ -47,7 +47,7 @@
 			</thruster>
 		</engine>
 		
-		<engine file="cf6-50c2_2">
+		<engine file="cf6-6d_2">
 			<feed>8</feed>
 			<thruster file="direct">
 				<location unit="M">
@@ -63,7 +63,7 @@
 			</thruster>
 		</engine>
 		
-		<engine file="cf6-50c2_3">
+		<engine file="cf6-6d_3">
 			<feed>9</feed>
 			<thruster file="direct">
 				<location unit="M">
@@ -161,26 +161,26 @@
 			<type>JET-A1</type>
 			<temperature>50</temperature>
 		</tank>
-		<tank type="FUEL"> <!-- Upper Aux Tank -->
+		<tank type="FUEL"> <!-- Unused -->
 			<location unit="M">
 				<x>1.59574</x>
 				<y>0</y>
 				<z>5.09697</z>
 			</location>
-			<capacity unit="LBS">70951</capacity>
+			<capacity unit="LBS">1</capacity>
 			<contents unit="LBS">0</contents>
 			<standpipe unit="LBS">43</standpipe>
 			<priority>1</priority>
 			<type>JET-A1</type>
 			<temperature>50</temperature>
 		</tank>
-		<tank type="FUEL"> <!-- Lower Aux Tank -->
+		<tank type="FUEL"> <!-- Unused -->
 			<location unit="M">
 				<x>1.59574</x>
 				<y>0</y>
 				<z>4.18259</z>
 			</location>
-			<capacity unit="LBS">11001</capacity>
+			<capacity unit="LBS">1</capacity>
 			<contents unit="LBS">0</contents>
 			<standpipe unit="LBS">43</standpipe>
 			<priority>1</priority>

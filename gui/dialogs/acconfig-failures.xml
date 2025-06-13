@@ -521,6 +521,9 @@
 			</checkbox>
 			
 			<checkbox>
+				<visible>
+					<not><property>options/series-10</property></not>
+				</visible>
 				<label>Aux Tank L Trans</label>
 				<halign>left</halign>
 				<property>/systems/failures/fuel/pumps-aux-l</property>
@@ -531,6 +534,9 @@
 			</checkbox>
 			
 			<checkbox>
+				<visible>
+					<not><property>options/series-10</property></not>
+				</visible>
 				<label>Aux Tank R Trans</label>
 				<halign>left</halign>
 				<property>/systems/failures/fuel/pumps-aux-r</property>

@@ -208,6 +208,18 @@
 			</expression>
 		</input>
 		<input>
+			<condition>
+				<property>/options/series-10</property>
+			</condition>
+			<expression>
+				<table>
+					<property>/engines/engine[0]/n1-actual</property>
+					<entry><ind> 22.6</ind><dep>0</dep></entry>
+					<entry><ind>111.0</ind><dep>1</dep></entry>
+				</table>
+			</expression>
+		</input>
+		<input>
 			<expression>
 				<table>
 					<property>/engines/engine[0]/n1-actual</property>
@@ -239,6 +251,18 @@
 			</expression>
 		</input>
 		<input>
+			<condition>
+				<property>/options/series-10</property>
+			</condition>
+			<expression>
+				<table>
+					<property>/engines/engine[1]/n1-actual</property>
+					<entry><ind> 22.6</ind><dep>0</dep></entry>
+					<entry><ind>111.0</ind><dep>1</dep></entry>
+				</table>
+			</expression>
+		</input>
+		<input>
 			<expression>
 				<table>
 					<property>/engines/engine[1]/n1-actual</property>
@@ -266,6 +290,18 @@
 					<property>/engines/engine[2]/n1-actual</property>
 					<entry><ind> 24.7</ind><dep>0</dep></entry>
 					<entry><ind>105.0</ind><dep>1</dep></entry>
+				</table>
+			</expression>
+		</input>
+		<input>
+			<condition>
+				<property>/options/series-10</property>
+			</condition>
+			<expression>
+				<table>
+					<property>/engines/engine[2]/n1-actual</property>
+					<entry><ind> 22.6</ind><dep>0</dep></entry>
+					<entry><ind>111.0</ind><dep>1</dep></entry>
 				</table>
 			</expression>
 		</input>

@@ -4,10 +4,14 @@ MATERIAL "gear_text" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 64  trans
 MATERIAL "Material.014" rgb 0.8 0.8 0.8  amb 0.8 0.8 0.8  emis 0.8 0.8 0.8  spec 0 0 0  shi 20.2105  trans 0
 MATERIAL "DefaultWhite.011" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 20.8842  trans 0
 OBJECT world
-kids 50
+kids 48
+OBJECT group
+name "CenterGearLights"
+loc -3.05608 0.97672 -0.253056
+kids 3
 OBJECT poly
 name "Cube.200"
-loc -3.06394 0.950207 -0.252312
+loc -0.00786328 -0.026513 0.000743657
 data 18
 EXT_P.btn.007.mesh
 texture "buttons.jpg"
@@ -276,6 +280,44 @@ refs 4
 35 0.001735 0.001844
 36 0.001735 0.02928
 31 0.001735 0.02928
+kids 0
+OBJECT poly
+name "lg.ctr.green"
+loc 0.00407672 0.0169889 -0.00219634
+texture "dashboard_text.png"
+crease 45.000000
+numvert 4
+-0.00242257 -0.0435532 -0.00374174
+-0.00242257 -0.0435532 0.00962353
+-0.00141644 -0.0495765 -0.00374174
+-0.00141644 -0.0495765 0.00962353
+numsurf 1
+SURF 0x30
+mat 2
+refs 4
+0 0.275039 0.435355
+1 0.216986 0.435355
+3 0.216986 0.413064
+2 0.275039 0.413064
+kids 0
+OBJECT poly
+name "lg.ctr.red"
+loc 0.0037868 0.00952405 0.00145265
+texture "dashboard_text.png"
+crease 45.000000
+numvert 4
+-0.0036087 -0.0268375 -0.00863123
+-0.0036087 -0.0268375 0.00721359
+-0.00241423 -0.0339777 -0.00863123
+-0.00241423 -0.0339777 0.00721359
+numsurf 1
+SURF 0x30
+mat 2
+refs 4
+0 0.362931 0.438032
+1 0.296096 0.438032
+3 0.296096 0.412369
+2 0.362931 0.412369
 kids 0
 OBJECT poly
 name "Cube.200"
@@ -1092,44 +1134,6 @@ refs 4
 1 0.060831 0.060942
 5 0.062315 0.062427
 4 0.000251 0.062427
-kids 0
-OBJECT poly
-name "lg.ctr.green"
-loc -3.052 0.993709 -0.255252
-texture "dashboard_text.png"
-crease 45.000000
-numvert 4
--0.00242257 -0.0435533 -0.00374174
--0.00242257 -0.0435533 0.00962353
--0.00141644 -0.0495765 -0.00374174
--0.00141644 -0.0495765 0.00962353
-numsurf 1
-SURF 0x30
-mat 2
-refs 4
-0 0.275039 0.435355
-1 0.216986 0.435355
-3 0.216986 0.413064
-2 0.275039 0.413064
-kids 0
-OBJECT poly
-name "lg.ctr.red"
-loc -3.05229 0.986244 -0.251603
-texture "dashboard_text.png"
-crease 45.000000
-numvert 4
--0.0036087 -0.0268374 -0.00863123
--0.0036087 -0.0268374 0.00721359
--0.00241423 -0.0339777 -0.00863123
--0.00241423 -0.0339777 0.00721359
-numsurf 1
-SURF 0x30
-mat 2
-refs 4
-0 0.362931 0.438032
-1 0.296096 0.438032
-3 0.296096 0.412369
-2 0.362931 0.412369
 kids 0
 OBJECT poly
 name "lg.left.green"

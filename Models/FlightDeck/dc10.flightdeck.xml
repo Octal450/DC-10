@@ -260,12 +260,34 @@
 	</model>
 	
 	<model>
-		<path>Aircraft/DC-10/Models/Instruments/Engines/enginesGE.xml</path>
+		<path>Aircraft/DC-10/Models/Instruments/Engines/engines6D.xml</path>
 		<condition>
-			<equals>
-				<property>options/eng</property>
-				<value>GE</value>
-			</equals>
+			<and>
+				<property>options/series-10</property>
+				<equals>
+					<property>options/eng</property>
+					<value>GE</value>
+				</equals>
+			</and>
+		</condition>
+		<offsets>
+			<x-m>-3.044</x-m>
+			<y-m>-0.005</y-m>
+			<z-m>0.857</z-m>
+			<pitch-deg>-10</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/DC-10/Models/Instruments/Engines/engines50C2.xml</path>
+		<condition>
+			<and>
+				<not><property>options/series-10</property></not>
+				<equals>
+					<property>options/eng</property>
+					<value>GE</value>
+				</equals>
+			</and>
 		</condition>
 		<offsets>
 			<x-m>-3.044</x-m>
@@ -1272,6 +1294,14 @@
 					<value>1</value>
 				</equals>
 			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>CenterGearLights</object-name>
+		<condition>
+			<not><property>options/series-10</property></not>
 		</condition>
 	</animation>
 	

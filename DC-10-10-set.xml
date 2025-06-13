@@ -5,8 +5,8 @@
 <PropertyList include="DC-10-main.xml">
 	
     <sim>
-		<aero>FDE/DC-10-30</aero>
-		<description>McDonnell Douglas DC-10-30 (CF6-50C)</description>
+		<aero>FDE/DC-10-10</aero>
+		<description>McDonnell Douglas DC-10-10 (CF6-6D)</description>
 		<flight-model>jsb</flight-model>
 		<model n="0">
 			<armrest type="double">0</armrest>
@@ -25,7 +25,7 @@
 			<livery>
 				<file type="string">White</file>
 			</livery>
-			<path>Aircraft/DC-10/Models/DC-10-30.xml</path>
+			<path>Aircraft/DC-10/Models/DC-10-10.xml</path>
 			<yoke n="0">
 				<texture type="string">res/yoke.png</texture>
 			</yoke>
@@ -43,7 +43,7 @@
 		</sound>
 		<systems n="0">
 			<autopilot n="6">
-				<path>Aircraft/DC-10/Sounds/cf650-sound-control.xml</path>
+				<path>Aircraft/DC-10/Sounds/cf66-sound-control.xml</path>
 			</autopilot>
 		</systems>
     </sim>
@@ -55,8 +55,8 @@
 			<tank n="2"><name>Tank 2</name></tank>
 			<tank n="3"><name>Tank 3 Inboard</name></tank>
 			<tank n="4"><name>Tank 3 Outboard</name></tank>
-			<tank n="5"><name>Upper Aux Tank</name></tank>
-			<tank n="6"><name>Lower Aux Tank</name></tank>
+			<tank n="5"><name>Not Installed</name></tank>
+			<tank n="6"><name>Not Installed</name></tank>
 			<tank n="7"><name>Engine 1 Pipe</name></tank>
 			<tank n="8"><name>Engine 2 Pipe</name></tank>
 			<tank n="9"><name>Engine 3 Pipe</name></tank>
@@ -74,16 +74,16 @@
 	
 	<limits>
 		<mass-and-balance> <!-- Data source: TCDS -->
-			<maximum-takeoff-mass-lbs>593000</maximum-takeoff-mass-lbs>
-			<maximum-landing-mass-lbs>411000</maximum-landing-mass-lbs>
-			<maximum-zero-fuel-mass-lbs>368000</maximum-zero-fuel-mass-lbs>
+			<maximum-takeoff-mass-lbs>440000</maximum-takeoff-mass-lbs>
+			<maximum-landing-mass-lbs>363500</maximum-landing-mass-lbs>
+			<maximum-zero-fuel-mass-lbs>335000</maximum-zero-fuel-mass-lbs>
 		</mass-and-balance>
 	</limits>
 	
 	<options n="0">
 		<eng type="string">GE</eng>
 		<eng-int type="int">0</eng-int>
-		<series-10 type="bool">0</series-10>
+		<series-10 type="bool">1</series-10>
 	</options>
 	
 	<payload n="0">
@@ -133,7 +133,7 @@
     
 	<nasal n="0">
 		<setup>
-			<script>aircraft.livery.init("Aircraft/DC-10/Models/Liveries/DC-10-30");</script>
+			<script>aircraft.livery.init("Aircraft/DC-10/Models/Liveries/DC-10-10");</script>
 		</setup>
 	</nasal>
 

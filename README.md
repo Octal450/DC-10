@@ -2,6 +2,7 @@
 This is a simulation of the McDonnell Douglas DC-10 for FlightGear. It is on hold in the very early stage of development due to needing a complete 3D modelling overhaul, which I am not able to do.
 
 Present pack includes the following McDonnell Douglas DC-10 variants:
+- DC-10-10 (GE CF6-6D)
 - DC-10-30 (GE CF6-50C2)
 - DC-10-30F (GE CF6-50C2)
 - DC-10-40 (PW JT9D-59A)

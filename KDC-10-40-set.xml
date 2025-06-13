@@ -61,6 +61,22 @@
 		<variant-of>KC-10A</variant-of>
     </sim>
 	
+	<consumables n="0">
+		<fuel>
+			<tank n="0"><name>Tank 1 Outboard</name></tank>
+			<tank n="1"><name>Tank 1 Inboard</name></tank>
+			<tank n="2"><name>Tank 2</name></tank>
+			<tank n="3"><name>Tank 3 Inboard</name></tank>
+			<tank n="4"><name>Tank 3 Outboard</name></tank>
+			<tank n="5"><name>Upper Aux Tank</name></tank>
+			<tank n="6"><name>Lower Aux Tank</name></tank>
+			<tank n="7"><name>Engine 1 Pipe</name></tank>
+			<tank n="8"><name>Engine 2 Pipe</name></tank>
+			<tank n="9"><name>Engine 3 Pipe</name></tank>
+			<tank n="10"><name>APU Pipe</name></tank>
+		</fuel>
+	</consumables>
+	
 	<fdm n="0">
 		<jsbsim n="0">
 			<inertia n="0">
@@ -82,6 +98,7 @@
 		<drogues-shown type="bool">0</drogues-shown>
 		<eng type="string">PW</eng>
 		<eng-int type="int">1</eng-int>
+		<series-10 type="bool">0</series-10>
 	</options>
 	
 	<payload n="0">
