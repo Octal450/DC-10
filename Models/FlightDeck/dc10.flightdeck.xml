@@ -1049,7 +1049,7 @@
 			</binding>
 			<binding>
 				<command>property-assign</command>
-				<property>/controls/cockpit/flaps-lever-translate-cmd</property>
+				<property>controls/cockpit/flaps-lever-translate-cmd</property>
 				<value>1</value>
 			</binding>
 		</increase>
@@ -1060,14 +1060,14 @@
 			</binding>
 			<binding>
 				<command>property-assign</command>
-				<property>/controls/cockpit/flaps-lever-translate-cmd</property>
+				<property>controls/cockpit/flaps-lever-translate-cmd</property>
 				<value>1</value>
 			</binding>
 		</decrease>
 		<release>
 			<binding>
 				<command>property-assign</command>
-				<property>/controls/cockpit/flaps-lever-translate-cmd</property>
+				<property>controls/cockpit/flaps-lever-translate-cmd</property>
 				<value>0</value>
 			</binding>
 		</release>
@@ -1077,7 +1077,7 @@
 		<type>rotate</type>
 		<object-name>FlapLever</object-name>
 		<object-name>SlatLever</object-name>
-		<property>/controls/cockpit/flaps-lever-rotate</property>
+		<property>controls/cockpit/flaps-lever-rotate</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-28.0</dep></entry>
 			<entry><ind>1</ind><dep>-15.0</dep></entry>
@@ -1101,7 +1101,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>FlapLever</object-name>
-		<property>/controls/cockpit/flaps-lever-translate</property>
+		<property>controls/cockpit/flaps-lever-translate</property>
 		<factor>0.01</factor>
 		<axis>
 			<x>0</x>
