@@ -304,42 +304,6 @@
 			</volume>
 		</touch>
 		
-		<touch>
-			<name>dc10 xtouch n</name>
-			<mode>once</mode>
-			<path>FL2070/11_touch_OUTf.wav</path>
-			<property>gear/gear[0]/wow</property>
-			
-			<volume>
-				<property>sim/sound/other/outside</property>
-				<factor>50</factor>
-			</volume>
-		</touch>
-		
-		<touch>
-			<name>dc10 xtouch l</name>
-			<mode>once</mode>
-			<path>FL2070/11_touch_OUT.wav</path>
-			<property>gear/gear[1]/wow</property>
-			
-			<volume>
-				<property>sim/sound/other/outside</property>
-				<factor>50</factor>
-			</volume>
-		</touch>
-		
-		<touch>
-			<name>dc10 xtouch r</name>
-			<mode>once</mode>
-			<path>FL2070/11_touch_OUT.wav</path>
-			<property>gear/gear[2]/wow</property>
-			
-			<volume>
-				<property>sim/sound/other/outside</property>
-				<factor>50</factor>
-			</volume>
-		</touch>
-		
 		<!-- Custom CAWS -->
 	    <caws>
 			<name>2500</name>
