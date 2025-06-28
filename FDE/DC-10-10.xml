@@ -21,7 +21,7 @@
 	<system file="dc-10-hydraulics"/>
 	<system file="dc-10-fcc"/>
 	<system file="dc-10-fcs"/>
-	<system file="dc-10-spoiler"/>
+	<system file="dc-10-spoilers"/>
 	<system file="dc-10-ignition"/>
 	<system file="dc-10-ge-6d-engine-thrlim"/>
 	<system file="dc-10-apu"/>
