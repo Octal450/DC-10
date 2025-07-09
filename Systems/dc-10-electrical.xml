@@ -1602,8 +1602,9 @@
 		<!-- Left Emergency DC Bus Remote Circuit Breaker -->
 		<switch name="/systems/electrical/rcb/dc-bat-l-emer-dc/command-pos">
 			<default value="0"/>
-			<test value="1"> <!-- ON -->
+			<test logic="AND" value="1">
 				/controls/electrical/emer-pwr eq 1
+				/systems/electrical/bus/dc-bat-direct-regulator ge 24
 			</test>
 		</switch>
 		
@@ -1678,8 +1679,9 @@
 		
 		<switch name="/systems/electrical/relay/si-l-emer-ac/command-pos">
 			<default value="0"/>
-			<test value="1"> <!-- ON -->
+			<test logic="AND" value="1">
 				/controls/electrical/emer-pwr eq 1
+				/systems/electrical/bus/dc-bat-direct-regulator ge 24
 			</test>
 		</switch>
 		
