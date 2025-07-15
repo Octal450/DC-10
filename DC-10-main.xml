@@ -159,14 +159,14 @@
 						<label>Auto Flight and FCC</label>
 						<binding>
 							<command>open-browser</command>
-							<path>Aircraft/DC-10/Docs/Auto_Flight_and_FCC.pdf</path>
+							<path>https://github.com/Octal450/FlightGear-Aircraft-Documentation/blob/master/DC-10/Auto_Flight_and_FCC.pdf</path>
 						</binding>
 					</item>
 					<item>
 						<label>Thrust Limits and TCI</label>
 						<binding>
 							<command>open-browser</command>
-							<path>Aircraft/DC-10/Docs/Thrust_Limits_and_TCI.pdf</path>
+							<path>https://github.com/Octal450/FlightGear-Aircraft-Documentation/blob/master/DC-10/Thrust_Limits_and_TCI.pdf</path>
 						</binding>
 					</item>
 				</menu>
