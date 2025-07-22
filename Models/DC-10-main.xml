@@ -260,7 +260,7 @@
 	<!-- Nav Lights -->
 	<model>
 		<name>NavLightLFwd</name>
-		<path>Aircraft/MD-11/Models/Effects/Lights/rednav.xml</path>
+		<path>Aircraft/DC-10/Models/Effects/Lights/rednav.xml</path>
 		<offsets>
 			<x-m>12.2421</x-m>
 			<y-m>-24.86</y-m>
@@ -312,7 +312,7 @@
 	
 	<model>
 		<name>NavLightRFwd</name>
-		<path>Aircraft/MD-11/Models/Effects/Lights/greennav.xml</path>
+		<path>Aircraft/DC-10/Models/Effects/Lights/greennav.xml</path>
 		<offsets>
 			<x-m>12.2421</x-m>
 			<y-m>24.86</y-m>
@@ -364,7 +364,7 @@
 	
 	<model>
 		<name>NavLightLAft</name>
-		<path>Aircraft/MD-11/Models/Effects/Lights/rearnav.xml</path>
+		<path>Aircraft/DC-10/Models/Effects/Lights/rearnav.xml</path>
 		<offsets>
 			<x-m>15.077</x-m>
 			<y-m>-24.83</y-m>
@@ -416,7 +416,7 @@
 	
 	<model>
 		<name>NavLightRAftCompositor</name>
-		<path>Aircraft/MD-11/Models/Effects/Lights/rearnav.xml</path>
+		<path>Aircraft/DC-10/Models/Effects/Lights/rearnav.xml</path>
 		<offsets>
 			<x-m>15.077</x-m>
 			<y-m>24.83</y-m>
@@ -469,7 +469,7 @@
 	<!-- Strobe Lights -->
 	<model>
 		<name>StrobeLightLFwd</name>
-		<path>Aircraft/MD-11/Models/Effects/Lights/strobe-left.xml</path>
+		<path>Aircraft/DC-10/Models/Effects/Lights/strobe-left.xml</path>
 		<offsets>
 			<x-m>12.2421</x-m>
 			<y-m>-24.86</y-m>
@@ -521,7 +521,7 @@
 	
 	<model>
 		<name>StrobeLightRFwd</name>
-		<path>Aircraft/MD-11/Models/Effects/Lights/strobe-right.xml</path>
+		<path>Aircraft/DC-10/Models/Effects/Lights/strobe-right.xml</path>
 		<offsets>
 			<x-m>12.2421</x-m>
 			<y-m>24.86</y-m>
@@ -573,7 +573,7 @@
 	
 	<model>
 		<name>StrobeLightLAft</name>
-		<path>Aircraft/MD-11/Models/Effects/Lights/strobe-aft.xml</path>
+		<path>Aircraft/DC-10/Models/Effects/Lights/strobe-aft.xml</path>
 		<offsets>
 			<x-m>15.077</x-m>
 			<y-m>-24.83</y-m>
@@ -625,7 +625,7 @@
 	
 	<model>
 		<name>StrobeLightRAft</name>
-		<path>Aircraft/MD-11/Models/Effects/Lights/strobe-aft.xml</path>
+		<path>Aircraft/DC-10/Models/Effects/Lights/strobe-aft.xml</path>
 		<offsets>
 			<x-m>15.077</x-m>
 			<y-m>24.83</y-m>
@@ -678,7 +678,7 @@
 	<!-- Beacon -->
 	<model>
 		<name>TopBeacon</name>
-		<path>Aircraft/MD-11/Models/Effects/Lights/beacon.xml</path>
+		<path>Aircraft/DC-10/Models/Effects/Lights/beacon.xml</path>
 		<offsets>
 			<x-m>-4.1455</x-m>
 			<y-m>0</y-m>
@@ -723,7 +723,7 @@
 	
 	<model>
 		<name>BottomBeacon</name>
-		<path>Aircraft/MD-11/Models/Effects/Lights/beacon.xml</path>
+		<path>Aircraft/DC-10/Models/Effects/Lights/beacon.xml</path>
 		<offsets>
 			<x-m>14.2979</x-m>
 			<y-m>0</y-m>
