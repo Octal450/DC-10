@@ -470,7 +470,7 @@
 				<roll-offset-deg archive="y">0</roll-offset-deg>
 			</config>
 		</view>
-    </sim>
+	</sim>
 	
 	<controls n="0">
 		<apu n="0">

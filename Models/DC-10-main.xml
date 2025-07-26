@@ -300,7 +300,7 @@
 			<b>0.0</b>
 			<a>1.0</a>
 		</specular>
-	    <attenuation>
+		<attenuation>
 			<c>1.0</c>
 			<l>0.09</l>
 			<q>0.032</q>
@@ -352,7 +352,7 @@
 			<b>0.0</b>
 			<a>1.0</a>
 		</specular>
-	    <attenuation>
+		<attenuation>
 			<c>1.0</c>
 			<l>0.09</l>
 			<q>0.032</q>
@@ -404,7 +404,7 @@
 			<b>1.0</b>
 			<a>1.0</a>
 		</specular>
-	    <attenuation>
+		<attenuation>
 			<c>1.0</c>
 			<l>0.09</l>
 			<q>0.032</q>
@@ -456,7 +456,7 @@
 			<b>1.0</b>
 			<a>1.0</a>
 		</specular>
-	    <attenuation>
+		<attenuation>
 			<c>1.0</c>
 			<l>0.09</l>
 			<q>0.032</q>
@@ -509,7 +509,7 @@
 			<b>0.98</b>
 			<a>1.0</a>
 		</specular>
-	    <attenuation>
+		<attenuation>
 			<c>1.0</c>
 			<l>0.09</l>
 			<q>0.032</q>
@@ -561,7 +561,7 @@
 			<b>0.98</b>
 			<a>1.0</a>
 		</specular>
-	    <attenuation>
+		<attenuation>
 			<c>1.0</c>
 			<l>0.09</l>
 			<q>0.032</q>
@@ -613,7 +613,7 @@
 			<b>0.98</b>
 			<a>1.0</a>
 		</specular>
-	    <attenuation>
+		<attenuation>
 			<c>1.0</c>
 			<l>0.09</l>
 			<q>0.032</q>
@@ -665,7 +665,7 @@
 			<b>0.98</b>
 			<a>1.0</a>
 		</specular>
-	    <attenuation>
+		<attenuation>
 			<c>1.0</c>
 			<l>0.09</l>
 			<q>0.032</q>
@@ -799,7 +799,7 @@
 			<b>0.98</b>
 			<a>1.0</a>
 		</specular>
-	    <attenuation>
+		<attenuation>
 			<c>1.0</c>
 			<l>0.09</l>
 			<q>0.03</q>
@@ -841,7 +841,7 @@
 			<b>0.98</b>
 			<a>1.0</a>
 		</specular>
-	    <attenuation>
+		<attenuation>
 			<c>1.0</c>
 			<l>0.09</l>
 			<q>0.03</q>
