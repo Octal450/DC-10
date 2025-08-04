@@ -3,4 +3,5 @@
 
 var FCS = {
 	slatsCmd: props.globals.getNode("/systems/fcs/slats/cmd"),
+	speedbrakeInhibit: props.globals.getNode("/systems/fcs/spoilers/speedbrake-inhibit"),
 };
