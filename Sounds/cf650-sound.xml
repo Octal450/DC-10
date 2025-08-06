@@ -15,9 +15,9 @@
 			<offset>0</offset>
 		</pitch>
 		<position>
-			<x>00</x>
+			<x>0.0</x>
 			<y>20</y>
-			<z>00</z>
+			<z>0.0</z>
 		</position>
 	</engine>
 	
@@ -35,7 +35,7 @@
 		</pitch>
 		<position>
 			<x>0.0</x>
-			<y>-20</y>
+			<y>0.0</y>
 			<z>0.0</z>
 		</position>
 	</engine>
