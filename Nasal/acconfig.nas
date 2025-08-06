@@ -343,11 +343,15 @@ var PANEL = {
 				systems.FUEL.Controls.pump3Aft.setBoolValue(1);
 				systems.FUEL.Controls.pump3Fwd.setBoolValue(1);
 				
-				fgcommand("dialog-close", props.Node.new({"dialog-name": "acconfig-psload"}));
-				spinningT.stop();
-				fgcommand("dialog-show", props.Node.new({"dialog-name": "acconfig-psloaded"}));
-				SYSTEM.autoConfigRunning.setBoolValue(0);
-				me.stop = 1;
+				settimer(func() { # Give things a moment to settle
+					if (!me.stop) {
+						fgcommand("dialog-close", props.Node.new({"dialog-name": "acconfig-psload"}));
+						spinningT.stop();
+						fgcommand("dialog-show", props.Node.new({"dialog-name": "acconfig-psloaded"}));
+						SYSTEM.autoConfigRunning.setBoolValue(0);
+						me.stop = 1;
+					}
+				}, 1);
 			}
 		});
 	},
