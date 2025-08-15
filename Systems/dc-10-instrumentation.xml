@@ -1821,7 +1821,7 @@
 	
 	</channel>
 	
-	<channel name="Fuel/GW Gauge" execrate="4">
+	<channel name="Fuel/GW Gauge" execrate="2">
 		
 		<switch name="/instrumentation/fuel-gw/power-avail">
 			<default value="0"/>
@@ -1892,7 +1892,7 @@
 	
 	</channel>
 	
-	<channel name="EPR Gauges" execrate="4">
+	<channel name="EPR Gauges" execrate="2">
 		
 		<!-- EPR Gauge 1 -->
 		<switch name="/instrumentation/epr[0]/power-avail">
@@ -2154,7 +2154,7 @@
 	
 	</channel>
 	
-	<channel name="N1/N2 Gauges" execrate="4">
+	<channel name="N1/N2 Gauges" execrate="2">
 		
 		<!-- N1/N2 Gauge 1 -->
 		<switch name="/instrumentation/n[0]/power-avail">
@@ -2572,7 +2572,7 @@
 	
 	</channel>
 	
-	<channel name="EGT Gauges" execrate="4">
+	<channel name="EGT Gauges" execrate="2">
 		
 		<!-- EGT Gauge 1 -->
 		<switch name="/instrumentation/egt[0]/power-avail">
@@ -2783,7 +2783,7 @@
 	
 	</channel>
 	
-	<channel name="FF Gauges" execrate="4">
+	<channel name="FF Gauges" execrate="2">
 		
 		<!-- FF Gauge 1 -->
 		<switch name="/instrumentation/ff[0]/power-avail">
@@ -2940,7 +2940,7 @@
 	
 	</channel>
 	
-	<channel name="TCI and Assumed Temp" execrate="4">
+	<channel name="TCI and Assumed Temp" execrate="2">
 		
 		<switch name="/instrumentation/tci/power-avail">
 			<default value="0"/>
@@ -3302,7 +3302,7 @@
 	
 	</channel>
 	
-	<channel name="TAS SAT" execrate="4">
+	<channel name="TAS SAT" execrate="2">
 		
 		<switch name="/instrumentation/tas-sat/power-avail">
 			<default value="0"/>
@@ -3443,7 +3443,7 @@
 	
 	</channel>
 	
-	<channel name="Flap Slat" execrate="4">
+	<channel name="Flap Slat" execrate="2">
 		
 		<switch name="/instrumentation/flap-slat/power-avail">
 			<default value="0"/>
@@ -3496,7 +3496,7 @@
 	
 	</channel>
 	
-	<channel name="Radios" execrate="4">
+	<channel name="Radios" execrate="2">
 		
 		<!-- NAV -->
 		<pure_gain name="/instrumentation/nav[0]/frequencies/selected-mhz-fmt-x100">
