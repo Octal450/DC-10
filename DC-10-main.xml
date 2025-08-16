@@ -1212,7 +1212,7 @@
 				<standby-mhz type="double">121.4</standby-mhz>
 			</frequencies>
 			<serviceable type="bool">true</serviceable>
-			<volume type="double">0</volume>
+			<volume type="double">0.1</volume>
 		</comm>
 		<comm n="1">
 			<frequencies n="0">
