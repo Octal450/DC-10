@@ -6,6 +6,9 @@
 		<name>dc10_a1s</name>
 		<mode>looped</mode>
 		<path>FL2070/abn1strt.wav</path>
+		<condition>
+			<not><property>sim/sound/unused</property></not>
+		</condition>
 		<volume>
 			<property>sim/sound/eng/a1strt</property>
 			<offset>0</offset>
@@ -25,6 +28,9 @@
 		<name>dc10_b1s</name>
 		<mode>looped</mode>
 		<path>FL2070/abn1strt.wav</path>
+		<condition>
+			<not><property>sim/sound/unused</property></not>
+		</condition>
 		<volume>
 			<property>sim/sound/eng/b1strt</property>
 			<offset>0</offset>
@@ -44,6 +50,9 @@
 		<name>dc10_c1s</name>
 		<mode>looped</mode>
 		<path>FL2070/abn1strt.wav</path>
+		<condition>
+			<not><property>sim/sound/unused</property></not>
+		</condition>
 		<volume>
 			<property>sim/sound/eng/c1strt</property>
 			<offset>0</offset>
@@ -70,10 +79,6 @@
 		<path>FL2070/mdn11.wav</path>
 		<condition>
 			<property>sim/sound/internal</property>
-			<less-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-2</value>
-			</less-than>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/a11</property>
@@ -96,10 +101,6 @@
 		<path>FL2070/mdn12.wav</path>
 		<condition>
 			<property>sim/sound/internal</property>
-			<less-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-2</value>
-			</less-than>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/a12</property>
@@ -122,10 +123,6 @@
 		<path>FL2070/mdn13.wav</path>
 		<condition>
 			<property>sim/sound/internal</property>
-			<less-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-2</value>
-			</less-than>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/a13</property>
@@ -149,10 +146,6 @@
 		<path>FL2070/mdn11.wav</path>
 		<condition>
 			<property>sim/sound/internal</property>
-			<less-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-2</value>
-			</less-than>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/b11</property>
@@ -175,10 +168,6 @@
 		<path>FL2070/mdn12.wav</path>
 		<condition>
 			<property>sim/sound/internal</property>
-			<less-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-2</value>
-			</less-than>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/b12</property>
@@ -201,10 +190,6 @@
 		<path>FL2070/mdn13.wav</path>
 		<condition>
 			<property>sim/sound/internal</property>
-			<less-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-2</value>
-			</less-than>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/b13</property>
@@ -227,10 +212,6 @@
 		<path>FL2070/mdn11.wav</path>
 		<condition>
 			<property>sim/sound/internal</property>
-			<less-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-2</value>
-			</less-than>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/c11</property>
@@ -253,10 +234,6 @@
 		<path>FL2070/mdn12.wav</path>
 		<condition>
 			<property>sim/sound/internal</property>
-			<less-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-2</value>
-			</less-than>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/c12</property>
@@ -279,10 +256,6 @@
 		<path>FL2070/mdn13.wav</path>
 		<condition>
 			<property>sim/sound/internal</property>
-			<less-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-2</value>
-			</less-than>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/c13</property>
@@ -314,11 +287,7 @@
 		<mode>looped</mode>
 		<path>FL2070/axx21.wav</path>
 		<condition>
-			<property>sim/sound/internal</property>
-			<greater-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-1.9</value>
-			</greater-than>
+			<not><property>sim/sound/internal</property></not>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/a11</property>
@@ -340,11 +309,7 @@
 		<mode>looped</mode>
 		<path>FL2070/axx22.wav</path>
 		<condition>
-			<property>sim/sound/internal</property>
-			<greater-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-1.9</value>
-			</greater-than>
+			<not><property>sim/sound/internal</property></not>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/a12</property>
@@ -366,11 +331,7 @@
 		<mode>looped</mode>
 		<path>FL2070/axx23.wav</path>
 		<condition>
-			<property>sim/sound/internal</property>
-			<greater-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-1.9</value>
-			</greater-than>
+			<not><property>sim/sound/internal</property></not>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/a13</property>
@@ -394,11 +355,7 @@
 		<mode>looped</mode>
 		<path>FL2070/axx21.wav</path>
 		<condition>
-			<property>sim/sound/internal</property>
-			<greater-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-1.9</value>
-			</greater-than>
+			<not><property>sim/sound/internal</property></not>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/b11</property>
@@ -420,11 +377,7 @@
 		<mode>looped</mode>
 		<path>FL2070/axx22.wav</path>
 		<condition>
-			<property>sim/sound/internal</property>
-			<greater-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-1.9</value>
-			</greater-than>
+			<not><property>sim/sound/internal</property></not>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/b12</property>
@@ -446,11 +399,7 @@
 		<mode>looped</mode>
 		<path>FL2070/axx23.wav</path>
 		<condition>
-			<property>sim/sound/internal</property>
-			<greater-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-1.9</value>
-			</greater-than>
+			<not><property>sim/sound/internal</property></not>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/b13</property>
@@ -472,11 +421,7 @@
 		<mode>looped</mode>
 		<path>FL2070/axx21.wav</path>
 		<condition>
-			<property>sim/sound/internal</property>
-			<greater-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-1.9</value>
-			</greater-than>
+			<not><property>sim/sound/internal</property></not>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/c11</property>
@@ -498,11 +443,7 @@
 		<mode>looped</mode>
 		<path>FL2070/axx22.wav</path>
 		<condition>
-			<property>sim/sound/internal</property>
-			<greater-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-1.9</value>
-			</greater-than>
+			<not><property>sim/sound/internal</property></not>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/c12</property>
@@ -524,11 +465,7 @@
 		<mode>looped</mode>
 		<path>FL2070/axx23.wav</path>
 		<condition>
-			<property>sim/sound/internal</property>
-			<greater-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-1.9</value>
-			</greater-than>
+			<not><property>sim/sound/internal</property></not>
 		</condition>
 		<volume>
 			<property>sim/sound/eng/c13</property>
