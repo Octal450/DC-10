@@ -23,7 +23,7 @@
 				<max>
 					<property>/systems/fcc/speeds/vmin</property>
 					<difference>
-						<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+						<property>/it-autoflight/internal/athr-kts-input-lag</property>
 						<value>25</value>
 					</difference>
 				</max>
@@ -34,7 +34,7 @@
 				<min>
 					<property>/systems/fcc/speeds/vmax</property>
 					<sum>
-						<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+						<property>/it-autoflight/internal/athr-kts-input-lag</property>
 						<value>25</value>
 					</sum>
 				</min>
