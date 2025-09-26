@@ -1,6 +1,6 @@
 {
   "damage": {
-    "version": "1.4.13",
+    "version": "1.4.14",
     "path": "Nasal/Damage/damage.nas"
   },
   "armament-notification": {
