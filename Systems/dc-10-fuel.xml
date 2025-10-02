@@ -541,12 +541,12 @@
 			<test logic="AND" value="63">
 				/systems/fuel/trans-aux-lower-l eq 1
 				propulsion/tank[6]/contents-lbs gt 10
-				propulsion/tank[5]/contents-lbs lt 70940
+				propulsion/tank[5]/contents-lbs lt 87101
 			</test>
 			<test logic="AND" value="63">
 				/systems/fuel/trans-aux-lower-r eq 1
 				propulsion/tank[6]/contents-lbs gt 10
-				propulsion/tank[5]/contents-lbs lt 70940
+				propulsion/tank[5]/contents-lbs lt 87101
 			</test>
 		</switch>
 		
@@ -569,7 +569,7 @@
 			<default value="0"/>
 			<test logic="AND" value="18">
 				/systems/fuel/internal/aux-tank-upper-tank-1-inner-cmd eq 1
-				propulsion/tank[1]/contents-lbs lt 33980
+				propulsion/tank[1]/contents-lbs lt 33693
 			</test>
 		</switch>
 		
@@ -591,7 +591,7 @@
 			<default value="0"/>
 			<test logic="AND" value="18">
 				/systems/fuel/internal/aux-tank-upper-tank-2-cmd eq 1
-				propulsion/tank[2]/contents-lbs lt 54680
+				propulsion/tank[2]/contents-lbs lt 64959
 			</test>
 		</switch>
 		
@@ -613,7 +613,7 @@
 			<default value="0"/>
 			<test logic="AND" value="18">
 				/systems/fuel/internal/aux-tank-upper-tank-3-inner-cmd eq 1
-				propulsion/tank[3]/contents-lbs lt 33980
+				propulsion/tank[3]/contents-lbs lt 33693
 			</test>
 		</switch>
 		
@@ -631,7 +631,7 @@
 			<default value="0"/>
 			<test logic="AND" value="18">
 				/systems/fuel/internal/tank-1-inner-tank-2-cmd eq 1
-				propulsion/tank[2]/contents-lbs lt 64030
+				propulsion/tank[2]/contents-lbs lt 64959
 			</test>
 		</switch>
 		
@@ -648,7 +648,7 @@
 			<default value="0"/>
 			<test logic="AND" value="18">
 				/systems/fuel/internal/tank-1-inner-tank-3-inner-cmd eq 1
-				propulsion/tank[3]/contents-lbs lt 33980
+				propulsion/tank[3]/contents-lbs lt 33693
 			</test>
 		</switch>
 		
@@ -666,7 +666,7 @@
 			<default value="0"/>
 			<test logic="AND" value="18">
 				/systems/fuel/internal/tank-2-tank-1-inner-cmd eq 1
-				propulsion/tank[1]/contents-lbs lt 33980
+				propulsion/tank[1]/contents-lbs lt 33693
 			</test>
 		</switch>
 		
@@ -683,7 +683,7 @@
 			<default value="0"/>
 			<test logic="AND" value="18">
 				/systems/fuel/internal/tank-2-tank-3-inner-cmd eq 1
-				propulsion/tank[3]/contents-lbs lt 33980
+				propulsion/tank[3]/contents-lbs lt 33693
 			</test>
 		</switch>
 		
@@ -701,7 +701,7 @@
 			<default value="0"/>
 			<test logic="AND" value="18">
 				/systems/fuel/internal/tank-3-inner-tank-1-inner-cmd eq 1
-				propulsion/tank[1]/contents-lbs lt 33980
+				propulsion/tank[1]/contents-lbs lt 33693
 			</test>
 		</switch>
 		
@@ -718,7 +718,7 @@
 			<default value="0"/>
 			<test logic="AND" value="18">
 				/systems/fuel/internal/tank-3-inner-tank-2-cmd eq 1
-				propulsion/tank[2]/contents-lbs lt 64030
+				propulsion/tank[2]/contents-lbs lt 64959
 			</test>
 		</switch>
 		
