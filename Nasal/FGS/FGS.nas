@@ -449,6 +449,8 @@ var ITAF = {
 							me.ap2Master(0);
 						}
 					}
+				} else if (Text.lat.getValue() != "ALIGN") { # No vert change
+					me.updateLatText("ALIGN");
 				}
 			}
 			if (Output.latTemp == 2) { # After pitch or else the cockpit indications will be wonky

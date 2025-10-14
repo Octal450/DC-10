@@ -96,7 +96,7 @@ Aircraft Configuration Center:
 Used to load panel states and set ground equipment, as well as configure simulation and aircraft options.
 
 Simulation:
-* Allow Damage: Enables OPRF damage code on the KC-10 and KDC-10-40.
+* Allow OPRF Damage (KC-10 &amp; KDC-10): Enables OPRF damage code on the KC-10 and KDC-10.
 * Keyboard Mode: Maps flight controls to number pad and number rows instead of view shortcuts.
 * Open When FlightGear Starts: Opens the Aircraft Configuration Center automatically when FlightGear starts.
 * Separate Tiller Axis: Separates the tiller from the rudder and maps it to /controls/gear/steering.
