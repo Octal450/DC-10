@@ -7,8 +7,35 @@
 	<filter>
 		<name>A/THR Knots Lag</name>
 		<type>exponential</type>
-		<input>/instrumentation/airspeed-indicator/indicated-speed-kt</input>
+		<input>/it-autoflight/internal/kts-input-avg</input>
 		<output>/it-autoflight/internal/athr-kts-input-lag</output>
+		<filter-time>0.64</filter-time>
+	</filter>
+	
+	<filter>
+		<name>A/THR Knots Rate</name>
+		<type>derivative</type>
+		<input>/it-autoflight/internal/athr-kts-input-lag</input>
+		<output>/it-autoflight/internal/athr-kts-rate-raw</output>
+		<min>-10</min>
+		<max>10</max>
+		<filter-time>1.0</filter-time>
+	</filter>
+	
+	<filter>
+		<name>A/THR Rate Filter</name>
+		<type>exponential</type>
+		<input>
+			<condition>
+				<less-than>
+					<property>/velocities/airspeed-kt</property>
+					<value>1</value>
+				</less-than>
+			</condition>
+			<value>0</value>
+		</input>
+		<input>/it-autoflight/internal/athr-kts-rate-raw</input>
+		<output>/it-autoflight/internal/athr-rate</output>
 		<filter-time>0.04</filter-time>
 	</filter>
 	
@@ -18,43 +45,21 @@
 		<gain>1.0</gain>
 		<input>/it-autoflight/input/kts</input>
 		<output>/it-autoflight/internal/athr-kts-cmd</output>
-		<min>
-			<expression>
-				<max>
-					<property>/systems/fcc/speeds/vmin</property>
-					<difference>
-						<property>/it-autoflight/internal/athr-kts-input-lag</property>
-						<value>25</value>
-					</difference>
-				</max>
-			</expression>
-		</min>
-		<max>
-			<expression>
-				<min>
-					<property>/systems/fcc/speeds/vmax</property>
-					<sum>
-						<property>/it-autoflight/internal/athr-kts-input-lag</property>
-						<value>25</value>
-					</sum>
-				</min>
-			</expression>
-		</max>
+		<min>/systems/fcc/speeds/vmin</min>
+		<max>/systems/fcc/speeds/vmax</max>
 	</filter>
 	
 	<filter>
 		<name>A/THR Knots Input Filter</name>
 		<type>noise-spike</type>
+		<feedback-if-disabled>true</feedback-if-disabled>
 		<initialize-to>output</initialize-to>
 		<input>/it-autoflight/internal/athr-kts-cmd</input>
 		<output>/it-autoflight/internal/athr-kts</output>
 		<max-rate-of-change>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>0</value>
@@ -75,6 +80,65 @@
 	</filter>
 	
 	<filter>
+		<name>A/THR Rate Command</name>
+		<type>gain</type>
+		<gain>
+			<expression>
+				<table> <!-- As thrust decreases with altitude, correction must be less aggressive -->
+					<property>/position/altitude-ft</property>
+					<entry><ind>    0</ind><dep>1.0</dep></entry>
+					<entry><ind>50000</ind><dep>0.7</dep></entry>
+				</table>
+			</expression>
+		</gain>
+		<input>
+			<expression>
+				<product>
+					<difference>
+						<property>/it-autoflight/internal/athr-kts</property>
+						<property>/it-autoflight/internal/kts-asi-lag</property>
+					</difference>
+					<value>0.15</value>
+				</product>
+			</expression>
+		</input>
+		<output>/it-autoflight/internal/athr-rate-cmd-raw</output>
+		<min>-10</min>
+		<max>10</max>
+	</filter>
+	
+	<filter>
+		<name>A/THR Rate Command Filter</name>
+		<type>noise-spike</type>
+		<feedback-if-disabled>true</feedback-if-disabled>
+		<initialize-to>output</initialize-to>
+		<input>/it-autoflight/internal/athr-rate-cmd-raw</input>
+		<output>/it-autoflight/internal/athr-rate-cmd</output>
+		<max-rate-of-change>
+			<condition>
+				<and>
+					<property>/it-autoflight/output/athr-on</property>
+					<equals>
+						<property>/it-autoflight/output/thr-mode</property>
+						<value>0</value>
+					</equals>
+				</and>
+			</condition>
+			<value>3</value>
+		</max-rate-of-change>
+		<max-rate-of-change>100</max-rate-of-change>
+	</filter>
+	
+	<filter>
+		<name>A/THR Rate Error</name>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>/it-autoflight/internal/athr-rate</input>
+		<reference>/it-autoflight/internal/athr-rate-cmd</reference>
+		<output>/it-autoflight/internal/athr-rate-error</output>
+	</filter>
+	
+	<filter>
 		<name>A/THR Max Command</name>
 		<type>gain</type>
 		<gain>1.0</gain>
@@ -91,14 +155,11 @@
 	</filter>
 	
 	<pid-controller>
-		<name>IT-CONTROLLER: Knots</name>
+		<name>IT-CONTROLLER: Speed/Mach</name>
 		<enable>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>0</value>
@@ -106,30 +167,116 @@
 				</and>
 			</condition>
 		</enable>
-		<input>/it-autoflight/internal/athr-kts-input-lag</input>
-		<reference>/it-autoflight/internal/athr-kts</reference>
-		<output>/systems/engines/ats-cmd-raw-pid</output>
+		<input>/it-autoflight/internal/athr-rate-error</input>
+		<reference>0</reference>
+		<output>/it-autoflight/internal/throttle-cmd-raw-pid</output>
 		<config>
-			<Kp>0.055</Kp>
-			<Ti>9.0</Ti>
-			<Td>0.00001</Td>
-			<u_min>/systems/engines/limit/idle-norm</u_min>
-			<u_max>/it-autoflight/internal/ats-max</u_max>
+			<Kp>
+				<expression>
+					<table> <!-- As thrust decreases with altitude, more delta throttle is required -->
+						<property>/position/altitude-ft</property>
+						<entry><ind>    0</ind><dep>0.06</dep></entry>
+						<entry><ind>50000</ind><dep>0.08</dep></entry>
+					</table>
+				</expression>
+			</Kp>
+			<Ti>1.2</Ti>
+			<Td>0.0</Td>
+			<u_min>
+				<expression>
+					<pow>
+						<max>
+							<property>/systems/engines/limit/idle-norm</property>
+							<sum>
+								<property>/it-autoflight/internal/throttle-cmd</property>
+								<value>-0.005</value> <!-- For 60Hz and 0.3/sec -->
+							</sum>
+						</max>
+						<value>1.4</value>
+					</pow>
+				</expression>
+			</u_min>
+			<u_max>
+				<expression>
+					<pow>
+						<min>
+							<property>/it-autoflight/internal/ats-max</property>
+							<sum>
+								<property>/it-autoflight/internal/throttle-cmd</property>
+								<value>0.005</value> <!-- For 60Hz and 0.3/sec -->
+							</sum>
+						</min>
+						<value>1.4</value>
+					</pow>
+				</expression>
+			</u_max>
 		</config>
 	</pid-controller>
 	
 	<filter>
-		<name>Speed Filter</name>
+		<name>Speed/Mach Shaping</name>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<enable>
+			<condition>
+				<and>
+					<property>/it-autoflight/output/athr-on</property>
+					<equals>
+						<property>/it-autoflight/output/thr-mode</property>
+						<value>0</value>
+					</equals>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<expression>
+				<pow>
+					<property>/it-autoflight/internal/throttle-cmd-raw-pid</property>
+					<div>
+						<value>1</value>
+						<value>1.4</value>
+					</div>
+				</pow>
+			</expression>
+		</input>
+		<output>/it-autoflight/internal/throttle-cmd-raw-shape</output>
+	</filter>
+	
+	<filter>
+		<name>Speed/Mach Inactive Sync</name>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<enable>
+			<condition>
+				<or>
+					<not><property>/it-autoflight/output/athr-on</property></not>
+					<not-equals>
+						<property>/it-autoflight/output/thr-mode</property>
+						<value>0</value>
+					</not-equals>
+				</or>
+			</condition>
+		</enable>
+		<input>
+			<expression>
+				<pow>
+					<property>/it-autoflight/internal/throttle-cmd-raw-shape</property>
+					<value>1.4</value>
+				</pow>
+			</expression>
+		</input>
+		<output>/it-autoflight/internal/throttle-cmd-raw-pid</output>
+	</filter>
+	
+	<filter>
+		<name>Speed/Mach Filter</name>
 		<type>noise-spike</type>
 		<feedback-if-disabled>true</feedback-if-disabled>
 		<initialize-to>output</initialize-to>
 		<enable>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>0</value>
@@ -137,8 +284,8 @@
 				</and>
 			</condition>
 		</enable>
-		<input>/systems/engines/ats-cmd-raw-pid</input>
-		<output>/systems/engines/ats-cmd-raw</output>
+		<input>/it-autoflight/internal/throttle-cmd-raw-shape</input>
+		<output>/it-autoflight/internal/throttle-cmd</output>
 		<max-rate-of-change>0.3</max-rate-of-change>
 	</filter>
 	
@@ -149,10 +296,7 @@
 		<enable>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>1</value>
@@ -161,7 +305,7 @@
 			</condition>
 		</enable>
 		<input>0</input>
-		<output>/systems/engines/ats-cmd-raw</output>
+		<output>/it-autoflight/internal/throttle-cmd</output>
 		<max-rate-of-change>
 			<condition>
 				<or>
@@ -187,10 +331,7 @@
 		<enable>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>2</value>
@@ -199,7 +340,7 @@
 			</condition>
 		</enable>
 		<input>/it-autoflight/internal/ats-max</input>
-		<output>/systems/engines/ats-cmd-raw</output>
+		<output>/it-autoflight/internal/throttle-cmd</output>
 		<max-rate-of-change>0.15</max-rate-of-change>
 	</filter>
 	
@@ -337,10 +478,7 @@
 		<enable>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<not-equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>3</value> <!-- Clamp -->
@@ -351,13 +489,13 @@
 		<input>/systems/engines/power-norm[0]</input>
 		<reference>
 			<expression>
-				<min> <!-- For per engine manual EPR limit -->
-					<property>/systems/engines/ats-cmd-raw</property>
+				<min> <!-- For per engine manual N1/EPR limit -->
+					<property>/it-autoflight/internal/throttle-cmd</property>
 					<property>/systems/engines/control-1/ats-max</property>
 				</min>
 			</expression>
 		</reference>
-		<output>/systems/engines/ats-cmd[0]</output>
+		<output>/systems/engines/ats-power-cmd[0]</output>
 		<config>
 			<Kp>0.4</Kp>
 			<Ti>0.8</Ti>
@@ -401,10 +539,7 @@
 		<enable>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<not-equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>3</value> <!-- Clamp -->
@@ -415,13 +550,13 @@
 		<input>/systems/engines/power-norm[1]</input>
 		<reference>
 			<expression>
-				<min> <!-- For per engine manual EPR limit -->
-					<property>/systems/engines/ats-cmd-raw</property>
+				<min> <!-- For per engine manual N1/EPR limit -->
+					<property>/it-autoflight/internal/throttle-cmd</property>
 					<property>/systems/engines/control-2/ats-max</property>
 				</min>
 			</expression>
 		</reference>
-		<output>/systems/engines/ats-cmd[1]</output>
+		<output>/systems/engines/ats-power-cmd[1]</output>
 		<config>
 			<Kp>0.4</Kp>
 			<Ti>0.8</Ti>
@@ -465,10 +600,7 @@
 		<enable>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<not-equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>3</value> <!-- Clamp -->
@@ -480,12 +612,12 @@
 		<reference>
 			<expression>
 				<min> <!-- For per engine manual EPR limit -->
-					<property>/systems/engines/ats-cmd-raw</property>
+					<property>/it-autoflight/internal/throttle-cmd</property>
 					<property>/systems/engines/control-3/ats-max</property>
 				</min>
 			</expression>
 		</reference>
-		<output>/systems/engines/ats-cmd[2]</output>
+		<output>/systems/engines/ats-power-cmd[2]</output>
 		<config>
 			<Kp>0.4</Kp>
 			<Ti>0.8</Ti>
@@ -531,10 +663,7 @@
 		<enable>
 			<condition>
 				<or>
-					<not-equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</not-equals>
+					<not><property>/it-autoflight/output/athr-on</property></not>
 					<equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>3</value> <!-- Clamp -->
@@ -543,10 +672,10 @@
 			</condition>
 		</enable>
 		<input>/systems/engines/throttle-compare-max</input>
-		<output>/systems/engines/ats-cmd[0]</output>
-		<output>/systems/engines/ats-cmd[1]</output>
-		<output>/systems/engines/ats-cmd[2]</output>
-		<output>/systems/engines/ats-cmd-raw</output>
+		<output>/systems/engines/ats-power-cmd[0]</output>
+		<output>/systems/engines/ats-power-cmd[1]</output>
+		<output>/systems/engines/ats-power-cmd[2]</output>
+		<output>/it-autoflight/internal/throttle-cmd</output>
 	</filter>
 	
 	<!-- Engine 1 -->
@@ -557,27 +686,21 @@
 		<input>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<not-equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>3</value> <!-- Clamp -->
 					</not-equals>
 				</and>
 			</condition>
-			<property>/systems/engines/ats-cmd[0]</property>
+			<property>/systems/engines/ats-power-cmd[0]</property>
 		</input>
 		<input>/controls/cockpit/throttle-lever[0]</input>
 		<output>/systems/engines/ats-cmd-1</output>
 		<max-rate-of-change>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<not-equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>3</value> <!-- Clamp -->
@@ -596,10 +719,7 @@
 		<enable>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<not-equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>3</value> <!-- Clamp -->
@@ -619,27 +739,21 @@
 		<input>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<not-equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>3</value> <!-- Clamp -->
 					</not-equals>
 				</and>
 			</condition>
-			<property>/systems/engines/ats-cmd[1]</property>
+			<property>/systems/engines/ats-power-cmd[1]</property>
 		</input>
 		<input>/controls/cockpit/throttle-lever[1]</input>
 		<output>/systems/engines/ats-cmd-2</output>
 		<max-rate-of-change>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<not-equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>3</value> <!-- Clamp -->
@@ -658,10 +772,7 @@
 		<enable>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<not-equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>3</value> <!-- Clamp -->
@@ -681,27 +792,21 @@
 		<input>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<not-equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>3</value> <!-- Clamp -->
 					</not-equals>
 				</and>
 			</condition>
-			<property>/systems/engines/ats-cmd[2]</property>
+			<property>/systems/engines/ats-power-cmd[2]</property>
 		</input>
 		<input>/controls/cockpit/throttle-lever[2]</input>
 		<output>/systems/engines/ats-cmd-3</output>
 		<max-rate-of-change>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<not-equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>3</value> <!-- Clamp -->
@@ -720,10 +825,7 @@
 		<enable>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/output/athr</property>
-						<value>1</value>
-					</equals>
+					<property>/it-autoflight/output/athr-on</property>
 					<not-equals>
 						<property>/it-autoflight/output/thr-mode</property>
 						<value>3</value> <!-- Clamp -->
