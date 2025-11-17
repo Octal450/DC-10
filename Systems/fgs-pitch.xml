@@ -585,10 +585,6 @@
 							<property>/gear/gear[2]/wow</property>
 							<value>0</value>
 						</equals>
-						<not-equals>
-							<property>/it-autoflight/output/vert</property>
-							<value>9</value>
-						</not-equals>
 					</and>
 				</not>
 			</condition>
@@ -600,51 +596,10 @@
 	</filter>
 	
 	<filter>
-		<name>IT-CONTROLLER: Pitch Turbulance</name>
-		<type>noise-spike</type>
-		<input>
-			<condition>
-				<and>
-					<property>/it-autoflight/output/apfd-on</property>
-					<equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>9</value>
-					</equals>
-				</and>
-			</condition>
-			<property>/it-autoflight/input/pitch</property>
-		</input>
-		<input>/orientation/pitch-deg</input>
-		<output>/it-autoflight/internal/target-pitch-hold</output>
-		<max-rate-of-change>
-			<condition>
-				<and>
-					<property>/it-autoflight/output/apfd-on</property>
-					<equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>9</value>
-					</equals>
-				</and>
-			</condition>
-			<value>1.5</value>
-		</max-rate-of-change>
-		<max-rate-of-change>50</max-rate-of-change>
-	</filter>
-	
-	<filter>
 		<name>System Command: Pitch Rate Target</name>
 		<type>gain</type>
 		<gain>-0.5</gain>
 		<input>/orientation/pitch-deg</input>
-		<reference>
-			<condition>
-				<equals>
-					<property>/it-autoflight/output/vert</property>
-					<value>9</value>
-				</equals>
-			</condition>
-			<property>/it-autoflight/internal/target-pitch-hold</property>
-		</reference>
 		<reference>/it-autoflight/internal/target-pitch-deg</reference>
 		<output>/it-autoflight/internal/pitch-rate</output>
 		<min>-1.5</min>
@@ -664,10 +619,6 @@
 							<property>/gear/gear[0]/wow</property>
 							<value>0</value>
 						</equals>
-						<not-equals>
-							<property>/it-autoflight/output/vert</property>
-							<value>9</value>
-						</not-equals>
 					</and>
 				</not>
 			</condition>
@@ -686,10 +637,6 @@
 						<property>/gear/gear[0]/wow</property>
 						<value>0</value>
 					</equals>
-					<not-equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>9</value>
-					</not-equals>
 				</and>
 			</condition>
 		</enable>
@@ -737,13 +684,7 @@
 		<gain>1.0</gain>
 		<enable>
 			<condition>
-				<or>
-					<not><property>/it-autoflight/output/ap-on</property></not>
-					<equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>9</value>
-					</equals>
-				</or>
+				<not><property>/it-autoflight/output/ap-on</property></not>
 			</condition>
 		</enable>
 		<input>/controls/flight/elevator</input>
@@ -756,13 +697,7 @@
 		<initialize-to>output</initialize-to>
 		<enable>
 			<condition>
-				<and>
-					<property>/it-autoflight/output/ap-on</property>
-					<not-equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>9</value>
-					</not-equals>
-				</and>
+				<property>/it-autoflight/output/ap-on</property>
 			</condition>
 		</enable>
 		<input>
