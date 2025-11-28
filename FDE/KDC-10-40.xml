@@ -36,7 +36,7 @@
 			<feed>7</feed>
 			<thruster file="direct">
 				<location unit="M">
-					<x>-5.29297</x>	
+					<x>-5.29297</x>
 					<y>-4.14094</y>
 					<z>3.47943</z>
 				</location>
@@ -52,7 +52,7 @@
 			<feed>8</feed>
 			<thruster file="direct">
 				<location unit="M">
-					<x>20.764</x>	
+					<x>20.764</x>
 					<y>0 </y>
 					<z>10.6498</z>
 				</location>
@@ -68,7 +68,7 @@
 			<feed>9</feed>
 			<thruster file="direct">
 				<location unit="M">
-					<x>-5.29297</x>	
+					<x>-5.29297</x>
 					<y>4.14094</y>
 					<z>3.47943</z>
 				</location>
@@ -84,7 +84,7 @@
 			<feed>10</feed>
 			<thruster file="direct">
 				<location unit="M">
-					<x>20.3934</x>	
+					<x>20.3934</x>
 					<y>0</y>
 					<z>7.95507</z>
 				</location>
