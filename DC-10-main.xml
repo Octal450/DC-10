@@ -534,9 +534,9 @@
 				<man-epr-set type="bool">0</man-epr-set>
 				<man-n1 type="double">110</man-n1>
 				<man-n1-set type="bool">0</man-n1-set>
-				<starter type="bool">0</starter>
 				<start-cmd type="bool">0</start-cmd>
 				<start-switch type="bool">0</start-switch>
+				<starter type="bool">0</starter>
 			</engine>
 			<engine n="1">
 				<cutoff type="bool">1</cutoff>
@@ -545,9 +545,9 @@
 				<man-epr-set type="bool">0</man-epr-set>
 				<man-n1 type="double">110</man-n1>
 				<man-n1-set type="bool">0</man-n1-set>
-				<starter type="bool">0</starter>
 				<start-cmd type="bool">0</start-cmd>
 				<start-switch type="bool">0</start-switch>
+				<starter type="bool">0</starter>
 			</engine>
 			<engine n="2">
 				<cutoff type="bool">1</cutoff>
@@ -556,10 +556,14 @@
 				<man-epr-set type="bool">0</man-epr-set>
 				<man-n1 type="double">110</man-n1>
 				<man-n1-set type="bool">0</man-n1-set>
-				<starter type="bool">0</starter>
 				<start-cmd type="bool">0</start-cmd>
 				<start-switch type="bool">0</start-switch>
-			</engine> 
+				<starter type="bool">0</starter>
+			</engine>
+			<engine n="3"> <!-- APU -->
+				<cutoff type="bool">1</cutoff>
+				<starter type="bool">0</starter>
+			</engine>
 		</engines>
 		<fcc n="0">
 			<flap-limit type="int">0</flap-limit>
