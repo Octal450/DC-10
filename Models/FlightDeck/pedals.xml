@@ -18,6 +18,23 @@
 			<z>0.0</z>
 		</axis>
 	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>pedals.left</object-name>
+		<property>controls/cockpit/brake-pedal-left</property>
+		<factor>-40</factor>
+		<center>
+			<x-m>-27.6379</x-m>
+			<y-m>0</y-m>
+			<z-m>6.45998</z-m>
+		</center>
+		<axis>
+			<x>0</x> 
+			<y>1</y> 
+			<z>0</z> 
+		</axis>
+	</animation>
 
 	<animation>
 		<type>translate</type>
@@ -28,6 +45,23 @@
 			<x>1.0</x>
 			<y>0.0</y>
 			<z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>pedals.right</object-name>
+		<property>controls/cockpit/brake-pedal-right</property>
+		<factor>-40</factor>
+		<center>
+			<x-m>-27.6379</x-m>
+			<y-m>0</y-m>
+			<z-m>6.45998</z-m>
+		</center>
+		<axis>
+			<x>0</x> 
+			<y>1</y> 
+			<z>0</z> 
 		</axis>
 	</animation>
 
