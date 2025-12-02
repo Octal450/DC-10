@@ -650,7 +650,7 @@
 			<default value="0"/>
 			<test logic="OR" value="0">
 				position/wow eq 1
-				/position/gear-agl-ft lt 50
+				position/gear-agl-ft lt 50
 			</test>
 			<test logic="OR" value="1">
 				/systems/fcc/yaw/avail-upper-a eq 1
