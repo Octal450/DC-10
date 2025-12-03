@@ -72,7 +72,7 @@
 			</test>
 		</switch>
 		
-		<fcs_function name="/systems/fcc/cws-roll/p-rad_sec">
+		<fcs_function name="/systems/fcc/cws-roll/phidot-rad_sec">
 			<function>
 				<toradians>
 					<property>/orientation/roll-rate-degps</property>
@@ -885,15 +885,15 @@
 	
 	<channel name="FCC: Roll CWS">
 		
-		<switch name="/systems/fcc/cws-roll/p-switched">
-			<default value="/systems/fcc/cws-roll/p-rad_sec"/>
+		<switch name="/systems/fcc/cws-roll/phidot-switched">
+			<default value="/systems/fcc/cws-roll/phidot-rad_sec"/>
 			<test value="0">
 				gear/unit[0]/WOW eq 1
 			</test>
 		</switch>
 		
-		<lead_lag_filter name="/systems/fcc/cws-roll/p-leadlag">
-			<input>/systems/fcc/cws-roll/p-switched</input>
+		<lead_lag_filter name="/systems/fcc/cws-roll/phidot-leadlag">
+			<input>/systems/fcc/cws-roll/phidot-switched</input>
 			<c1>1.05</c1>
 			<c2>1.0</c2>
 			<c3>0.97</c3>
@@ -952,7 +952,7 @@
 		</pure_gain>
 		
 		<summer name="/systems/fcc/cws-roll/rate-error">
-			<input>/systems/fcc/cws-roll/p-leadlag</input>
+			<input>/systems/fcc/cws-roll/phidot-leadlag</input>
 			<input>-/systems/fcc/cws-roll/rate-demand</input>
 		</summer>
 		
