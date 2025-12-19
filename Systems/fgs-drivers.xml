@@ -536,7 +536,7 @@
 	</filter>
 	
 	<filter>
-		<name>VS Input Slow</name>
+		<name>VS Wheel Input</name>
 		<type>noise-spike</type>
 		<input>
 			<condition>
