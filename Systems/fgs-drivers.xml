@@ -533,6 +533,8 @@
 			</expression>
 		</input>
 		<output>/it-autoflight/input/vs</output>
+		<min>-6000</min>
+		<max>6000</max>
 	</filter>
 	
 	<filter>
