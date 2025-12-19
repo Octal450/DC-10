@@ -533,8 +533,6 @@
 			</expression>
 		</input>
 		<output>/it-autoflight/input/vs</output>
-		<min>-6000</min>
-		<max>6000</max>
 	</filter>
 	
 	<filter>
@@ -549,7 +547,17 @@
 			</condition>
 			<property>/it-autoflight/input/vs-wheel-input</property>
 		</input>
-		<input>/it-autoflight/input/vs</input>
+		<input>
+			<expression>
+				<max>
+					<min>
+						<property>/it-autoflight/input/vs</property>
+						<value>6000</value>
+					</min>
+					<value>-6000</value>
+				</max>
+			</expression>
+		</input>
 		<output>/it-autoflight/input/vs-wheel-input</output>
 		<max-rate-of-change>10000</max-rate-of-change>
 	</filter>
