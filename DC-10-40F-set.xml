@@ -45,7 +45,7 @@
 				<path>Aircraft/DC-10/Sounds/jt9d-sound-control.xml</path>
 			</autopilot>
 		</systems>
-		<variant-of>DC-10-40</variant-of>
+		<variant-of>DC-10-30F</variant-of>
     </sim>
 	
 	<consumables n="0">

@@ -37,7 +37,6 @@
 				<path>gui/splash/dc-10.png</path>
 			</preview>
 		</previews>
-		<primary-set>true</primary-set>
 		<sound n="0">
 			<path>Aircraft/DC-10/Sounds/cf650-sound.xml</path>
 		</sound>
@@ -46,6 +45,7 @@
 				<path>Aircraft/DC-10/Sounds/cf66-sound-control.xml</path>
 			</autopilot>
 		</systems>
+		<variant-of>DC-10-30</variant-of>
     </sim>
 	
 	<consumables n="0">
