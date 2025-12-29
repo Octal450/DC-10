@@ -83,8 +83,13 @@ var UpdateFma = {
 			Fma.pitchA.setValue("ALT");
 			Fma.pitchB.setValue("CAP");
 		} else if (me.vertText == "V/S") {
-			Fma.pitchA.setValue("VERT");
-			Fma.pitchB.setValue("SPD");
+			if (Internal.vsAltActive.getBoolValue()) {
+				Fma.pitchA.setValue("ALT");
+				Fma.pitchB.setValue("HOLD");
+			} else {
+				Fma.pitchA.setValue("VERT");
+				Fma.pitchB.setValue("SPD");
+			}
 		} else if (me.vertText == "G/S") {
 			Fma.pitchA.setValue("G/S");
 			me.gsUpdate();

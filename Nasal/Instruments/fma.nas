@@ -55,13 +55,8 @@ var canvasBase = {
 		
 		if (systems.ELECTRICAL.Outputs.fma[n].getValue() >= 24) {
 			for (var w = 0; w <= 3; w = w + 1) {
-				if (w == 3 and fgs.Output.vert.getValue() == 1 and abs(fgs.Input.vs.getValue()) < 50) {
-					Value.line1[w] = "ALT";
-					Value.line2[w] = "HOLD";
-				} else {
-					Value.line1[w] = Modes.line1[w].getValue();
-					Value.line2[w] = Modes.line2[w].getValue();
-				}
+				Value.line1[w] = Modes.line1[w].getValue();
+				Value.line2[w] = Modes.line2[w].getValue();
 			}
 			
 			if (Value.atsOn) {

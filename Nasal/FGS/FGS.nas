@@ -166,6 +166,7 @@ var Internal = {
 	takeoffLvl: props.globals.initNode("/it-autoflight/internal/takeoff-lvl", 1, "BOOL"),
 	togaKts: props.globals.initNode("/it-autoflight/internal/toga-kts", 150, "INT"),
 	vs: props.globals.initNode("/it-autoflight/internal/vert-speed-fpm", 0, "DOUBLE"),
+	vsAltActive: props.globals.initNode("/it-autoflight/internal/vs-alt-active", 0, "BOOL"),
 	vsTemp: 0,
 };
 
@@ -1080,6 +1081,11 @@ var ITAF = {
 		Input.autoLand.setBoolValue(n);
 		UpdateFma.arm();
 	},
+	updateVsAlt: func() {
+		if (Output.vert.getValue() == 1) {
+			UpdateFma.vert();
+		}
+	},
 };
 
 setlistener("/it-autoflight/input/ap1", func() {
@@ -1182,6 +1188,10 @@ setlistener("/it-autoflight/input/lat", func() {
 setlistener("/it-autoflight/input/vert", func() {
 	ITAF.setVertMode(Input.vert.getValue());
 });
+
+setlistener("/it-autoflight/internal/vs-alt-active", func() {
+	ITAF.updateVsAlt();
+}, 0, 0);
 
 # Warning Logic
 var killApWarn = func() {
