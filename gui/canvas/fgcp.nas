@@ -1,5 +1,5 @@
 # McDonnell Douglas DC-10 FGCP Dialog
-# Copyright (c) 2025 Josh Davidson (Octal450)
+# Copyright (c) 2026 Josh Davidson (Octal450)
 
 var fgcpCanvas = {
 	new: func() {

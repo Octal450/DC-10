@@ -1,5 +1,5 @@
 # McDonnell Douglas DC-10 Engines
-# Copyright (c) 2025 Josh Davidson (Octal450)
+# Copyright (c) 2026 Josh Davidson (Octal450)
 
 var ENGINES = {
 	egt: [props.globals.getNode("/engines/engine[0]/egt-actual"), props.globals.getNode("/engines/engine[1]/egt-actual"), props.globals.getNode("/engines/engine[2]/egt-actual")],

@@ -1,5 +1,5 @@
 # McDonnell Douglas DC-10 FCC
-# Copyright (c) 2025 Josh Davidson (Octal450)
+# Copyright (c) 2026 Josh Davidson (Octal450)
 
 var FCC = {
 	fcc1Power: props.globals.getNode("/systems/fcc/fcc1-power"),
