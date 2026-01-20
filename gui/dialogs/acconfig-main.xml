@@ -92,7 +92,7 @@
 						<dialog-name>acconfig-failures</dialog-name>
 					</binding>
 				</button>
-				<button>
+				<!--button>
 					<halign>center</halign>
 					<legend>DU Framerate</legend>
 					<pref-width>140</pref-width>
@@ -100,7 +100,7 @@
 						<command>dialog-show</command>
 						<dialog-name>acconfig-du-framerate</dialog-name>
 					</binding>
-				</button>
+				</button-->
 			</group>
 			
 			<group>
