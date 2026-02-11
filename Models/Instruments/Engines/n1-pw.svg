@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="n1alt.svg"
+   sodipodi:docname="n1-pw.svg"
    inkscape:export-filename="D:\Aircraft\DC-10\Models\Instruments\Engines\n1-pw-scale.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
@@ -28,16 +28,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="217.13041"
-     inkscape:cy="329.78575"
+     inkscape:zoom="1"
+     inkscape:cx="132.11686"
+     inkscape:cy="251.63074"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
      inkscape:window-width="1920"
-     inkscape:window-height="1057"
-     inkscape:window-x="1592"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
@@ -134,17 +134,17 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.5px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';fill:#568fbc;fill-opacity:1">%</tspan></text>
     </g>
     <g
-       transform="matrix(1.1614362,0,0,1.16144,10.274155,6.6914268)"
+       transform="matrix(1.1614389,0,0,1.16144,3.7104606,6.6914268)"
        id="g4255">
       <text
          sodipodi:linespacing="125%"
          id="text4353"
          y="829.08948"
          x="196.01071"
-         style="font-style:normal;font-weight:normal;font-size:34.60464859px;line-height:125%;font-family:'Century Gothic';letter-spacing:-1.7220031px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;-inkscape-font-specification:'Century Gothic';font-stretch:normal;font-variant:normal;"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34.60464859px;line-height:125%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';letter-spacing:-1.7220031px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"
          transform="scale(0.9574495,1.0444415)"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:38.93022919px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';letter-spacing:-1.7220031px;fill:#ffffff;"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:38.93022919px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';letter-spacing:-1.7220031px;fill:#ffffff"
            y="829.08948"
            x="196.01071"
            id="tspan4355"
@@ -490,14 +490,6 @@
        inkscape:label="#path4291"
        inkscape:transform-center-x="-197.13592"
        inkscape:transform-center-y="-31.171761" />
-    <rect
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4562"
-       width="280"
-       height="95"
-       x="115.99999"
-       y="874.71118"
-       ry="0" />
     <circle
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path4188"
@@ -510,5 +502,27 @@
        cx="322.11337"
        id="circle4190"
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       ry="0"
+       y="864.36218"
+       x="274"
+       height="129"
+       width="87"
+       id="rect4336"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4562"
+       width="210"
+       height="95"
+       x="151"
+       y="874.71118"
+       ry="0" />
+    <path
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       id="rect4147-8"
+       d="m 381.61909,912.2923 0,19.83689 -19.83709,-9.91845 z"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:8;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>

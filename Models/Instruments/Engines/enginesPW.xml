@@ -1329,10 +1329,10 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>EGT1.hundreds</object-name>
-		<property>instrumentation/egt[0]/egt-digit</property>
-		<factor>0.001</factor>
-		<step>100</step>
-		<scroll>1</scroll>
+		<property>instrumentation/egt[0]/egt-d100</property>
+		<factor>0.0697</factor>
+		<step>1</step>
+		<scroll>0.01</scroll>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1342,10 +1342,10 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>EGT1.tens</object-name>
-		<property>instrumentation/egt[0]/egt-digit</property>
-		<factor>0.01</factor>
-		<step>10</step>
-		<scroll>1</scroll>
+		<property>instrumentation/egt[0]/egt-d10</property>
+		<factor>0.0697</factor>
+		<step>1</step>
+		<scroll>0.1</scroll>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1354,9 +1354,10 @@
 	
 	<animation>
 		<type>textranslate</type>
+		<object-name>EGT1.lines</object-name>
 		<object-name>EGT1.ones</object-name>
-		<property>instrumentation/egt[0]/egt-digit</property>
-		<factor>0.1</factor>
+		<property>instrumentation/egt[0]/egt-d1</property>
+		<factor>0.0697</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1366,10 +1367,10 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>EGT2.hundreds</object-name>
-		<property>instrumentation/egt[1]/egt-digit</property>
-		<factor>0.001</factor>
-		<step>100</step>
-		<scroll>1</scroll>
+		<property>instrumentation/egt[1]/egt-d100</property>
+		<factor>0.0697</factor>
+		<step>1</step>
+		<scroll>0.01</scroll>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1379,10 +1380,10 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>EGT2.tens</object-name>
-		<property>instrumentation/egt[1]/egt-digit</property>
-		<factor>0.01</factor>
-		<step>10</step>
-		<scroll>1</scroll>
+		<property>instrumentation/egt[1]/egt-d10</property>
+		<factor>0.0697</factor>
+		<step>1</step>
+		<scroll>0.1</scroll>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1392,8 +1393,8 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>EGT2.ones</object-name>
-		<property>instrumentation/egt[1]/egt-digit</property>
-		<factor>0.1</factor>
+		<property>instrumentation/egt[1]/egt-d1</property>
+		<factor>0.0697</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1403,10 +1404,10 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>EGT3.hundreds</object-name>
-		<property>instrumentation/egt[2]/egt-digit</property>
-		<factor>0.001</factor>
-		<step>100</step>
-		<scroll>1</scroll>
+		<property>instrumentation/egt[2]/egt-d100</property>
+		<factor>0.0697</factor>
+		<step>1</step>
+		<scroll>0.01</scroll>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1416,10 +1417,10 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>EGT3.tens</object-name>
-		<property>instrumentation/egt[2]/egt-digit</property>
-		<factor>0.01</factor>
-		<step>10</step>
-		<scroll>1</scroll>
+		<property>instrumentation/egt[2]/egt-d10</property>
+		<factor>0.0697</factor>
+		<step>1</step>
+		<scroll>0.1</scroll>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1429,8 +1430,8 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>EGT3.ones</object-name>
-		<property>instrumentation/egt[2]/egt-digit</property>
-		<factor>0.1</factor>
+		<property>instrumentation/egt[2]/egt-d1</property>
+		<factor>0.0697</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1441,10 +1442,10 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>N11.hundreds</object-name>
-		<property>instrumentation/n[0]/n1-digit</property>
-		<factor>0.001</factor>
-		<step>100</step>
-		<scroll>0.1</scroll>
+		<property>instrumentation/n[0]/n1-d100</property>
+		<factor>0.0697</factor>
+		<step>1</step>
+		<scroll>0.01</scroll>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1454,21 +1455,8 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>N11.tens</object-name>
-		<property>instrumentation/n[0]/n1-digit</property>
-		<factor>0.01</factor>
-		<step>10</step>
-		<scroll>0.1</scroll>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-		</axis>
-	</animation>
-	
-	<animation>
-		<type>textranslate</type>
-		<object-name>N11.ones</object-name>
-		<property>instrumentation/n[0]/n1-digit</property>
-		<factor>0.1</factor>
+		<property>instrumentation/n[0]/n1-d10</property>
+		<factor>0.0697</factor>
 		<step>1</step>
 		<scroll>0.1</scroll>
 		<axis>
@@ -1479,9 +1467,10 @@
 	
 	<animation>
 		<type>textranslate</type>
-		<object-name>N11.tenths</object-name>
-		<property>instrumentation/n[0]/n1-digit</property>
-		<factor>1</factor>
+		<object-name>N11.lines</object-name>
+		<object-name>N11.ones</object-name>
+		<property>instrumentation/n[0]/n1-d1</property>
+		<factor>0.0697</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1491,10 +1480,10 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>N12.hundreds</object-name>
-		<property>instrumentation/n[1]/n1-digit</property>
-		<factor>0.001</factor>
-		<step>100</step>
-		<scroll>0.1</scroll>
+		<property>instrumentation/n[1]/n1-d100</property>
+		<factor>0.0697</factor>
+		<step>1</step>
+		<scroll>0.01</scroll>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1504,21 +1493,8 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>N12.tens</object-name>
-		<property>instrumentation/n[1]/n1-digit</property>
-		<factor>0.01</factor>
-		<step>10</step>
-		<scroll>0.1</scroll>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-		</axis>
-	</animation>
-	
-	<animation>
-		<type>textranslate</type>
-		<object-name>N12.ones</object-name>
-		<property>instrumentation/n[1]/n1-digit</property>
-		<factor>0.1</factor>
+		<property>instrumentation/n[1]/n1-d10</property>
+		<factor>0.0697</factor>
 		<step>1</step>
 		<scroll>0.1</scroll>
 		<axis>
@@ -1529,9 +1505,10 @@
 	
 	<animation>
 		<type>textranslate</type>
-		<object-name>N12.tenths</object-name>
-		<property>instrumentation/n[1]/n1-digit</property>
-		<factor>1</factor>
+		<object-name>N12.lines</object-name>
+		<object-name>N12.ones</object-name>
+		<property>instrumentation/n[1]/n1-d1</property>
+		<factor>0.0697</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1541,10 +1518,10 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>N13.hundreds</object-name>
-		<property>instrumentation/n[2]/n1-digit</property>
-		<factor>0.001</factor>
-		<step>100</step>
-		<scroll>0.1</scroll>
+		<property>instrumentation/n[2]/n1-d100</property>
+		<factor>0.0697</factor>
+		<step>1</step>
+		<scroll>0.01</scroll>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1554,21 +1531,8 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>N13.tens</object-name>
-		<property>instrumentation/n[2]/n1-digit</property>
-		<factor>0.01</factor>
-		<step>10</step>
-		<scroll>0.1</scroll>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-		</axis>
-	</animation>
-	
-	<animation>
-		<type>textranslate</type>
-		<object-name>N13.ones</object-name>
-		<property>instrumentation/n[2]/n1-digit</property>
-		<factor>0.1</factor>
+		<property>instrumentation/n[2]/n1-d10</property>
+		<factor>0.0697</factor>
 		<step>1</step>
 		<scroll>0.1</scroll>
 		<axis>
@@ -1579,9 +1543,10 @@
 	
 	<animation>
 		<type>textranslate</type>
-		<object-name>N13.tenths</object-name>
-		<property>instrumentation/n[2]/n1-digit</property>
-		<factor>1</factor>
+		<object-name>N13.lines</object-name>
+		<object-name>N13.ones</object-name>
+		<property>instrumentation/n[2]/n1-d1</property>
+		<factor>0.0697</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>

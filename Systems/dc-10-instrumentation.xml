@@ -1917,7 +1917,7 @@
 		</lag_filter>
 		
 		<pure_gain name="/instrumentation/epr[0]/epr-d100">
-			<input>/instrumentation/epr[0]/epr-input</input>
+			<input>/instrumentation/epr[0]/epr</input>
 			<gain>1.0</gain>
 		</pure_gain>
 		
@@ -1925,9 +1925,9 @@
 			<function>
 				<product>
 					<difference>
-						<property>/instrumentation/epr[0]/epr-input</property>
+						<property>/instrumentation/epr[0]/epr</property>
 						<floor>
-							<property>/instrumentation/epr[0]/epr-input</property>
+							<property>/instrumentation/epr[0]/epr</property>
 						</floor>
 					</difference>
 					<value>10</value>
@@ -1940,7 +1940,7 @@
 				<product>
 					<fraction>
 						<product>
-							<property>/instrumentation/epr[0]/epr-input</property>
+							<property>/instrumentation/epr[0]/epr</property>
 							<value>10</value>
 						</product>
 					</fraction>
@@ -2003,7 +2003,7 @@
 		</lag_filter>
 		
 		<pure_gain name="/instrumentation/epr[1]/epr-d100">
-			<input>/instrumentation/epr[1]/epr-input</input>
+			<input>/instrumentation/epr[1]/epr</input>
 			<gain>1.0</gain>
 		</pure_gain>
 		
@@ -2011,9 +2011,9 @@
 			<function>
 				<product>
 					<difference>
-						<property>/instrumentation/epr[1]/epr-input</property>
+						<property>/instrumentation/epr[1]/epr</property>
 						<floor>
-							<property>/instrumentation/epr[1]/epr-input</property>
+							<property>/instrumentation/epr[1]/epr</property>
 						</floor>
 					</difference>
 					<value>10</value>
@@ -2026,7 +2026,7 @@
 				<product>
 					<fraction>
 						<product>
-							<property>/instrumentation/epr[1]/epr-input</property>
+							<property>/instrumentation/epr[1]/epr</property>
 							<value>10</value>
 						</product>
 					</fraction>
@@ -2089,7 +2089,7 @@
 		</lag_filter>
 		
 		<pure_gain name="/instrumentation/epr[2]/epr-d100">
-			<input>/instrumentation/epr[2]/epr-input</input>
+			<input>/instrumentation/epr[2]/epr</input>
 			<gain>1.0</gain>
 		</pure_gain>
 		
@@ -2097,9 +2097,9 @@
 			<function>
 				<product>
 					<difference>
-						<property>/instrumentation/epr[2]/epr-input</property>
+						<property>/instrumentation/epr[2]/epr</property>
 						<floor>
-							<property>/instrumentation/epr[2]/epr-input</property>
+							<property>/instrumentation/epr[2]/epr</property>
 						</floor>
 					</difference>
 					<value>10</value>
@@ -2112,7 +2112,7 @@
 				<product>
 					<fraction>
 						<product>
-							<property>/instrumentation/epr[2]/epr-input</property>
+							<property>/instrumentation/epr[2]/epr</property>
 							<value>10</value>
 						</product>
 					</fraction>
@@ -2199,6 +2199,48 @@
 			<input>/instrumentation/n[0]/n1-round</input>
 			<c1>15</c1>
 		</lag_filter>
+		
+		<fcs_function name="/instrumentation/n[0]/n1-d100">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/n[0]/n1</property>
+							<value>1000</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/instrumentation/n[0]/n1-d10">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/n[0]/n1</property>
+							<value>100</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/instrumentation/n[0]/n1-d1">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/n[0]/n1</property>
+							<value>10</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
 		
 		<lag_filter name="/instrumentation/n[0]/n1-cmd-digit">
 			<input>/controls/engines/engine[0]/man-n1</input>
@@ -2338,6 +2380,48 @@
 			<c1>15</c1>
 		</lag_filter>
 		
+		<fcs_function name="/instrumentation/n[1]/n1-d100">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/n[1]/n1</property>
+							<value>1000</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/instrumentation/n[1]/n1-d10">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/n[1]/n1</property>
+							<value>100</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/instrumentation/n[1]/n1-d1">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/n[1]/n1</property>
+							<value>10</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
 		<lag_filter name="/instrumentation/n[1]/n1-cmd-digit">
 			<input>/controls/engines/engine[1]/man-n1</input>
 			<c1>20</c1>
@@ -2475,6 +2559,48 @@
 			<input>/instrumentation/n[2]/n1-round</input>
 			<c1>15</c1>
 		</lag_filter>
+		
+		<fcs_function name="/instrumentation/n[2]/n1-d100">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/n[2]/n1</property>
+							<value>1000</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/instrumentation/n[2]/n1-d10">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/n[2]/n1</property>
+							<value>100</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/instrumentation/n[2]/n1-d1">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/n[2]/n1</property>
+							<value>10</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
 		
 		<lag_filter name="/instrumentation/n[2]/n1-cmd-digit">
 			<input>/controls/engines/engine[2]/man-n1</input>
@@ -2616,6 +2742,48 @@
 			<c1>15</c1>
 		</lag_filter>
 		
+		<fcs_function name="/instrumentation/egt[0]/egt-d100">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/egt[0]/egt</property>
+							<value>1000</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/instrumentation/egt[0]/egt-d10">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/egt[0]/egt</property>
+							<value>100</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/instrumentation/egt[0]/egt-d1">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/egt[0]/egt</property>
+							<value>10</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
 		<switch name="/instrumentation/egt[0]/alert">
 			<default value="0"/>
 			<test logic="AND" value="1">
@@ -2685,6 +2853,48 @@
 			<c1>15</c1>
 		</lag_filter>
 		
+		<fcs_function name="/instrumentation/egt[1]/egt-d100">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/egt[1]/egt</property>
+							<value>1000</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/instrumentation/egt[1]/egt-d10">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/egt[1]/egt</property>
+							<value>100</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/instrumentation/egt[1]/egt-d1">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/egt[1]/egt</property>
+							<value>10</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
 		<switch name="/instrumentation/egt[1]/alert">
 			<default value="0"/>
 			<test logic="AND" value="1">
@@ -2753,6 +2963,48 @@
 			<input>/instrumentation/egt[2]/egt-round</input>
 			<c1>15</c1>
 		</lag_filter>
+		
+		<fcs_function name="/instrumentation/egt[2]/egt-d100">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/egt[2]/egt</property>
+							<value>1000</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/instrumentation/egt[2]/egt-d10">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/egt[2]/egt</property>
+							<value>100</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/instrumentation/egt[2]/egt-d1">
+			<function>
+				<product>
+					<fraction>
+						<quotient>
+							<property>/instrumentation/egt[2]/egt</property>
+							<value>10</value>
+						</quotient>
+					</fraction>
+					<value>10</value>
+				</product>
+			</function>
+		</fcs_function>
 		
 		<switch name="/instrumentation/egt[2]/alert">
 			<default value="0"/>

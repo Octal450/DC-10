@@ -28,18 +28,22 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="304.96154"
-     inkscape:cy="197.06017"
+     inkscape:zoom="4"
+     inkscape:cx="210.89251"
+     inkscape:cy="103.17762"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
      inkscape:window-width="1920"
-     inkscape:window-height="1057"
-     inkscape:window-x="1592"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4183" />
+  </sodipodi:namedview>
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -101,17 +105,17 @@
          y="675.74335"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.45589447px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';fill:#568fbc;fill-opacity:1">°C X 100</tspan></text>
     <text
-       transform="scale(0.95744795,1.0444432)"
+       transform="scale(0.95745077,1.0444401)"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40.19115829px;line-height:125%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';letter-spacing:-2px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="226.2912"
-       y="969.34277"
+       x="199.57904"
+       y="969.34564"
        id="text4353"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4355"
-         x="226.2912"
-         y="969.34277"
+         x="199.57904"
+         y="969.34564"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:45.21504974px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';letter-spacing:-2px;fill:#ffffff">EGT </tspan></text>
     <text
        sodipodi:linespacing="125%"
@@ -359,6 +363,20 @@
        cy="797.36218"
        cx="322.11337"
        id="circle4190"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       id="rect4147-8"
+       d="m 381.61909,912.2923 0,19.83689 -19.83709,-9.91845 z"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:8;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       ry="0"
+       y="864.36218"
+       x="274"
+       height="129"
+       width="87"
+       id="rect4336"
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>
