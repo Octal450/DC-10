@@ -75,7 +75,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>libraries.Sound.switch1();</script>
+				<script>core.Sound.switch1();</script>
 			</binding>
 		</action>
 	</animation>
@@ -114,7 +114,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>libraries.Sound.switch1();</script>
+				<script>core.Sound.switch1();</script>
 			</binding>
 		</action>
 	</animation>
@@ -130,7 +130,7 @@
 				<command>nasal</command>
 				<script>
 					cockpit.ApPanel.turb();
-					libraries.Sound.btn1();
+					core.Sound.btn1();
 				</script>
 			</binding>
 			<binding>
@@ -169,7 +169,7 @@
 				<command>nasal</command>
 				<script>
 					cockpit.ApPanel.turb();
-					libraries.Sound.btn1();
+					core.Sound.btn1();
 				</script>
 			</binding>
 			<binding>
@@ -233,7 +233,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>libraries.Sound.switch1();</script>
+				<script>core.Sound.switch1();</script>
 			</binding>
 		</action>
 	</animation>
@@ -273,7 +273,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>libraries.Sound.switch1();</script>
+				<script>core.Sound.switch1();</script>
 			</binding>
 		</action>
 	</animation>
@@ -529,7 +529,7 @@
 				<command>nasal</command>
 				<script>
 					cockpit.ApPanel.eprN1();
-					libraries.Sound.btn1();
+					core.Sound.btn1();
 				</script>
 			</binding>
 			<binding>
@@ -594,7 +594,7 @@
 			</mod-up>
 			<binding>
 				<command>nasal</command>
-				<script>libraries.Sound.switch1();</script>
+				<script>core.Sound.switch1();</script>
 			</binding>
 		</action>
 	</animation>
@@ -944,7 +944,7 @@
 				<command>nasal</command>
 				<script>
 					cockpit.ApPanel.fms();
-					libraries.Sound.btn1();
+					core.Sound.btn1();
 				</script>
 			</binding>
 			<binding>
@@ -983,7 +983,7 @@
 				<command>nasal</command>
 				<script>
 					cockpit.ApPanel.vorLoc();
-					libraries.Sound.btn1();
+					core.Sound.btn1();
 				</script>
 			</binding>
 			<binding>
@@ -1022,7 +1022,7 @@
 				<command>nasal</command>
 				<script>
 					cockpit.ApPanel.ils();
-					libraries.Sound.btn1();
+					core.Sound.btn1();
 				</script>
 			</binding>
 			<binding>
@@ -1310,7 +1310,7 @@
 				<command>nasal</command>
 				<script>
 					cockpit.ApPanel.reset();
-					libraries.Sound.btn1();
+					core.Sound.btn1();
 				</script>
 			</binding>
 			<binding>
@@ -1349,7 +1349,7 @@
 				<command>nasal</command>
 				<script>
 					cockpit.ApPanel.ias();
-					libraries.Sound.btn1();
+					core.Sound.btn1();
 				</script>
 			</binding>
 			<binding>
@@ -1388,7 +1388,7 @@
 				<command>nasal</command>
 				<script>
 					cockpit.ApPanel.mach();
-					libraries.Sound.btn1();
+					core.Sound.btn1();
 				</script>
 			</binding>
 			<binding>
@@ -1427,7 +1427,7 @@
 				<command>nasal</command>
 				<script>
 					cockpit.ApPanel.land();
-					libraries.Sound.btn1();
+					core.Sound.btn1();
 				</script>
 			</binding>
 			<binding>
@@ -1468,7 +1468,7 @@
 				<command>nasal</command>
 				<script>
 					cockpit.ApPanel.apFgs1(1);
-					libraries.Sound.switch1();
+					core.Sound.switch1();
 				</script>
 			</binding>
 			<binding>
@@ -1498,7 +1498,7 @@
 				<command>nasal</command>
 				<script>
 					cockpit.ApPanel.apFgs1(-1);
-					libraries.Sound.switch1();
+					core.Sound.switch1();
 				</script>
 			</binding>
 			<binding>
@@ -1531,7 +1531,7 @@
 				<command>nasal</command>
 				<script>
 					cockpit.ApPanel.apFgs2(1);
-					libraries.Sound.switch1();
+					core.Sound.switch1();
 				</script>
 			</binding>
 			<binding>
@@ -1561,7 +1561,7 @@
 				<command>nasal</command>
 				<script>
 					cockpit.ApPanel.apFgs2(-1);
-					libraries.Sound.switch1();
+					core.Sound.switch1();
 				</script>
 			</binding>
 			<binding>

@@ -67,7 +67,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>libraries.Sound.btn1();</script>
+				<script>core.Sound.btn1();</script>
 			</binding>
 			<mod-up>
 				<binding>
@@ -102,7 +102,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>libraries.Sound.btn1();</script>
+				<script>core.Sound.btn1();</script>
 			</binding>
 			<mod-up>
 				<binding>
@@ -137,7 +137,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>libraries.Sound.btn1();</script>
+				<script>core.Sound.btn1();</script>
 			</binding>
 			<mod-up>
 				<binding>
@@ -172,7 +172,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>libraries.Sound.btn1();</script>
+				<script>core.Sound.btn1();</script>
 			</binding>
 			<mod-up>
 				<binding>
@@ -207,7 +207,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>libraries.Sound.btn1();</script>
+				<script>core.Sound.btn1();</script>
 			</binding>
 			<mod-up>
 				<binding>
@@ -242,7 +242,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>libraries.Sound.btn1();</script>
+				<script>core.Sound.btn1();</script>
 			</binding>
 			<mod-up>
 				<binding>

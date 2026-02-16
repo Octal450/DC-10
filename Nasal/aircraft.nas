@@ -1,4 +1,4 @@
-# McDonnell Douglas DC-10 Main Libraries
+# McDonnell Douglas DC-10 Aircraft Core
 # Copyright (c) 2026 Josh Davidson (Octal450)
 
 print("------------------------------------------------");

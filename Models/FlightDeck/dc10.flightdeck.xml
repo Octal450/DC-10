@@ -723,14 +723,14 @@
 			<button>3</button>
 			<binding>
 				<command>nasal</command>
-				<script>libraries.retractSpeedbrake();</script>
+				<script>core.retractSpeedbrake();</script>
 			</binding>
 		</action>
 		<action>
 			<button>4</button>
 			<binding>
 				<command>nasal</command>
-				<script>libraries.deploySpeedbrake();</script>
+				<script>core.deploySpeedbrake();</script>
 			</binding>
 		</action>
 	</animation>

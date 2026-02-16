@@ -15,7 +15,7 @@
 	<mass_balance file="FDE/Config/kc-10-mass-balance"/>
 	<metrics file="FDE/Config/dc-10-metrics"/>
 	
-	<system file="dc-10-libraries"/>
+	<system file="dc-10-core"/>
 	<system file="dc-10-electrical"/>
 	<system file="dc-10-fuel"/>
 	<system file="dc-10-hydraulics"/>

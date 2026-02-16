@@ -97,7 +97,7 @@ var SYSTEM = {
 			me.Error.reason.setValue("FGFS version is too old. Please update FlightGear to at least " ~ CONFIG.minFgfsString ~ ".");
 			me.showError();
 			print("System: FGFS version error");
-		} else if (!libraries.initDone) {
+		} else if (!core.initDone) {
 			me.Error.active.setBoolValue(1);
 			me.Error.reason.setValue("Initialization did not complete successfully. System files may be damaged.");
 			me.showError();
@@ -113,7 +113,7 @@ var SYSTEM = {
 		#systems.PNEUMATICS.resetFailures();
 	},
 	showError: func() {
-		libraries.systemsLoop.stop();
+		core.systemsLoop.stop();
 		#systems.DUController.showError();
 		fgcommand("dialog-close", props.Node.new({"dialog-name": "acconfig-main"}));
 		fgcommand("dialog-close", props.Node.new({"dialog-name": "acconfig-updated"}));
@@ -271,7 +271,7 @@ var PANEL = {
 		fgcommand("dialog-close", props.Node.new({"dialog-name": "acconfig-psloaded"}));
 		fgcommand("dialog-show", props.Node.new({"dialog-name": "acconfig-psload"}));
 		systems.doIdleThrust();
-		libraries.systemsInit();
+		core.systemsInit();
 		pts.Controls.Flight.speedbrake.setValue(0);
 		if (t == 1) {
 			pts.Controls.Flight.elevatorTrim.setValue(math.round(pts.Systems.Performance.stabilizerDeg.getValue(), 0.1) / -15); # Trim value for CG
@@ -360,7 +360,7 @@ var PANEL = {
 		
 		pts.Services.Chocks.enable.setBoolValue(0);
 		systems.ELECTRICAL.Controls.battery.setBoolValue(1);
-		systems.ELECTRICAL.Controls.groundCart.setBoolValue(1); # autoConfigRunning cancels disable check in libraries.nas
+		systems.ELECTRICAL.Controls.groundCart.setBoolValue(1); # autoConfigRunning cancels disable check in core.nas
 		systems.ELECTRICAL.Controls.extPwr.setBoolValue(1);
 		systems.ELECTRICAL.Controls.extGPwr.setBoolValue(1);
 		pts.Controls.Switches.seatbeltSign.setBoolValue(1);
@@ -446,7 +446,7 @@ var spinningT = maketimer(0.05, SYSTEM, SYSTEM.spinning);
 SYSTEM.simInit();
 
 setlistener("/sim/signals/reinit", func(s) {
-	if (!s.getBoolValue() and libraries.initDone) {
+	if (!s.getBoolValue() and core.initDone) {
 		PANEL.coldDark(1);
 	}
 });
