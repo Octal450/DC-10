@@ -1,4 +1,4 @@
-# McDonnell Douglas DC-10 Fuel System
+# McDonnell Douglas DC-10 Fuel
 # Copyright (c) 2026 Josh Davidson (Octal450)
 
 var FUEL = {

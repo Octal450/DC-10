@@ -1,4 +1,4 @@
-# McDonnell Douglas DC-10 Electrical System
+# McDonnell Douglas DC-10 Electrical
 # Copyright (c) 2026 Josh Davidson (Octal450)
 
 var ELECTRICAL = {
