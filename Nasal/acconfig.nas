@@ -318,6 +318,7 @@ var PANEL = {
 		
 		pts.Services.Chocks.enable.setBoolValue(1);
 		systems.ELECTRICAL.Controls.battery.setBoolValue(1);
+		systems.FUEL.Controls.apuStartPump.setBoolValue(1);
 		systems.APU.fastStart();
 		pts.Controls.Lighting.beacon.setBoolValue(1);
 		pts.Controls.Lighting.navLights.setBoolValue(1);
@@ -342,6 +343,7 @@ var PANEL = {
 				systems.FUEL.Controls.pump2Fwd.setBoolValue(1);
 				systems.FUEL.Controls.pump3Aft.setBoolValue(1);
 				systems.FUEL.Controls.pump3Fwd.setBoolValue(1);
+				systems.FUEL.Controls.apuStartPump.setBoolValue(0);
 				
 				settimer(func() { # Give things a moment to settle
 					if (!me.stop) {

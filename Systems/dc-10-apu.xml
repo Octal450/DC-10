@@ -7,13 +7,6 @@
 	
 	<channel name="APU Logic">
 		
-		<switch name="/systems/apu/dc-fuel-pump">
-			<default value="0"/>
-			<test value="1">
-				/controls/apu/master ge 1
-			</test>
-		</switch>
-		
 		<switch name="/systems/apu/throttle-cmd-norm">
 			<default value="0"/> <!-- Idle N1 -->
 			<test value="0"> <!-- Force Idle N1 -->

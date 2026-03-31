@@ -3,6 +3,7 @@
 
 var FUEL = {
 	Controls: {
+		apuStartPump: props.globals.getNode("/controls/fuel/apu-start-pump"),
 		fill1: props.globals.getNode("/controls/fuel/fill-1"),
 		fill2: props.globals.getNode("/controls/fuel/fill-2"),
 		fill3: props.globals.getNode("/controls/fuel/fill-3"),
@@ -23,14 +24,26 @@ var FUEL = {
 		xFeed3: props.globals.getNode("/controls/fuel/x-feed-3"),
 	},
 	Failures: {
-		pumpsAuxL: props.globals.getNode("/systems/failures/fuel/pumps-aux-l"),
-		pumpsAuxR: props.globals.getNode("/systems/failures/fuel/pumps-aux-r"),
-		pumps1: props.globals.getNode("/systems/failures/fuel/pumps-1"),
-		pumps2: props.globals.getNode("/systems/failures/fuel/pumps-2"),
-		pumps3: props.globals.getNode("/systems/failures/fuel/pumps-3"),
+		aftPump1: props.globals.getNode("/systems/failures/fuel/aft-pump-1"),
+		aftPump2L: props.globals.getNode("/systems/failures/fuel/aft-pump-2l"),
+		aftPump2R: props.globals.getNode("/systems/failures/fuel/aft-pump-2r"),
+		aftPump3: props.globals.getNode("/systems/failures/fuel/aft-pump-3"),
+		altPump: props.globals.getNode("/systems/failures/fuel/alt-pump"),
+		apuStartPump: props.globals.getNode("/systems/failures/fuel/apu-start-pump"),
+		fwdPump1: props.globals.getNode("/systems/failures/fuel/fwd-pump-1"),
+		fwdPump2: props.globals.getNode("/systems/failures/fuel/fwd-pump-2"),
+		fwdPump3: props.globals.getNode("/systems/failures/fuel/fwd-pump-3"),
+		trans1: props.globals.getNode("/systems/failures/fuel/trans-1"),
+		trans2: props.globals.getNode("/systems/failures/fuel/trans-2"),
+		trans3: props.globals.getNode("/systems/failures/fuel/trans-3"),
+		transAuxLowerL: props.globals.getNode("/systems/failures/fuel/trans-aux-lower-l"),
+		transAuxLowerR: props.globals.getNode("/systems/failures/fuel/trans-aux-lower-r"),
+		transAuxUpperL: props.globals.getNode("/systems/failures/fuel/trans-aux-upper-l"),
+		transAuxUpperR: props.globals.getNode("/systems/failures/fuel/trans-aux-upper-r"),
 	},
 	init: func() {
 		me.resetFailures();
+		me.Controls.apuStartPump.setBoolValue(0);
 		me.Controls.fill1.setBoolValue(0);
 		me.Controls.fill2.setBoolValue(0);
 		me.Controls.fill3.setBoolValue(0);
@@ -51,10 +64,21 @@ var FUEL = {
 		me.Controls.xFeed3.setBoolValue(0);
 	},
 	resetFailures: func() {
-		me.Failures.pumpsAuxL.setBoolValue(0);
-		me.Failures.pumpsAuxR.setBoolValue(0);
-		me.Failures.pumps1.setBoolValue(0);
-		me.Failures.pumps2.setBoolValue(0);
-		me.Failures.pumps3.setBoolValue(0);
+		me.Failures.aftPump1.setBoolValue(0);
+		me.Failures.aftPump2L.setBoolValue(0);
+		me.Failures.aftPump2R.setBoolValue(0);
+		me.Failures.aftPump3.setBoolValue(0);
+		me.Failures.altPump.setBoolValue(0);
+		me.Failures.apuStartPump.setBoolValue(0);
+		me.Failures.fwdPump1.setBoolValue(0);
+		me.Failures.fwdPump2.setBoolValue(0);
+		me.Failures.fwdPump3.setBoolValue(0);
+		me.Failures.trans1.setBoolValue(0);
+		me.Failures.trans2.setBoolValue(0);
+		me.Failures.trans3.setBoolValue(0);
+		me.Failures.transAuxLowerL.setBoolValue(0);
+		me.Failures.transAuxLowerR.setBoolValue(0);
+		me.Failures.transAuxUpperL.setBoolValue(0);
+		me.Failures.transAuxUpperR.setBoolValue(0);
 	},
 };

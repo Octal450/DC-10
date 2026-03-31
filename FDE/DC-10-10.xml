@@ -161,26 +161,26 @@
 			<type>JET-A1</type>
 			<temperature>50</temperature>
 		</tank>
-		<tank type="FUEL"> <!-- Unused -->
+		<tank type="FUEL"> <!-- Placeholder -->
 			<location unit="M">
 				<x>1.59574</x>
 				<y>0</y>
 				<z>5.09697</z>
 			</location>
-			<capacity unit="LBS">1</capacity>
+			<capacity unit="LBS">0.001</capacity>
 			<contents unit="LBS">0</contents>
 			<standpipe unit="LBS">43</standpipe>
 			<priority>1</priority>
 			<type>JET-A1</type>
 			<temperature>50</temperature>
 		</tank>
-		<tank type="FUEL"> <!-- Unused -->
+		<tank type="FUEL"> <!-- Placeholder -->
 			<location unit="M">
 				<x>1.59574</x>
 				<y>0</y>
 				<z>4.18259</z>
 			</location>
-			<capacity unit="LBS">1</capacity>
+			<capacity unit="LBS">0.001</capacity>
 			<contents unit="LBS">0</contents>
 			<standpipe unit="LBS">43</standpipe>
 			<priority>1</priority>

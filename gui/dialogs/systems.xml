@@ -947,6 +947,16 @@
 				<live>true</live>
 			</checkbox>
 			
+			<checkbox>
+				<label>APU Start Pump</label>
+				<halign>left</halign>
+				<property>/controls/fuel/apu-start-pump</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
 			<group>
 				<layout>hbox</layout>
 				<visible>
