@@ -865,16 +865,13 @@
 					<table>
 						<independentVar lookup="row">velocities/mach</independentVar>
 						<independentVar lookup="column">/systems/fcs/flaps/input</independentVar> <!-- Take advantage of table interpolation, values same -->
-						<independentVar lookup="table">/position/altitude-ft</independentVar>
-						<tableData breakPoint="0">
+						<tableData>
 							      0     1
-							0.21  30.3  30.3
-							0.70  38.1  38.1
-						</tableData>
-						<tableData breakPoint="45000">
-							      0     1
-							0.55  47.3  47.3
-							0.90  53.0  53.0
+							0.08  24.7  24.7
+							0.21  30.4  33.8
+							0.50  36.2  40.7
+							0.70  38.5  42.8
+							0.90  39.7  43.7
 						</tableData>
 					</table>
 					<value>0</value>
