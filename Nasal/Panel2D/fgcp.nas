@@ -39,7 +39,7 @@ var fgcpCanvas = {
 		me._root = me._canvas.createGroup();
 		
 		me._svg = me._root.createChild("group");
-		canvas.parsesvg(me._svg, "Aircraft/DC-10/gui/canvas/fgcp.svg", {"font-mapper": font_mapper});
+		canvas.parsesvg(me._svg, "Aircraft/DC-10/Nasal/Panel2D/fgcp.svg", {"font-mapper": font_mapper});
 		
 		me._svgKeys = me.getKeys();
 		foreach(me._key; me._svgKeys) {

@@ -1666,8 +1666,8 @@
 			<file>Aircraft/DC-10/Nasal/Autopush/route.nas</file>
 		</autopush_route>
 		<panel2d>
-			<file>Aircraft/DC-10/gui/canvas/common.nas</file>
-			<file>Aircraft/DC-10/gui/canvas/fgcp.nas</file>
+			<file>Aircraft/DC-10/Nasal/Panel2D/common.nas</file>
+			<file>Aircraft/DC-10/Nasal/Panel2D/fgcp.nas</file>
 		</panel2d>
 	</nasal>
 
