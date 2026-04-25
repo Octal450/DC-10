@@ -45,7 +45,9 @@ var ApPanel = {
 	vertTemp: 0,
 	vsTemp: 0,
 	apDisc: func() {
-		fgs.killApWarn();
+		if (pts.Systems.Caws.ApOff.hornSilenceEnabled.getBoolValue()) {
+			fgs.killApWarn();
+		}
 		if (fgs.Output.ap1.getBoolValue()) {
 			fgs.ITAF.ap1Master(0);
 		}

@@ -188,6 +188,11 @@ var Sim = {
 };
 
 var Systems = {
+	Caws: {
+		ApOff: {
+			hornSilenceEnabled: props.globals.getNode("/systems/caws/apoff/horn-silence-enabled"),
+		},
+	},
 	Performance: {
 		flapRetract: props.globals.getNode("/systems/performance/flap-retract"),
 		landFlaps: props.globals.getNode("/systems/performance/land-flaps"),
