@@ -1619,7 +1619,7 @@
 			<file>Aircraft/DC-10/Nasal/property-tree-setup.nas</file>
 		</pts>
 		<core>
-			<file>Aircraft/DC-10/Nasal/aircraft.nas</file>
+			<file>Aircraft/DC-10/Nasal/core.nas</file>
 			<file>Aircraft/DC-10/Nasal/hack-canvas.nas</file>
 			<file>Aircraft/DC-10/Nasal/thunder-effects.nas</file>
 			<file>Aircraft/DC-10/Nasal/view-controller.nas</file>
