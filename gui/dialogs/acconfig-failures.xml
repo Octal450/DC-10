@@ -55,7 +55,7 @@
 				<not><property>/payload/armament/msg</property></not>
 			</visible>
 			<halign>left</halign>
-			<label>Failed when checked</label>
+			<label>Failures are active when checked.</label>
 		</text>
 		<text>
 			<row>0</row>
@@ -64,17 +64,19 @@
 				<property>/payload/armament/msg</property>
 			</visible>
 			<halign>left</halign>
-			<label>Not available while Allow Damage is enabled in Aircraft Configuration Center</label>
+			<label>Not available while OPRF Damage is enabled in Aircraft Configuration Center.</label>
 		</text>
 	</group>
 	
 	<group>
-		<layout>hbox</layout>
+		<layout>table</layout>
 		<visible>
 			<not><property>/payload/armament/msg</property></not>
 		</visible>
 		
 		<group>
+			<row>0</row>
+			<col>0</col>
 			<layout>vbox</layout>
 			
 			<group>
@@ -297,9 +299,14 @@
 		
 		</group>
 		
-		<vrule/>
+		<vrule>
+			<row>0</row>
+			<col>1</col>
+		</vrule>
 		
 		<group>
+			<row>0</row>
+			<col>2</col>
 			<layout>vbox</layout>
 			
 			<group>
@@ -552,9 +559,14 @@
 		
 		</group>
 		
-		<vrule/>
+		<vrule>
+			<row>0</row>
+			<col>3</col>
+		</vrule>
 		
 		<group>
+			<row>0</row>
+			<col>4</col>
 			<layout>vbox</layout>
 			
 			<group>
