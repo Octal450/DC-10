@@ -136,32 +136,38 @@
 			<use_hitpoints_instead_of_failure_modes_bool type="bool">0</use_hitpoints_instead_of_failure_modes_bool>
 		</d-config>
 		<weight n="0">
-			<name>Forward Fuel Tank</name>
+			<name>Forward Upper Cargo</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
-			<min-lb type="double">0</min-lb>
-			<max-lb type="double">55308</max-lb>
-		</weight>
-		<weight n="1">
-			<name>Aft Fuel Tank</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
-			<min-lb type="double">0</min-lb>
-			<max-lb type="double">66149</max-lb>
-		</weight>
-		<weight n="2">
-			<name>Forward Cargo</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
-			<min-lb type="double">0</min-lb>
-			<max-lb type="double">25200</max-lb>
-		</weight>
-		<weight n="3">
-			<name>Aft Cargo</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
 			<min-lb type="double">0</min-lb>
 			<max-lb type="double">33600</max-lb>
 		</weight>
+		<weight n="1">
+			<name>Mid Upper Cargo</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+			<min-lb type="double">0</min-lb>
+			<max-lb type="double">33600</max-lb>
+		</weight>
+		<weight n="2">
+			<name>Aft Upper Cargo</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
+			<min-lb type="double">0</min-lb>
+			<max-lb type="double">42000</max-lb>
+		</weight>
+		<weight n="3">
+			<name>Forward Cargo</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
+			<min-lb type="double">0</min-lb>
+			<max-lb type="double">25200</max-lb>
+		</weight>
 		<weight n="4">
-			<name>Aft Bulk Cargo</name>
+			<name>Aft Cargo</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]"/>
+			<min-lb type="double">0</min-lb>
+			<max-lb type="double">33600</max-lb>
+		</weight>
+		<weight n="5">
+			<name>Aft Bulk Cargo</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[5]"/>
 			<min-lb type="double">0</min-lb>
 			<max-lb type="double">2000</max-lb>
 		</weight>
