@@ -132,7 +132,7 @@
 			<name>Forward Upper Cargo</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">33600</max-lb>
+			<max-lb type="double">33400</max-lb>
 		</weight>
 		<weight n="1">
 			<name>Mid Upper Cargo</name>
@@ -147,16 +147,16 @@
 			<max-lb type="double">42000</max-lb>
 		</weight>
 		<weight n="3">
-			<name>Forward Cargo</name>
+			<name>Forward Lower Cargo</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">25200</max-lb>
+			<max-lb type="double">25400</max-lb>
 		</weight>
 		<weight n="4">
-			<name>Aft Cargo</name>
+			<name>Aft Lower Cargo</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">33600</max-lb>
+			<max-lb type="double">33800</max-lb>
 		</weight>
 		<weight n="5">
 			<name>Aft Bulk Cargo</name>
