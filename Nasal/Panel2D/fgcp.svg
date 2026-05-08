@@ -2,20 +2,19 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    width="748"
    height="200"
    id="svg3651"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="fgcp.svg">
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   sodipodi:docname="fgcp.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <sodipodi:namedview
      pagecolor="#000000"
      bordercolor="#666666"
@@ -30,20 +29,38 @@
      id="namedview8"
      showgrid="false"
      inkscape:zoom="1.4142136"
-     inkscape:cx="322.20973"
-     inkscape:cy="95.644936"
-     inkscape:window-x="1912"
+     inkscape:cx="345.42165"
+     inkscape:cy="87.327685"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      units="px"
      inkscape:document-units="px"
-     showguides="true" />
+     showguides="true"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#3f3fff"
+       empopacity="0.25098039"
+       color="#3f3fff"
+       opacity="0.1254902"
+       empspacing="5"
+       enabled="true"
+       visible="false" />
+  </sodipodi:namedview>
   <defs
      id="defs3653">
     <linearGradient
        id="linearGradient5209"
-       osb:paint="solid">
+       inkscape:swatch="solid">
       <stop
          style="stop-color:#e6e6e6;stop-opacity:1;"
          offset="0"
@@ -58,7 +75,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -182,20 +198,19 @@
            inkscape:connector-curvature="0" />
         <text
            transform="scale(0.9949874,1.0050379)"
-           sodipodi:linespacing="125%"
            id="VsKnobText"
            y="945.87561"
            x="419.59003"
-           style="font-style:normal;font-weight:normal;font-size:24.52407646px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            xml:space="preserve"
            inkscape:label="#text4382"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.53768921px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5377px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
              y="945.87561"
              x="419.59003"
              id="tspan4384"
              sodipodi:role="line">ALT</tspan><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.53768921px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
-             y="958.43475"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5377px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+             y="980.6861"
              x="419.59003"
              sodipodi:role="line"
              id="tspan4386">HLD</tspan></text>
@@ -329,17 +344,16 @@
          inkscape:transform-center-y="-15.336088" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="270.71005"
          y="934.53278"
          id="text4287"
-         sodipodi:linespacing="125%"
          transform="scale(0.99498742,1.0050378)"><tspan
            sodipodi:role="line"
            id="tspan4289"
            x="270.71005"
            y="934.53278"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">5</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">5</tspan></text>
     </g>
     <g
        id="Bank25"
@@ -361,14 +375,13 @@
          r="2.5"
          inkscape:transform-center-y="-15.336099" />
       <text
-         sodipodi:linespacing="125%"
          id="text4291"
          y="934.70862"
          x="338.8862"
-         style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"
          transform="scale(0.99498742,1.0050378)"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
            y="934.70862"
            x="338.8862"
            id="tspan4293"
@@ -394,17 +407,16 @@
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.79999995;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:47.32375717px;line-height:89.99999762%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="74.450661"
          y="918.6355"
          id="EprN1Text"
-         sodipodi:linespacing="89.999998%"
          transform="scale(0.96579546,1.0354159)"
          inkscape:label="#text4218-5"><tspan
            sodipodi:role="line"
            x="74.450661"
            y="918.6355"
-           style="font-size:11.83093929px;line-height:89.99999762%;text-align:center;text-anchor:middle;fill:#ffffff"
+           style="font-size:11.8309px;line-height:90%;text-align:center;text-anchor:middle;fill:#ffffff"
            id="tspan4393-0">N1</tspan></text>
     </g>
     <g
@@ -428,14 +440,13 @@
       <text
          inkscape:label="#text4218-5"
          transform="scale(0.96579546,1.0354159)"
-         sodipodi:linespacing="89.999998%"
          id="text4433"
          y="918.51721"
          x="74.398094"
-         style="font-style:normal;font-weight:normal;font-size:47.32375717px;line-height:89.99999762%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            id="tspan4435"
-           style="font-size:11.83093929px;line-height:89.99999762%;text-align:center;text-anchor:middle;fill:#ffffff"
+           style="font-size:11.8309px;line-height:90%;text-align:center;text-anchor:middle;fill:#ffffff"
            y="918.51721"
            x="74.398094"
            sodipodi:role="line">FMS</tspan></text>
@@ -460,17 +471,16 @@
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.79999995;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:47.32375717px;line-height:89.99999762%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="74.398094"
          y="918.51721"
          id="text4443"
-         sodipodi:linespacing="89.999998%"
          transform="scale(0.96579546,1.0354159)"
          inkscape:label="#text4218-5"><tspan
            sodipodi:role="line"
            x="74.398094"
            y="918.51721"
-           style="font-size:11.83093929px;line-height:89.99999762%;text-align:center;text-anchor:middle;fill:#ffffff"
+           style="font-size:11.8309px;line-height:90%;text-align:center;text-anchor:middle;fill:#ffffff"
            id="tspan4445">ILS</tspan></text>
     </g>
     <g
@@ -494,19 +504,18 @@
       <text
          inkscape:label="#text4218-5"
          transform="scale(0.96579547,1.0354159)"
-         sodipodi:linespacing="89.999998%"
          id="text4453"
          y="913.19916"
          x="74.247581"
-         style="font-style:normal;font-weight:normal;font-size:47.32375717px;line-height:89.99999762%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            id="tspan4455"
-           style="font-size:11.83093929px;line-height:89.99999762%;text-align:center;text-anchor:middle;fill:#ffffff"
+           style="font-size:11.8309px;line-height:90%;text-align:center;text-anchor:middle;fill:#ffffff"
            y="913.19916"
            x="74.247581"
            sodipodi:role="line">VOR</tspan><tspan
-           style="font-size:11.83093929px;line-height:89.99999762%;text-align:center;text-anchor:middle;fill:#ffffff"
-           y="923.84698"
+           style="font-size:11.8309px;line-height:90%;text-align:center;text-anchor:middle;fill:#ffffff"
+           y="955.79053"
            x="74.247581"
            sodipodi:role="line"
            id="tspan4457">LOC</tspan></text>
@@ -532,14 +541,13 @@
       <text
          inkscape:label="#text4218-5"
          transform="scale(0.96579546,1.0354159)"
-         sodipodi:linespacing="89.999998%"
          id="text4499"
          y="918.51721"
          x="74.398094"
-         style="font-style:normal;font-weight:normal;font-size:47.32375717px;line-height:89.99999762%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            id="tspan4501"
-           style="font-size:11.83093929px;line-height:89.99999762%;text-align:center;text-anchor:middle;fill:#ffffff"
+           style="font-size:11.8309px;line-height:90%;text-align:center;text-anchor:middle;fill:#ffffff"
            y="918.51721"
            x="74.398094"
            sodipodi:role="line">IAS</tspan></text>
@@ -564,17 +572,16 @@
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.79999995;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:46.8545723px;line-height:89.99999762%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="75.193176"
          y="909.43414"
          id="text4509"
-         sodipodi:linespacing="89.999998%"
          transform="scale(0.95622024,1.0457842)"
          inkscape:label="#text4218-5"><tspan
            sodipodi:role="line"
            x="75.193176"
            y="909.43414"
-           style="font-size:11.71364307px;line-height:89.99999762%;text-align:center;text-anchor:middle;fill:#ffffff"
+           style="font-size:11.7136px;line-height:90%;text-align:center;text-anchor:middle;fill:#ffffff"
            id="tspan4511">MACH</tspan></text>
     </g>
     <g
@@ -597,32 +604,30 @@
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.79999995;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:45.12143326px;line-height:89.99999762%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="78.056793"
          y="875.77179"
          id="text4529"
-         sodipodi:linespacing="89.999998%"
          transform="scale(0.92084982,1.0859534)"
          inkscape:label="#text4218-5"><tspan
            sodipodi:role="line"
            x="78.056793"
            y="875.77179"
-           style="font-size:11.28035831px;line-height:89.99999762%;text-align:center;text-anchor:middle;fill:#ffffff"
+           style="font-size:11.2804px;line-height:90%;text-align:center;text-anchor:middle;fill:#ffffff"
            id="tspan4531">LAND</tspan></text>
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="41.875107"
        y="875.44293"
        id="text4184"
-       sodipodi:linespacing="125%"
        transform="scale(0.99498741,1.0050378)"><tspan
          sodipodi:role="line"
          id="tspan4186"
          x="41.875107"
          y="875.44293"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">FD</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">FD</tspan></text>
     <g
        id="BankKnob"
        inkscape:label="#g4405">
@@ -652,45 +657,42 @@
         <text
            inkscape:label="#text4218-5"
            transform="scale(0.96579547,1.0354159)"
-           sodipodi:linespacing="89.999998%"
            id="text4265"
            y="933.3598"
            x="312.17462"
-           style="font-style:normal;font-weight:normal;font-size:103.15340424px;line-height:89.99999762%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            xml:space="preserve"><tspan
              id="tspan4267"
-             style="font-size:25.78835106px;line-height:89.99999762%;text-align:center;text-anchor:middle;fill:#ffffff"
+             style="font-size:25.7884px;line-height:90%;text-align:center;text-anchor:middle;fill:#ffffff"
              y="933.3598"
              x="312.17462"
              sodipodi:role="line">H</tspan></text>
       </g>
     </g>
     <text
-       sodipodi:linespacing="125%"
        id="text4367"
        y="923.07031"
        x="42.143478"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        transform="scale(0.99498741,1.0050378)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
          y="923.07031"
          x="42.143478"
          id="tspan4369"
          sodipodi:role="line">OFF</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="41.864731"
        y="1003.6495"
        id="text4371"
-       sodipodi:linespacing="125%"
        transform="scale(0.99498741,1.0050378)"><tspan
          sodipodi:role="line"
          id="tspan4373"
          x="41.864731"
          y="1003.6495"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">TURB</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">TURB</tspan></text>
     <g
        id="g4574"
        transform="translate(-0.9743042,0)">
@@ -733,57 +735,53 @@
          sodipodi:nodetypes="ccccc" />
     </g>
     <text
-       sodipodi:linespacing="125%"
        id="text4583"
        y="868.21167"
        x="157.39603"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        transform="scale(0.99498741,1.0050378)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
          y="868.21167"
          x="157.39603"
          id="tspan4585"
          sodipodi:role="line">ATS</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="157.22411"
        y="903.81134"
        id="text4587"
-       sodipodi:linespacing="125%"
        transform="scale(0.99498741,1.0050378)"><tspan
          sodipodi:role="line"
          id="tspan4589"
          x="157.22411"
          y="903.81134"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">ON</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">ON</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text4591"
        y="952.99091"
        x="157.00226"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        transform="scale(0.99498741,1.0050378)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
          y="952.99091"
          x="157.00226"
          id="tspan4593"
          sodipodi:role="line">OFF</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="157.5733"
        y="972.49615"
        id="text4595"
-       sodipodi:linespacing="125%"
        transform="scale(0.9949874,1.0050379)"><tspan
          sodipodi:role="line"
          id="tspan4597"
          x="157.5733"
          y="972.49615"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">SPD</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">SPD</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 163.103,1006.857 0,9.3307 27.95294,0"
@@ -815,31 +813,29 @@
          style="fill:#fbb805;fill-opacity:1;stroke:none;stroke-width:12.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
     <text
-       sodipodi:linespacing="125%"
        id="text4639"
        y="886.07495"
        x="123.49199"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        transform="scale(0.9949874,1.0050379)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
          y="886.07495"
          x="123.49199"
          id="tspan4641"
          sodipodi:role="line">1</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="190.5582"
        y="886.07495"
        id="text4643"
-       sodipodi:linespacing="125%"
        transform="scale(0.9949874,1.0050379)"><tspan
          sodipodi:role="line"
          id="tspan4645"
          x="190.5582"
          y="886.07495"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">2</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">2</tspan></text>
     <rect
        style="fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4653"
@@ -875,40 +871,37 @@
        id="Ats2"
        style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <text
-       sodipodi:linespacing="125%"
        id="text4228"
        y="875.44293"
        x="710.22528"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        transform="scale(0.99498741,1.0050378)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
          y="875.44293"
          x="710.22528"
          id="tspan4230"
          sodipodi:role="line">FD</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="710.49365"
        y="923.07031"
        id="text4232"
-       sodipodi:linespacing="125%"
        transform="scale(0.99498741,1.0050378)"><tspan
          sodipodi:role="line"
          id="tspan4234"
          x="710.49365"
          y="923.07031"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">OFF</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">OFF</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text4236"
        y="1003.6495"
        x="710.2149"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        transform="scale(0.99498741,1.0050378)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
          y="1003.6495"
          x="710.2149"
          id="tspan4238"
@@ -936,20 +929,19 @@
            y="929.94635" />
         <text
            transform="scale(0.96579548,1.0354159)"
-           sodipodi:linespacing="89.999998%"
            id="text4218"
            y="913.19916"
            x="74.991798"
-           style="font-style:normal;font-weight:normal;font-size:47.32375717px;line-height:89.99999762%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            xml:space="preserve"><tspan
              id="tspan4222"
-             style="font-size:11.83093929px;line-height:89.99999762%;text-align:center;text-anchor:middle;fill:#ffffff"
+             style="font-size:11.8309px;line-height:90%;text-align:center;text-anchor:middle;fill:#ffffff"
              y="913.19916"
              x="74.991798"
              sodipodi:role="line">BACK</tspan><tspan
              id="tspan4393"
-             style="font-size:11.83093929px;line-height:89.99999762%;text-align:center;text-anchor:middle;fill:#ffffff"
-             y="923.84698"
+             style="font-size:11.8309px;line-height:90%;text-align:center;text-anchor:middle;fill:#ffffff"
+             y="955.79053"
              x="74.991798"
              sodipodi:role="line">CRS</tspan></text>
       </g>
@@ -973,21 +965,20 @@
            style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.79999995;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
         <text
            xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:47.32375717px;line-height:89.99999762%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            x="74.991798"
            y="913.19916"
            id="text4246"
-           sodipodi:linespacing="89.999998%"
            transform="scale(0.96579548,1.0354159)"><tspan
              sodipodi:role="line"
              x="74.991798"
              y="913.19916"
-             style="font-size:11.83093929px;line-height:89.99999762%;text-align:center;text-anchor:middle;fill:#ffffff"
+             style="font-size:11.8309px;line-height:90%;text-align:center;text-anchor:middle;fill:#ffffff"
              id="tspan4248">BACK</tspan><tspan
              sodipodi:role="line"
              x="74.991798"
-             y="923.84698"
-             style="font-size:11.83093929px;line-height:89.99999762%;text-align:center;text-anchor:middle;fill:#ffffff"
+             y="955.79053"
+             style="font-size:11.8309px;line-height:90%;text-align:center;text-anchor:middle;fill:#ffffff"
              id="tspan4250">CRS</tspan></text>
       </g>
     </g>
@@ -1054,17 +1045,16 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="302.82486"
        y="878.94098"
        id="text4248"
-       sodipodi:linespacing="125%"
        transform="scale(0.99498741,1.0050378)"><tspan
          sodipodi:role="line"
          id="tspan4251"
          x="302.82486"
          y="878.94098"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">HDG</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">HDG</tspan></text>
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
@@ -1089,14 +1079,13 @@
          id="rect4353"
          style="fill:#505358;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <text
-         sodipodi:linespacing="125%"
          id="text4329"
          y="1041.538"
          x="709.93109"
-         style="font-style:normal;font-weight:normal;font-size:27.22285652px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"
          transform="scale(0.9949874,1.0050379)"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.69732094px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#b3b3b3;fill-opacity:1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.6973px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#b3b3b3;fill-opacity:1"
            y="1041.538"
            x="709.93109"
            id="tspan4331"
@@ -1110,27 +1099,25 @@
          y="1038.0033" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:27.22285652px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="41.58094"
          y="1041.538"
          id="text4349"
-         sodipodi:linespacing="125%"
          transform="scale(0.9949874,1.0050379)"><tspan
            sodipodi:role="line"
            id="tspan4351"
            x="41.58094"
            y="1041.538"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.69732094px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#b3b3b3;fill-opacity:1">TOGA</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.6973px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#b3b3b3;fill-opacity:1">TOGA</tspan></text>
     </g>
     <text
-       sodipodi:linespacing="125%"
        id="text4369"
        y="889.07416"
        x="508.69391"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        transform="scale(0.9949874,1.0050379)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
          y="889.07416"
          x="508.69391"
          id="tspan4371"
@@ -1143,15 +1130,14 @@
        x="463.16418"
        y="903.44019" />
     <text
-       sodipodi:linespacing="125%"
        id="Alt_10_disp"
        y="913.12701"
        x="532.21094"
-       style="font-style:normal;font-weight:normal;font-size:45.47748947px;line-height:125%;font-family:'Alata';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:label="#text4621"
        transform="scale(0.99074269,1.0093438)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.54110527px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.5411px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
          y="913.12701"
          x="532.21094"
          id="tspan4377"
@@ -1168,16 +1154,15 @@
        transform="scale(0.99074269,1.0093438)"
        inkscape:label="#text4621"
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:51.89636993px;line-height:125%;font-family:'Alata';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="497.76428"
        y="914.13647"
-       id="Alt_1000_disp"
-       sodipodi:linespacing="125%"><tspan
+       id="Alt_1000_disp"><tspan
          sodipodi:role="line"
          id="tspan4381"
          x="497.76428"
          y="914.13647"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.29921913px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">0</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.2992px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">0</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4400"
@@ -1200,39 +1185,36 @@
        style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:25.6892128px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="463.75592"
        y="876.48383"
        id="text4300"
-       sodipodi:linespacing="125%"
        transform="scale(0.99498738,1.0050379)"><tspan
          sodipodi:role="line"
          id="tspan4302"
          x="463.75592"
          y="876.48383"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.03833389px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">RESET</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.0383px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">RESET</tspan></text>
     <text
        transform="scale(0.9949874,1.0050379)"
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="601.05688"
        y="893.18805"
-       id="text4320"
-       sodipodi:linespacing="125%"><tspan
+       id="text4320"><tspan
          sodipodi:role="line"
          id="tspan4322"
          x="601.05688"
          y="893.18805"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">AP</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">AP</tspan></text>
     <text
        transform="scale(0.9949874,1.0050379)"
-       sodipodi:linespacing="125%"
        id="text4324"
        y="930.77771"
        x="601.03363"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
          y="930.77771"
          x="601.03363"
          id="tspan4326"
@@ -1240,38 +1222,35 @@
     <text
        transform="scale(0.9949874,1.0050379)"
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="601.06512"
        y="975.97699"
-       id="text4328"
-       sodipodi:linespacing="125%"><tspan
+       id="text4328"><tspan
          sodipodi:role="line"
          id="tspan4330"
          x="601.06512"
          y="975.97699"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">OFF</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">OFF</tspan></text>
     <text
        transform="scale(0.9949874,1.0050379)"
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="567.31024"
        y="911.05133"
-       id="text4332"
-       sodipodi:linespacing="125%"><tspan
+       id="text4332"><tspan
          sodipodi:role="line"
          id="tspan4334"
          x="567.31024"
          y="911.05133"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">1</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">1</tspan></text>
     <text
        transform="scale(0.9949874,1.0050379)"
-       sodipodi:linespacing="125%"
        id="text4336"
        y="911.05133"
        x="634.37579"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
          y="911.05133"
          x="634.37579"
          id="tspan4338"
@@ -1294,17 +1273,16 @@
        ry="7.089417" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:30.24761772px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="601.03888"
        y="953.37738"
        id="text4344"
-       sodipodi:linespacing="125%"
        transform="scale(0.9949874,1.0050379)"><tspan
          sodipodi:role="line"
          id="tspan4346"
          x="601.03888"
          y="953.37738"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.99702358px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">CWS</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.997px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">CWS</tspan></text>
     <rect
        style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="Ap1"
@@ -1329,54 +1307,50 @@
        transform="scale(0.99074269,1.0093438)"
        inkscape:label="#text4621"
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:45.47748947px;line-height:125%;font-family:'Alata';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="316.94489"
        y="902.04657"
-       id="Hdg_1_disp"
-       sodipodi:linespacing="125%"><tspan
+       id="Hdg_1_disp"><tspan
          sodipodi:role="line"
          id="tspan4257"
          x="316.94489"
          y="902.04657"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.54110527px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">0</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.5411px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">0</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="Hdg_10_disp"
        y="902.04657"
        x="304.31195"
-       style="font-style:normal;font-weight:normal;font-size:45.47748947px;line-height:125%;font-family:'Alata';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:label="#text4621"
        transform="scale(0.99074269,1.0093438)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.54110527px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.5411px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
          y="902.04657"
          x="304.31195"
          id="tspan4341"
          sodipodi:role="line">0</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="Hdg_100_disp"
        y="902.04657"
        x="291.67902"
-       style="font-style:normal;font-weight:normal;font-size:45.47748947px;line-height:125%;font-family:'Alata';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:label="#text4621"
        transform="scale(0.99074269,1.0093438)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.54110527px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.5411px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
          y="902.04657"
          x="291.67902"
          id="tspan4337"
          sodipodi:role="line">0</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="Spd_1_disp"
        y="995.20239"
        x="170.93829"
-       style="font-style:normal;font-weight:normal;font-size:45.47748947px;line-height:125%;font-family:'Alata';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:label="#text4621"
        transform="scale(0.99074269,1.0093438)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.54110527px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.5411px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
          y="995.20239"
          x="170.93829"
          id="tspan4355"
@@ -1385,40 +1359,37 @@
        transform="scale(0.99074269,1.0093438)"
        inkscape:label="#text4621"
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:45.47748947px;line-height:125%;font-family:'Alata';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="158.30534"
        y="995.20239"
-       id="Spd_10_disp"
-       sodipodi:linespacing="125%"><tspan
+       id="Spd_10_disp"><tspan
          sodipodi:role="line"
          id="tspan4363"
          x="158.30534"
          y="995.20239"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.54110527px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">0</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.5411px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">0</tspan></text>
     <text
        transform="scale(0.99074269,1.0093438)"
        inkscape:label="#text4621"
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:45.47748947px;line-height:125%;font-family:'Alata';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="145.67239"
        y="995.20239"
-       id="Spd_100_disp"
-       sodipodi:linespacing="125%"><tspan
+       id="Spd_100_disp"><tspan
          sodipodi:role="line"
          id="tspan4359"
          x="145.67239"
          y="995.20239"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.54110527px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">0</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.5411px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">0</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="Alt_10000_disp"
        y="914.13647"
        x="483.34781"
-       style="font-style:normal;font-weight:normal;font-size:51.89636993px;line-height:125%;font-family:'Alata';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:label="#text4621"
        transform="scale(0.99074269,1.0093438)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.29921913px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.2992px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff"
          y="914.13647"
          x="483.34781"
          id="tspan4367"
@@ -1427,16 +1398,15 @@
        transform="scale(0.99074269,1.0093438)"
        inkscape:label="#text4621"
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:45.47748947px;line-height:125%;font-family:'Alata';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="513.26147"
        y="913.12701"
-       id="Alt_100_disp"
-       sodipodi:linespacing="125%"><tspan
+       id="Alt_100_disp"><tspan
          sodipodi:role="line"
          id="tspan4383"
          x="513.26147"
          y="913.12701"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.54110527px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">0</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.5411px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#ffffff">0</tspan></text>
     <g
        id="AtsDisc"
        inkscape:label="#g4384"
@@ -1450,13 +1420,12 @@
          style="fill:#505358;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <text
          transform="scale(0.9949874,1.0050379)"
-         sodipodi:linespacing="125%"
          id="text4374"
          y="1062.6448"
          x="155.33684"
-         style="font-style:normal;font-weight:normal;font-size:27.22285652px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.69732094px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#b3b3b3;fill-opacity:1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.6973px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#b3b3b3;fill-opacity:1"
            y="1062.6448"
            x="155.33684"
            id="tspan4376"
@@ -1475,17 +1444,16 @@
          y="1038.0032" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:27.22285652px;line-height:125%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:Alata;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="587.508"
          y="1041.5381"
          id="text4393"
-         sodipodi:linespacing="125%"
          transform="scale(0.9949874,1.0050379)"><tspan
            sodipodi:role="line"
            id="tspan4395"
            x="587.508"
            y="1041.5381"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.69732094px;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#b3b3b3;fill-opacity:1">AP DISC</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.6973px;line-height:1.25;font-family:Alata;-inkscape-font-specification:Alata;text-align:center;text-anchor:middle;fill:#b3b3b3;fill-opacity:1">AP DISC</tspan></text>
     </g>
     <g
        id="SpdPlus"
