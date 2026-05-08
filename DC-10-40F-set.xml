@@ -83,6 +83,7 @@
 	<options n="0">
 		<eng type="string">PW</eng>
 		<eng-int type="int">1</eng-int>
+		<freighter type="bool">1</freighter>
 		<series-10 type="bool">0</series-10>
 	</options>
 	

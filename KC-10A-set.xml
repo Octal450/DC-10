@@ -105,6 +105,7 @@
 		<drogues-shown type="bool">0</drogues-shown>
 		<eng type="string">GE</eng>
 		<eng-int type="int">0</eng-int>
+		<freighter type="bool">1</freighter>
 		<series-10 type="bool">0</series-10>
 	</options>
 	

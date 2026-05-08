@@ -74,15 +74,16 @@
 	
 	<limits>
 		<mass-and-balance> <!-- Data source: TCDS -->
-			<maximum-takeoff-mass-lbs>593000</maximum-takeoff-mass-lbs>
-			<maximum-landing-mass-lbs>436000</maximum-landing-mass-lbs>
-			<maximum-zero-fuel-mass-lbs>414000</maximum-zero-fuel-mass-lbs>
+			<maximum-takeoff-mass-lbs>572000</maximum-takeoff-mass-lbs>
+			<maximum-landing-mass-lbs>424000</maximum-landing-mass-lbs>
+			<maximum-zero-fuel-mass-lbs>401000</maximum-zero-fuel-mass-lbs>
 		</mass-and-balance>
 	</limits>
 	
 	<options n="0">
 		<eng type="string">GE</eng>
 		<eng-int type="int">0</eng-int>
+		<freighter type="bool">1</freighter>
 		<series-10 type="bool">0</series-10>
 	</options>
 	

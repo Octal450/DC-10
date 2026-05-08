@@ -98,6 +98,7 @@
 		<drogues-shown type="bool">0</drogues-shown>
 		<eng type="string">PW</eng>
 		<eng-int type="int">1</eng-int>
+		<freighter type="bool">0</freighter>
 		<series-10 type="bool">0</series-10>
 	</options>
 	
@@ -129,31 +130,31 @@
 			<use_hitpoints_instead_of_failure_modes_bool type="bool">0</use_hitpoints_instead_of_failure_modes_bool>
 		</d-config>
 		<weight n="0">
-			<name>Forward Upper Cargo</name>
+			<name>Forward Cabin</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">33400</max-lb>
+			<max-lb type="double">6150</max-lb>
 		</weight>
 		<weight n="1">
-			<name>Mid Upper Cargo</name>
+			<name>Mid Cabin</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">33600</max-lb>
+			<max-lb type="double">19800</max-lb>
 		</weight>
 		<weight n="2">
-			<name>Aft Upper Cargo</name>
+			<name>Aft Cabin</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">42000</max-lb>
+			<max-lb type="double">26850</max-lb>
 		</weight>
 		<weight n="3">
-			<name>Forward Lower Cargo</name>
+			<name>Forward Cargo</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
 			<min-lb type="double">0</min-lb>
 			<max-lb type="double">25400</max-lb>
 		</weight>
 		<weight n="4">
-			<name>Aft Lower Cargo</name>
+			<name>Aft Cargo</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]"/>
 			<min-lb type="double">0</min-lb>
 			<max-lb type="double">33800</max-lb>
