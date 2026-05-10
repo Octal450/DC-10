@@ -2271,7 +2271,7 @@
 			</test>
 			<test logic="OR" value="/systems/engines/n1-redline">
 				/systems/acconfig/autoconfig-running eq 1
-				/controls/switches/eng-max-reset eq 1
+				/controls/engines/exceedance-reset eq 1
 			</test>
 			<test logic="OR" value="/engines/engine[0]/n1-actual">
 				/engines/engine[0]/n1-actual gt /instrumentation/n[0]/n1-max-raw
@@ -2324,7 +2324,7 @@
 			</test>
 			<test logic="OR" value="/systems/engines/n2-redline">
 				/systems/acconfig/autoconfig-running eq 1
-				/controls/switches/eng-max-reset eq 1
+				/controls/engines/exceedance-reset eq 1
 			</test>
 			<test logic="OR" value="/engines/engine[0]/n2-actual">
 				/engines/engine[0]/n2-actual gt /instrumentation/n[0]/n2-max-raw
@@ -2451,7 +2451,7 @@
 			</test>
 			<test logic="OR" value="/systems/engines/n1-redline">
 				/systems/acconfig/autoconfig-running eq 1
-				/controls/switches/eng-max-reset eq 1
+				/controls/engines/exceedance-reset eq 1
 			</test>
 			<test logic="OR" value="/engines/engine[1]/n1-actual">
 				/engines/engine[1]/n1-actual gt /instrumentation/n[1]/n1-max-raw
@@ -2504,7 +2504,7 @@
 			</test>
 			<test logic="OR" value="/systems/engines/n2-redline">
 				/systems/acconfig/autoconfig-running eq 1
-				/controls/switches/eng-max-reset eq 1
+				/controls/engines/exceedance-reset eq 1
 			</test>
 			<test logic="OR" value="/engines/engine[1]/n2-actual">
 				/engines/engine[1]/n2-actual gt /instrumentation/n[1]/n2-max-raw
@@ -2631,7 +2631,7 @@
 			</test>
 			<test logic="OR" value="/systems/engines/n1-redline">
 				/systems/acconfig/autoconfig-running eq 1
-				/controls/switches/eng-max-reset eq 1
+				/controls/engines/exceedance-reset eq 1
 			</test>
 			<test logic="OR" value="/engines/engine[2]/n1-actual">
 				/engines/engine[2]/n1-actual gt /instrumentation/n[2]/n1-max-raw
@@ -2684,7 +2684,7 @@
 			</test>
 			<test logic="OR" value="/systems/engines/n2-redline">
 				/systems/acconfig/autoconfig-running eq 1
-				/controls/switches/eng-max-reset eq 1
+				/controls/engines/exceedance-reset eq 1
 			</test>
 			<test logic="OR" value="/engines/engine[2]/n2-actual">
 				/engines/engine[2]/n2-actual gt /instrumentation/n[2]/n2-max-raw
@@ -2799,7 +2799,7 @@
 			</test>
 			<test logic="OR" value="/systems/engines/egt-redline">
 				/systems/acconfig/autoconfig-running eq 1
-				/controls/switches/eng-max-reset eq 1
+				/controls/engines/exceedance-reset eq 1
 			</test>
 			<test logic="OR" value="/engines/engine[0]/egt-actual">
 				/engines/engine[0]/egt-actual gt /instrumentation/egt[0]/egt-max-raw
@@ -2910,7 +2910,7 @@
 			</test>
 			<test logic="OR" value="/systems/engines/egt-redline">
 				/systems/acconfig/autoconfig-running eq 1
-				/controls/switches/eng-max-reset eq 1
+				/controls/engines/exceedance-reset eq 1
 			</test>
 			<test logic="OR" value="/engines/engine[1]/egt-actual">
 				/engines/engine[1]/egt-actual gt /instrumentation/egt[1]/egt-max-raw
@@ -3021,7 +3021,7 @@
 			</test>
 			<test logic="OR" value="/systems/engines/egt-redline">
 				/systems/acconfig/autoconfig-running eq 1
-				/controls/switches/eng-max-reset eq 1
+				/controls/engines/exceedance-reset eq 1
 			</test>
 			<test logic="OR" value="/engines/engine[2]/egt-actual">
 				/engines/engine[2]/egt-actual gt /instrumentation/egt[2]/egt-max-raw

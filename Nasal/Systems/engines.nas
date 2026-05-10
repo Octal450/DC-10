@@ -18,6 +18,7 @@ var ENGINES = {
 	Controls: {
 		cutoff: [props.globals.getNode("/controls/engines/engine[0]/cutoff-switch"), props.globals.getNode("/controls/engines/engine[1]/cutoff-switch"), props.globals.getNode("/controls/engines/engine[2]/cutoff-switch")],
 		eprTemp: 0,
+		exceedanceReset: props.globals.getNode("/controls/engines/exceedance-reset"),
 		manEpr: [props.globals.getNode("/controls/engines/engine[0]/man-epr"), props.globals.getNode("/controls/engines/engine[1]/man-epr"), props.globals.getNode("/controls/engines/engine[2]/man-epr")],
 		manEprSet: [props.globals.getNode("/controls/engines/engine[0]/man-epr-set"), props.globals.getNode("/controls/engines/engine[1]/man-epr-set"), props.globals.getNode("/controls/engines/engine[2]/man-epr-set")],
 		manN1: [props.globals.getNode("/controls/engines/engine[0]/man-n1"), props.globals.getNode("/controls/engines/engine[1]/man-n1"), props.globals.getNode("/controls/engines/engine[2]/man-n1")],
@@ -32,6 +33,7 @@ var ENGINES = {
 		me.reverseEngage[0].setBoolValue(0);
 		me.reverseEngage[1].setBoolValue(0);
 		me.reverseEngage[2].setBoolValue(0);
+		me.Controls.exceedanceReset.setBoolValue(0);
 		me.Controls.manEpr[0].setValue(1.5);
 		me.Controls.manEpr[1].setValue(1.5);
 		me.Controls.manEpr[2].setValue(1.5);

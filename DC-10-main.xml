@@ -567,6 +567,7 @@
 				<cutoff type="bool">1</cutoff>
 				<starter type="bool">0</starter>
 			</engine>
+			<exceedance-reset type="bool">0</exceedance-reset>
 		</engines>
 		<fcc n="0">
 			<flap-limit type="int">0</flap-limit>
@@ -649,7 +650,6 @@
 		<switches n="0">
 			<adg-handle type="double">0</adg-handle>
 			<annun-test type="bool">0</annun-test>
-			<eng-max-reset type="bool">0</eng-max-reset>
 			<minimums type="int">200</minimums>
 			<no-smoking-sign type="double">1</no-smoking-sign> <!-- Smoking is bad! -->
 			<no-smoking-sign-status type="bool">1</no-smoking-sign-status>
