@@ -35,14 +35,14 @@ jobs:
       contents: write
     steps:
       - name: "Manual Update"
-        uses: BobDotCom/OPRFAssetUpdater@v0.10
+        uses: BobDotCom/OPRFAssetUpdater@v0.12
         if: "${{ github.event_name == 'workflow_dispatch' }}"
         with:
           include: ${{ inputs.include }}
           exclude: ${{ inputs.exclude }}
           compatibility: ${{ inputs.compatibility }}
       - name: "Scheduled Update"
-        uses: BobDotCom/OPRFAssetUpdater@v0.10
+        uses: BobDotCom/OPRFAssetUpdater@v0.12
         with:
           commit_message: "Files: Auto-Update Damage Libraries"
         if: "${{ github.event_name != 'workflow_dispatch' }}"
