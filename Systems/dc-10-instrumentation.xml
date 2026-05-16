@@ -2717,7 +2717,7 @@
 			</test>
 			<clipto>
 				<min>0</min>
-				<max>1000</max>
+				<max>999</max>
 			</clipto>
 		</switch>
 		
@@ -2828,7 +2828,7 @@
 			</test>
 			<clipto>
 				<min>0</min>
-				<max>1000</max>
+				<max>999</max>
 			</clipto>
 		</switch>
 		
@@ -2939,7 +2939,7 @@
 			</test>
 			<clipto>
 				<min>0</min>
-				<max>1000</max>
+				<max>999</max>
 			</clipto>
 		</switch>
 		
