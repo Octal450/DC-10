@@ -29,7 +29,13 @@ var ENGINES = {
 		throttle: [props.globals.getNode("/controls/engines/engine[0]/throttle"), props.globals.getNode("/controls/engines/engine[1]/throttle"), props.globals.getNode("/controls/engines/engine[2]/throttle")],
 		throttleTemp: [0, 0, 0],
 	},
+	Failures: {
+		fire1: props.globals.getNode("/systems/failures/engines/fire-1"),
+		fire2: props.globals.getNode("/systems/failures/engines/fire-2"),
+		fire3: props.globals.getNode("/systems/failures/engines/fire-3"),
+	},
 	init: func() {
+		me.resetFailures();
 		me.reverseEngage[0].setBoolValue(0);
 		me.reverseEngage[1].setBoolValue(0);
 		me.reverseEngage[2].setBoolValue(0);
@@ -52,6 +58,11 @@ var ENGINES = {
 		me.Controls.startCmd[0].setBoolValue(0);
 		me.Controls.startCmd[1].setBoolValue(0);
 		me.Controls.startCmd[2].setBoolValue(0);
+	},
+	resetFailures: func() {
+		me.Failures.fire1.setBoolValue(0);
+		me.Failures.fire2.setBoolValue(0);
+		me.Failures.fire3.setBoolValue(0);
 	},
 	adjustManEpr: func(n, d) {
 		if (me.Controls.manEprSet[n].getBoolValue() and pts.Instrumentation.Epr.powerAvail[n].getBoolValue()) {

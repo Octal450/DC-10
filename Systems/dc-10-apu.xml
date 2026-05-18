@@ -156,7 +156,7 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="/systems/apu/egt-cmd">
+		<fcs_function name="/systems/apu/egt-table">
 			<function>
 				<sum>
 					<property>propulsion/tat-c</property>
@@ -165,7 +165,7 @@
 						<independentVar lookup="column">atmosphere/density-altitude</independentVar>
 						<independentVar lookup="table">/controls/engines/engine[3]/cutoff</independentVar>
 						<tableData breakPoint="0">
-							       0    50000
+							     0    50000
 							 16    0    0
 							 40  460  355
 							 50  505  400
@@ -177,13 +177,41 @@
 							110  457  376
 						</tableData>
 						<tableData breakPoint="1">
-							       0    50000
+							     0    50000
 							 20    0    0
 							100  363  272
 							110  457  376
 						</tableData>
 					</table>
 				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/systems/apu/egt-cmd">
+			<function>
+				<max>
+					<ifthen>
+						<eq>
+							<property>/engines/engine[3]/on-fire</property>
+							<value>1</value>
+						</eq>
+						<min>
+							<sum>
+								<quotient>
+									<property>propulsion/tat-c</property>
+									<value>4</value>
+								</quotient>
+								<value>930</value>
+							</sum>
+							<sum> <!-- Stop it from rising too fast -->
+								<property>/engines/engine[3]/egt-actual</property>
+								<value>50</value>
+							</sum>
+						</min>
+						<value>0</value>
+					</ifthen>
+					<property>/systems/apu/egt-table</property>
+				</max>
 			</function>
 		</fcs_function>
 		

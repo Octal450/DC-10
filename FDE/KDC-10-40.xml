@@ -17,6 +17,7 @@
 	
 	<system file="dc-10-core"/>
 	<system file="dc-10-electrical"/>
+	<system file="dc-10-fire"/>
 	<system file="dc-10-fuel"/>
 	<system file="dc-10-hydraulics"/>
 	<system file="dc-10-fcc"/>

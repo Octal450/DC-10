@@ -179,7 +179,7 @@
 		
 		<!-- 
 		Thrust limits on the PW are tricky because of the EPR model not being 100% accurate, so instead I computed N1s.
-		The GE's just use N1, which is linear so it works well to make the FADEC, but as stated primary param is EPR.
+		The GE's just use N1, which is linear so it works well to make the engines, but as stated primary param is EPR.
 		So we have our basic thrust limits in N1 created from tables and other factors, then we calculate them to EPR.
 		After we round the EPR, in order to correctly control/limit thrust, we will convert it BACK to N1... annoying right?
 		Well the advantage is the plane is actually targetting EPR, so its more realistic to do this way even if its more steps
@@ -1659,7 +1659,7 @@
 			</test>
 		</switch>
 		
-		<fcs_function name="/systems/engines/egt-cmd-1">
+		<fcs_function name="/systems/engines/egt-table-1">
 			<function>
 				<sum>
 					<property>propulsion/tat-c</property>
@@ -1668,7 +1668,7 @@
 						<independentVar lookup="column">atmosphere/density-altitude</independentVar>
 						<independentVar lookup="table">/controls/engines/engine[0]/cutoff</independentVar>
 						<tableData breakPoint="0">
-							        0    50000
+							      0    50000
 							10.0    0    0
 							35.0  520  390
 							50.0  515  385
@@ -1677,12 +1677,40 @@
 						</tableData>
 						<tableData breakPoint="1">
 							      0    50000
-							30.0  0    0
+							30.0    0    0
 							58.9  405  270
 							99.0  610  520
 						</tableData>
 					</table>
 				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/systems/engines/egt-cmd-1">
+			<function>
+				<max>
+					<ifthen>
+						<eq>
+							<property>/engines/engine[0]/on-fire</property>
+							<value>1</value>
+						</eq>
+						<min>
+							<sum>
+								<quotient>
+									<property>propulsion/tat-c</property>
+									<value>4</value>
+								</quotient>
+								<value>745</value>
+							</sum>
+							<sum> <!-- Stop it from rising too fast -->
+								<property>/engines/engine[0]/egt-actual</property>
+								<value>50</value>
+							</sum>
+						</min>
+						<value>0</value>
+					</ifthen>
+					<property>/systems/engines/egt-table-1</property>
+				</max>
 			</function>
 		</fcs_function>
 		
@@ -1692,7 +1720,7 @@
 			<output>/engines/engine[0]/egt-actual</output>
 		</lag_filter>
 		
-		<fcs_function name="/systems/engines/egt-cmd-2">
+		<fcs_function name="/systems/engines/egt-table-2">
 			<function>
 				<sum>
 					<property>propulsion/tat-c</property>
@@ -1701,7 +1729,7 @@
 						<independentVar lookup="column">atmosphere/density-altitude</independentVar>
 						<independentVar lookup="table">/controls/engines/engine[1]/cutoff</independentVar>
 						<tableData breakPoint="0">
-							        0    50000
+							      0    50000
 							10.0    0    0
 							35.0  520  390
 							50.0  515  385
@@ -1710,12 +1738,40 @@
 						</tableData>
 						<tableData breakPoint="1">
 							      0    50000
-							30.0  0    0
+							30.0    0    0
 							58.9  405  270
 							99.0  610  520
 						</tableData>
 					</table>
 				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/systems/engines/egt-cmd-2">
+			<function>
+				<max>
+					<ifthen>
+						<eq>
+							<property>/engines/engine[1]/on-fire</property>
+							<value>1</value>
+						</eq>
+						<min>
+							<sum>
+								<quotient>
+									<property>propulsion/tat-c</property>
+									<value>4</value>
+								</quotient>
+								<value>745</value>
+							</sum>
+							<sum> <!-- Stop it from rising too fast -->
+								<property>/engines/engine[1]/egt-actual</property>
+								<value>50</value>
+							</sum>
+						</min>
+						<value>0</value>
+					</ifthen>
+					<property>/systems/engines/egt-table-2</property>
+				</max>
 			</function>
 		</fcs_function>
 		
@@ -1725,7 +1781,7 @@
 			<output>/engines/engine[1]/egt-actual</output>
 		</lag_filter>
 		
-		<fcs_function name="/systems/engines/egt-cmd-3">
+		<fcs_function name="/systems/engines/egt-table-3">
 			<function>
 				<sum>
 					<property>propulsion/tat-c</property>
@@ -1734,7 +1790,7 @@
 						<independentVar lookup="column">atmosphere/density-altitude</independentVar>
 						<independentVar lookup="table">/controls/engines/engine[2]/cutoff</independentVar>
 						<tableData breakPoint="0">
-							        0    50000
+							      0    50000
 							10.0    0    0
 							35.0  520  390
 							50.0  515  385
@@ -1743,12 +1799,40 @@
 						</tableData>
 						<tableData breakPoint="1">
 							      0    50000
-							30.0  0    0
+							30.0    0    0
 							58.9  405  270
 							99.0  610  520
 						</tableData>
 					</table>
 				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/systems/engines/egt-cmd-3">
+			<function>
+				<max>
+					<ifthen>
+						<eq>
+							<property>/engines/engine[2]/on-fire</property>
+							<value>1</value>
+						</eq>
+						<min>
+							<sum>
+								<quotient>
+									<property>propulsion/tat-c</property>
+									<value>4</value>
+								</quotient>
+								<value>745</value>
+							</sum>
+							<sum> <!-- Stop it from rising too fast -->
+								<property>/engines/engine[2]/egt-actual</property>
+								<value>50</value>
+							</sum>
+						</min>
+						<value>0</value>
+					</ifthen>
+					<property>/systems/engines/egt-table-3</property>
+				</max>
 			</function>
 		</fcs_function>
 		
