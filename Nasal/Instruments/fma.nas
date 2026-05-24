@@ -40,9 +40,6 @@ var CanvasBase = {
 		
 		return me;
 	},
-	getKeys: func() {
-		return [];
-	},
 	update: func() {
 		fmaL.update();
 		fmaR.update();
