@@ -155,7 +155,7 @@
 	</filter>
 	
 	<pid-controller>
-		<name>IT-CONTROLLER: Speed/Mach</name>
+		<name>IT-CONTROLLER: Speed</name>
 		<enable>
 			<condition>
 				<and>
@@ -214,7 +214,7 @@
 	</pid-controller>
 	
 	<filter>
-		<name>Speed/Mach Shaping</name>
+		<name>Speed Shaping</name>
 		<type>gain</type>
 		<gain>1.0</gain>
 		<enable>
@@ -243,7 +243,7 @@
 	</filter>
 	
 	<filter>
-		<name>Speed/Mach Inactive Sync</name>
+		<name>Speed Inactive Sync</name>
 		<type>gain</type>
 		<gain>1.0</gain>
 		<enable>
@@ -269,7 +269,7 @@
 	</filter>
 	
 	<filter>
-		<name>Speed/Mach Filter</name>
+		<name>Speed Filter</name>
 		<type>noise-spike</type>
 		<feedback-if-disabled>true</feedback-if-disabled>
 		<initialize-to>output</initialize-to>
