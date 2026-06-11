@@ -84,6 +84,7 @@
 		<eng type="string">GE</eng>
 		<eng-int type="int">0</eng-int>
 		<freighter type="bool">0</freighter>
+		<kc-10 type="bool">0</kc-10>
 		<series-10 type="bool">0</series-10>
 	</options>
 	
@@ -92,7 +93,7 @@
 			<name>Forward Cabin</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">6150</max-lb>
+			<max-lb type="double">6200</max-lb>
 		</weight>
 		<weight n="1">
 			<name>Mid Cabin</name>
@@ -104,19 +105,19 @@
 			<name>Aft Cabin</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">26850</max-lb>
+			<max-lb type="double">27600</max-lb>
 		</weight>
 		<weight n="3">
 			<name>Forward Cargo</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">25400</max-lb>
+			<max-lb type="double">38100</max-lb>
 		</weight>
 		<weight n="4">
 			<name>Aft Cargo</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">33800</max-lb>
+			<max-lb type="double">41800</max-lb>
 		</weight>
 		<weight n="5">
 			<name>Aft Bulk Cargo</name>

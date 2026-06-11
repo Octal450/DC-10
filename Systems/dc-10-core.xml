@@ -126,6 +126,16 @@
 			</function>
 		</fcs_function>
 		
+		<summer name="/consumables/fuel/total-fuel-actual"> <!-- Total fuel without the feed pipes -->
+			<input>propulsion/tank[0]/contents-lbs</input>
+			<input>propulsion/tank[1]/contents-lbs</input>
+			<input>propulsion/tank[2]/contents-lbs</input>
+			<input>propulsion/tank[3]/contents-lbs</input>
+			<input>propulsion/tank[4]/contents-lbs</input>
+			<input>propulsion/tank[5]/contents-lbs</input>
+			<input>propulsion/tank[6]/contents-lbs</input>
+		</summer>
+		
 		<switch name="contact/any-wow"> <!-- For failure-bridge.nas -->
 			<default value="0"/>
 			<test logic="OR" value="1">
@@ -186,6 +196,607 @@
 						<value>2</value>
 					</mod>
 				</floor>
+			</function>
+		</fcs_function>
+	
+	</channel>
+	
+	<channel name="Load Manager">
+		
+		<!-- Fuel Distribution -->
+		<!--
+			Refueling schedule:
+			Load 1, 2, 3 until 5000 in each
+			Load 0, 2, 4 so that 0 + 1 = 2 = 3 + 4 until 0 and 4 are full
+			Load 1, 2, 3 so that 0 + 1 = 2 = 3 + 4 until 0, 1, 3, 4 are full
+			Load 2 until full
+			Load 5 until full
+			Load 6 until full
+		-->
+		
+		<switch name="/systems/load-manager/total-fuel">
+			<default value="/systems/load-manager/total-fuel-30-40"/>
+			<test value="/systems/load-manager/total-fuel-10">
+				/options/series-10 eq 1
+			</test>
+		</switch>
+		
+		<pure_gain name="/systems/load-manager/fuel/total-fuel"> <!-- Keep synchronized -->
+			<input>/systems/load-manager/total-fuel</input>
+			<gain>1.0</gain>
+		</pure_gain>
+		
+		<fcs_function name="/systems/load-manager/fuel/tank[0]"> <!-- Tank 1 Outboard -->
+			<function>
+				<difference>
+					<quotient>
+						<property>/systems/load-manager/fuel/total-fuel</property>
+						<value>3</value>
+					</quotient>
+					<value>5000</value>
+				</difference>
+			</function>
+			<clipto>
+				<min>0</min>
+				<max>/systems/load-manager/tank-capacity[0]</max>
+			</clipto>
+		</fcs_function>
+		
+		<fcs_function name="/systems/load-manager/fuel/tank[4]"> <!-- Tank 3 Outboard -->
+			<function>
+				<difference>
+					<quotient>
+						<property>/systems/load-manager/fuel/total-fuel</property>
+						<value>3</value>
+					</quotient>
+					<value>5000</value>
+				</difference>
+			</function>
+			<clipto>
+				<min>0</min>
+				<max>/systems/load-manager/tank-capacity[4]</max>
+			</clipto>
+		</fcs_function>
+		
+		<fcs_function name="/systems/load-manager/fuel/tank[1]"> <!-- Tank 1 Inboard -->
+			<function>
+				<min>
+					<quotient> <!-- 1 = 2 = 3 (low fuel) -->
+						<property>/systems/load-manager/fuel/total-fuel</property>
+						<value>3</value>
+					</quotient>
+					<difference> <!-- 0 + 1 = 2 -->
+						<property>/systems/load-manager/fuel/tank[2]</property>
+						<property>/systems/load-manager/fuel/tank[0]</property>
+					</difference>
+				</min>
+			</function>
+			<clipto>
+				<min>0</min>
+				<max>/systems/load-manager/tank-capacity[1]</max>
+			</clipto>
+		</fcs_function>
+		
+		<fcs_function name="/systems/load-manager/fuel/tank[3]"> <!-- Tank 3 Inboard -->
+			<function>
+				<min>
+					<quotient> <!-- 1 = 2 = 3 (low fuel) -->
+						<property>/systems/load-manager/fuel/total-fuel</property>
+						<value>3</value>
+					</quotient>
+					<difference> <!-- 3 + 4 = 2 -->
+						<property>/systems/load-manager/fuel/tank[2]</property>
+						<property>/systems/load-manager/fuel/tank[4]</property>
+					</difference>
+				</min>
+			</function>
+			<clipto>
+				<min>0</min>
+				<max>/systems/load-manager/tank-capacity[3]</max>
+			</clipto>
+		</fcs_function>
+		
+		<fcs_function name="/systems/load-manager/fuel/tank[2]"> <!-- Tank 2 -->
+			<function>
+				<max>
+					<quotient> <!-- Balanced -->
+						<property>/systems/load-manager/fuel/total-fuel</property>
+						<value>3</value>
+					</quotient>
+					<difference> <!-- Tanks 1 and 3 full -->
+						<property>/systems/load-manager/fuel/total-fuel</property>
+						<property>/systems/load-manager/fuel/tank[0]</property>
+						<property>/systems/load-manager/fuel/tank[1]</property>
+						<property>/systems/load-manager/fuel/tank[3]</property>
+						<property>/systems/load-manager/fuel/tank[4]</property>
+					</difference>
+				</max>
+			</function>
+			<clipto>
+				<min>0</min>
+				<max>/systems/load-manager/tank-capacity[2]</max>
+			</clipto>
+		</fcs_function>
+		
+		<fcs_function name="/systems/load-manager/fuel/tank[5]"> <!-- Upper Aux Tank -->
+			<function>
+				<ifthen>
+					<eq>
+						<property>/options/series-10</property>
+						<value>1</value>
+					</eq>
+					<value>0</value>
+					<difference>
+						<property>/systems/load-manager/fuel/total-fuel</property>
+						<property>/systems/load-manager/fuel/tank[0]</property>
+						<property>/systems/load-manager/fuel/tank[1]</property>
+						<property>/systems/load-manager/fuel/tank[2]</property>
+						<property>/systems/load-manager/fuel/tank[3]</property>
+						<property>/systems/load-manager/fuel/tank[4]</property>
+					</difference>
+				</ifthen>
+			</function>
+			<clipto>
+				<min>0</min>
+				<max>/systems/load-manager/tank-capacity[5]</max>
+			</clipto>
+		</fcs_function>
+		
+		<fcs_function name="/systems/load-manager/fuel/tank[6]"> <!-- Lower Aux Tank -->
+			<function>
+				<ifthen>
+					<eq>
+						<property>/options/series-10</property>
+						<value>1</value>
+					</eq>
+					<value>0</value>
+					<difference>
+						<property>/systems/load-manager/fuel/total-fuel</property>
+						<property>/systems/load-manager/fuel/tank[0]</property>
+						<property>/systems/load-manager/fuel/tank[1]</property>
+						<property>/systems/load-manager/fuel/tank[2]</property>
+						<property>/systems/load-manager/fuel/tank[3]</property>
+						<property>/systems/load-manager/fuel/tank[4]</property>
+						<property>/systems/load-manager/fuel/tank[5]</property>
+					</difference>
+				</ifthen>
+			</function>
+			<clipto>
+				<min>0</min>
+				<max>/systems/load-manager/tank-capacity[6]</max>
+			</clipto>
+		</fcs_function>
+		
+		<summer name="/systems/load-manager/fuel/total-calc">
+			<input>/systems/load-manager/fuel/tank[0]</input>
+			<input>/systems/load-manager/fuel/tank[1]</input>
+			<input>/systems/load-manager/fuel/tank[2]</input>
+			<input>/systems/load-manager/fuel/tank[3]</input>
+			<input>/systems/load-manager/fuel/tank[4]</input>
+			<input>/systems/load-manager/fuel/tank[5]</input>
+			<input>/systems/load-manager/fuel/tank[6]</input>
+		</summer>
+		
+		<!-- Payload -->
+		<switch name="/systems/load-manager/weight[0]">
+			<default value="/systems/load-manager/weight-p[0]"/>
+			<test value="/systems/load-manager/weight-f[0]">
+				/options/freighter eq 1
+			</test>
+		</switch>
+		
+		<switch name="/systems/load-manager/weight[1]">
+			<default value="/systems/load-manager/weight-p[1]"/>
+			<test value="/systems/load-manager/weight-f[1]">
+				/options/freighter eq 1
+			</test>
+		</switch>
+		
+		<switch name="/systems/load-manager/weight[2]">
+			<default value="/systems/load-manager/weight-p[2]"/>
+			<test value="/systems/load-manager/weight-f[2]">
+				/options/freighter eq 1
+			</test>
+		</switch>
+		
+		<!-- Weights and CGs -->
+		<summer name="/systems/load-manager/zfw-lbs">
+			<input>inertia/empty-weight-lbs</input>
+			<input>/systems/load-manager/weight[0]</input>
+			<input>/systems/load-manager/weight[1]</input>
+			<input>/systems/load-manager/weight[2]</input>
+			<input>/systems/load-manager/weight[3]</input>
+			<input>/systems/load-manager/weight[4]</input>
+			<input>/systems/load-manager/weight[5]</input>
+		</summer>
+		
+		<summer name="/systems/load-manager/gw-lbs">
+			<input>/systems/load-manager/zfw-lbs</input>
+			<input>/systems/load-manager/fuel/total-fuel</input>
+		</summer>
+		
+		<fcs_function name="/systems/load-manager/zfwcg-x-in">
+			<function>
+				<quotient> <!-- Weighted average -->
+					<sum>
+						<product>
+							<property>inertia/empty-weight-lbs</property>
+							<property>inertia/empty-weight-x-in</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/weight[0]</property>
+							<property>inertia/pointmass-location-X-inches[0]</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/weight[1]</property>
+							<property>inertia/pointmass-location-X-inches[1]</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/weight[2]</property>
+							<property>inertia/pointmass-location-X-inches[2]</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/weight[3]</property>
+							<property>inertia/pointmass-location-X-inches[3]</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/weight[4]</property>
+							<property>inertia/pointmass-location-X-inches[4]</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/weight[5]</property>
+							<property>inertia/pointmass-location-X-inches[5]</property>
+						</product>
+					</sum>
+					<property>/systems/load-manager/zfw-lbs</property>
+				</quotient>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/systems/load-manager/zfwcg-percent-mac">
+			<function>
+				<product>
+					<quotient>
+						<difference>
+							<product>
+								<property>/systems/load-manager/zfwcg-x-in</property>
+								<value>0.0254</value> <!-- Inches to meters -->
+							</product>
+							<value>-0.21384</value> <!-- Offset -->
+						</difference>
+						<value>8.59</value> <!-- MAC length -->
+					</quotient>
+					<value>100</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/systems/load-manager/zfw-lbs-limited">
+			<function>
+				<min>
+					<property>/limits/mass-and-balance/maximum-zero-fuel-mass-lbs</property>
+					<property>/systems/load-manager/zfw-lbs</property>
+				</min>
+			</function>
+		</fcs_function>
+		
+		<switch name="/systems/load-manager/zfwcg-aft-limit-sel-10">
+			<default value="0"/>
+			<test value="3">
+				/systems/load-manager/fuel/total-fuel ge 113999.5
+			</test>
+			<test value="2">
+				/systems/load-manager/fuel/total-fuel ge 101999.5
+			</test>
+			<test value="1">
+				/systems/load-manager/fuel/total-fuel ge 79999.5
+			</test>
+		</switch>
+		
+		<switch name="/systems/load-manager/zfwcg-aft-limit-keepout-10">
+			<default value="0"/>
+			<test value="1">
+				/systems/load-manager/gw-lbs ge 422999.5
+			</test>
+		</switch>
+		
+		<switch name="/systems/load-manager/zfwcg-aft-limit-sel">
+			<default value="0"/>
+			<test value="1">
+				/systems/load-manager/fuel/total-fuel ge 99999.5
+			</test>
+		</switch>
+		
+		<fcs_function name="/systems/load-manager/zfwcg-aft-limit"> <!-- From FCOM -->
+			<function>
+				<ifthen>
+					<eq>
+						<property>/options/series-10</property>
+						<value>1</value>
+					</eq>
+					<table>
+						<independentVar lookup="row">/systems/load-manager/zfw-lbs-limited</independentVar>
+						<independentVar lookup="column">/systems/load-manager/zfwcg-aft-limit-keepout-10</independentVar>
+						<independentVar lookup="table">/systems/load-manager/zfwcg-aft-limit-sel-10</independentVar>
+						<tableData breakPoint="0">
+							        0     1
+							220000  26.9  26.9
+							260000  27.5  27.5
+							286999  27.8  27.8
+							287000  27.8  25.4
+							320000  28.1  22.0
+							335000  28.3  23.1
+						</tableData>
+						<tableData breakPoint="1">
+							        0     1
+							220000  25.9  25.9
+							260000  26.7  26.7
+							286999  27.0  27.0
+							287000  27.8  25.4
+							320000  28.1  22.0
+							335000  28.3  23.1
+						</tableData>
+						<tableData breakPoint="2">
+							        0     1
+							220000  24.8  24.8
+							260000  25.8  25.8
+							286999  26.1  26.1
+							287000  27.8  25.4
+							320000  28.1  22.0
+							335000  28.3  23.1
+						</tableData>
+						<tableData breakPoint="3">
+							        0     1
+							220000  23.9  23.9
+							286999  25.4  25.4
+							287000  27.8  25.4
+							320000  28.1  22.0
+							335000  28.3  23.1
+						</tableData>
+					</table>
+					<ifthen>
+						<eq>
+							<property>/options/kc-10</property>
+							<value>1</value>
+						</eq>
+						<table>
+							<independentVar lookup="row">/systems/load-manager/gw-lbs</independentVar>
+							<tableData>
+								240000  33.0
+								274999  32.0
+								275000  29.0
+								414000  29.0
+							</tableData>
+						</table>
+						<table>
+							<independentVar lookup="row">/systems/load-manager/zfw-lbs-limited</independentVar>
+							<independentVar lookup="column">zero</independentVar> <!-- Take advantage of the table lookup to interpolate -->
+							<independentVar lookup="table">/systems/load-manager/zfwcg-aft-limit-sel</independentVar>
+							<tableData breakPoint="0">
+								        0     1
+								240000  25.0  25.0
+								360000  26.2  26.2
+								401000  25.4  25.4
+							</tableData>
+							<tableData breakPoint="1">
+								        0     1
+								240000  23.2  23.2
+								332000  24.8  24.8
+								386000  23.8  23.8
+								401000  22.7  22.7
+							</tableData>
+						</table>
+					</ifthen>
+				</ifthen>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/systems/load-manager/zfwcg-fwd-limit"> <!-- From FCOM -->
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<property>/options/series-10</property>
+							<value>1</value>
+						</eq>
+						<eq>
+							<property>/options/kc-10</property>
+							<value>0</value>
+						</eq>
+					</and>
+					<table>
+						<independentVar lookup="row">/systems/load-manager/gw-lbs</independentVar>
+						<tableData>
+							316000  8.0
+							335000  9.6
+						</tableData>
+					</table>
+					<value>8</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/systems/load-manager/cg-x-in">
+			<function>
+				<quotient> <!-- Weighted average -->
+					<sum>
+						<product>
+							<property>inertia/empty-weight-lbs</property>
+							<property>inertia/empty-weight-x-in</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/weight[0]</property>
+							<property>inertia/pointmass-location-X-inches[0]</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/weight[1]</property>
+							<property>inertia/pointmass-location-X-inches[1]</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/weight[2]</property>
+							<property>inertia/pointmass-location-X-inches[2]</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/weight[3]</property>
+							<property>inertia/pointmass-location-X-inches[3]</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/weight[4]</property>
+							<property>inertia/pointmass-location-X-inches[4]</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/weight[5]</property>
+							<property>inertia/pointmass-location-X-inches[5]</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/fuel/tank[0]</property>
+							<property>propulsion/tank[0]/x-position</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/fuel/tank[1]</property>
+							<property>propulsion/tank[1]/x-position</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/fuel/tank[2]</property>
+							<property>propulsion/tank[2]/x-position</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/fuel/tank[3]</property>
+							<property>propulsion/tank[3]/x-position</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/fuel/tank[4]</property>
+							<property>propulsion/tank[4]/x-position</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/fuel/tank[5]</property>
+							<property>propulsion/tank[5]/x-position</property>
+						</product>
+						<product>
+							<property>/systems/load-manager/fuel/tank[6]</property>
+							<property>propulsion/tank[6]/x-position</property>
+						</product>
+					</sum>
+					<property>/systems/load-manager/gw-lbs</property>
+				</quotient>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/systems/load-manager/cg-percent-mac">
+			<function>
+				<product>
+					<quotient>
+						<difference>
+							<product>
+								<property>/systems/load-manager/cg-x-in</property>
+								<value>0.0254</value> <!-- Inches to meters -->
+							</product>
+							<value>-0.21384</value> <!-- Offset -->
+						</difference>
+						<value>8.59</value> <!-- MAC length -->
+					</quotient>
+					<value>100</value>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/systems/load-manager/cg-aft-limit"> <!-- From FCOM -->
+			<function>
+				<ifthen>
+					<eq>
+						<property>/options/series-10</property>
+						<value>1</value>
+					</eq>
+					<table>
+						<independentVar lookup="row">/systems/load-manager/gw-lbs</independentVar>
+						<tableData>
+							220000  26.9
+							238000  27.2
+							254000  30.8
+							423000  30.8
+							440000  29.0
+						</tableData>
+					</table>
+					<ifthen>
+						<eq>
+							<property>/options/kc-10</property>
+							<value>1</value>
+						</eq>
+						<table>
+							<independentVar lookup="row">/systems/load-manager/gw-lbs</independentVar>
+							<tableData>
+								240000  33.0
+								274999  32.0
+								275000  29.0
+								460000  29.0
+								520000  27.8
+								590000  23.2
+							</tableData>
+						</table>
+						<table>
+							<independentVar lookup="row">/systems/load-manager/gw-lbs</independentVar>
+							<tableData>
+								240000  25.0
+								256000  25.2
+								266500  28.6
+								272000  29.0
+								462000  29.0
+								518000  27.8
+								572000  24.4
+							</tableData>
+						</table>
+					</ifthen>
+				</ifthen>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/systems/load-manager/cg-fwd-limit"> <!-- From FCOM -->
+			<function>
+				<ifthen>
+					<eq>
+						<property>/options/series-10</property>
+						<value>1</value>
+					</eq>
+					<table>
+						<independentVar lookup="row">/systems/load-manager/gw-lbs</independentVar>
+						<tableData>
+							316000   8.0
+							350000   9.8
+							368000  11.6
+							378000  13.6
+							440000  16.6
+						</tableData>
+					</table>
+					<ifthen>
+						<eq>
+							<property>/options/kc-10</property>
+							<value>1</value>
+						</eq>
+						<table>
+							<independentVar lookup="row">/systems/load-manager/gw-lbs</independentVar>
+							<tableData>
+								414000   8.0
+								432000   8.4
+								448000  11.4
+								468000  12.0
+								492000  10.2
+								572000   9.9
+								590000  19.0
+							</tableData>
+						</table>
+						<table>
+							<independentVar lookup="row">/systems/load-manager/gw-lbs</independentVar>
+							<tableData>
+								401000   8.0
+								416000   8.2
+								432000  11.5
+								442000  11.8
+								470000  10.2
+								572000   9.9
+							</tableData>
+						</table>
+					</ifthen>
+				</ifthen>
 			</function>
 		</fcs_function>
 	

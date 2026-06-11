@@ -4,6 +4,17 @@
 # Anything that says Temp is set by another file to avoid multiple getValue calls
 # Usage Example: pts.Class.SubClass.node.getValue()
 
+var Consumables = {
+	Fuel: {
+		Tank: {
+			capacityGalUs: [props.globals.getNode("/consumables/fuel/tank[0]/capacity-gal_us"), props.globals.getNode("/consumables/fuel/tank[1]/capacity-gal_us"), props.globals.getNode("/consumables/fuel/tank[2]/capacity-gal_us"), props.globals.getNode("/consumables/fuel/tank[3]/capacity-gal_us"), props.globals.getNode("/consumables/fuel/tank[4]/capacity-gal_us"), props.globals.getNode("/consumables/fuel/tank[5]/capacity-gal_us"), props.globals.getNode("/consumables/fuel/tank[6]/capacity-gal_us")],
+			densityPpg: [props.globals.getNode("/consumables/fuel/tank[0]/density-ppg"), props.globals.getNode("/consumables/fuel/tank[1]/density-ppg"), props.globals.getNode("/consumables/fuel/tank[2]/density-ppg"), props.globals.getNode("/consumables/fuel/tank[3]/density-ppg"), props.globals.getNode("/consumables/fuel/tank[4]/density-ppg"), props.globals.getNode("/consumables/fuel/tank[5]/density-ppg"), props.globals.getNode("/consumables/fuel/tank[6]/density-ppg")],
+			levelLbs: [props.globals.getNode("/consumables/fuel/tank[0]/level-lbs"), props.globals.getNode("/consumables/fuel/tank[1]/level-lbs"), props.globals.getNode("/consumables/fuel/tank[2]/level-lbs"), props.globals.getNode("/consumables/fuel/tank[3]/level-lbs"), props.globals.getNode("/consumables/fuel/tank[4]/level-lbs"), props.globals.getNode("/consumables/fuel/tank[5]/level-lbs"), props.globals.getNode("/consumables/fuel/tank[6]/level-lbs")],
+		},
+		totalFuelActual: props.globals.getNode("/consumables/fuel/total-fuel-actual"),
+	},
+};
+
 var Controls = {
 	Flight: {
 		aileronDrivesTiller: props.globals.getNode("/controls/flight/aileron-drives-tiller"),
@@ -109,6 +120,10 @@ var Instrumentation = {
 
 var Options = {
 	eng: props.globals.getNode("/options/eng"),
+	engInt: props.globals.getNode("/options/eng-int"),
+	freighter: props.globals.getNode("/options/freighter"),
+	kc10: props.globals.getNode("/options/kc-10"),
+	series10: props.globals.getNode("/options/series-10"),
 };
 
 var Orientation = {
@@ -119,6 +134,9 @@ var Orientation = {
 var Payload = {
 	Armament: {
 		msg: props.globals.getNode("/payload/armament/msg"),
+	},
+	Weight: {
+		weightLb: [props.globals.getNode("/payload/weight[0]/weight-lb"), props.globals.getNode("/payload/weight[1]/weight-lb"), props.globals.getNode("/payload/weight[2]/weight-lb"), props.globals.getNode("/payload/weight[3]/weight-lb"), props.globals.getNode("/payload/weight[4]/weight-lb"), props.globals.getNode("/payload/weight[5]/weight-lb")],
 	},
 };
 

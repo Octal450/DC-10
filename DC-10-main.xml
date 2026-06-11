@@ -77,6 +77,13 @@
 						</binding>
 					</item-->
 					<item>
+						<label>Load Manager</label>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>load-manager</dialog-name>
+						</binding>
+					</item>
+					<item>
 						<label>System Failures</label>
 						<binding>
 							<command>dialog-show</command>
@@ -1033,6 +1040,14 @@
 					<script>systems.doFullThrust();</script>
 				</binding>
 			</key>
+			<key n="76">
+				<name>L</name>
+				<desc>Open Load Manager</desc>
+				<binding>
+					<command>nasal</command>
+					<script>core.LoadManager.openDialog();</script>
+				</binding>
+			</key>
 			<key n="80">
 				<name>P</name>
 				<desc>Open performance dialog</desc>
@@ -1467,6 +1482,7 @@
 				</autopush>
 				<damage type="bool">0</damage>
 				<keyboard-mode type="bool">0</keyboard-mode>
+				<load-manager-pax-count type="bool">1</load-manager-pax-count>
 				<separate-tiller-axis type="bool">0</separate-tiller-axis>
 			</options>
 		</acconfig>
@@ -1603,6 +1619,30 @@
 			<sys-2-qty-input type="double">8</sys-2-qty-input> <!-- Randomized later in sim init -->
 			<sys-3-qty-input type="double">8</sys-3-qty-input> <!-- Randomized later in sim init -->
 		</hydraulics>
+		<load-manager n="0">
+			<pax n="0" type="int">0</pax>
+			<pax n="1" type="int">0</pax>
+			<pax n="2" type="int">0</pax>
+			<tank-capacity n="0" type="int">0</tank-capacity>
+			<tank-capacity n="1" type="int">0</tank-capacity>
+			<tank-capacity n="2" type="int">0</tank-capacity>
+			<tank-capacity n="3" type="int">0</tank-capacity>
+			<tank-capacity n="4" type="int">0</tank-capacity>
+			<tank-capacity n="5" type="int">0</tank-capacity>
+			<tank-capacity n="6" type="int">0</tank-capacity>
+			<total-fuel-10 type="int">0</total-fuel-10>
+			<total-fuel-30-40 type="int">0</total-fuel-30-40>
+			<total-fuel-kc-10 type="int">0</total-fuel-kc-10>
+			<weight n="3" type="int">0</weight>
+			<weight n="4" type="int">0</weight>
+			<weight n="5" type="int">0</weight>
+			<weight-f n="0" type="int">0</weight-f>
+			<weight-f n="1" type="int">0</weight-f>
+			<weight-f n="2" type="int">0</weight-f>
+			<weight-p n="0" type="int">0</weight-p>
+			<weight-p n="1" type="int">0</weight-p>
+			<weight-p n="2" type="int">0</weight-p>
+		</load-manager>
 		<pneumatics n="0">
 			<bleed-1-psi type="double">30</bleed-1-psi>
 			<bleed-2-psi type="double">30</bleed-2-psi>
@@ -1625,6 +1665,7 @@
 		<core>
 			<file>Aircraft/DC-10/Nasal/core.nas</file>
 			<file>Aircraft/DC-10/Nasal/hack-canvas.nas</file>
+			<file>Aircraft/DC-10/Nasal/load-manager.nas</file>
 			<file>Aircraft/DC-10/Nasal/thunder-effects.nas</file>
 			<file>Aircraft/DC-10/Nasal/view-controller.nas</file>
 		</core>
