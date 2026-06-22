@@ -666,7 +666,7 @@
 					<table>
 						<independentVar lookup="row">/controls/engines/engine[0]/throttle</independentVar>
 						<tableData>
-							0.05  0.00
+							0.00  0.00
 							1.00  0.82
 						</tableData>
 					</table>
@@ -682,7 +682,7 @@
 					<table>
 						<independentVar lookup="row">/systems/engines/reverse-1/throttle-rev-cmd</independentVar>
 						<tableData>
-							0.05  0.25
+							0.00  0.25
 							0.82  1.00
 						</tableData>
 					</table>
@@ -768,7 +768,7 @@
 					<table>
 						<independentVar lookup="row">/controls/engines/engine[1]/throttle</independentVar>
 						<tableData>
-							0.05  0.00
+							0.00  0.00
 							1.00  0.82
 						</tableData>
 					</table>
@@ -784,7 +784,7 @@
 					<table>
 						<independentVar lookup="row">/systems/engines/reverse-2/throttle-rev-cmd</independentVar>
 						<tableData>
-							0.05  0.25
+							0.00  0.25
 							0.82  1.00
 						</tableData>
 					</table>
@@ -862,7 +862,7 @@
 					<table>
 						<independentVar lookup="row">/controls/engines/engine[2]/throttle</independentVar>
 						<tableData>
-							0.05  0.00
+							0.00  0.00
 							1.00  0.82
 						</tableData>
 					</table>
@@ -878,7 +878,7 @@
 					<table>
 						<independentVar lookup="row">/systems/engines/reverse-3/throttle-rev-cmd</independentVar>
 						<tableData>
-							0.05  0.25
+							0.00  0.25
 							0.82  1.00
 						</tableData>
 					</table>
