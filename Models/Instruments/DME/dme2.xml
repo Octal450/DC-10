@@ -42,7 +42,7 @@
 		<type>number-value</type>
 		<format>%05.1f</format>
 		<property>instrumentation/dme[0]/distance-nm</property>
-		<font>Std7SegCustom.ttf</font>
+		<font>Std7Seg.ttf</font>
 		<draw-text>true</draw-text>
 		<draw-alignment>false</draw-alignment>
 		<draw-boundingbox>false</draw-boundingbox>
@@ -63,7 +63,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type>literal</type>
 		<text>---.-</text>
-		<font>Std7SegCustom.ttf</font>
+		<font>Std7Seg.ttf</font>
 		<draw-text>true</draw-text>
 		<draw-alignment>false</draw-alignment>
 		<draw-boundingbox>false</draw-boundingbox>
@@ -84,7 +84,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type>literal</type>
 		<text>888.8</text>
-		<font>Std7SegCustom.ttf</font>
+		<font>Std7Seg.ttf</font>
 		<draw-text>true</draw-text>
 		<draw-alignment>false</draw-alignment>
 		<draw-boundingbox>false</draw-boundingbox>
@@ -107,7 +107,7 @@
 		<type>number-value</type>
 		<format>%05.1f</format>
 		<property>instrumentation/dme[1]/distance-nm</property>
-		<font>Std7SegCustom.ttf</font>
+		<font>Std7Seg.ttf</font>
 		<draw-text>true</draw-text>
 		<draw-alignment>false</draw-alignment>
 		<draw-boundingbox>false</draw-boundingbox>
@@ -128,7 +128,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type>literal</type>
 		<text>---.-</text>
-		<font>Std7SegCustom.ttf</font>
+		<font>Std7Seg.ttf</font>
 		<draw-text>true</draw-text>
 		<draw-alignment>false</draw-alignment>
 		<draw-boundingbox>false</draw-boundingbox>
@@ -149,7 +149,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type>literal</type>
 		<text>888.8</text>
-		<font>Std7SegCustom.ttf</font>
+		<font>Std7Seg.ttf</font>
 		<draw-text>true</draw-text>
 		<draw-alignment>false</draw-alignment>
 		<draw-boundingbox>false</draw-boundingbox>
