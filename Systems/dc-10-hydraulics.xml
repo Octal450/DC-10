@@ -194,12 +194,18 @@
 			</test>
 		</switch>
 		
-		<switch name="/systems/hydraulics/l-eng-1-pump-psi">
+		<switch name="/systems/hydraulics/l-eng-1-pump-psi-cmd">
 			<default value="40"/>
 			<test value="/systems/hydraulics/l-eng-1-pump-psi-input">
 				/systems/hydraulics/l-eng-1-pump-cmd eq 1
 			</test>
 		</switch>
+		
+		<actuator name="/systems/hydraulics/l-eng-1-pump-psi">
+			<input>/systems/hydraulics/l-eng-1-pump-psi-cmd</input>
+			<rate_limit sense="incr">6000</rate_limit>
+			<rate_limit sense="decr">2000</rate_limit>
+		</actuator>
 		
 		<fcs_function name="/systems/hydraulics/r-eng-1-pump-psi-input">
 			<function>
@@ -238,12 +244,18 @@
 			</test>
 		</switch>
 		
-		<switch name="/systems/hydraulics/r-eng-1-pump-psi">
+		<switch name="/systems/hydraulics/r-eng-1-pump-psi-cmd">
 			<default value="40"/>
 			<test value="/systems/hydraulics/r-eng-1-pump-psi-input">
 				/systems/hydraulics/r-eng-1-pump-cmd eq 1
 			</test>
 		</switch>
+		
+		<actuator name="/systems/hydraulics/r-eng-1-pump-psi">
+			<input>/systems/hydraulics/r-eng-1-pump-psi-cmd</input>
+			<rate_limit sense="incr">6000</rate_limit>
+			<rate_limit sense="decr">2000</rate_limit>
+		</actuator>
 		
 		<fcs_function name="/systems/hydraulics/sys-1-pre-psi-cmd">
 			<function>
@@ -317,12 +329,18 @@
 			</test>
 		</switch>
 		
-		<switch name="/systems/hydraulics/l-eng-2-pump-psi">
+		<switch name="/systems/hydraulics/l-eng-2-pump-psi-cmd">
 			<default value="40"/>
 			<test value="/systems/hydraulics/l-eng-2-pump-psi-input">
 				/systems/hydraulics/l-eng-2-pump-cmd eq 1
 			</test>
 		</switch>
+		
+		<actuator name="/systems/hydraulics/l-eng-2-pump-psi">
+			<input>/systems/hydraulics/l-eng-2-pump-psi-cmd</input>
+			<rate_limit sense="incr">6000</rate_limit>
+			<rate_limit sense="decr">2000</rate_limit>
+		</actuator>
 		
 		<fcs_function name="/systems/hydraulics/r-eng-2-pump-psi-input">
 			<function>
@@ -361,12 +379,18 @@
 			</test>
 		</switch>
 		
-		<switch name="/systems/hydraulics/r-eng-2-pump-psi">
+		<switch name="/systems/hydraulics/r-eng-2-pump-psi-cmd">
 			<default value="40"/>
 			<test value="/systems/hydraulics/r-eng-2-pump-psi-input">
 				/systems/hydraulics/r-eng-2-pump-cmd eq 1
 			</test>
 		</switch>
+		
+		<actuator name="/systems/hydraulics/r-eng-2-pump-psi">
+			<input>/systems/hydraulics/r-eng-2-pump-psi-cmd</input>
+			<rate_limit sense="incr">6000</rate_limit>
+			<rate_limit sense="decr">2000</rate_limit>
+		</actuator>
 		
 		<fcs_function name="/systems/hydraulics/sys-2-pre-psi-cmd">
 			<function>
@@ -440,12 +464,18 @@
 			</test>
 		</switch>
 		
-		<switch name="/systems/hydraulics/l-eng-3-pump-psi">
+		<switch name="/systems/hydraulics/l-eng-3-pump-psi-cmd">
 			<default value="40"/>
 			<test value="/systems/hydraulics/l-eng-3-pump-psi-input">
 				/systems/hydraulics/l-eng-3-pump-cmd eq 1
 			</test>
 		</switch>
+		
+		<actuator name="/systems/hydraulics/l-eng-3-pump-psi">
+			<input>/systems/hydraulics/l-eng-3-pump-psi-cmd</input>
+			<rate_limit sense="incr">6000</rate_limit>
+			<rate_limit sense="decr">2000</rate_limit>
+		</actuator>
 		
 		<fcs_function name="/systems/hydraulics/r-eng-3-pump-psi-input">
 			<function>
@@ -484,14 +514,20 @@
 			</test>
 		</switch>
 		
-		<switch name="/systems/hydraulics/r-eng-3-pump-psi">
+		<switch name="/systems/hydraulics/r-eng-3-pump-psi-cmd">
 			<default value="40"/>
 			<test value="/systems/hydraulics/r-eng-3-pump-psi-input">
 				/systems/hydraulics/r-eng-3-pump-cmd eq 1
 			</test>
 		</switch>
 		
-		<switch name="/systems/hydraulics/aux-pump-1-psi">
+		<actuator name="/systems/hydraulics/r-eng-3-pump-psi">
+			<input>/systems/hydraulics/r-eng-3-pump-psi-cmd</input>
+			<rate_limit sense="incr">6000</rate_limit>
+			<rate_limit sense="decr">2000</rate_limit>
+		</actuator>
+		
+		<switch name="/systems/hydraulics/aux-pump-1-psi-cmd">
 			<default value="0"/>
 			<test logic="OR" value="0">
 				/controls/hydraulics/aux-pump-1 ne 1
@@ -511,7 +547,13 @@
 			</test>
 		</switch>
 		
-		<switch name="/systems/hydraulics/aux-pump-2-psi">
+		<actuator name="/systems/hydraulics/aux-pump-1-psi">
+			<input>/systems/hydraulics/aux-pump-1-psi-cmd</input>
+			<rate_limit sense="incr">6000</rate_limit>
+			<rate_limit sense="decr">2000</rate_limit>
+		</actuator>
+		
+		<switch name="/systems/hydraulics/aux-pump-2-psi-cmd">
 			<default value="0"/>
 			<test logic="OR" value="0">
 				/controls/hydraulics/aux-pump-2 ne 1
@@ -524,6 +566,12 @@
 				/systems/electrical/bus/ac-3 ge 112
 			</test>
 		</switch>
+		
+		<actuator name="/systems/hydraulics/aux-pump-2-psi">
+			<input>/systems/hydraulics/aux-pump-2-psi-cmd</input>
+			<rate_limit sense="incr">6000</rate_limit>
+			<rate_limit sense="decr">2000</rate_limit>
+		</actuator>
 		
 		<fcs_function name="/systems/hydraulics/sys-3-pre-psi-cmd">
 			<function>
