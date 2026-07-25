@@ -487,7 +487,7 @@
 		
 		<lag_filter name="/instrumentation/ai[0]/slip-skid">
 			<input>/instrumentation/ai[0]/slip-skid-cmd</input>
-			<c1>5.0</c1>
+			<c1>5</c1>
 		</lag_filter>
 		
 		<!-- Attitude Indicator 2 -->
@@ -680,7 +680,7 @@
 		
 		<lag_filter name="/instrumentation/ai[1]/slip-skid">
 			<input>/instrumentation/ai[1]/slip-skid-cmd</input>
-			<c1>5.0</c1>
+			<c1>5</c1>
 		</lag_filter>
 		
 		<!-- Standby Attitude Indicator -->
@@ -1747,7 +1747,7 @@
 		<!-- Computation -->
 		<lag_filter name="/instrumentation/vertical-speed-indicator/ground/rate-lag">
 			<input>/orientation/pitch-rate-degps</input>
-			<c1>5.0</c1>
+			<c1>5</c1>
 		</lag_filter>
 		
 		<pure_gain name="/instrumentation/vertical-speed-indicator/ground/rate">
@@ -1764,7 +1764,7 @@
 		
 		<lag_filter name="/instrumentation/vertical-speed-indicator/vert-speed-fpm">
 			<input>/instrumentation/vertical-speed-indicator/vert-speed-fpm-switch</input>
-			<c1>1.0</c1>
+			<c1>1</c1>
 		</lag_filter>
 		
 		<!-- Vertical Speed Indicator 1 -->
@@ -1918,7 +1918,7 @@
 		
 		<pure_gain name="/instrumentation/epr[0]/epr-d100">
 			<input>/instrumentation/epr[0]/epr</input>
-			<gain>1.0</gain>
+			<gain>1</gain>
 		</pure_gain>
 		
 		<fcs_function name="/instrumentation/epr[0]/epr-d10">
@@ -2004,7 +2004,7 @@
 		
 		<pure_gain name="/instrumentation/epr[1]/epr-d100">
 			<input>/instrumentation/epr[1]/epr</input>
-			<gain>1.0</gain>
+			<gain>1</gain>
 		</pure_gain>
 		
 		<fcs_function name="/instrumentation/epr[1]/epr-d10">
@@ -2090,7 +2090,7 @@
 		
 		<pure_gain name="/instrumentation/epr[2]/epr-d100">
 			<input>/instrumentation/epr[2]/epr</input>
-			<gain>1.0</gain>
+			<gain>1</gain>
 		</pure_gain>
 		
 		<fcs_function name="/instrumentation/epr[2]/epr-d10">
@@ -3362,7 +3362,7 @@
 		
 		<pure_gain name="/instrumentation/tci/limit-epr-d1">
 			<input>/instrumentation/tci/limit-epr-active</input>
-			<gain>1.0</gain>
+			<gain>1</gain>
 		</pure_gain>
 		
 		<fcs_function name="/instrumentation/tci/limit-epr-d.1">

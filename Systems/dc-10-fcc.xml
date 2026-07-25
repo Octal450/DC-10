@@ -475,7 +475,7 @@
 		
 		<pure_gain name="/systems/fcc/speeds/vmax">
 			<input>/systems/fcc/speeds/vmo-mmo</input>
-			<gain>1.0</gain>
+			<gain>1</gain>
 			<clipto>
 				<min>100</min>
 				<max>100000</max>
@@ -895,9 +895,9 @@
 		<lead_lag_filter name="/systems/fcc/cws-roll/phidot-leadlag">
 			<input>/systems/fcc/cws-roll/phidot-switched</input>
 			<c1>1.05</c1>
-			<c2>1.0</c2>
+			<c2>1</c2>
 			<c3>0.97</c3>
-			<c4>1.0</c4>
+			<c4>1</c4>
 		</lead_lag_filter>
 		
 		<fcs_function name="/systems/fcc/cws-roll/aileron-nul">
@@ -1007,8 +1007,8 @@
 			<kd>/systems/fcc/cws-roll/d-gain-scheduled</kd>
 			<trigger>/systems/fcc/cws-roll/trigger</trigger>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</pid>
 		
@@ -1041,9 +1041,9 @@
 		<lead_lag_filter name="/systems/fcc/cws-pitch/thetadot-leadlag">
 			<input>/systems/fcc/cws-pitch/thetadot-switched</input>
 			<c1>1.05</c1>
-			<c2>1.0</c2>
+			<c2>1</c2>
 			<c3>0.97</c3>
-			<c4>1.0</c4>
+			<c4>1</c4>
 		</lead_lag_filter>
 		
 		<fcs_function name="/systems/fcc/cws-pitch/elevator-nul">
@@ -1131,8 +1131,8 @@
 			<kd>/systems/fcc/cws-pitch/d-gain</kd>
 			<trigger>/systems/fcc/cws-pitch/trigger</trigger>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</pid>
 		
@@ -1320,7 +1320,7 @@
 		<pid name="/systems/fcc/yaw/tc-pd">
 			<input>/systems/fcc/yaw/slip-skid</input>
 			<kp>/systems/fcc/yaw/tc-p-gain-scheduled</kp>
-			<ki>0.0</ki>
+			<ki>0</ki>
 			<kd>/systems/fcc/yaw/tc-d-gain-scheduled</kd>
 			<clipto>
 				<min>-0.2</min>
@@ -1367,8 +1367,8 @@
 			<input>/systems/fcc/yaw/rudder-nul</input>
 			<input>/systems/fcc/yaw/upper-output</input>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</summer>
 		
@@ -1376,8 +1376,8 @@
 			<input>/systems/fcc/yaw/rudder-nul</input>
 			<input>/systems/fcc/yaw/lower-output</input>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</summer>
 	

@@ -72,8 +72,8 @@
 			<input>/systems/fcs/aileron-yoke-switch</input>
 			<input>/systems/fcs/ailerons/trim-overall</input>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</summer>
 		
@@ -81,8 +81,8 @@
 			<input>/systems/fcc/roll-output</input>
 			<input>/systems/fcs/ailerons/trim-overall</input>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</summer>
 		
@@ -96,8 +96,8 @@
 			<input>/systems/fcs/ailerons/output</input>
 			<input>-/systems/fcs/ailerons/trim-overall</input>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</summer>
 		
@@ -193,8 +193,8 @@
 				/systems/hydraulics/sys-3-psi ge 2200
 			</test>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</switch>
 		
@@ -245,8 +245,8 @@
 				/systems/hydraulics/sys-3-psi ge 2200
 			</test>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</switch>
 		
@@ -297,8 +297,8 @@
 				/systems/hydraulics/sys-3-psi ge 2200
 			</test>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</switch>
 		
@@ -352,8 +352,8 @@
 				/systems/hydraulics/sys-3-psi ge 2200
 			</test>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</switch>
 		
@@ -471,8 +471,8 @@
 				/systems/hydraulics/sys-2-psi ge 2200
 			</test>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</switch>
 		
@@ -511,8 +511,8 @@
 				/systems/hydraulics/sys-3-aft-psi ge 2200
 			</test>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</switch>
 		
@@ -551,8 +551,8 @@
 				/systems/hydraulics/sys-3-aft-psi ge 2200
 			</test>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</switch>
 		
@@ -591,8 +591,8 @@
 				/systems/hydraulics/sys-2-psi ge 2200
 			</test>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</switch>
 		
@@ -640,7 +640,7 @@
 			<gain>15</gain>
 			<clipto>
 				<min>-15</min>
-				<max>1.0</max>
+				<max>1</max>
 			</clipto>
 		</pure_gain>
 		
@@ -671,8 +671,8 @@
 			<input>/systems/fcc/rudder-upper-output</input>
 			<input>/systems/fcs/rudders/trim</input>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</summer>
 		
@@ -680,8 +680,8 @@
 			<input>/systems/fcc/rudder-lower-output</input>
 			<input>/systems/fcs/rudders/trim</input>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</summer>
 		
@@ -689,8 +689,8 @@
 			<input>/systems/fcs/rudders/pedal-switch</input>
 			<input>/systems/fcs/rudders/trim</input>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</summer>
 		
@@ -717,8 +717,8 @@
 				/systems/hydraulics/nrmp/sys-2-to-sys-1 ge 2200
 			</test>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</switch>
 		
@@ -752,8 +752,8 @@
 				/systems/hydraulics/nrmp/sys-3-to-sys-2 ge 2200
 			</test>
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</switch>
 		
@@ -1296,8 +1296,8 @@
 			<input>/systems/fcc/afs/yaw-cmd</input>
 			<input>/systems/fcs/rudders/trim</input> <!-- 13 of 30 -->
 			<clipto>
-				<min>-1.0</min>
-				<max>1.0</max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</summer>
 		
@@ -1474,8 +1474,8 @@
 			</function>
 			<output>/systems/hydraulics/brakes/left-input-feedback</output>
 			<clipto>
-				<min>0.0</min>
-				<max>1.0</max>
+				<min>0</min>
+				<max>1</max>
 			</clipto>
 		</fcs_function>
 		
@@ -1502,8 +1502,8 @@
 			</function>
 			<output>/systems/hydraulics/brakes/right-input-feedback</output>
 			<clipto>
-				<min>0.0</min>
-				<max>1.0</max>
+				<min>0</min>
+				<max>1</max>
 			</clipto>
 		</fcs_function>
 		
@@ -1539,8 +1539,8 @@
 			</function>
 			<output>/systems/hydraulics/brakes/center-input-feedback</output>
 			<clipto>
-				<min>0.0</min>
-				<max>1.0</max>
+				<min>0</min>
+				<max>1</max>
 			</clipto>
 		</fcs_function>
 		
