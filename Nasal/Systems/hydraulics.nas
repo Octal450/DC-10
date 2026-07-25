@@ -33,11 +33,11 @@ var HYDRAULICS = {
 		lPump2: props.globals.getNode("/controls/hydraulics/l-pump-2"),
 		lPump3: props.globals.getNode("/controls/hydraulics/l-pump-3"),
 		pressTest: props.globals.getNode("/controls/hydraulics/press-test"),
+		rmp13: props.globals.getNode("/controls/hydraulics/rmp-1-3"),
+		rmp23: props.globals.getNode("/controls/hydraulics/rmp-2-3"),
 		rPump1: props.globals.getNode("/controls/hydraulics/r-pump-1"),
 		rPump2: props.globals.getNode("/controls/hydraulics/r-pump-2"),
 		rPump3: props.globals.getNode("/controls/hydraulics/r-pump-3"),
-		rmp13: props.globals.getNode("/controls/hydraulics/rmp-1-3"),
-		rmp23: props.globals.getNode("/controls/hydraulics/rmp-2-3"),
 	},
 	Failures: {
 		auxPump1: props.globals.getNode("/systems/failures/hydraulics/aux-pump-1"),
@@ -48,11 +48,11 @@ var HYDRAULICS = {
 		lPump3: props.globals.getNode("/systems/failures/hydraulics/l-pump-3"),
 		nrmp21: props.globals.getNode("/systems/failures/hydraulics/nrmp-2-1"),
 		nrmp32: props.globals.getNode("/systems/failures/hydraulics/nrmp-3-2"),
+		rmp13: props.globals.getNode("/systems/failures/hydraulics/rmp-1-3"),
+		rmp23: props.globals.getNode("/systems/failures/hydraulics/rmp-2-3"),
 		rPump1: props.globals.getNode("/systems/failures/hydraulics/r-pump-1"),
 		rPump2: props.globals.getNode("/systems/failures/hydraulics/r-pump-2"),
 		rPump3: props.globals.getNode("/systems/failures/hydraulics/r-pump-3"),
-		rmp13: props.globals.getNode("/systems/failures/hydraulics/rmp-1-3"),
-		rmp23: props.globals.getNode("/systems/failures/hydraulics/rmp-2-3"),
 		sys1Leak: props.globals.getNode("/systems/failures/hydraulics/sys-1-leak"),
 		sys2Leak: props.globals.getNode("/systems/failures/hydraulics/sys-2-leak"),
 		sys3Leak: props.globals.getNode("/systems/failures/hydraulics/sys-3-leak"),
@@ -69,11 +69,11 @@ var HYDRAULICS = {
 		me.Controls.lPump2.setBoolValue(0);
 		me.Controls.lPump3.setBoolValue(0);
 		me.Controls.pressTest.setBoolValue(0);
+		me.Controls.rmp13.setBoolValue(0);
+		me.Controls.rmp23.setBoolValue(0);
 		me.Controls.rPump1.setValue(0);
 		me.Controls.rPump2.setValue(0);
 		me.Controls.rPump3.setValue(0);
-		me.Controls.rmp13.setBoolValue(0);
-		me.Controls.rmp23.setBoolValue(0);
 	},
 	resetFailures: func() {
 		me.Failures.auxPump1.setBoolValue(0);
@@ -84,11 +84,11 @@ var HYDRAULICS = {
 		me.Failures.lPump3.setBoolValue(0);
 		me.Failures.nrmp21.setBoolValue(0);
 		me.Failures.nrmp32.setBoolValue(0);
+		me.Failures.rmp13.setBoolValue(0);
+		me.Failures.rmp23.setBoolValue(0);
 		me.Failures.rPump1.setBoolValue(0);
 		me.Failures.rPump2.setBoolValue(0);
 		me.Failures.rPump3.setBoolValue(0);
-		me.Failures.rmp13.setBoolValue(0);
-		me.Failures.rmp23.setBoolValue(0);
 		me.Failures.sys1Leak.setBoolValue(0);
 		me.Failures.sys2Leak.setBoolValue(0);
 		me.Failures.sys3Leak.setBoolValue(0);
