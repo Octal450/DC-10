@@ -21,8 +21,8 @@ var fgcpCanvas = {
 	},
 	getKeys: func() {
 		return ["Ap1", "Ap2", "ApDisc", "Alt_green", "AltKnob", "AltMinus", "AltPlus", "Alt_10_disp", "Alt_100_disp", "Alt_1000_disp", "Alt_10000_disp", "Ats1", "Ats2", "AtsDisc", "Bank5", "Bank10", "Bank15", "Bank20", "Bank25", "BankLimit", "EprN1",
-		"EprN1Text", "Fd1", "Fd2", "Fms", "HdgKnob", "HdgMinus", "HdgPlus", "Hdg_1_disp", "Hdg_10_disp", "Hdg_100_disp", "Ias", "Ils", "Land", "Mach", "Reset", "SpdKnob", "SpdMinus", "SpdPlus", "Spd_1_disp", "Spd_10_disp", "Spd_100_disp", "Toga", "Turb",
-		"VorLoc", "VsKnob", "VsMinus", "VsPlus", "VsKnobRef", "VsKnobText"];
+		"EprText", "Fd1", "Fd2", "Fms", "HdgKnob", "HdgMinus", "HdgPlus", "Hdg_1_disp", "Hdg_10_disp", "Hdg_100_disp", "Ias", "Ils", "Land", "Mach", "N1Text", "Reset", "SpdKnob", "SpdMinus", "SpdPlus", "Spd_1_disp", "Spd_10_disp", "Spd_100_disp", "Toga",
+		"Turb", "VorLoc", "VsKnob", "VsMinus", "VsPlus", "VsKnobRef", "VsKnobText"];
 	},
 	close: func() {
 		me._dialogUpdate.stop();
@@ -47,7 +47,9 @@ var fgcpCanvas = {
 		}
 		
 		if (pts.Options.eng.getValue() == "PW") {
-			me["EprN1Text"].setText("EPR");
+			me["N1Text"].hide();
+		} else {
+			me["EprText"].hide();
 		}
 		
 		# Set up clickspots
