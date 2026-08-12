@@ -1210,6 +1210,7 @@
 			<pointer-1-input type="int">140</pointer-1-input>
 			<pointer-2-input type="int">160</pointer-2-input>
 			<pointer-3-input type="int">180</pointer-3-input>
+			<pointer-4-input type="int">200</pointer-4-input>
 		</airspeed-indicator>
 		<altimeter n="0">
 			<bug-input type="int">0</bug-input>
@@ -1643,6 +1644,9 @@
 			<weight-p n="1" type="int">0</weight-p>
 			<weight-p n="2" type="int">0</weight-p>
 		</load-manager>
+		<performance n="0">
+			<asi-bugs type="bool">0</asi-bugs>
+		</performance>
 		<pneumatics n="0">
 			<bleed-1-psi type="double">30</bleed-1-psi>
 			<bleed-2-psi type="double">30</bleed-2-psi>

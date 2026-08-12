@@ -211,6 +211,7 @@ var Systems = {
 		},
 	},
 	Performance: {
+		asiBugs: props.globals.getNode("/systems/performance/asi-bugs"),
 		flapRetract: props.globals.getNode("/systems/performance/flap-retract"),
 		landFlaps: props.globals.getNode("/systems/performance/land-flaps"),
 		landNoSlats: props.globals.getNode("/systems/performance/land-no-slats"),

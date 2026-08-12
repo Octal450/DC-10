@@ -20,18 +20,9 @@ var variousReset = func() {
 	pts.Controls.Switches.minimums.setValue(200);
 	pts.Controls.Switches.noSmokingSign.setValue(1); # Smoking is bad!
 	pts.Controls.Switches.seatbeltSign.setValue(0);
-}
-
-var setAsiBugs = func(n) {
-	if (n == 1) {
-		pts.Instrumentation.AirspeedIndicator.pointer1Input.setValue(math.round(pts.Systems.Performance.vapp.getValue()));
-		pts.Instrumentation.AirspeedIndicator.pointer2Input.setValue(math.round(pts.Systems.Performance.slatRetract.getValue()));
-		pts.Instrumentation.AirspeedIndicator.pointer3Input.setValue(math.round(pts.Systems.Performance.minManeuver.getValue()));
-	} else {
-		pts.Instrumentation.AirspeedIndicator.pointer1Input.setValue(math.round(pts.Systems.Performance.v1.getValue()));
-		pts.Instrumentation.AirspeedIndicator.pointer2Input.setValue(math.round(pts.Systems.Performance.flapRetract.getValue()));
-		pts.Instrumentation.AirspeedIndicator.pointer3Input.setValue(math.round(pts.Systems.Performance.slatRetract.getValue()));
-	}
+	pts.Instrumentation.Hsi.slavedToGps[0].setBoolValue(0);
+	pts.Instrumentation.Hsi.slavedToGps[1].setBoolValue(0);
+	pts.Systems.Performance.asiBugs.setBoolValue(0); # Back to takeoff bugs
 }
 
 var ApPanel = {

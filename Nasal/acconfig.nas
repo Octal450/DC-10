@@ -289,9 +289,6 @@ var PANEL = {
 		pts.Systems.Performance.landFlaps.setValue(35);
 		pts.Systems.Performance.landNoSlats.setBoolValue(0);
 		pts.Systems.Performance.toFlaps.setValue(15);
-		settimer(func() { # Ensure it recomputes
-			cockpit.setAsiBugs(0);
-		}, 0.5);
 	},
 	coldDark: func(reinit = 0) {
 		me.panelBase(0);
