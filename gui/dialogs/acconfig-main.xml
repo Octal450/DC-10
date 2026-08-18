@@ -374,7 +374,7 @@
 						<property>/systems/acconfig/damage-installed</property>
 					</and>
 				</enable>
-				<label>Allow OPRF Damage (K(D)C-10)</label>
+				<label>Allow OPRF Damage (KC/KDC-10)</label>
 				<halign>left</halign>
 				<property>/payload/armament/msg</property>
 				<binding>
