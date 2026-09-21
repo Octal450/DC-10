@@ -73,15 +73,19 @@ var LoadManager = {
 		}
 		
 		settimer(func() {
-			for (var i = 0; i < 7; i = i + 1) {
-				pts.Consumables.Fuel.Tank.levelLbs[i].setValue(me.Fuel.tank[i].getValue());
+			if (t != 2) {
+				for (var i = 0; i < 7; i = i + 1) {
+					pts.Consumables.Fuel.Tank.levelLbs[i].setValue(me.Fuel.tank[i].getValue());
+				}
 			}
 			
-			for (var i = 0; i < 6; i = i + 1) {
-				if (me.freighter) {
-					pts.Payload.Weight.weightLb[i].setValue(math.round(me.weightF[i].getValue(), 100));
-				} else {
-					pts.Payload.Weight.weightLb[i].setValue(math.round(me.weightP[i].getValue(), 100));
+			if (t != 1) {
+				for (var i = 0; i < 6; i = i + 1) {
+					if (me.freighter) {
+						pts.Payload.Weight.weightLb[i].setValue(math.round(me.weightF[i].getValue(), 100));
+					} else {
+						pts.Payload.Weight.weightLb[i].setValue(math.round(me.weightP[i].getValue(), 100));
+					}
 				}
 			}
 			
