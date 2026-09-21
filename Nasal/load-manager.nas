@@ -66,7 +66,7 @@ var LoadManager = {
 			}
 		}
 	},
-	setLoad: func() {
+	setLoad: func(t = 0) { # 0 = All, 1 = Fuel, 2 = Payload
 		if (!pts.Position.wow.getBoolValue() and pts.Payload.Armament.msg.getBoolValue()) {
 			gui.popupTip("Load Manager usage is not allowed when airborne with OPRF damage enabled.");
 			return;
@@ -104,3 +104,57 @@ setlistener("/systems/load-manager/weight-p[1]", func() {
 setlistener("/systems/load-manager/weight-p[2]", func() {
 	LoadManager.updatePax(2);
 }, 0, 0);
+
+
+# SimBrief Import Add-On Support
+globals.simbriefFuelCallback = func(blockFuel) {
+	if (LoadManager.series10) {
+		LoadManager.totalFuel10.setValue(math.round(blockFuel * KG2LB, 100));
+	} else {
+		LoadManager.totalFuel3040.setValue(math.round(blockFuel * KG2LB, 100));
+	}
+	LoadManager.setLoad(1);
+};
+
+var payloadCapacityLb = [pts.Payload.Weight.maxLb[0].getValue(), pts.Payload.Weight.maxLb[1].getValue(), pts.Payload.Weight.maxLb[2].getValue(), pts.Payload.Weight.maxLb[3].getValue(), pts.Payload.Weight.maxLb[4].getValue(), pts.Payload.Weight.maxLb[5].getValue()];
+globals.simbriefPayloadCallback = func(cargoWeight, paxWeight, paxCount) {
+	if (LoadManager.freighter) {
+		var totalCapacityLb = 0;
+		
+        for (var i = 0; i < 6; i += 1) {
+            totalCapacityLb += payloadCapacityLb[i];
+        }
+		
+        for (var i = 0; i < 6; i += 1) {
+            var weight = math.round((cargoWeight + paxWeight) * KG2LB * (payloadCapacityLb[i] / totalCapacityLb), 100);
+            LoadManager.weightF[i].setValue(weight);
+        }
+		
+		LoadManager.setLoad(2);
+	} else {
+		var totalPaxCapacityLb = 0;
+		var totalCargoCapacityLb = 0;
+		
+		# Passengers
+		for (var i = 0; i < 3; i += 1) {
+			totalPaxCapacityLb += payloadCapacityLb[i];
+		}
+		
+		for (var i = 0; i < 3; i += 1) {
+			var weight = math.round(paxWeight * KG2LB * (payloadCapacityLb[i] / totalPaxCapacityLb), 200);
+			LoadManager.weightP[i].setValue(weight);
+		}
+		
+		# Lower Cargo
+		for (var i = 3; i < 6; i += 1) {
+			totalCargoCapacityLb += payloadCapacityLb[i];
+		}
+		
+		for (var i = 3; i < 6; i += 1) {
+			var weight = math.round(cargoWeight * KG2LB * (payloadCapacityLb[i] / totalCargoCapacityLb), 100);
+			LoadManager.weightP[i].setValue(weight);
+		}
+		
+		LoadManager.setLoad(2);
+	}
+}
