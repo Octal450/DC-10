@@ -758,8 +758,8 @@
 		<object-name>EGT1</object-name>
 		<property>instrumentation/egt[0]/egt</property>
 		<interpolation>
-			<entry><ind>   0</ind><dep>-112.5</dep></entry>
-			<entry><ind>1000</ind><dep> 112.5</dep></entry>
+			<entry><ind>   0</ind><dep>-122.01</dep></entry>
+			<entry><ind>1000</ind><dep> 122.01</dep></entry>
 		</interpolation>
 		<axis>
 			<x>-1</x>
@@ -778,8 +778,8 @@
 		<object-name>EGTMax1</object-name>
 		<property>instrumentation/egt[0]/egt-max</property>
 		<interpolation>
-			<entry><ind>   0</ind><dep>-112.5</dep></entry>
-			<entry><ind>1000</ind><dep> 112.5</dep></entry>
+			<entry><ind>   0</ind><dep>-122.01</dep></entry>
+			<entry><ind>1000</ind><dep> 122.01</dep></entry>
 		</interpolation>
 		<axis>
 			<x>-1</x>
@@ -798,8 +798,8 @@
 		<object-name>EGT2</object-name>
 		<property>instrumentation/egt[1]/egt</property>
 		<interpolation>
-			<entry><ind>   0</ind><dep>-112.5</dep></entry>
-			<entry><ind>1000</ind><dep> 112.5</dep></entry>
+			<entry><ind>   0</ind><dep>-122.01</dep></entry>
+			<entry><ind>1000</ind><dep> 122.01</dep></entry>
 		</interpolation>
 		<axis>
 			<x>-1</x>
@@ -818,8 +818,8 @@
 		<object-name>EGTMax2</object-name>
 		<property>instrumentation/egt[1]/egt-max</property>
 		<interpolation>
-			<entry><ind>   0</ind><dep>-112.5</dep></entry>
-			<entry><ind>1000</ind><dep> 112.5</dep></entry>
+			<entry><ind>   0</ind><dep>-122.01</dep></entry>
+			<entry><ind>1000</ind><dep> 122.01</dep></entry>
 		</interpolation>
 		<axis>
 			<x>-1</x>
@@ -838,8 +838,8 @@
 		<object-name>EGT3</object-name>
 		<property>instrumentation/egt[2]/egt</property>
 		<interpolation>
-			<entry><ind>   0</ind><dep>-112.5</dep></entry>
-			<entry><ind>1000</ind><dep> 112.5</dep></entry>
+			<entry><ind>   0</ind><dep>-122.01</dep></entry>
+			<entry><ind>1000</ind><dep> 122.01</dep></entry>
 		</interpolation>
 		<axis>
 			<x>-1</x>
@@ -858,8 +858,8 @@
 		<object-name>EGTMax3</object-name>
 		<property>instrumentation/egt[2]/egt-max</property>
 		<interpolation>
-			<entry><ind>   0</ind><dep>-112.5</dep></entry>
-			<entry><ind>1000</ind><dep> 112.5</dep></entry>
+			<entry><ind>   0</ind><dep>-122.01</dep></entry>
+			<entry><ind>1000</ind><dep> 122.01</dep></entry>
 		</interpolation>
 		<axis>
 			<x>-1</x>
@@ -879,8 +879,8 @@
 		<object-name>N11</object-name>
 		<property>instrumentation/n[0]/n1</property>
 		<interpolation>
-			<entry><ind>  0</ind><dep>-108</dep></entry>
-			<entry><ind>120</ind><dep> 108</dep></entry>
+			<entry><ind>  0</ind><dep>-122.01</dep></entry>
+			<entry><ind>120</ind><dep> 122.01</dep></entry>
 		</interpolation>
 		<axis>
 			<x>-1</x>
@@ -899,8 +899,8 @@
 		<object-name>N1Max1</object-name>
 		<property>instrumentation/n[0]/n1-max</property>
 		<interpolation>
-			<entry><ind>  0</ind><dep>-108</dep></entry>
-			<entry><ind>120</ind><dep> 108</dep></entry>
+			<entry><ind>  0</ind><dep>-122.01</dep></entry>
+			<entry><ind>120</ind><dep> 122.01</dep></entry>
 		</interpolation>
 		<axis>
 			<x>-1</x>
@@ -919,8 +919,8 @@
 		<object-name>N12</object-name>
 		<property>instrumentation/n[1]/n1</property>
 		<interpolation>
-			<entry><ind>  0</ind><dep>-108</dep></entry>
-			<entry><ind>120</ind><dep> 108</dep></entry>
+			<entry><ind>  0</ind><dep>-122.01</dep></entry>
+			<entry><ind>120</ind><dep> 122.01</dep></entry>
 		</interpolation>
 		<axis>
 			<x>-1</x>
@@ -939,8 +939,8 @@
 		<object-name>N1Max2</object-name>
 		<property>instrumentation/n[1]/n1-max</property>
 		<interpolation>
-			<entry><ind>  0</ind><dep>-108</dep></entry>
-			<entry><ind>120</ind><dep> 108</dep></entry>
+			<entry><ind>  0</ind><dep>-122.01</dep></entry>
+			<entry><ind>120</ind><dep> 122.01</dep></entry>
 		</interpolation>
 		<axis>
 			<x>-1</x>
@@ -959,8 +959,8 @@
 		<object-name>N13</object-name>
 		<property>instrumentation/n[2]/n1</property>
 		<interpolation>
-			<entry><ind>  0</ind><dep>-108</dep></entry>
-			<entry><ind>120</ind><dep> 108</dep></entry>
+			<entry><ind>  0</ind><dep>-122.01</dep></entry>
+			<entry><ind>120</ind><dep> 122.01</dep></entry>
 		</interpolation>
 		<axis>
 			<x>-1</x>
@@ -979,8 +979,8 @@
 		<object-name>N1Max3</object-name>
 		<property>instrumentation/n[2]/n1-max</property>
 		<interpolation>
-			<entry><ind>  0</ind><dep>-108</dep></entry>
-			<entry><ind>120</ind><dep> 108</dep></entry>
+			<entry><ind>  0</ind><dep>-122.01</dep></entry>
+			<entry><ind>120</ind><dep> 122.01</dep></entry>
 		</interpolation>
 		<axis>
 			<x>-1</x>
