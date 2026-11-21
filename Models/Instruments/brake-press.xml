@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2010 Gary R. Neely (Buckaroo) -->
+<!-- Copyright (c) 2026 Josh Davidson (Octal450) -->
+
+<PropertyList>
+	
+	<path>brake-press.ac</path>
+	
+	<animation>
+		<type>scale</type>
+		<x-offset>0.95</x-offset>
+		<y-offset>0.95</y-offset>
+		<z-offset>0.95</z-offset>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>Face</object-name>
+		<object-name>NeedleL</object-name>
+		<object-name>NeedleR</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>0.6</green>
+			<blue>0.3</blue>
+			<factor-prop>systems/lighting/capt-panel</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>NeedleL</object-name>
+		<property>instrumentation/brakes/sys-1-psi</property>
+		<interpolation>
+			<entry><ind>   0</ind><dep>  0</dep></entry>
+			<entry><ind>4000</ind><dep>240</dep></entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.03</y-m>
+			<z-m>0</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>NeedleR</object-name>
+		<property>instrumentation/brakes/sys-2-psi</property>
+		<interpolation>
+			<entry><ind>   0</ind><dep>  0</dep></entry>
+			<entry><ind>4000</ind><dep>240</dep></entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0.03</y-m>
+			<z-m>0</z-m>
+		</center>
+	</animation>
+
+</PropertyList>

@@ -192,6 +192,16 @@
 		</offsets>
 	</model>
 	
+	<model>
+		<path>Aircraft/DC-10/Models/Instruments/brake-press.xml</path>
+		<offsets>
+			<x-m>-3.032</x-m>
+			<y-m>-0.31</y-m>
+			<z-m>0.788</z-m>
+			<pitch-deg>-10</pitch-deg>
+		</offsets>
+	</model>
+	
 	<!-- Center Instruments -->
 	<model>
 		<path>Aircraft/DC-10/Models/Instruments/FCP/fcp.xml</path>
