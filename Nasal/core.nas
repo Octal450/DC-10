@@ -37,6 +37,7 @@ var fdmInit = setlistener("sim/signals/fdm-initialized", func {
 	systemsInit();
 	systemsLoop.start();
 	slowLoop.start();
+	canvas_eids.setup();
 	canvas_fma.setup();
 	LoadManager.init();
 	acconfig.SYSTEM.finalInit();
@@ -45,6 +46,7 @@ var fdmInit = setlistener("sim/signals/fdm-initialized", func {
 });
 
 var systemsLoop = maketimer(0.1, func {
+	systems.DUController.loop();
 	SHAKE.loop();
 	
 	if (pts.Sim.Replay.replayState.getBoolValue()) {
@@ -82,7 +84,18 @@ var slowLoop = maketimer(1, func() {
 	if (acconfig.SYSTEM.Error.active.getBoolValue()) {
 		systemsInit();
 	}
+	
+	# Panel forcer - makes sure an invalid panel configuration is never used
+	setPanelConfig();
 });
+
+var setPanelConfig = func() {
+	if (pts.Options.series10.getBoolValue()) {
+		if (pts.Systems.Acconfig.Options.eids.getBoolValue()) {
+			pts.Systems.Acconfig.Options.eids.setBoolValue(0);
+		}
+	}
+}
 
 var beacon = aircraft.light.new("/sim/model/lights/beacon", [0.1, 1], "/systems/exterior-lights/beacon");
 var strobe = aircraft.light.new("/sim/model/lights/strobe", [0.05, 0.05, 0.05, 1.0], "/systems/exterior-lights/strobe-lights");

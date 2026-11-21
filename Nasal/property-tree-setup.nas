@@ -87,6 +87,11 @@ var Instrumentation = {
 			standbyMhzFmt: [props.globals.getNode("/instrumentation/comm[0]/frequencies/standby-mhz-fmt"), props.globals.getNode("/instrumentation/comm[1]/frequencies/standby-mhz-fmt"), props.globals.getNode("/instrumentation/comm[2]/frequencies/standby-mhz-fmt")],
 		},
 	},
+	Eids: {
+		limitMode: props.globals.getNode("/instrumentation/eids/limit-mode"),
+		manEpr: props.globals.getNode("/instrumentation/eids/man-epr-limit"),
+		manN1: props.globals.getNode("/instrumentation/eids/man-n1-limit"),
+	},
 	Epr: {
 		powerAvail: [props.globals.getNode("/instrumentation/epr[0]/power-avail"), props.globals.getNode("/instrumentation/epr[1]/power-avail"), props.globals.getNode("/instrumentation/epr[2]/power-avail")],
 	},
@@ -206,6 +211,11 @@ var Sim = {
 };
 
 var Systems = {
+	Acconfig: {
+		Options: {
+			eids: props.globals.getNode("/systems/acconfig/options/eids"),
+		},
+	},
 	Caws: {
 		ApOff: {
 			hornSilenceEnabled: props.globals.getNode("/systems/caws/apoff/horn-silence-enabled"),

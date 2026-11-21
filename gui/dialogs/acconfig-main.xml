@@ -424,6 +424,39 @@
 				</binding>
 				<live>true</live>
 			</checkbox>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+				<text>
+					<label>Panel (See Aircraft Help)</label>
+				</text>
+				<hrule>
+					<stretch>true</stretch>
+				</hrule>
+			</group>
+			
+			<checkbox>
+				<enable>
+					<and>
+						<not><property>/options/series-10</property></not>
+					</and>
+				</enable>
+				<label>AvVance EIDS Equipped</label>
+				<halign>left</halign>
+				<property>/systems/acconfig/options/eids</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>nasal</command>
+					<script>acconfig.OPTIONS.write();</script>
+				</binding>
+				<live>true</live>
+			</checkbox>
 		</group>
 	</group>
 

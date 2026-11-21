@@ -5,6 +5,36 @@
 
 <PropertyList>
 	
+	<filter>
+		<name>EIDS LCD Contrast</name>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<not>
+					<property>/instrumentation/eids/lcd-on</property>
+				</not>
+			</condition>
+			<expression>
+				<table>
+					<property>/rendering/scene/diffuse/red</property>
+					<entry><ind>0.8</ind><dep>0.97</dep></entry>
+					<entry><ind>0.0</ind><dep>0.98</dep></entry>
+				</table>
+			</expression>
+		</input>
+		<input>
+			<expression>
+				<table>
+					<property>/rendering/scene/diffuse/red</property>
+					<entry><ind>0.8</ind><dep>0.95</dep></entry>
+					<entry><ind>0.0</ind><dep>0.90</dep></entry>
+				</table>
+			</expression>
+		</input>
+		<output>/instrumentation/eids/lcd-contrast</output>
+	</filter>
+	
 	<!-- Slowed values used in dc-10-instrumentation.xml -->
 	<filter>
 		<name>Mach Slow</name>

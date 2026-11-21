@@ -3202,6 +3202,120 @@
 	
 	</channel>
 	
+	<channel name="EIDS" execrate="2">
+		
+		<switch name="/instrumentation/eids/limit-n1-sel-1">
+			<default value="/controls/engines/engine[0]/man-n1-set"/>
+			<test logic="AND" value="1">
+				/options/eng-int eq 0
+				/systems/acconfig/options/eids eq 1
+				/instrumentation/eids/limit-mode eq 1
+			</test>
+			<test logic="AND" value="0">
+				/options/eng-int eq 0
+				/systems/acconfig/options/eids eq 1
+				/instrumentation/eids/limit-mode eq 0
+			</test>
+			<output>/controls/engines/engine[0]/man-n1-set</output>
+		</switch>
+		
+		<switch name="/instrumentation/eids/limit-epr-sel-1">
+			<default value="/controls/engines/engine[0]/man-epr-set"/>
+			<test logic="AND" value="1">
+				/options/eng-int eq 1
+				/systems/acconfig/options/eids eq 1
+				/instrumentation/eids/limit-mode eq 1
+			</test>
+			<test logic="AND" value="0">
+				/options/eng-int eq 1
+				/systems/acconfig/options/eids eq 1
+				/instrumentation/eids/limit-mode eq 0
+			</test>
+			<output>/controls/engines/engine[0]/man-epr-set</output>
+		</switch>
+		
+		<switch name="/instrumentation/eids/limit-n1-sel-2">
+			<default value="/controls/engines/engine[1]/man-n1-set"/>
+			<test logic="AND" value="1">
+				/options/eng-int eq 0
+				/systems/acconfig/options/eids eq 1
+				/instrumentation/eids/limit-mode eq 1
+			</test>
+			<test logic="AND" value="0">
+				/options/eng-int eq 0
+				/systems/acconfig/options/eids eq 1
+				/instrumentation/eids/limit-mode eq 0
+			</test>
+			<output>/controls/engines/engine[1]/man-n1-set</output>
+		</switch>
+		
+		<switch name="/instrumentation/eids/limit-epr-sel-2">
+			<default value="/controls/engines/engine[1]/man-epr-set"/>
+			<test logic="AND" value="1">
+				/options/eng-int eq 1
+				/systems/acconfig/options/eids eq 1
+				/instrumentation/eids/limit-mode eq 1
+			</test>
+			<test logic="AND" value="0">
+				/options/eng-int eq 1
+				/systems/acconfig/options/eids eq 1
+				/instrumentation/eids/limit-mode eq 0
+			</test>
+			<output>/controls/engines/engine[1]/man-epr-set</output>
+		</switch>
+		
+		<switch name="/instrumentation/eids/limit-n1-sel-3">
+			<default value="/controls/engines/engine[2]/man-n1-set"/>
+			<test logic="AND" value="1">
+				/options/eng-int eq 0
+				/systems/acconfig/options/eids eq 1
+				/instrumentation/eids/limit-mode eq 1
+			</test>
+			<test logic="AND" value="0">
+				/options/eng-int eq 0
+				/systems/acconfig/options/eids eq 1
+				/instrumentation/eids/limit-mode eq 0
+			</test>
+			<output>/controls/engines/engine[2]/man-n1-set</output>
+		</switch>
+		
+		<switch name="/instrumentation/eids/limit-epr-sel-3">
+			<default value="/controls/engines/engine[2]/man-epr-set"/>
+			<test logic="AND" value="1">
+				/options/eng-int eq 1
+				/systems/acconfig/options/eids eq 1
+				/instrumentation/eids/limit-mode eq 1
+			</test>
+			<test logic="AND" value="0">
+				/options/eng-int eq 1
+				/systems/acconfig/options/eids eq 1
+				/instrumentation/eids/limit-mode eq 0
+			</test>
+			<output>/controls/engines/engine[2]/man-epr-set</output>
+		</switch>
+		
+		<fcs_function name="/instrumentation/eids/man-n1-limit">
+			<function>
+				<max>
+					<property>/controls/engines/engine[0]/man-n1</property>
+					<property>/controls/engines/engine[1]/man-n1</property>
+					<property>/controls/engines/engine[2]/man-n1</property>
+				</max>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="/instrumentation/eids/man-epr-limit">
+			<function>
+				<max>
+					<property>/controls/engines/engine[0]/man-epr</property>
+					<property>/controls/engines/engine[1]/man-epr</property>
+					<property>/controls/engines/engine[2]/man-epr</property>
+				</max>
+			</function>
+		</fcs_function>
+	
+	</channel>
+	
 	<channel name="TCI and Assumed Temp" execrate="2">
 		
 		<switch name="/instrumentation/tci/power-avail">

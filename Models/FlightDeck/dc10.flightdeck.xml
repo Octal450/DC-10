@@ -235,6 +235,9 @@
 	
 	<model>
 		<path>Aircraft/DC-10/Models/Instruments/TAS_SAT/tas_sat.xml</path>
+		<condition>
+			<not><property>systems/acconfig/options/eids</property></not>
+		</condition>
 		<offsets>
 			<x-m>-3.0652</x-m>
 			<y-m>-0.135</y-m>
@@ -246,10 +249,13 @@
 	<model>
 		<path>Aircraft/DC-10/Models/Instruments/assumedtemp.xml</path>
 		<condition>
-			<equals>
-				<property>options/eng</property>
-				<value>GE</value>
-			</equals>
+			<and>
+				<not><property>systems/acconfig/options/eids</property></not>
+				<equals>
+					<property>options/eng</property>
+					<value>GE</value>
+				</equals>
+			</and>
 		</condition>
 		<offsets>
 			<x-m>-3.04</x-m>
@@ -260,10 +266,33 @@
 	</model>
 	
 	<model>
+		<name>Reversers</name>
+		<path>Aircraft/DC-10/Models/Instruments/Engines/reversers.xml</path>
+		<offsets>
+			<x-m>-3.044</x-m>
+			<y-m>-0.005</y-m>
+			<z-m>0.857</z-m>
+			<pitch-deg>-10</pitch-deg>
+		</offsets>
+	</model>
+	<animation>
+		<type>translate</type>
+		<object-name>Reversers</object-name>
+		<property>systems/acconfig/options/eids</property>
+		<factor>-0.011</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<model>
 		<path>Aircraft/DC-10/Models/Instruments/Engines/engines6D.xml</path>
 		<condition>
 			<and>
 				<property>options/series-10</property>
+				<not><property>systems/acconfig/options/eids</property></not>
 				<equals>
 					<property>options/eng</property>
 					<value>GE</value>
@@ -283,6 +312,7 @@
 		<condition>
 			<and>
 				<not><property>options/series-10</property></not>
+				<not><property>systems/acconfig/options/eids</property></not>
 				<equals>
 					<property>options/eng</property>
 					<value>GE</value>
@@ -300,14 +330,31 @@
 	<model>
 		<path>Aircraft/DC-10/Models/Instruments/Engines/enginesPW.xml</path>
 		<condition>
-			<equals>
-				<property>options/eng</property>
-				<value>PW</value>
-			</equals>
+			<and>
+				<not><property>systems/acconfig/options/eids</property></not>
+				<equals>
+					<property>options/eng</property>
+					<value>PW</value>
+				</equals>
+			</and>
 		</condition>
 		<offsets>
 			<x-m>-3.044</x-m>
 			<y-m>-0.005</y-m>
+			<z-m>0.857</z-m>
+			<pitch-deg>-10</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/DC-10/Models/Instruments/EIDS/eids.xml</path>
+		<condition>
+			<not><property>options/series-10</property></not>
+			<property>systems/acconfig/options/eids</property>
+		</condition>
+		<offsets>
+			<x-m>-3.044</x-m>
+			<y-m>-0.016</y-m>
 			<z-m>0.857</z-m>
 			<pitch-deg>-10</pitch-deg>
 		</offsets>

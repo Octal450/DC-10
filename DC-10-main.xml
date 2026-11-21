@@ -489,6 +489,7 @@
 			<baro-rotate n="2" type="int">49984</baro-rotate> <!-- So the symbol is upright -->
 			<bug-rotate n="0" type="int">49984</bug-rotate> <!-- So the symbol is upright -->
 			<bug-rotate n="1" type="int">49984</bug-rotate> <!-- So the symbol is upright -->
+			<eids-cmd-rotate type="int">49984</eids-cmd-rotate> <!-- So the symbol is upright -->
 			<fgcp n="0">
 				<ap1-sw type="bool">0</ap1-sw>
 				<ap2-sw type="bool">0</ap2-sw>
@@ -1262,6 +1263,9 @@
 			<serviceable type="bool">true</serviceable>
 			<volume type="double">0</volume>
 		</dme>
+		<eids n="0">
+			<limit-mode type="int">0</limit-mode>
+		</eids>
 		<encoder n="0">
 			<serviceable type="bool">1</serviceable>
 		</encoder>
@@ -1482,6 +1486,7 @@
 					<show-wingtip type="bool">1</show-wingtip>
 				</autopush>
 				<damage type="bool">0</damage>
+				<eids type="bool">0</eids>
 				<keyboard-mode type="bool">0</keyboard-mode>
 				<load-manager-pax-count type="bool">1</load-manager-pax-count>
 				<separate-tiller-axis type="bool">0</separate-tiller-axis>
@@ -1688,6 +1693,7 @@
 			<file>Aircraft/DC-10/Nasal/Systems/ignition.nas</file>
 			<file>Aircraft/DC-10/Nasal/Systems/thrlim.nas</file>
 			<file>Aircraft/DC-10/Nasal/Systems/warnings.nas</file>
+			<file>Aircraft/DC-10/Nasal/Displays/DU-controller.nas</file>
 		</systems>
 		<fgs>
 			<file>Aircraft/DC-10/Nasal/FGS/FGS.nas</file>
@@ -1696,6 +1702,9 @@
 		<cockpit>
 			<file>Aircraft/DC-10/Nasal/cockpit.nas</file>
 		</cockpit>
+		<canvas_eids>
+			<file>Aircraft/DC-10/Nasal/Displays/EIDS.nas</file>
+		</canvas_eids>
 		<canvas_fma>
 			<file>Aircraft/DC-10/Nasal/Instruments/fma.nas</file>
 		</canvas_fma>

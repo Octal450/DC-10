@@ -69,10 +69,28 @@ var ENGINES = {
 			me.Controls.eprTemp = math.round(me.Controls.manEpr[n].getValue() + (d * 0.01), (abs(d * 0.01))); # Kill floating point error
 			if (me.Controls.eprTemp < 1) {
 				me.Controls.manEpr[n].setValue(1);
-			} else if (me.Controls.eprTemp > 2.0) {
-				me.Controls.manEpr[n].setValue(2.0);
+			} else if (me.Controls.eprTemp > 2) {
+				me.Controls.manEpr[n].setValue(2);
 			} else {
 				me.Controls.manEpr[n].setValue(me.Controls.eprTemp);
+			}
+		}
+	},
+	adjustManEprEids: func(d) {
+		if (me.Controls.manEprSet[0].getBoolValue() and systems.ELECTRICAL.Bus.lEmerAc.getValue() >= 112) {
+			me.Controls.eprTemp = math.round(me.Controls.manEpr[0].getValue() + (d * 0.01), (abs(d * 0.01))); # Kill floating point error
+			if (me.Controls.eprTemp < 1) {
+				me.Controls.manEpr[0].setValue(1);
+				me.Controls.manEpr[1].setValue(1);
+				me.Controls.manEpr[2].setValue(1);
+			} else if (me.Controls.eprTemp > 2) {
+				me.Controls.manEpr[0].setValue(2);
+				me.Controls.manEpr[1].setValue(2);
+				me.Controls.manEpr[2].setValue(2);
+			} else {
+				me.Controls.manEpr[0].setValue(me.Controls.eprTemp);
+				me.Controls.manEpr[1].setValue(me.Controls.eprTemp);
+				me.Controls.manEpr[2].setValue(me.Controls.eprTemp);
 			}
 		}
 	},
@@ -85,6 +103,24 @@ var ENGINES = {
 				me.Controls.manN1[n].setValue(120);
 			} else {
 				me.Controls.manN1[n].setValue(me.Controls.n1Temp);
+			}
+		}
+	},
+	adjustManN1Eids: func(d) {
+		if (me.Controls.manN1Set[0].getBoolValue() and systems.ELECTRICAL.Bus.lEmerAc.getValue() >= 112) {
+			me.Controls.n1Temp = math.round(me.Controls.manN1[0].getValue() + (d * 0.1), (abs(d * 0.1))); # Kill floating point error
+			if (me.Controls.n1Temp < 0) {
+				me.Controls.manN1[0].setValue(0);
+				me.Controls.manN1[1].setValue(0);
+				me.Controls.manN1[2].setValue(0);
+			} else if (me.Controls.n1Temp > 120) {
+				me.Controls.manN1[0].setValue(120);
+				me.Controls.manN1[1].setValue(120);
+				me.Controls.manN1[2].setValue(120);
+			} else {
+				me.Controls.manN1[0].setValue(me.Controls.n1Temp);
+				me.Controls.manN1[1].setValue(me.Controls.n1Temp);
+				me.Controls.manN1[2].setValue(me.Controls.n1Temp);
 			}
 		}
 	},

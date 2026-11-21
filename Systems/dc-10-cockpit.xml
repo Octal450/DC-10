@@ -23,6 +23,11 @@
 			<c1>5</c1>
 		</lag_filter>
 		
+		<lag_filter name="/controls/cockpit/eids-limit-mode">
+			<input>/instrumentation/eids/limit-mode</input>
+			<c1>20</c1>
+		</lag_filter>
+		
 		<lag_filter name="/controls/cockpit/elevator-yoke">
 			<input>/systems/fcs/elevator-yoke-switch</input>
 			<c1>20</c1>
