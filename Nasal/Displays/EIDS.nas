@@ -338,7 +338,7 @@ var CanvasPw = {
 		Value.egt[1] = systems.ENGINES.egt[1].getValue();
 		Value.egt[2] = systems.ENGINES.egt[2].getValue();
 		
-		me["EGT1_bar"].setTranslation(0, math.clamp(Value.egt[0] / 700 * -574, -574, 0));
+		me["EGT1_bar"].setTranslation(0, -96 / 300 * math.clamp(Value.egt[0], 0, 300) - 478 / 400 * math.clamp(Value.egt[0] - 300, 0, 400));
 		if (Value.egt[0] - 0.5 > 685) {
 			me["EGT1_bar"].setColorFill(1, 0, 0);
 		} else if (Value.egt[0] - 0.5 > 650) {
@@ -347,7 +347,7 @@ var CanvasPw = {
 			me["EGT1_bar"].setColorFill(1, 1, 1);
 		}
 		
-		me["EGT2_bar"].setTranslation(0, math.clamp(Value.egt[1] / 700 * -574, -574, 0));
+		me["EGT2_bar"].setTranslation(0, -96 / 300 * math.clamp(Value.egt[1], 0, 300) - 478 / 400 * math.clamp(Value.egt[1] - 300, 0, 400));
 		if (Value.egt[1] - 0.5 > 685) {
 			me["EGT2_bar"].setColorFill(1, 0, 0);
 		} else if (Value.egt[1] - 0.5 > 650) {
@@ -356,7 +356,7 @@ var CanvasPw = {
 			me["EGT2_bar"].setColorFill(1, 1, 1);
 		}
 		
-		me["EGT3_bar"].setTranslation(0, math.clamp(Value.egt[2] / 700 * -574, -574, 0));
+		me["EGT3_bar"].setTranslation(0, -96 / 300 * math.clamp(Value.egt[2], 0, 300) - 478 / 400 * math.clamp(Value.egt[2] - 300, 0, 400));
 		if (Value.egt[2] - 0.5 > 685) {
 			me["EGT3_bar"].setColorFill(1, 0, 0);
 		} else if (Value.egt[2] - 0.5 > 650) {
