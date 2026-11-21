@@ -234,28 +234,46 @@
 	</model>
 	
 	<model>
+		<name>TasSat</name>
 		<path>Aircraft/DC-10/Models/Instruments/TAS_SAT/tas_sat.xml</path>
-		<condition>
-			<not><property>systems/acconfig/options/eids</property></not>
-		</condition>
 		<offsets>
-			<x-m>-3.0652</x-m>
+			<x-m>-3.0662</x-m>
 			<y-m>-0.135</y-m>
 			<z-m>0.96</z-m>
 			<pitch-deg>-10</pitch-deg>
 		</offsets>
 	</model>
+	<animation>
+		<type>translate</type>
+		<object-name>TasSat</object-name>
+		<property>systems/acconfig/options/eids</property>
+		<factor>0.214</factor>
+		<axis>
+			<x>0.176326</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>TasSat</object-name>
+		<property>systems/acconfig/options/eids</property>
+		<factor>0.006</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
 	
 	<model>
+		<name>AssumedTemp</name>
 		<path>Aircraft/DC-10/Models/Instruments/assumedtemp.xml</path>
 		<condition>
-			<and>
-				<not><property>systems/acconfig/options/eids</property></not>
-				<equals>
-					<property>options/eng</property>
-					<value>GE</value>
-				</equals>
-			</and>
+			<equals>
+				<property>options/eng</property>
+				<value>GE</value>
+			</equals>
 		</condition>
 		<offsets>
 			<x-m>-3.04</x-m>
@@ -264,6 +282,28 @@
 			<pitch-deg>-10</pitch-deg>
 		</offsets>
 	</model>
+	<animation>
+		<type>translate</type>
+		<object-name>AssumedTemp</object-name>
+		<property>systems/acconfig/options/eids</property>
+		<factor>0.063</factor>
+		<axis>
+			<x>0.176326</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>AssumedTemp</object-name>
+		<property>systems/acconfig/options/eids</property>
+		<factor>0.068</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
 	
 	<model>
 		<name>Reversers</name>
